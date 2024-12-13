@@ -22,7 +22,7 @@ jobs:
       - name: Upload static files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.WORKING_DIRECTORY }}/apps/app-frontend-server/storybook-static
+          path: ${{ github.workspace }}/apps/app-frontend-server/storybook-static
 
   deploy:
     needs: build
