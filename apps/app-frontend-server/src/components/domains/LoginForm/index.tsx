@@ -2,9 +2,10 @@ import { useId } from 'react';
 
 import Button from '@/components/shared/Button';
 import Input from '@/components/shared/Input';
+import LogoTrastocker from '@/components/shared/LogoTrastocker';
 import { useTranslation } from '@/hooks/useTranslation';
 
-import { inputWrapper, label, labelText } from './styles.css';
+import { inputWrapper, logoWrapper, label, labelText, loginButtonWrapper } from './styles.css';
 
 import type React from 'react';
 
@@ -14,6 +15,9 @@ const LoginForm: React.FC = () => {
   const { t } = useTranslation();
   return (
     <form>
+      <div className={logoWrapper}>
+        <LogoTrastocker />
+      </div>
       <div className={inputWrapper}>
         <label className={label} htmlFor={emailInputId}>
           <span className={labelText}>
@@ -42,7 +46,7 @@ const LoginForm: React.FC = () => {
           }}
         />
       </div>
-      <div className="form-control mt-6">
+      <div className={loginButtonWrapper}>
         <Button>
           {t('Login')}
         </Button>
