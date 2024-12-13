@@ -1,0 +1,5 @@
+[[d1_databases]]
+binding = "DB"
+database_name = "trastocker"
+database_id = "f33035ec-c9be-47bb-bff8-d182b3b722bf"
+migrations_dir = "migrations"

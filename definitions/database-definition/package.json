@@ -1,0 +1,33 @@
+{
+  "name": "@trastocker/database-definition",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rimraf node_modules",
+    "database:local": "dotenv -v DATABASE_URL=$(find ../../apps/app-backend-server/.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) -- drizzle-kit studio",
+    "database:production": "drizzle-kit studio",
+    "lint:code": "eslint . --cache",
+    "lint:type": "tsc --pretty --noEmit",
+    "migrate:apply:local": "wrangler d1 migrations apply trastocker --local --persist-to ../../apps/app-backend-server/.wrangler/state",
+    "migrate:apply:remote": "wrangler d1 migrations apply trastocker --remote",
+    "migrate:generate": "drizzle-kit generate",
+    "sort:package": "sort-package-json"
+  },
+  "dependencies": {
+    "@miniflare/d1": "^2.14.4",
+    "@miniflare/shared": "^2.14.4",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.36.3"
+  },
+  "devDependencies": {
+    "@huuyafwww/eslint-config-common": "^1.0.6",
+    "@huuyafwww/eslint-config-node": "^1.0.3",
+    "@huuyafwww/tsconfig-common": "^1.1.0",
+    "dotenv-cli": "^7.4.4",
+    "drizzle-kit": "^0.28.1",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "@huuyafwww/tsconfig-next",
+    // "@trastocker/typescript-config-common",
+    // "@tsconfig/next",
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "jsxImportSource": "@emotion/react",
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "eslint.config.js",
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

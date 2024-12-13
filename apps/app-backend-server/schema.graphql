@@ -1,0 +1,33 @@
+type Mutation {
+  """login"""
+  login(
+    """email"""
+    email: String!
+
+    """password"""
+    password: String!
+  ): User!
+}
+
+type Query {
+  """get Authenticated User"""
+  authUser: User!
+
+  """get User by ID"""
+  user(
+    """User ID"""
+    userId: ID!
+  ): User!
+}
+
+"""User"""
+type User {
+  """User Email"""
+  email: String!
+
+  """User ID"""
+  id: ID!
+
+  """User Name"""
+  name: String!
+}
