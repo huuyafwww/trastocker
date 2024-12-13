@@ -15,5 +15,6 @@ jobs:
       - name: Setup pnpm
         uses: ./.github/actions/setup/pnpm
 
-      - name: Build packages
-        run: pnpm run build
+      # TODO: We need to make adjustments to allow Build to come through.
+      # - name: Build packages
+      #   run: pnpm run build

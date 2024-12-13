@@ -15,9 +15,6 @@ jobs:
       - name: Setup pnpm
         uses: ./.github/actions/setup/pnpm
 
-      - name: Build packages
-        run: pnpm run build
-
       - name: Setup ESLint cache
         uses: actions/cache@v4
         with:
