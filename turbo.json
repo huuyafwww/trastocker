@@ -20,6 +20,10 @@
     "lint:type": {
       "dependsOn": [],
       "inputs": ["**/*.ts"]
+    },
+    "test": {
+      "dependsOn": ["^test"],
+      "inputs": ["**/*.ts", "**/*.tsx"]
     }
   }
 }
