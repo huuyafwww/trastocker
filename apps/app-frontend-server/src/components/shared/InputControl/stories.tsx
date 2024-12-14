@@ -21,9 +21,6 @@ const meta = {
     disabled: {
       control: 'boolean',
     },
-    required: {
-      control: 'boolean',
-    },
     readonly: {
       control: 'boolean',
     },
@@ -51,7 +48,7 @@ export const Disabled: Story = {
 export const Required: Story = {
   args: {
     ...Default.args,
-    required: true,
+    rules: { required: true },
   },
 };
 

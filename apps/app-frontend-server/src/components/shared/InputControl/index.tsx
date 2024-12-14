@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useFormContext, useController } from 'react-hook-form';
 
 import Input from '@/components/shared/Input';
@@ -9,7 +11,6 @@ export type InputControlProps<FormValues extends FieldValues> = {
   name: FieldPath<FormValues>;
   defaultValue?: PathValue<FormValues, Path<FormValues>>;
   disabled?: boolean;
-  required?: boolean;
   readonly?: boolean;
   rules?: Omit<RegisterOptions<FormValues, Path<FormValues>>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>;
 } & InputProps;
@@ -18,7 +19,6 @@ const InputControl = <FormValues extends FieldValues>({
   name,
   defaultValue,
   disabled = false,
-  required = false,
   readonly = false,
   rules = {},
   ...props
@@ -31,6 +31,14 @@ const InputControl = <FormValues extends FieldValues>({
     control,
     rules,
   });
+
+  const required = useMemo(() => {
+    if (rules.required === undefined) return false;
+    if (typeof rules.required === 'string') return true;
+    if (typeof rules.required === 'boolean') return rules.required;
+    return !!rules?.required?.value;
+  }, [rules]);
+
   return (
     <Input
       {...props}

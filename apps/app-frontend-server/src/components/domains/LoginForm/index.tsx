@@ -38,7 +38,6 @@ const LoginForm: React.FC = () => {
             border: 'bordered',
           }}
           rules={{ required: true }}
-          required
         />
       </div>
       <div className={inputWrapper}>
@@ -55,7 +54,6 @@ const LoginForm: React.FC = () => {
             border: 'bordered',
           }}
           rules={{ required: true }}
-          required
         />
       </div>
       <div className={loginButtonWrapper}>
