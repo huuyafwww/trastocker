@@ -47,6 +47,7 @@
     "@huuyafwww/eslint-config-storybook": "^1.0.3",
     "@huuyafwww/tsconfig-common": "^1.1.0",
     "@huuyafwww/tsconfig-next": "^1.1.0",
+    "@storybook/addon-actions": "^8.4.7",
     "@storybook/addon-essentials": "^8.3.5",
     "@storybook/blocks": "^8.3.5",
     "@storybook/nextjs": "^8.3.5",
