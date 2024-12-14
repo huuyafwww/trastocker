@@ -10,7 +10,18 @@ const meta = {
   decorators: [
     ReactHookFormDecorator,
   ],
-  argTypes: {},
+  tags: ['autodocs'],
+  argTypes: {
+    name: {
+      control: 'text',
+    },
+    defaultValue: {
+      control: 'text',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+  },
 } satisfies Meta<typeof InputControl>;
 
 export default meta;

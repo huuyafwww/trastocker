@@ -7,7 +7,16 @@ const meta = {
   component: LogoTrastocker,
   tags: ['autodocs'],
   args: {
-    children: 'LogoTrastocker',
+    alt: 'Trastocker',
+    priority: true,
+  },
+  argTypes: {
+    alt: {
+      control: 'text',
+    },
+    priority: {
+      control: 'boolean',
+    },
   },
 } satisfies Meta<typeof LogoTrastocker>;
 
