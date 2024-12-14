@@ -3,7 +3,6 @@ import '@/styles/tailwind.css';
 import '@/styles/globals.css';
 import '@/styles/app.css';
 
-import { NextUIProvider } from '@nextui-org/react';
 import { Noto_Sans_JP } from 'next/font/google';
 
 import type { NextPage } from 'next';
@@ -27,9 +26,9 @@ type AppPropsWithLayout = AppProps & {
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? (page => page);
   return (
-    <NextUIProvider>
+    <>
       {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
-    </NextUIProvider>
+    </>
   );
 };
 
