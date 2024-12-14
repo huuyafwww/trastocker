@@ -21,6 +21,7 @@ const meta = {
 } satisfies Meta<typeof LogoTrastocker>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {

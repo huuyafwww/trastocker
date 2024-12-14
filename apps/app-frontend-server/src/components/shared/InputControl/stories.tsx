@@ -21,6 +21,12 @@ const meta = {
     disabled: {
       control: 'boolean',
     },
+    required: {
+      control: 'boolean',
+    },
+    readonly: {
+      control: 'boolean',
+    },
   },
 } satisfies Meta<typeof InputControl>;
 
@@ -35,9 +41,23 @@ export const Default: Story = {
   },
 };
 
-export const disabled: Story = {
+export const Disabled: Story = {
   args: {
     ...Default.args,
     disabled: true,
+  },
+};
+
+export const Required: Story = {
+  args: {
+    ...Default.args,
+    required: true,
+  },
+};
+
+export const Readonly: Story = {
+  args: {
+    ...Default.args,
+    readonly: true,
   },
 };
