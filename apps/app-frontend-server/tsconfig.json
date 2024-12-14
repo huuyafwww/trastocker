@@ -9,7 +9,6 @@
         "./src/*"
       ]
     },
-    // "jsxImportSource": "@emotion/react",
   },
   "include": [
     "next-env.d.ts",
