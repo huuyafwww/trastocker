@@ -1,7 +1,8 @@
-import { useId } from 'react';
+import { useId, useCallback } from 'react';
 
 import Button from '@/components/shared/Button';
-import Input from '@/components/shared/Input';
+import Form from '@/components/shared/Form';
+import InputControl from '@/components/shared/InputControl';
 import LogoTrastocker from '@/components/shared/LogoTrastocker';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -13,8 +14,13 @@ const LoginForm: React.FC = () => {
   const emailInputId = useId();
   const passwordInputId = useId();
   const { t } = useTranslation();
+
+  const handleSubmit = useCallback(() => {
+    console.log('submit');
+  }, []);
+
   return (
-    <form>
+    <Form onSubmit={handleSubmit}>
       <div className={logoWrapper}>
         <LogoTrastocker />
       </div>
@@ -24,8 +30,9 @@ const LoginForm: React.FC = () => {
             {t('Email')}
           </span>
         </label>
-        <Input
+        <InputControl
           id={emailInputId}
+          name="email"
           type="email"
           variant={{
             border: 'bordered',
@@ -38,8 +45,9 @@ const LoginForm: React.FC = () => {
             {t('Password')}
           </span>
         </label>
-        <Input
+        <InputControl
           id={passwordInputId}
+          name="password"
           type="password"
           variant={{
             border: 'bordered',
@@ -51,7 +59,7 @@ const LoginForm: React.FC = () => {
           {t('Login')}
         </Button>
       </div>
-    </form>
+    </Form>
   );
 };
 
