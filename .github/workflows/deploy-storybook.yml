@@ -2,8 +2,7 @@ name: Deploy Storybook
 
 on:
   push:
-    branches-ignore:
-      - main
+    branches: [develop]
 
 jobs:
   build:
