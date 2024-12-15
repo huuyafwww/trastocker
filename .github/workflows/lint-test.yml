@@ -26,5 +26,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-eslint-cache-
 
+      - name: Build packages
+        run: pnpm run build
+
       - name: Lint Code
         run: pnpm run lint:code
