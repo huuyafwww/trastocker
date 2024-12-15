@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { valibotResolver } from '@hookform/resolvers/valibot';
 import { useForm } from 'react-hook-form';
 import * as v from 'valibot';
@@ -29,10 +31,12 @@ export const useLoginForm = () => {
     resolver: valibotResolver(schema),
   });
 
+  const handleSubmit = useCallback((data: LoginFormValues) => {
+    console.log(data);
+  }, []);
+
   return {
     methods,
-    handleSubmit: methods.handleSubmit((data) => {
-      console.log(data);
-    }),
+    handleSubmit: methods.handleSubmit(handleSubmit),
   };
 };
