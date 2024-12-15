@@ -1,4 +1,4 @@
-import StaredRepositories from '@/layouts/StaredRepositories';
+import HomeLayout from '@/layouts/HomeLayout';
 
 import type { NextPageWithLayout } from './_app';
 import type { ReactElement } from 'react';
@@ -10,7 +10,7 @@ const Index: NextPageWithLayout = () => {
 };
 
 Index.getLayout = (page: ReactElement) => {
-  return <StaredRepositories>{page}</StaredRepositories>;
+  return <HomeLayout>{page}</HomeLayout>;
 };
 
 export default Index;

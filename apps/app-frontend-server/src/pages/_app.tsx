@@ -3,9 +3,6 @@ import '@/styles/tailwind.css';
 import '@/styles/globals.css';
 import '@/styles/app.css';
 import { Noto_Sans_JP } from 'next/font/google';
-import { Provider } from 'urql';
-
-import useUrql from '@/hooks/useUrql';
 
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
@@ -27,11 +24,10 @@ type AppPropsWithLayout = AppProps & {
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? (page => page);
-  const { client } = useUrql();
   return (
-    <Provider value={client}>
+    <>
       {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
-    </Provider>
+    </>
   );
 };
 
