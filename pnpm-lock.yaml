@@ -183,6 +183,9 @@ importers:
       tailwind-merge:
         specifier: ^2.5.3
         version: 2.5.5
+      tailwindcss:
+        specifier: ^3.4.13
+        version: 3.4.16(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.7.2))
     devDependencies:
       '@cloudflare/next-on-pages':
         specifier: ^1.13.5
@@ -253,15 +256,9 @@ importers:
       storybook:
         specifier: ^8.4.7
         version: 8.4.7
-      tailwindcss:
-        specifier: ^3.4.13
-        version: 3.4.16(ts-node@10.9.1(@types/node@16.18.11)(typescript@5.7.2))
       typescript:
         specifier: ^5.6.3
         version: 5.7.2
-      vercel:
-        specifier: ^35.2.4
-        version: 35.2.4
       webpack-merge:
         specifier: ^6.0.1
         version: 6.0.1

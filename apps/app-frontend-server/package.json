@@ -61,7 +61,6 @@
     "postcss": "^8.4.47",
     "storybook": "^8.4.7",
     "typescript": "^5.6.3",
-    "vercel": "^35.2.4",
     "webpack-merge": "^6.0.1"
   }
 }
