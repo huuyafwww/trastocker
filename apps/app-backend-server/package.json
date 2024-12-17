@@ -6,17 +6,21 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build:schema": "graphql-code-generator --config codegen.ts",
+    "build:schema": "tsx scripts/write-schema.ts",
     "clean": "rimraf node_modules",
     "database:seed:local": "dotenv -v DATABASE_URL=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) -- tsx ./seeds/index.ts",
     "deploy": "wrangler deploy",
     "dev": "wrangler dev --env dev",
-    "generate": "tsx scripts/write-schema.ts",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
     "sort:package": "sort-package-json",
     "test": "vitest run",
     "test:watch": "vitest run --watch"
+  },
+  "lint-staged": {
+    "src/graphql/resolvers/**": [
+      "bash -c 'pnpm run build:schema'"
+    ]
   },
   "dependencies": {
     "@escape.tech/graphql-armor-block-field-suggestions": "^3.0.0",
@@ -43,9 +47,6 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241214.0",
-    "@graphql-codegen/cli": "^5.0.3",
-    "@graphql-codegen/client-preset": "^4.5.1",
-    "@graphql-codegen/schema-ast": "^4.1.0",
     "@huuyafwww/eslint-config-common": "^1.0.6",
     "@huuyafwww/eslint-config-node": "^1.0.3",
     "@huuyafwww/tsconfig-common": "^1.1.0",

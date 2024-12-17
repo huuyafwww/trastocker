@@ -4,7 +4,7 @@
   "description": "",
   "license": "MIT",
   "scripts": {
-    "build": "turbo run build --filter=@trastocker/database-definition",
+    "build:definition": "turbo run build --filter=@trastocker/*-definition",
     "clean": "turbo run clean",
     "lint:code": "turbo lint:code",
     "lint:type": "turbo lint:type",

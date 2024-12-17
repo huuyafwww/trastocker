@@ -67,7 +67,7 @@ importers:
         version: 2.4.6
       '@whatwg-node/server-plugin-cookies':
         specifier: ^1.0.3
-        version: 1.0.3(@whatwg-node/server@0.9.63)
+        version: 1.0.3(@whatwg-node/server@0.9.64)
       bcryptjs:
         specifier: ^2.4.3
         version: 2.4.3
@@ -105,15 +105,6 @@ importers:
       '@cloudflare/workers-types':
         specifier: ^4.20241214.0
         version: 4.20241216.0
-      '@graphql-codegen/cli':
-        specifier: ^5.0.3
-        version: 5.0.3(@types/node@22.10.2)(graphql@16.10.0)(typescript@5.7.2)
-      '@graphql-codegen/client-preset':
-        specifier: ^4.5.1
-        version: 4.5.1(graphql@16.10.0)
-      '@graphql-codegen/schema-ast':
-        specifier: ^4.1.0
-        version: 4.1.0(graphql@16.10.0)
       '@huuyafwww/eslint-config-common':
         specifier: ^1.0.6
         version: 1.0.6(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
@@ -159,6 +150,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.9.1(react-hook-form@7.54.1(react@18.3.1))
+      '@trastocker/graphql-definition':
+        specifier: workspace:*
+        version: link:../../definitions/graphql-definition
       '@trastocker/validation-schema-definition':
         specifier: workspace:*
         version: link:../../definitions/validation-schema-definition
@@ -317,6 +311,30 @@ importers:
       pkgroll:
         specifier: ^2.5.1
         version: 2.5.1(typescript@5.7.2)
+      typescript:
+        specifier: ^5.6.3
+        version: 5.7.2
+
+  definitions/graphql-definition:
+    devDependencies:
+      '@graphql-codegen/cli':
+        specifier: ^5.0.3
+        version: 5.0.3(@types/node@22.10.2)(graphql@16.10.0)(typescript@5.7.2)
+      '@graphql-codegen/typescript-operations':
+        specifier: ^4.4.0
+        version: 4.4.0(graphql@16.10.0)
+      '@huuyafwww/eslint-config-common':
+        specifier: ^1.0.6
+        version: 1.0.6(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
+      '@huuyafwww/eslint-config-node':
+        specifier: ^1.0.3
+        version: 1.0.3(eslint@9.14.0(jiti@2.4.1))
+      '@huuyafwww/tsconfig-common':
+        specifier: ^1.1.0
+        version: 1.1.0
+      graphql:
+        specifier: ^16.9.0
+        version: 16.10.0
       typescript:
         specifier: ^5.6.3
         version: 5.7.2
@@ -3881,8 +3899,8 @@ packages:
     peerDependencies:
       '@whatwg-node/server': ^0.9.44
 
-  '@whatwg-node/server@0.9.63':
-    resolution: {integrity: sha512-rHBN2murCcuuhQru/AQjA13lA9SzQAH9k8ENy4iZrAmY+C0yFYPud3HiFgPUgzR1B2KYUpIYKwC1UAUlkzASOQ==}
+  '@whatwg-node/server@0.9.64':
+    resolution: {integrity: sha512-4HSOWOjFvPLY7F6zqs/kbSBHInHIxd50xnwtp3NXUrI+d92iOBLHKm9aIULwAn2ABPcnfXb55VQwb4bEV3g6KA==}
     engines: {node: '>=18.0.0'}
 
   '@xobotyi/scrollbar-width@1.9.5':
@@ -5414,8 +5432,8 @@ packages:
       eslint-plugin-import-x:
         optional: true
 
-  eslint-plugin-import-x@4.5.0:
-    resolution: {integrity: sha512-l0OTfnPF8RwmSXfjT75N8d6ZYLVrVYWpaGlgvVkVqFERCI5SyBfDP7QEMr3kt0zWi2sOa9EQ47clbdFsHkF83Q==}
+  eslint-plugin-import-x@4.5.1:
+    resolution: {integrity: sha512-Wyut9jDeHdfZSebiWRmmOYDBov33M0ZZ3x9J/lD1v4M3nBgMNC02XH6Kq271pMxJWqctVRCjA+X5AQJZ2FezoQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -10531,7 +10549,7 @@ snapshots:
     dependencies:
       graphql: 16.10.0
       lodash.sortby: 4.7.0
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   '@graphql-tools/executor-graphql-ws@1.3.5(graphql@16.10.0)':
     dependencies:
@@ -10804,8 +10822,8 @@ snapshots:
       '@typescript-eslint/eslint-plugin': 8.18.1(@typescript-eslint/parser@8.18.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2))(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
       '@typescript-eslint/parser': 8.18.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
       eslint: 9.14.0(jiti@2.4.1)
-      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import-x@4.5.0(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2))(eslint@9.14.0(jiti@2.4.1))
-      eslint-plugin-import-x: 4.5.0(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
+      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import-x@4.5.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2))(eslint@9.14.0(jiti@2.4.1))
+      eslint-plugin-import-x: 4.5.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
       eslint-plugin-unused-imports: 4.1.4(@typescript-eslint/eslint-plugin@8.18.1(@typescript-eslint/parser@8.18.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2))(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2))(eslint@9.14.0(jiti@2.4.1))
       typescript-eslint: 8.18.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
     transitivePeerDependencies:
@@ -10830,7 +10848,7 @@ snapshots:
       '@praha/eslint-config-definer': 2.0.1(eslint@9.14.0(jiti@2.4.1))
       '@stylistic/eslint-plugin-js': 2.12.1(eslint@9.14.0(jiti@2.4.1))
       eslint: 9.14.0(jiti@2.4.1)
-      eslint-plugin-import-x: 4.5.0(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
+      eslint-plugin-import-x: 4.5.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
       eslint-plugin-react: 7.37.2(eslint@9.14.0(jiti@2.4.1))
       eslint-plugin-react-hooks: 5.1.0(eslint@9.14.0(jiti@2.4.1))
     transitivePeerDependencies:
@@ -13210,13 +13228,13 @@ snapshots:
       fast-querystring: 1.1.2
       tslib: 2.8.1
 
-  '@whatwg-node/server-plugin-cookies@1.0.3(@whatwg-node/server@0.9.63)':
+  '@whatwg-node/server-plugin-cookies@1.0.3(@whatwg-node/server@0.9.64)':
     dependencies:
       '@whatwg-node/cookie-store': 0.2.2
-      '@whatwg-node/server': 0.9.63
+      '@whatwg-node/server': 0.9.64
       tslib: 2.8.1
 
-  '@whatwg-node/server@0.9.63':
+  '@whatwg-node/server@0.9.64':
     dependencies:
       '@whatwg-node/disposablestack': 0.0.5
       '@whatwg-node/fetch': 0.10.1
@@ -13708,7 +13726,7 @@ snapshots:
   capital-case@1.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case-first: 2.0.2
 
   capnp-ts@0.7.0:
@@ -13766,7 +13784,7 @@ snapshots:
       path-case: 3.0.4
       sentence-case: 3.0.4
       snake-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   chardet@0.7.0: {}
 
@@ -13914,7 +13932,7 @@ snapshots:
   constant-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case: 2.0.2
 
   constants-browserify@1.0.0: {}
@@ -14314,7 +14332,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   dotenv-cli@7.4.4:
     dependencies:
@@ -14877,7 +14895,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.7.0(eslint-plugin-import-x@4.5.0(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2))(eslint@9.14.0(jiti@2.4.1)):
+  eslint-import-resolver-typescript@3.7.0(eslint-plugin-import-x@4.5.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2))(eslint@9.14.0(jiti@2.4.1)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.0
@@ -14889,12 +14907,13 @@ snapshots:
       is-glob: 4.0.3
       stable-hash: 0.0.4
     optionalDependencies:
-      eslint-plugin-import-x: 4.5.0(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
+      eslint-plugin-import-x: 4.5.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-x@4.5.0(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2):
+  eslint-plugin-import-x@4.5.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2):
     dependencies:
+      '@types/doctrine': 0.0.9
       '@typescript-eslint/scope-manager': 8.18.1
       '@typescript-eslint/utils': 8.18.1(eslint@9.14.0(jiti@2.4.1))(typescript@5.7.2)
       debug: 4.4.0
@@ -15485,7 +15504,7 @@ snapshots:
       '@graphql-yoga/logger': 2.0.0
       '@graphql-yoga/subscription': 5.0.2
       '@whatwg-node/fetch': 0.10.1
-      '@whatwg-node/server': 0.9.63
+      '@whatwg-node/server': 0.9.64
       dset: 3.1.4
       graphql: 16.10.0
       lru-cache: 10.4.3
@@ -15532,7 +15551,7 @@ snapshots:
   header-case@2.0.4:
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   hmac-drbg@1.0.1:
     dependencies:
@@ -15785,7 +15804,7 @@ snapshots:
 
   is-lower-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   is-map@2.0.3: {}
 
@@ -15859,7 +15878,7 @@ snapshots:
 
   is-upper-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   is-weakmap@2.0.2: {}
 
@@ -16132,11 +16151,11 @@ snapshots:
 
   lower-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   lru-cache@10.4.3: {}
 
@@ -16377,7 +16396,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   node-abort-controller@3.1.1: {}
 
@@ -16645,14 +16664,14 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   path-browserify@1.0.1: {}
 
   path-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   path-exists@4.0.0: {}
 
@@ -17565,7 +17584,7 @@ snapshots:
   sentence-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case-first: 2.0.2
 
   serialize-javascript@6.0.2:
@@ -17716,7 +17735,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   sort-object-keys@1.1.3: {}
 
@@ -17748,7 +17767,7 @@ snapshots:
 
   sponge-case@1.0.1:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   stable-hash@0.0.4: {}
 
@@ -17971,7 +17990,7 @@ snapshots:
 
   swap-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   tailwind-merge@2.5.5: {}
 
@@ -18082,7 +18101,7 @@ snapshots:
 
   title-case@3.0.3:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   tmp@0.0.33:
     dependencies:
@@ -18330,11 +18349,11 @@ snapshots:
 
   upper-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   upper-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   uri-js@4.4.1:
     dependencies:
