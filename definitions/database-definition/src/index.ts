@@ -11,4 +11,3 @@ export const connectDatabase = (database: AnyD1Database): Database => {
 };
 
 export * from './schema';
-export * from './database';

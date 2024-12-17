@@ -1,3 +1,4 @@
+import { UserEmailSchema } from '@trastocker/validation-schema-definition';
 import * as v from 'valibot';
 
 export class InvalidUserEmailError extends Error {
@@ -9,10 +10,7 @@ export class InvalidUserEmailError extends Error {
 
 export class UserEmail {
   private readonly value: string;
-  private static readonly schema = v.pipe(
-    v.string(),
-    v.email(),
-  );
+  private static readonly schema = UserEmailSchema;
 
   protected constructor(value: string) {
     this.value = value;

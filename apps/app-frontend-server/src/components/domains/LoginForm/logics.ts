@@ -1,10 +1,9 @@
 import { useCallback } from 'react';
 
 import { valibotResolver } from '@hookform/resolvers/valibot';
+import { UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-schema-definition';
 import { useForm } from 'react-hook-form';
 import * as v from 'valibot';
-
-import { PASSWORD_MIN_LENGTH } from '@/constants/password';
 
 type LoginFormValues = {
   email: string;
@@ -12,18 +11,8 @@ type LoginFormValues = {
 };
 
 const schema = v.object({
-  email: v.pipe(
-    v.string(),
-    v.email(),
-  ),
-  password: v.pipe(
-    v.string(),
-    v.check(value => value.length >= PASSWORD_MIN_LENGTH, `Password must be at least ${PASSWORD_MIN_LENGTH} characters long`),
-    v.check(value => /[a-z]/.test(value), 'Password must contain at least one lowercase letter'),
-    v.check(value => /[A-Z]/.test(value), 'Password must contain at least one uppercase letter'),
-    v.check(value => /[0-9]/.test(value), 'Password must contain at least one number'),
-    v.check(value => /[!-/:-@[-`{-~]/.test(value), 'Password must contain at least one special character'),
-  ),
+  email: UserEmailSchema,
+  password: UserPasswordSchema,
 });
 
 export const useLoginForm = () => {

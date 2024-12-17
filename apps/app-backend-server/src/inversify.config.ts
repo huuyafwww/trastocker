@@ -15,7 +15,7 @@ const createContainer: (props: {
   database: AnyD1Database;
 }) => Container = ({ database }) => {
   const container = new Container();
-  container.bind<UserLoginUseCase>(UserLoginUseCase).to(UserLoginUseCase).inSingletonScope();
+  container.bind<UserLoginUseCase>(UserLoginUseCase).to(UserLoginUseCase);
   container.bind<GetAuthUserUseCase>(GetAuthUserUseCase).to(GetAuthUserUseCase);
   container.bind<UserRepository>(UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(UserTokenRepository).to(D1UserTokenRepository);
