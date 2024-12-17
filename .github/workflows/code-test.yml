@@ -15,5 +15,8 @@ jobs:
       - name: Setup pnpm
         uses: ./.github/actions/setup/pnpm
 
+      - name: Build packages
+        run: pnpm run build:definition
+
       - name: Test Code
         run: pnpm run test
