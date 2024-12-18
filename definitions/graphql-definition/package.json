@@ -20,7 +20,7 @@
     "@huuyafwww/eslint-config-common": "^1.0.6",
     "@huuyafwww/eslint-config-node": "^1.0.3",
     "@huuyafwww/tsconfig-common": "^1.1.0",
-    "graphql": "^16.9.0",
-    "typescript": "^5.6.3"
+    "graphql": "^16.10.0",
+    "typescript": "^5.7.2"
   }
 }
