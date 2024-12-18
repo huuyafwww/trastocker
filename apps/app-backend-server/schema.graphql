@@ -1,6 +1,6 @@
 type Mutation {
-  """login"""
-  login(
+  """login user"""
+  loginUser(
     """email"""
     email: String!
 

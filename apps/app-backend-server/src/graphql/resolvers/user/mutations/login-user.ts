@@ -6,9 +6,9 @@ import { builder } from '@graphql/builder';
 
 import { User } from '../types/user';
 
-builder.mutationField('login', t => t.field({
+builder.mutationField('loginUser', t => t.field({
   type: User,
-  description: 'login',
+  description: 'login user',
   args: {
     email: t.arg.string({
       description: 'email',
