@@ -3,6 +3,10 @@ import '@/styles/tailwind.css';
 import '@/styles/globals.css';
 import '@/styles/app.css';
 import { Noto_Sans_JP } from 'next/font/google';
+import { CookiesProvider } from 'react-cookie';
+import { Provider } from 'urql';
+
+import useUrql from '@/hooks/useUrql';
 
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
@@ -23,11 +27,15 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const { client } = useUrql();
   const getLayout = Component.getLayout ?? (page => page);
+
   return (
-    <>
-      {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
-    </>
+    <CookiesProvider>
+      <Provider value={client}>
+        {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
+      </Provider>
+    </CookiesProvider>
   );
 };
 
