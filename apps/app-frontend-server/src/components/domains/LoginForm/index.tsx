@@ -57,7 +57,7 @@ const LoginForm: React.FC = () => {
           />
         </div>
         <div className={loginButtonWrapper}>
-          <Button>
+          <Button type="submit">
             {t('Login')}
           </Button>
         </div>
