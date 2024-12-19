@@ -6,6 +6,7 @@
   "scripts": {
     "build:definition": "turbo run build --filter=@trastocker/*-definition",
     "clean": "turbo run clean",
+    "dev": "turbo run dev",
     "lint:code": "turbo lint:code",
     "lint:type": "turbo lint:type",
     "prepare": "husky",

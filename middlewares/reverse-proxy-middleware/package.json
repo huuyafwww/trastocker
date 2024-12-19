@@ -24,7 +24,7 @@
     "build": "pkgroll --minify",
     "build:watch": "pkgroll --watch",
     "clean": "rimraf node_modules dist",
-    "dev": "sudo tsx src/server.ts",
+    "dev": "sudo tsx watch src/server.ts",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
     "sort:package": "sort-package-json"

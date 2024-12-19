@@ -11,6 +11,7 @@
   "scripts": {
     "build": "graphql-code-generator --config codegen.ts",
     "clean": "rimraf node_modules dist",
+    "dev": "nodemon --watch ../../apps/app-backend-server/schema.graphql --exec 'pnpm run build'",
     "lint:code": "eslint . --cache",
     "sort:package": "sort-package-json"
   },
@@ -21,6 +22,7 @@
     "@huuyafwww/eslint-config-node": "^1.0.3",
     "@huuyafwww/tsconfig-common": "^1.1.0",
     "graphql": "^16.10.0",
+    "nodemon": "^3.1.9",
     "typescript": "^5.7.2"
   }
 }

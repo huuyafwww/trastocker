@@ -22,10 +22,10 @@
   ],
   "scripts": {
     "build": "pkgroll --minify",
-    "build:watch": "pkgroll --watch",
     "clean": "rimraf node_modules dist",
     "database:local": "dotenv -v DATABASE_URL=$(find ../../apps/app-backend-server/.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) -- drizzle-kit studio",
     "database:production": "drizzle-kit studio",
+    "dev": "pkgroll --watch",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
     "migrate:apply:local": "wrangler d1 migrations apply trastocker --local --persist-to ../../apps/app-backend-server/.wrangler/state",

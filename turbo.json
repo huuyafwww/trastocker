@@ -6,6 +6,9 @@
       "cache": false,
       "outputs": ["dist/**"]
     },
+    "dev": {
+      "cache": false
+    },
     "clean": {
       "cache": false,
       "inputs": ["package.json"]
