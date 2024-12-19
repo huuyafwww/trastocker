@@ -18,6 +18,7 @@ app.register(fastifyHttpProxy, {
   upstream: 'http://localhost:3000',
   prefix: '/',
   rewritePrefix: '/',
+  websocket: true, // for Next.js dev server
 });
 
 app.listen({ port: 80 }, (err, address) => {
