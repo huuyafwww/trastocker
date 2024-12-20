@@ -12,6 +12,7 @@ const config = define([
       'postcss.config.cjs',
       'tailwind.config.ts',
       'storybook-static/**',
+      '.storybook/public/**',
     ],
   }),
   common,

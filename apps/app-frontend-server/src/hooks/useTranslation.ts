@@ -24,7 +24,7 @@ export const useTranslation = () => {
 
     const enOnlyKeys = localeKeys.filter(key => !(key in en));
     if (enOnlyKeys.length > 0) {
-      console.error(enOnlyKeys.map(key => `Key: ${key} is only in ja`).join('\n'));
+      console.error(enOnlyKeys.map(key => `Key: ${key} is only in en`).join('\n'));
     }
   });
 

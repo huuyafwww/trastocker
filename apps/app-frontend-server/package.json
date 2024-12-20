@@ -5,18 +5,17 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts",
     "clean": "rimraf node_modules",
     "deploy": "pnpm pages:build && wrangler pages deploy",
-    "dev": "next dev",
+    "dev": "npm-run-all --parallel dev:server dev:storybook",
+    "dev:server": "next dev",
+    "dev:storybook": "storybook dev -p 6006",
     "lint": "next lint",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
     "pages:build": "pnpm next-on-pages",
     "preview": "pnpm pages:build && wrangler pages dev",
     "sort:package": "sort-package-json",
-    "start": "next start",
-    "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
   },
   "dependencies": {
@@ -66,9 +65,17 @@
     "@vanilla-extract/webpack-plugin": "^2.3.15",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
+    "msw": "^2.7.0",
+    "msw-storybook-addon": "^2.0.4",
+    "npm-run-all2": "^7.0.2",
     "postcss": "^8.4.49",
     "storybook": "^8.4.7",
     "typescript": "^5.7.2",
     "webpack-merge": "^6.0.1"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
