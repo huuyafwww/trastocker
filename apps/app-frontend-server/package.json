@@ -53,6 +53,7 @@
     "@huuyafwww/eslint-config-storybook": "^1.0.3",
     "@huuyafwww/tsconfig-common": "^1.1.0",
     "@huuyafwww/tsconfig-next": "^1.1.0",
+    "@mswjs/data": "^0.16.2",
     "@storybook/addon-actions": "^8.4.7",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/blocks": "^8.4.7",
