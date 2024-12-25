@@ -1,4 +1,4 @@
-import type { QueryHandler } from './';
+import type { QueryHandler } from '.';
 import type { IQueryUserArgs } from '@trastocker/graphql-definition';
 
 export const user: QueryHandler<

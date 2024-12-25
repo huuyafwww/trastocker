@@ -1,4 +1,4 @@
-import type { Seeder } from './';
+import type { Seeder } from '.';
 
 export const seedUser: Seeder = (database, context) => {
   let id = 1;

@@ -1,4 +1,4 @@
-import type { MutationHandler } from './';
+import type { MutationHandler } from '.';
 import type { IMutationLoginUserArgs } from '@trastocker/graphql-definition';
 
 export const loginUser: MutationHandler<

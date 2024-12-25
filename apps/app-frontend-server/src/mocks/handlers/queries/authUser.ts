@@ -1,4 +1,4 @@
-import type { QueryHandler } from './';
+import type { QueryHandler } from '.';
 
 export const user: QueryHandler<
   'authUser',

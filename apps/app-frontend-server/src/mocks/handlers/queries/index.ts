@@ -2,7 +2,7 @@ import { graphql, HttpResponse } from 'msw';
 
 import { user } from './user';
 
-import type { HandlerContext, GraphQLResolverExtras, CreateHandler } from '../';
+import type { HandlerContext, GraphQLResolverExtras, CreateHandler } from '..';
 import type { IQuery } from '@trastocker/graphql-definition';
 
 const handlers = {
