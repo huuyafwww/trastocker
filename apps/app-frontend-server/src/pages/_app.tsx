@@ -3,7 +3,6 @@ import '@styles/tailwind.css';
 import '@styles/globals.css';
 import '@styles/app.css';
 import { Noto_Sans_JP } from 'next/font/google';
-import { CookiesProvider } from 'react-cookie';
 import { Provider } from 'urql';
 
 import type { NextPage } from 'next';
@@ -31,11 +30,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? (page => page);
 
   return (
-    <CookiesProvider>
-      <Provider value={client}>
-        {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
-      </Provider>
-    </CookiesProvider>
+    <Provider value={client}>
+      {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
+    </Provider>
   );
 };
 

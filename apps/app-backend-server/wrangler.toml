@@ -20,6 +20,7 @@ database_id = "f33035ec-c9be-47bb-bff8-d182b3b722bf"
 [env.dev.vars]
 APP_ENV = "local"
 NODE_ENV = "development"
+APP_DOMAIN = "localhost"
 
 [env.production]
 [[env.production.d1_databases]]

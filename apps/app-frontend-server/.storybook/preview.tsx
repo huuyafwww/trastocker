@@ -2,7 +2,6 @@ import 'ress';
 import '@styles/tailwind.css';
 import '@styles/globals.css';
 import { initialize, mswLoader } from 'msw-storybook-addon';
-import { CookiesProvider } from 'react-cookie';
 import { Provider } from 'urql';
 
 import type { Preview } from '@storybook/react';
@@ -29,11 +28,9 @@ const preview: Preview = {
     (Story) => {
       const { client } = useUrql();
       return (
-        <CookiesProvider>
-          <Provider value={client}>
-            <Story />
-          </Provider>
-        </CookiesProvider>
+        <Provider value={client}>
+          <Story />
+        </Provider>
       );
     },
   ],
