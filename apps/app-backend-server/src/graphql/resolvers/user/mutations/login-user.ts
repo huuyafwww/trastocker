@@ -8,6 +8,7 @@ import { User } from '../types/user';
 
 builder.mutationField('loginUser', t => t.field({
   type: User,
+  nullable: true,
   description: 'login user',
   args: {
     email: t.arg.string({

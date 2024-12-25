@@ -10,6 +10,7 @@ const config: CodegenConfig = {
     'dist/graphql.ts': {
       plugins: ['typescript'],
       config: {
+        avoidOptionals: true,
         typesPrefix: 'I',
         arrayInputCoercion: false,
         scalars: {
