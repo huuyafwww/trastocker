@@ -1,7 +1,7 @@
-import HomeLayout from '@/layouts/HomeLayout';
-
 import type { NextPageWithLayout } from './_app';
 import type { ReactElement } from 'react';
+
+import HomeLayout from '@layouts/HomeLayout';
 
 const Index: NextPageWithLayout = () => {
   return (

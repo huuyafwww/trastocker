@@ -1,16 +1,16 @@
 import 'ress';
-import '@/styles/tailwind.css';
-import '@/styles/globals.css';
-import '@/styles/app.css';
+import '@styles/tailwind.css';
+import '@styles/globals.css';
+import '@styles/app.css';
 import { Noto_Sans_JP } from 'next/font/google';
 import { CookiesProvider } from 'react-cookie';
 import { Provider } from 'urql';
 
-import useUrql from '@/hooks/useUrql';
-
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
+
+import useUrql from '@hooks/useUrql';
 
 const notoSansJp = Noto_Sans_JP({
   weight: ['400', '700'],

@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { useFormContext, useController } from 'react-hook-form';
 
-import Input from '@/components/shared/Input';
-
-import type { InputProps } from '@/components/shared/Input';
+import type { InputProps } from '@components/shared/Input';
 import type { FieldValues, FieldPath, Path, PathValue, RegisterOptions } from 'react-hook-form';
+
+import Input from '@components/shared/Input';
 
 export type InputControlProps<FormValues extends FieldValues> = {
   name: FieldPath<FormValues>;

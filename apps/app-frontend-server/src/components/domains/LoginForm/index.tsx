@@ -2,17 +2,17 @@ import { useId, useState, useCallback } from 'react';
 
 import { FormProvider } from 'react-hook-form';
 
-import { useLoginForm } from '@/components/domains/LoginForm/logics';
-import Button from '@/components/shared/Button';
-import IconEye from '@/components/shared/IconEye';
-import IconEyeOff from '@/components/shared/IconEyeOff';
-import InputControl from '@/components/shared/InputControl';
-import LogoTrastocker from '@/components/shared/LogoTrastocker';
-import { useTranslation } from '@/hooks/useTranslation';
-
 import { inputGroupWrapper, inputWrapper, input, iconButton, logoWrapper, label, labelText, loginButtonWrapper } from './styles.css';
 
 import type React from 'react';
+
+import { useLoginForm } from '@components/domains/LoginForm/logics';
+import Button from '@components/shared/Button';
+import IconEye from '@components/shared/IconEye';
+import IconEyeOff from '@components/shared/IconEyeOff';
+import InputControl from '@components/shared/InputControl';
+import LogoTrastocker from '@components/shared/LogoTrastocker';
+import { useTranslation } from '@hooks/useTranslation';
 
 const LoginForm: React.FC = () => {
   const emailInputId = useId();

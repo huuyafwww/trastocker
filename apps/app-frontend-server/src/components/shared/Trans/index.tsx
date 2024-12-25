@@ -1,6 +1,6 @@
-import { useTranslation } from '@/hooks/useTranslation';
+import type { LocaleKey } from '@locales';
 
-import type { LocaleKey } from '@/locales';
+import { useTranslation } from '@hooks/useTranslation';
 
 type TransProps = {
   children: React.ReactNode;

@@ -3,10 +3,10 @@ import { useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { useMount } from 'react-use';
 
-import Trans from '@/components/shared/Trans';
-import { en, ja } from '@/locales';
+import type { LocaleKey } from '@locales';
 
-import type { LocaleKey } from '@/locales';
+import Trans from '@components/shared/Trans';
+import { en, ja } from '@locales';
 
 export const useTranslation = () => {
   const { locale } = useRouter();

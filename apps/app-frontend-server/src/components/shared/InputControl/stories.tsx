@@ -1,8 +1,8 @@
-import ReactHookFormDecorator from '@/components/decorators/ReactHookFormDecorator';
-
 import InputControl from './';
 
 import type { Meta, StoryObj } from '@storybook/react';
+
+import ReactHookFormDecorator from '@components/decorators/ReactHookFormDecorator';
 
 const meta = {
   title: 'Shared/InputControl',

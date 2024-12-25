@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import { useCookies } from 'react-cookie';
 import { createClient, cacheExchange, fetchExchange } from 'urql';
 
-import { CookieKeys } from '@/constants/cookie';
-
 import type { Client } from 'urql';
+
+import { CookieKeys } from '@constants/cookie';
 
 const useUrql = (): {
   client: Client;

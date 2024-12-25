@@ -1,14 +1,14 @@
 import 'ress';
-import '@/styles/tailwind.css';
-import '@/styles/globals.css';
+import '@styles/tailwind.css';
+import '@styles/globals.css';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { CookiesProvider } from 'react-cookie';
 import { Provider } from 'urql';
 
-import useUrql from '@/hooks/useUrql';
-import { setupDatabase, setupHandlers } from '@/mocks';
-
 import type { Preview } from '@storybook/react';
+
+import useUrql from '@hooks/useUrql';
+import { setupDatabase, setupHandlers } from '@mocks';
 
 initialize();
 
