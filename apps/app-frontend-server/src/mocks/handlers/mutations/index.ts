@@ -15,11 +15,15 @@ export const createMutationHandlers: CreateHandler[] = [
   }) as Array<keyof (typeof handlers)>).map(mutationName => (context: HandlerContext) => {
     const handler = handlers[mutationName];
     return graphql.mutation<
-      ReturnType<typeof handlers[typeof mutationName]>,
+      {
+        [key in typeof mutationName]: ReturnType<typeof handlers[typeof mutationName]>
+      },
       Parameters<typeof handlers[typeof mutationName]>[0]['variables']
     > (mutationName, (args) => {
       return HttpResponse.json({
-        data: handler(args, context),
+        data: {
+          [mutationName]: handler(args, context),
+        },
       });
     });
   }),

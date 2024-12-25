@@ -15,11 +15,15 @@ export const createQueryHandlers: CreateHandler[] = [
   }) as Array<keyof (typeof handlers)>).map(queryName => (context: HandlerContext) => {
     const handler = handlers[queryName];
     return graphql.query<
-      ReturnType<typeof handlers[typeof queryName]>,
+      {
+        [key in typeof queryName]: ReturnType<typeof handlers[typeof queryName]>
+      },
       Parameters<typeof handlers[typeof queryName]>[0]['variables']
     > (queryName, (args) => {
       return HttpResponse.json({
-        data: handler(args, context),
+        data: {
+          [queryName]: handler(args, context),
+        },
       });
     });
   }),
