@@ -16,7 +16,9 @@
     "pages:build": "pnpm next-on-pages",
     "preview": "pnpm pages:build && wrangler pages dev",
     "sort:package": "sort-package-json",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "test": "vitest run",
+    "test:watch": "vitest run --watch"
   },
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",

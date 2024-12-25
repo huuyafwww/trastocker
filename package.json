@@ -11,7 +11,7 @@
     "lint:type": "turbo lint:type",
     "prepare": "husky",
     "sort:package": "sort-package-json && turbo run sort:package",
-    "test": "turbo run test --filter=@trastocker/app-backend-server"
+    "test": "turbo run test --filter=@trastocker/app-*"
   },
   "lint-staged": {
     "{package.json,**/package.json}": [
