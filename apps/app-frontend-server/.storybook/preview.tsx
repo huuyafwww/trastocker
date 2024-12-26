@@ -1,7 +1,9 @@
 import 'ress';
 import '@styles/tailwind.css';
 import '@styles/globals.css';
+import ms from 'ms';
 import { initialize, mswLoader } from 'msw-storybook-addon';
+import { ToastContainer } from 'react-toastify';
 import { Provider } from 'urql';
 
 import type { Preview } from '@storybook/react';
@@ -30,6 +32,7 @@ const preview: Preview = {
       return (
         <Provider value={client}>
           <Story />
+          <ToastContainer autoClose={ms('2s')} position="bottom-right" />
         </Provider>
       );
     },
