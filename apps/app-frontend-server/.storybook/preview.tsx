@@ -17,6 +17,20 @@ const database = setupDatabase();
 
 const preview: Preview = {
   loaders: [mswLoader],
+  globalTypes: {
+    locale: {
+      description: 'Switch locale',
+      toolbar: {
+        title: 'Locale',
+        icon: 'globe',
+        items: ['ja', 'en'],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    locale: 'ja',
+  },
   parameters: {
     msw: { handlers: setupHandlers(database) },
     controls: {
