@@ -1,6 +1,8 @@
-import { wrapper, content } from './styles.css';
+import { wrapper, content, footer, logoWrapper, copyRight } from './styles.css';
 
 import type React from 'react';
+
+import LogoTrastocker from '@components/shared/LogoTrastocker';
 
 type AuthLayoutProps = {
   children: React.ReactNode;
@@ -12,6 +14,14 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
       <div className={content}>
         {children}
       </div>
+      <footer className={footer}>
+        <div className={logoWrapper}>
+          <LogoTrastocker />
+        </div>
+        <p className={copyRight}>
+          © 2024 Trastocker.
+        </p>
+      </footer>
     </div>
   );
 };
