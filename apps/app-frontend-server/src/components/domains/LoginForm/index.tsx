@@ -1,6 +1,7 @@
-import { useId, useState, useCallback } from 'react';
+import { useId } from 'react';
 
 import { FormProvider } from 'react-hook-form';
+import { useToggle } from 'react-use';
 
 import { inputGroupWrapper, inputWrapper, input, iconButton, logoWrapper, label, labelText, loginButtonWrapper } from './styles.css';
 
@@ -20,10 +21,7 @@ const LoginForm: React.FC = () => {
   const passwordInputId = useId();
   const { t } = useTranslation();
   const { methods, handleSubmit } = useLoginForm();
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const handleClick = useCallback(() => {
-    setIsPasswordVisible(prev => !prev);
-  }, []);
+  const [on, toggle] = useToggle(true);
 
   return (
     <FormProvider {...methods}>
@@ -68,7 +66,7 @@ const LoginForm: React.FC = () => {
               id={passwordInputId}
               className={input}
               name="password"
-              type={isPasswordVisible ? 'text' : 'password'}
+              type={on ? 'text' : 'password'}
               variant={{
                 mode: 'with',
                 border: 'none',
@@ -82,9 +80,9 @@ const LoginForm: React.FC = () => {
               variant={{
                 color: 'ghost',
               }}
-              onClick={handleClick}
+              onPress={toggle}
             >
-              {isPasswordVisible ? <IconEye /> : <IconEyeOff />}
+              {on ? <IconEye /> : <IconEyeOff />}
             </Button>
           </div>
           {methods.formState.errors['password']?.message && (
