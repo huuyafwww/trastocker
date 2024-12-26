@@ -8,6 +8,7 @@ import type React from 'react';
 
 import { useLoginForm } from '@components/domains/LoginForm/logics';
 import Button from '@components/shared/Button';
+import ErrorMessage from '@components/shared/ErrorMessage';
 import IconEye from '@components/shared/IconEye';
 import IconEyeOff from '@components/shared/IconEyeOff';
 import InputControl from '@components/shared/InputControl';
@@ -50,6 +51,11 @@ const LoginForm: React.FC = () => {
               rules={{ required: true }}
             />
           </div>
+          {methods.formState.errors['email']?.message && (
+            <div className="mt-2">
+              <ErrorMessage message={methods.formState.errors['email'].message} />
+            </div>
+          )}
         </div>
         <div className={inputGroupWrapper}>
           <label className={label} htmlFor={passwordInputId}>
@@ -81,6 +87,11 @@ const LoginForm: React.FC = () => {
               {isPasswordVisible ? <IconEye /> : <IconEyeOff />}
             </Button>
           </div>
+          {methods.formState.errors['password']?.message && (
+            <div className="mt-2">
+              <ErrorMessage message={methods.formState.errors['password'].message} />
+            </div>
+          )}
         </div>
         <div className={loginButtonWrapper}>
           <Button type="submit">
