@@ -2,7 +2,9 @@ import 'ress';
 import '@styles/tailwind.css';
 import '@styles/globals.css';
 import '@styles/app.css';
+import ms from 'ms';
 import { Noto_Sans_JP } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
 import { Provider } from 'urql';
 
 import type { NextPage } from 'next';
@@ -32,6 +34,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <Provider value={client}>
       {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
+      <ToastContainer autoClose={ms('2s')} position="bottom-right" />
     </Provider>
   );
 };

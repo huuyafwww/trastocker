@@ -3,12 +3,15 @@ import { useCallback } from 'react';
 import { valibotResolver } from '@hookform/resolvers/valibot';
 import { UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-schema-definition';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { useMutation } from 'urql';
 import * as v from 'valibot';
 
 import { loginUserMutation } from './gql';
 
 import type { LoginUserMutation, LoginUserMutationVariables } from './gql';
+
+import { useTranslation } from '@hooks/useTranslation';
 
 type LoginFormValues = {
   email: string;
@@ -21,6 +24,7 @@ const schema = v.object({
 });
 
 export const useLoginForm = () => {
+  const { t } = useTranslation();
   const methods = useForm<LoginFormValues>({
     resolver: valibotResolver(schema),
   });
@@ -28,9 +32,12 @@ export const useLoginForm = () => {
   const [data, login] = useMutation<LoginUserMutation, LoginUserMutationVariables>(loginUserMutation);
 
   const handleSubmit = useCallback(async (data: LoginFormValues) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const result = await login(data);
-  }, [login]);
+    if (result.error) {
+      toast.error(t('Login failed'));
+      return;
+    }
+  }, [login, t]);
 
   return {
     methods,
