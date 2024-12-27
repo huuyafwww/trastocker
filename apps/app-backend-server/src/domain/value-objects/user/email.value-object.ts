@@ -1,6 +1,8 @@
 import { UserEmailSchema } from '@trastocker/validation-schema-definition';
 import * as v from 'valibot';
 
+import { ValueObject } from '../core/value-object';
+
 export class InvalidUserEmailError extends Error {
   public constructor(message = 'Invalid UserEmail') {
     super(message);
@@ -8,12 +10,11 @@ export class InvalidUserEmailError extends Error {
   }
 }
 
-export class UserEmail {
-  private readonly value: string;
+export class UserEmail extends ValueObject<string> {
   private static readonly schema = UserEmailSchema;
 
   protected constructor(value: string) {
-    this.value = value;
+    super(value);
   }
 
   public static fromString(value: string): UserEmail {
@@ -25,13 +26,5 @@ export class UserEmail {
 
   public static isValid(value: string): boolean {
     return v.safeParse(UserEmail.schema, value).success;
-  }
-
-  public toString(): string {
-    return this.value;
-  }
-
-  public isEqual(email: UserEmail): boolean {
-    return this.value === email.value;
   }
 }

@@ -2,6 +2,8 @@ import { UserPasswordSchema } from '@trastocker/validation-schema-definition';
 import bcrypt from 'bcryptjs';
 import * as v from 'valibot';
 
+import { ValueObject } from '../core/value-object';
+
 export class InvalidUserPasswordError extends Error {
   public constructor(message = 'Invalid UserPassword') {
     super(message);
@@ -9,12 +11,11 @@ export class InvalidUserPasswordError extends Error {
   }
 }
 
-export class UserPassword {
-  private readonly value: string;
+export class UserPassword extends ValueObject<string> {
   private static readonly schema = UserPasswordSchema;
 
   protected constructor(value: string) {
-    this.value = value;
+    super(value);
   }
 
   public static fromRawString(value: string, options?: {
@@ -32,13 +33,5 @@ export class UserPassword {
 
   public static isValid(value: string): boolean {
     return v.safeParse(UserPassword.schema, value).success;
-  }
-
-  public toString(): string {
-    return this.value;
-  }
-
-  public isEqual(password: string): boolean {
-    return bcrypt.compareSync(password, this.value);
   }
 }

@@ -1,6 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 import * as v from 'valibot';
 
+import { ValueObject } from '../core/value-object';
+
 export class InvalidUserTokenIdError extends Error {
   public constructor(message = 'Invalid UserTokenId') {
     super(message);
@@ -8,15 +10,14 @@ export class InvalidUserTokenIdError extends Error {
   }
 }
 
-export class UserTokenId {
-  private readonly value: string;
+export class UserTokenId extends ValueObject<string> {
   private static readonly schema = v.pipe(
     v.string(),
     v.uuid(),
   );
 
   protected constructor(value: string) {
-    this.value = value;
+    super(value);
   }
 
   public static generate(): UserTokenId {
@@ -32,13 +33,5 @@ export class UserTokenId {
 
   public static isValid(value: string): boolean {
     return v.safeParse(UserTokenId.schema, value).success;
-  }
-
-  public toString(): string {
-    return this.value;
-  }
-
-  public isEqual(id: UserTokenId): boolean {
-    return this.value === id.value;
   }
 }
