@@ -4,7 +4,7 @@ const wrapper = twMerge(
   'hero',
   'h-screen',
   'bg-base-200',
-  'p-5',
+  'md:p-5',
 );
 
 const content = twMerge(
