@@ -1,0 +1,26 @@
+{
+  "core": {
+    "workingDir": ".reg",
+    "actualDir": "__screenshots__",
+    "thresholdRate": 0,
+    "threshold": 0,
+    "ximgdiff": {
+      "invocationType": "client"
+    }
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": true,
+    "reg-notify-github-plugin": {
+      "prComment": true,
+      "prCommentBehavior": "default",
+      "clientId": "Y"
+    },
+    "reg-publish-s3-plugin": {
+      "bucketName": "storybook-visual-regression-test-result",
+      "sdkOptions": {
+        "region": "auto",
+        "endpoint": "https://3f29f61c3f8823d6a2c127330be6766d.r2.cloudflarestorage.com"
+      }
+    }
+  }
+}
