@@ -4,6 +4,7 @@ import '@styles/globals.css';
 import ms from 'ms';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { ToastContainer } from 'react-toastify';
+import { withScreenshot } from 'storycap';
 import { Provider } from 'urql';
 
 import type { Preview } from '@storybook/react';
@@ -39,6 +40,27 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    screenshot: {
+      fullPage: false,
+      captureBeyondViewport: false,
+      viewports: {
+        desktop: {
+          width: 1920,
+          height: 1080,
+        },
+        tablet: {
+          width: 820,
+          height: 1180,
+          hasTouch: true,
+        },
+        mobile: {
+          width: 390,
+          height: 844,
+          hasTouch: true,
+          isMobile: true,
+        },
+      },
+    },
   },
   decorators: [
     (Story) => {
@@ -50,6 +72,8 @@ const preview: Preview = {
         </Provider>
       );
     },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    withScreenshot(),
   ],
 };
 

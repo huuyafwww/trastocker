@@ -1,0 +1,27 @@
+name: Visual Regression test
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/setup/pnpm
+
+      - name: Build packages
+        run: pnpm run build:definition
+
+      - name: Build Storybook
+        run: pnpm run storybook:build
+        working-directory: apps/app-frontend-server
+
+      - name: Screenshot Stories
+        run: pnpm run storybook:screenshot
+        working-directory: apps/app-frontend-server
