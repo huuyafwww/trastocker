@@ -7,7 +7,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/Input',
   component: Input,
-  tags: ['autodocs'],
   args: {
     variant: defaultVariant,
   },

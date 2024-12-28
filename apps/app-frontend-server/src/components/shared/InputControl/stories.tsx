@@ -10,7 +10,6 @@ const meta = {
   decorators: [
     ReactHookFormDecorator,
   ],
-  tags: ['autodocs'],
   argTypes: {
     name: {
       control: 'text',

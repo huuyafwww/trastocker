@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/Icon/IconTriangleAlert',
   component: IconTriangleAlert,
-  tags: ['autodocs'],
   args: {},
   argTypes: {},
 } satisfies Meta<typeof IconTriangleAlert>;

@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/LogoTrastocker',
   component: LogoTrastocker,
-  tags: ['autodocs'],
   args: {
     alt: 'Trastocker',
     priority: true,

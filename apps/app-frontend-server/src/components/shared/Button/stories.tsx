@@ -9,7 +9,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/Button',
   component: Button,
-  tags: ['autodocs'],
   args: {
     as: 'button',
     children: 'Button',

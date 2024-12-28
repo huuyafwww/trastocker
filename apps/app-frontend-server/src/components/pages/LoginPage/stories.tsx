@@ -7,7 +7,6 @@ import AuthLayout from '@layouts/AuthLayout';
 const meta = {
   title: 'Pages/LoginPage',
   component: LoginPage,
-  tags: ['autodocs'],
   args: {},
   argTypes: {},
   decorators: [

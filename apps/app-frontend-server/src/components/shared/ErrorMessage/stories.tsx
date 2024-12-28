@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/ErrorMessage',
   component: ErrorMessage,
-  tags: ['autodocs'],
   args: {},
   argTypes: {},
 } satisfies Meta<typeof ErrorMessage>;

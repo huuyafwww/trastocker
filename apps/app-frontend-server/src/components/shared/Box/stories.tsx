@@ -7,7 +7,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/Box',
   component: Box,
-  tags: ['autodocs'],
   args: {
     children: 'Box',
     variant: defaultVariant,
