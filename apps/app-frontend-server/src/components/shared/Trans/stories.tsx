@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/Trans',
   component: Trans,
-  tags: ['autodocs'],
   args: {},
   argTypes: {
     children: { control: 'text' },

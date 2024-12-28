@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,6 +15,5 @@ jobs:
       - name: Setup pnpm
         uses: ./.github/actions/setup/pnpm
 
-      # TODO: We need to make adjustments to allow Build to come through.
-      # - name: Build packages
-      #   run: pnpm run build
+      - name: Build packages
+        run: pnpm run build:definition

@@ -1,7 +1,6 @@
 # next.js
 /.next/
 /out/
-next-env.d.ts
 
 # production
 /build
@@ -13,3 +12,5 @@ next-env.d.ts
 # storybook
 *storybook.log
 storybook-static
+__screenshots__
+.reg

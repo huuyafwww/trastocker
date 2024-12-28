@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/Icon/IconEmail',
   component: IconEmail,
-  tags: ['autodocs'],
   args: {},
   argTypes: {},
 } satisfies Meta<typeof IconEmail>;

@@ -6,6 +6,7 @@ const config = define([
   () => ({
     ignores: [
       '.graphql',
+      '.wrangler',
     ],
   }),
   common,

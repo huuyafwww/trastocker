@@ -3,7 +3,7 @@ import React from 'react';
 import { useObjectRef, useTextField } from 'react-aria';
 import { twMerge } from 'tailwind-merge';
 
-import { classNames, variants, defaultVariant } from './styles.css';
+import { variants, defaultVariant } from './styles.css';
 
 import type { Variant } from './styles.css';
 import type { AriaTextFieldProps } from 'react-aria';
@@ -21,7 +21,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ .
     <input
       {...inputProps}
       className={twMerge(
-        classNames.wrapper,
+        variants.mode[variant.mode],
         variants.color[variant.color],
         variants.size[variant.size],
         variants.border[variant.border],

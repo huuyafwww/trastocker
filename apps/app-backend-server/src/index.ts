@@ -4,6 +4,7 @@ import { useCookies } from '@whatwg-node/server-plugin-cookies';
 import { createYoga } from 'graphql-yoga';
 
 import { GetAuthUserUseCase } from '@application/use-cases/get-auth-user.use-case';
+import { CookieKeys } from '@constants/cookie';
 import { schema } from '@graphql/schema';
 
 import { createContainer } from './inversify.config';
@@ -38,15 +39,17 @@ export default {
       logging: isLocal ? 'debug' : 'info',
       context: async (context) => {
         const container = createContainer({ database: context.DB });
-        const authorization = context.request.headers.get('authorization');
-        if (!authorization) {
+        const accessToken = await context.request.cookieStore?.get(CookieKeys.ACCESS_TOKEN);
+        const refreshToken = await context.request.cookieStore?.get(CookieKeys.REFRESH_TOKEN);
+        if (!accessToken || !refreshToken) {
           return { container, authUser: null };
         }
 
-        const accessToken = authorization.replace('Bearer ', '');
-
         try {
-          const authUser = await container.get<GetAuthUserUseCase>(GetAuthUserUseCase).execute({ accessToken });
+          const authUser = await container.get<GetAuthUserUseCase>(GetAuthUserUseCase).execute({
+            accessToken: accessToken.value,
+            refreshToken: refreshToken.value,
+          });
           return { container, authUser };
         }
         catch {

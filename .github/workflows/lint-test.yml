@@ -22,9 +22,15 @@ jobs:
             apps/app-backend-server/.eslintcache
             apps/app-frontend-server/.eslintcache
             definitions/database-definition/.eslintcache
+            definitions/graphql-definition/.eslintcache
+            definitions/validation-schema-definition/.eslintcache
+            middlewares/reverse-proxy-middleware/.eslintcache
           key: ${{ runner.os }}-eslint-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-eslint-cache-
+
+      - name: Build packages
+        run: pnpm run build:definition
 
       - name: Lint Code
         run: pnpm run lint:code

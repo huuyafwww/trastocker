@@ -1,17 +1,17 @@
-import Button from '@/components/shared/Button';
-import IconBars from '@/components/shared/IconBars';
-import IconEllipsisHorizontal from '@/components/shared/IconEllipsisHorizontal';
-import Navbar from '@/components/shared/Navbar';
-
 import { classNames } from './styles.css';
 
 import type React from 'react';
 
-type StaredRepositoriesProps = {
+import Button from '@components/shared/Button';
+import IconBars from '@components/shared/IconBars';
+import IconEllipsisHorizontal from '@components/shared/IconEllipsisHorizontal';
+import Navbar from '@components/shared/Navbar';
+
+type HomeLayoutProps = {
   children: React.ReactNode;
 };
 
-const StaredRepositories: React.FC<StaredRepositoriesProps> = ({ children }) => {
+const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
   return (
     <div className={classNames.wrapper}>
       <Navbar className={classNames.navbar}>
@@ -22,7 +22,7 @@ const StaredRepositories: React.FC<StaredRepositoriesProps> = ({ children }) => 
         </div>
         <div className="flex-1">
           <Button as="a" variant={{ color: 'ghost' }} className="text-xl">
-            StarSpot
+            Trastocker
           </Button>
         </div>
         <div className="flex-none">
@@ -38,4 +38,4 @@ const StaredRepositories: React.FC<StaredRepositoriesProps> = ({ children }) => 
   );
 };
 
-export default StaredRepositories;
+export default HomeLayout;

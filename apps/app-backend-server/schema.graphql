@@ -1,23 +1,23 @@
 type Mutation {
-  """login"""
-  login(
+  """login user"""
+  loginUser(
     """email"""
     email: String!
 
     """password"""
     password: String!
-  ): User!
+  ): User
 }
 
 type Query {
   """get Authenticated User"""
-  authUser: User!
+  authUser: User
 
   """get User by ID"""
   user(
     """User ID"""
     userId: ID!
-  ): User!
+  ): User
 }
 
 """User"""

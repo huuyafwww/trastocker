@@ -1,3 +1,4 @@
+import { Entity } from '@domain/entities/entity';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 
 import type { Fields } from '@domain/entities/entity';
@@ -16,8 +17,7 @@ type SerializedUser = {
   deletedAt: Date | null;
 };
 
-export class User {
-  public readonly id!: UserId;
+export class User extends Entity<UserId> {
   public readonly name!: string;
   public readonly email!: UserEmail;
   public readonly password!: UserPassword;
@@ -28,7 +28,7 @@ export class User {
   public readonly deletedAt: Date | null = null;
 
   public constructor(props: Fields<User>) {
-    Object.assign(this, props);
+    super(props);
   }
 
   public static create(props: Omit<Fields<User>, 'id' | 'registeredAt' | 'createdAt' | 'updatedAt' | 'deletedAt'>): User {

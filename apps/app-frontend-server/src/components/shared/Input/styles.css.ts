@@ -1,10 +1,9 @@
-import { twMerge } from 'tailwind-merge';
-
-const wrapper = twMerge('input');
-
 export const variants = {
+  mode: {
+    only: 'input',
+    with: '',
+  },
   color: {
-    default: '',
     none: '',
     primary: 'input-primary',
     secondary: 'input-secondary',
@@ -16,31 +15,28 @@ export const variants = {
     ghost: 'input-ghost',
   },
   size: {
-    default: 'input-md',
     xs: 'input-xs',
     sm: 'input-sm',
     md: 'input-md',
     lg: 'input-lg',
+    none: '',
   },
   border: {
-    default: 'input-bordered',
     bordered: 'input-bordered',
     none: '',
   },
 };
 
 export type Variant = {
+  mode: keyof typeof variants.mode;
   color: keyof typeof variants.color;
   size: keyof typeof variants.size;
   border: keyof typeof variants.border;
 };
 
 export const defaultVariant: Variant = {
+  mode: 'only',
   color: 'none',
   size: 'md',
   border: 'bordered',
-};
-
-export const classNames = {
-  wrapper,
 };

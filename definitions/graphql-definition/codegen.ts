@@ -5,12 +5,13 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 // @see https://the-guild.dev/graphql/codegen/docs/config-reference/codegen-config
 const config: CodegenConfig = {
   overwrite: true,
-  schema: readFileSync('./schema.graphql', 'utf8').toString(),
+  schema: readFileSync('../../apps/app-backend-server/schema.graphql', 'utf8').toString(),
   generates: {
-    '.graphql/': {
-      preset: 'client',
-      plugins: [],
+    'dist/graphql.ts': {
+      plugins: ['typescript'],
       config: {
+        avoidOptionals: true,
+        typesPrefix: 'I',
         arrayInputCoercion: false,
         scalars: {
           ID: 'string',

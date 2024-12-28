@@ -3,10 +3,10 @@ import { useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { useMount } from 'react-use';
 
-import Trans from '@/components/shared/Trans';
-import { en, ja } from '@/locales';
+import type { LocaleKey } from '@locales';
 
-import type { LocaleKey } from '@/locales';
+import Trans from '@components/shared/Trans';
+import { en, ja } from '@locales';
 
 export const useTranslation = () => {
   const { locale } = useRouter();
@@ -24,7 +24,7 @@ export const useTranslation = () => {
 
     const enOnlyKeys = localeKeys.filter(key => !(key in en));
     if (enOnlyKeys.length > 0) {
-      console.error(enOnlyKeys.map(key => `Key: ${key} is only in ja`).join('\n'));
+      console.error(enOnlyKeys.map(key => `Key: ${key} is only in en`).join('\n'));
     }
   });
 

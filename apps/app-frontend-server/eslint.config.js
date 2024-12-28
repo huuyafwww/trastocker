@@ -11,6 +11,8 @@ const config = define([
       'next.config.mjs',
       'postcss.config.cjs',
       'tailwind.config.ts',
+      'storybook-static/**',
+      '.storybook/public/**',
     ],
   }),
   common,

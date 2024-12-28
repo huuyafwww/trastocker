@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Layouts/AuthLayout',
   component: AuthLayout,
-  tags: ['autodocs'],
   args: {},
   argTypes: {},
 } satisfies Meta<typeof AuthLayout>;
@@ -13,7 +12,9 @@ const meta = {
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    children: 'AuthLayout',
+  },
 };
 
 export default meta;

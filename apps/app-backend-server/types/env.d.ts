@@ -4,6 +4,7 @@ declare namespace NodeJS {
     CLOUDFLARE_DATABASE_ID: string;
     CLOUDFLARE_TOKEN: string;
     APP_ENV?: string;
+    APP_DOMAIN: string;
     DB: D1Database;
     JWT_ACCESS_TOKEN_SECRET: string;
     JWT_ACCESS_TOKEN_EXPIRES_IN: string;

@@ -12,10 +12,7 @@ const withVanillaExtract = createVanillaExtractPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  compiler: {
-    emotion: true,
-    compiler: { styledComponents: { ssr: true } },
-  },
+  compiler: {},
   i18n: {
     defaultLocale: 'ja',
     locales: ['ja', 'en']

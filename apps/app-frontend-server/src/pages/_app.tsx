@@ -1,14 +1,17 @@
 import 'ress';
-import '@/styles/tailwind.css';
-import '@/styles/globals.css';
-import '@/styles/app.css';
-
-import { NextUIProvider } from '@nextui-org/react';
+import '@styles/tailwind.css';
+import '@styles/globals.css';
+import '@styles/app.css';
+import ms from 'ms';
 import { Noto_Sans_JP } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
+import { Provider } from 'urql';
 
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
+
+import useUrql from '@hooks/useUrql';
 
 const notoSansJp = Noto_Sans_JP({
   weight: ['400', '700'],
@@ -25,11 +28,14 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const { client } = useUrql();
   const getLayout = Component.getLayout ?? (page => page);
+
   return (
-    <NextUIProvider>
+    <Provider value={client}>
       {getLayout(<Component className={notoSansJp.className} {...pageProps} />)}
-    </NextUIProvider>
+      <ToastContainer autoClose={ms('2s')} position="bottom-right" />
+    </Provider>
   );
 };
 

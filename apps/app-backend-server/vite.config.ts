@@ -15,7 +15,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
-    isolate: true, // 各テストケースを分離
+    isolate: true,
     setupFiles: 'tests/setup.ts',
     include: ['tests/**/*.test.ts'],
   },

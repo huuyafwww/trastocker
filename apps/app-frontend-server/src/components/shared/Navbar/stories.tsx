@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Shared/Navbar',
   component: Navbar,
-  tags: ['autodocs'],
   args: {
     children: 'Navbar',
   },

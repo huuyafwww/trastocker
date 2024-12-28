@@ -4,6 +4,8 @@ import * as v from 'valibot';
 import { UserEmail } from '@domain/value-objects/user/email.value-object';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 
+import { ValueObject } from '../core/value-object';
+
 import type { JwtPayload, VerifyOptions } from 'jsonwebtoken';
 
 export class InvalidUserTokenRefreshTokenError extends Error {
@@ -23,12 +25,11 @@ type UserTokenRefreshTokenDecodedPayload = {
   email: string;
 };
 
-export class UserTokenRefreshToken {
-  private readonly value: string;
+export class UserTokenRefreshToken extends ValueObject<string> {
   private static readonly schema = v.string();
 
   protected constructor(value: string) {
-    this.value = value;
+    super(value);
   }
 
   public static generate(payload: UserTokenRefreshTokenPayload): UserTokenRefreshToken {
@@ -62,10 +63,6 @@ export class UserTokenRefreshToken {
 
   public canVerify(options?: VerifyOptions): boolean {
     return !!this.verify(options);
-  }
-
-  public toString(): string {
-    return this.value;
   }
 
   public decode(): UserTokenRefreshTokenPayload | null {

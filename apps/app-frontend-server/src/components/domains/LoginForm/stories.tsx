@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 const meta = {
   title: 'Domain/LoginForm',
   component: LoginForm,
-  tags: ['autodocs'],
   args: {},
   argTypes: {},
 } satisfies Meta<typeof LoginForm>;

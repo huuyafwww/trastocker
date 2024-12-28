@@ -6,6 +6,7 @@ import { User } from '../types/user';
 
 builder.queryField('user', t => t.field({
   type: User,
+  nullable: true,
   description: 'get User by ID',
   args: {
     userId: t.arg.id({ description: 'User ID' }),

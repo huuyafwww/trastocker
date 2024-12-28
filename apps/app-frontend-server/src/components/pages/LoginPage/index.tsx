@@ -1,8 +1,8 @@
-import LoginForm from '@/components/domains/LoginForm';
-
 import { wrapper, inner } from './styles.css';
 
 import type React from 'react';
+
+import LoginForm from '@components/domains/LoginForm';
 
 type LoginPageProps = {};
 
