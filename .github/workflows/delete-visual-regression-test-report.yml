@@ -1,4 +1,4 @@
-name: Delete R2 Screenshots for PR Commits
+name: Delete Visual Regression test result report
 
 on:
   pull_request:
@@ -6,12 +6,14 @@ on:
       - closed
 
 jobs:
-  delete-screenshots:
+  delete-vrt-result-report:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Fetch PR commit hashes
         id: fetch_commits
@@ -31,7 +33,7 @@ jobs:
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
           aws configure set default.region auto
 
-      - name: Delete screenshots for all PR commits
+      - name: Delete VRT result report for all PR commits
         env:
           BUCKET_NAME: storybook-visual-regression-test-result
           R2_ENDPOINT: https://3f29f61c3f8823d6a2c127330be6766d.r2.cloudflarestorage.com
@@ -41,8 +43,8 @@ jobs:
             echo "Processing commit: $commit_hash"
             if aws s3 ls "s3://${BUCKET_NAME}/${commit_hash}/" --endpoint-url=$R2_ENDPOINT; then
               aws s3 rm "s3://${BUCKET_NAME}/${commit_hash}/" --recursive --endpoint-url=$R2_ENDPOINT
-              echo "Deleted screenshots for commit ${commit_hash}"
+              echo "Deleted VRT result report for commit ${commit_hash}"
             else
-              echo "No screenshots found for commit ${commit_hash}"
+              echo "No VRT result report found for commit ${commit_hash}"
             fi
           done
