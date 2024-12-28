@@ -18,28 +18,34 @@ jobs:
       - name: Build packages
         run: pnpm run build:definition
 
+      - name: Get installed Puppeteer version
+        id: puppeteer-version
+        run: echo "PUPPETEER_VERSION=$( cat package.json | jq -r ".devDependencies.puppeteer" )" >> $GITHUB_OUTPUT
+        working-directory: apps/app-frontend-server
+
+      - uses: actions/cache@v3
+        name: Setup puppeteer cache
+        id: puppeteer-cache
+        with:
+          path: /home/runner/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer-${{ steps.puppeteer-version.outputs.PUPPETEER_VERSION }}
+          restore-keys: ${{ runner.os }}-puppeteer-
+
+      - name: Install Chrome
+        if: steps.puppeteer-cache.outputs.cache-hit != 'true'
+        run: pnpm install:chrome
+        working-directory: apps/app-frontend-server
+
       - name: Build Storybook
         run: pnpm run storybook:build
         working-directory: apps/app-frontend-server
-
-      - name: Install puppeteer
-        run: pnpm add -D puppeteer
-        working-directory: apps/app-frontend-server
-
-      - name: Install Japanese fonts
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-          fonts-noto-cjk \
-          fonts-noto-cjk-extra
 
       - name: Screenshot Stories
         run: pnpm run storybook:screenshot
         working-directory: apps/app-frontend-server
 
       - name: workaround for detached HEAD
-        run: |
-          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
+        run: git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
 
       - name: Report Visual Regression test
         env:
