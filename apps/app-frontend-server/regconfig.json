@@ -17,6 +17,7 @@
     },
     "reg-publish-s3-plugin": {
       "bucketName": "storybook-visual-regression-test-result",
+      "customDomain": "pub-36c79d988005470c91832d7a0c2dc56a.r2.dev",
       "sdkOptions": {
         "region": "auto",
         "endpoint": "https://3f29f61c3f8823d6a2c127330be6766d.r2.cloudflarestorage.com"
