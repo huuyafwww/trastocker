@@ -3,7 +3,7 @@ import { merge } from 'webpack-merge';
 
 import type { StorybookConfig } from '@storybook/nextjs';
 
-const maxAssetSize = 1024 * 128; // 128KB
+const maxAssetSize = 1024 * 1024; // 1MB
 
 const config: StorybookConfig = {
   stories: ['../src/**/stories.@(js|jsx|mjs|ts|tsx)'],
@@ -14,7 +14,7 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: { builder: { useSWC: true } },
   },
   staticDirs: ['./public'],
   webpackFinal: config => merge(config, {
