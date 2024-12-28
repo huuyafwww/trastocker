@@ -5,8 +5,6 @@
 
 ## Installation
 
-Install my-project with npm
-
 ||version|
 |---|---|
 |Node.js|>= 22.12.0|
