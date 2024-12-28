@@ -23,8 +23,8 @@ jobs:
         working-directory: apps/app-frontend-server
 
       - name: Install puppeteer
-        run: |
-          pnpm add -D puppeteer
+        run: pnpm add -D puppeteer
+        working-directory: apps/app-frontend-server
 
       - name: Install Japanese fonts
         run: |
