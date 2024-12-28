@@ -28,8 +28,9 @@ export const useLoginForm = () => {
   const methods = useForm<LoginFormValues>({
     resolver: valibotResolver(schema),
   });
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, login] = useMutation<LoginUserMutation, LoginUserMutationVariables>(loginUserMutation);
+  const [_, login] = useMutation<LoginUserMutation, LoginUserMutationVariables>(loginUserMutation);
 
   const handleSubmit = useCallback(async (data: LoginFormValues) => {
     const result = await login(data);
@@ -37,6 +38,8 @@ export const useLoginForm = () => {
       toast.error(t('Login failed'));
       return;
     }
+
+    // TODO: redirect to logined page
   }, [login, t]);
 
   return {
