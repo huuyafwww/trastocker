@@ -74,7 +74,7 @@ export class UserTokenAccessToken extends ValueObject<string> {
     };
   }
 
-  public override isEqual(accessToken: UserTokenAccessToken): boolean {
+  public isEqual(accessToken: UserTokenAccessToken): boolean {
     return this.value === accessToken.value;
   }
 }

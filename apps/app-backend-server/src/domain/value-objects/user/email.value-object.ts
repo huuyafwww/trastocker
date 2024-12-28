@@ -27,4 +27,8 @@ export class UserEmail extends ValueObject<string> {
   public static isValid(value: string): boolean {
     return v.safeParse(UserEmail.schema, value).success;
   }
+
+  public isEqual(email: UserEmail): boolean {
+    return this.value === email.value;
+  }
 }

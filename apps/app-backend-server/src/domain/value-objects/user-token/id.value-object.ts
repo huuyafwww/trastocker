@@ -34,4 +34,8 @@ export class UserTokenId extends ValueObject<string> {
   public static isValid(value: string): boolean {
     return v.safeParse(UserTokenId.schema, value).success;
   }
+
+  public isEqual(id: UserTokenId): boolean {
+    return this.value === id.value;
+  }
 }

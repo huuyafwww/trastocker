@@ -34,4 +34,8 @@ export class UserPassword extends ValueObject<string> {
   public static isValid(value: string): boolean {
     return v.safeParse(UserPassword.schema, value).success;
   }
+
+  public isEqual(password: string): boolean {
+    return bcrypt.compareSync(password, this.value);
+  }
 }

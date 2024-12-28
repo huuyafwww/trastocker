@@ -34,4 +34,8 @@ export class UserId extends ValueObject<string> {
   public static isValid(value: string): boolean {
     return v.safeParse(UserId.schema, value).success;
   }
+
+  public isEqual(id: UserId): boolean {
+    return this.value === id.value;
+  }
 }

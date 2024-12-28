@@ -10,8 +10,4 @@ export class ValueObject<T> {
   public toString(): string {
     return String(this.value);
   }
-
-  public isEqual(valueObject: ValueObject<T>): boolean {
-    return this.value === valueObject.value;
-  }
 }
