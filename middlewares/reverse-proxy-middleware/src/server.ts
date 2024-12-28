@@ -1,5 +1,6 @@
 import fastifyHttpProxy from '@fastify/http-proxy';
 import fastify from 'fastify';
+import open, { apps } from 'open';
 
 const app = fastify({
   ignoreDuplicateSlashes: true,
@@ -21,10 +22,15 @@ app.register(fastifyHttpProxy, {
   websocket: true, // for Next.js dev server
 });
 
-app.listen({ port: 80 }, (err, address) => {
+app.listen({ port: 80 }, (err) => {
   if (err) {
     console.error(err);
     process.exit(1);
   }
-  console.log(`Reverse proxy is running on ${address}`);
+});
+
+await open('http://localhost', {
+  app: {
+    name: apps.chrome,
+  },
 });
