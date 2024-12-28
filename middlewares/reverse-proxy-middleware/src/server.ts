@@ -23,10 +23,10 @@ app.register(fastifyHttpProxy, {
 });
 
 app.listen({ port: 80 }, (err) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
+  if (!err) return;
+
+  console.error(err);
+  process.exit(1);
 });
 
 await open('http://localhost', {
