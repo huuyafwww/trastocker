@@ -3,30 +3,29 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "cache": false,
       "outputs": ["dist/**"]
     },
     "dev": {
+      "dependsOn": ["^dev"],
       "cache": false
     },
     "clean": {
-      "cache": false,
-      "inputs": ["package.json"]
+      "cache": false
     },
     "sort:package": {
-      "dependsOn": ["^sort:package"],
+      "dependsOn": [],
       "inputs": ["package.json"]
     },
     "lint:code": {
-      "dependsOn": ["^lint:code"],
-      "inputs": ["package.json"]
+      "dependsOn": [],
+      "inputs": ["**/*.ts", "**/*.tsx"]
     },
     "lint:type": {
       "dependsOn": [],
-      "inputs": ["**/*.ts"]
+      "inputs": ["**/*.ts", "**/*.tsx"]
     },
     "test": {
-      "dependsOn": ["^test"],
+      "dependsOn": [],
       "inputs": ["**/*.ts", "**/*.tsx"]
     }
   }
