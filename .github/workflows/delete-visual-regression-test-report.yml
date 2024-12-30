@@ -15,12 +15,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Fetch PR commit hashes
-        id: fetch_commits
-        run: |
-          commits=$(git log --pretty=format:"%H" ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }})
-          echo "commit_hashes=${commits}" >> $GITHUB_ENV
-
       - name: Install AWS CLI
         run: sudo apt-get update && sudo apt-get install -y awscli
 
@@ -38,7 +32,8 @@ jobs:
           BUCKET_NAME: storybook-visual-regression-test-result
           R2_ENDPOINT: https://3f29f61c3f8823d6a2c127330be6766d.r2.cloudflarestorage.com
         run: |
-          for commit_hash in ${{ env.commit_hashes }}
+          commit_hashes=$(git log --pretty=format:"%H" ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }})
+          for commit_hash in ${commit_hashes}
           do
             echo "Processing commit: $commit_hash"
             if aws s3 ls "s3://${BUCKET_NAME}/${commit_hash}/" --endpoint-url=$R2_ENDPOINT; then
