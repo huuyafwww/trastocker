@@ -23,7 +23,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_S3_SECRET_KEY_ID }}
         run: |
           aws configure set default.region auto
-          commit_hashes=$(git log --pretty=format:"%H" ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }})
+          commit_hashes=$(git log --pretty=format:"%H" ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | tail -n +2)
           for commit_hash in ${commit_hashes}
           do
             echo "Processing commit: $commit_hash"
