@@ -15,18 +15,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure AWS CLI for Cloudflare R2
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.CLOUDFLARE_R2_S3_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.CLOUDFLARE_R2_S3_SECRET_KEY_ID }}
-          aws-region: auto
+      - name: Install AWS CLI
+        run: |
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
 
       - name: Delete VRT result report for all PR commits
         env:
           BUCKET_NAME: storybook-visual-regression-test-result
           R2_ENDPOINT: https://3f29f61c3f8823d6a2c127330be6766d.r2.cloudflarestorage.com
+          AWS_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_S3_SECRET_KEY_ID }}
         run: |
+          aws configure set default.region auto
           commit_hashes=$(git log --pretty=format:"%H" ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }})
           for commit_hash in ${commit_hashes}
           do
