@@ -12,9 +12,22 @@ import type { Preview } from '@storybook/react';
 import useUrql from '@hooks/useUrql';
 import { setupDatabase, setupHandlers } from '@mocks';
 
-initialize();
-
 const database = setupDatabase();
+
+const options: {
+  serviceWorker?: {
+    url: string;
+  };
+} = {};
+
+// for GitHub Pages
+if (location.hostname === 'huuyafwww.github.io') {
+  options.serviceWorker = {
+    url: '/trastocker/mockServiceWorker.js',
+  };
+}
+
+initialize(options);
 
 const preview: Preview = {
   loaders: [mswLoader],
