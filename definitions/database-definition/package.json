@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.38.2"
+    "drizzle-orm": "^0.38.3"
   },
   "devDependencies": {
     "@huuyafwww/eslint-config-common": "^1.0.6",
