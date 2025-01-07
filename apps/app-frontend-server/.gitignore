@@ -14,3 +14,4 @@
 storybook-static
 __screenshots__
 .reg
+mock-database.sqlite
