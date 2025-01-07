@@ -34,6 +34,12 @@ export const useLoginForm = () => {
 
   const handleSubmit = useCallback(async (data: LoginFormValues) => {
     const result = await login(data);
+
+    if (!result.data?.loginUser) {
+      toast.error(t('Email address or password is incorrect.'));
+      return;
+    }
+
     if (result.error) {
       toast.error(t('Login failed'));
       return;

@@ -7,12 +7,13 @@ import { ToastContainer } from 'react-toastify';
 import { withScreenshot } from 'storycap';
 import { Provider } from 'urql';
 
+import { connectDatabase, setupHandlers } from '../mocks';
+
 import type { Preview } from '@storybook/react';
 
 import useUrql from '@hooks/useUrql';
-import { setupDatabase, setupHandlers } from '@mocks';
 
-const database = setupDatabase();
+const promiseDatabase = connectDatabase();
 
 const options: {
   serviceWorker?: {
@@ -46,7 +47,9 @@ const preview: Preview = {
     locale: 'ja',
   },
   parameters: {
-    msw: { handlers: setupHandlers(database) },
+    msw: {
+      handlers: setupHandlers(promiseDatabase),
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

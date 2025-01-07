@@ -14,8 +14,8 @@ export type UserLoginUseCaseProps = {
 };
 
 export type UserLoginUseCaseOutput = {
-  user: User;
-  userToken: UserToken;
+  user: User | null;
+  userToken: UserToken | null;
 };
 
 @injectable()
@@ -29,9 +29,9 @@ export class UserLoginUseCase {
   async execute(props: UserLoginUseCaseProps): Promise<UserLoginUseCaseOutput> {
     const email = UserEmail.fromString(props.email);
     const user = await this.userRepository.findByEmail(email);
-    if (!user) throw new Error('User not found');
+    if (!user) return { user: null, userToken: null };
 
-    if (!user.password.isEqual(props.password)) throw new Error('Invalid password');
+    if (!user.password.isEqual(props.password)) return { user: null, userToken: null };
 
     const userToken = await this.userTokenRepository.findByUserId(user.id);
 
