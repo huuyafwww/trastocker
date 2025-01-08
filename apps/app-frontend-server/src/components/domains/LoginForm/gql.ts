@@ -12,5 +12,7 @@ export const loginUserMutation = gql`
   }
 `;
 
-export type LoginUserMutation = IMutation['loginUser'];
+export type LoginUserMutation = {
+  loginUser: IMutation['loginUser'];
+};
 export type LoginUserMutationVariables = IMutationLoginUserArgs;

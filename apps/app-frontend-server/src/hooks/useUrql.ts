@@ -9,7 +9,7 @@ const useUrql = (): {
 } => {
   return useMemo(() => {
     const client = createClient({
-      url: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT_URL,
+      url: 'graphql',
       exchanges: [cacheExchange, fetchExchange],
       suspense: true,
     });
