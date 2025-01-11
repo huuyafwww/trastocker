@@ -1,6 +1,5 @@
-export type Brand<K, T> = K & { __brand: T };
-
-export class ValueObject<T> {
+export abstract class ValueObject<T> {
+  abstract readonly __brand: string;
   protected readonly value!: T;
 
   public constructor(value: T) {

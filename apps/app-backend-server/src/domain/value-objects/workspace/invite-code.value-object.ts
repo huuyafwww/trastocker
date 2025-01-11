@@ -14,6 +14,7 @@ export class InvalidWorkspaceInviteCodeError extends Error {
 }
 
 export class WorkspaceInviteCode extends ValueObject<string> {
+  declare readonly __brand: 'WorkspaceInviteCode';
   private static readonly schema = WorkspaceInviteCodeSchema;
 
   protected constructor(value: string) {

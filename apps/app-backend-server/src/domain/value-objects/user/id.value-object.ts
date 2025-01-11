@@ -1,3 +1,4 @@
+import { idSchema } from '@trastocker/validation-schema-definition';
 import { v4 as uuidv4 } from 'uuid';
 import * as v from 'valibot';
 
@@ -11,10 +12,8 @@ export class InvalidUserIdError extends Error {
 }
 
 export class UserId extends ValueObject<string> {
-  private static readonly schema = v.pipe(
-    v.string(),
-    v.uuid(),
-  );
+  declare readonly __brand: 'UserId';
+  private static readonly schema = idSchema;
 
   protected constructor(value: string) {
     super(value);

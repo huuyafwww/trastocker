@@ -11,6 +11,7 @@ export class InvalidWorkspaceNameError extends Error {
 }
 
 export class WorkspaceName extends ValueObject<string> {
+  declare readonly __brand: 'WorkspaceName';
   private static readonly schema = WorkspaceNameSchema;
 
   protected constructor(value: string) {

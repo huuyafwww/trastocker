@@ -12,6 +12,7 @@ export class InvalidWorkspaceUserIdError extends Error {
 }
 
 export class WorkspaceUserId extends ValueObject<string> {
+  declare readonly __brand: 'WorkspaceUserId';
   private static readonly schema = idSchema;
 
   protected constructor(value: string) {

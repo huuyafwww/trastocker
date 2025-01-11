@@ -11,6 +11,7 @@ export class InvalidUserEmailError extends Error {
 }
 
 export class UserEmail extends ValueObject<string> {
+  declare readonly __brand: 'UserEmail';
   private static readonly schema = UserEmailSchema;
 
   protected constructor(value: string) {
