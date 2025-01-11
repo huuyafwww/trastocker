@@ -15,15 +15,14 @@ type SerializedWorkspaceUser = {
 };
 
 export class WorkspaceUser extends Entity<WorkspaceUserId> {
-  public readonly userId!: UserId;
-  public readonly workspaceId!: WorkspaceId;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
-  public readonly deletedAt: Date | null = null;
+  declare public readonly userId: UserId;
+  declare public readonly workspaceId: WorkspaceId;
+  declare public readonly createdAt: Date;
+  declare public readonly updatedAt: Date;
+  declare public readonly deletedAt: Date | null;
 
   public constructor(props: Fields<WorkspaceUser>) {
-    super();
-    Object.assign(this, props);
+    super(props);
   }
 
   public static create(props: Omit<Fields<WorkspaceUser>, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>): WorkspaceUser {

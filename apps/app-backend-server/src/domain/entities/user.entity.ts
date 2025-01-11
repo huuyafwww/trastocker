@@ -18,18 +18,17 @@ type SerializedUser = {
 };
 
 export class User extends Entity<UserId> {
-  public readonly name!: string;
-  public readonly email!: UserEmail;
-  public readonly password!: UserPassword;
-  public readonly registeredAt!: Date;
-  public readonly verifiedAt: Date | null = null;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
-  public readonly deletedAt: Date | null = null;
+  declare public readonly name: string;
+  declare public readonly email: UserEmail;
+  declare public readonly password: UserPassword;
+  declare public readonly registeredAt: Date;
+  declare public readonly verifiedAt: Date | null;
+  declare public readonly createdAt: Date;
+  declare public readonly updatedAt: Date;
+  declare public readonly deletedAt: Date | null;
 
   public constructor(props: Fields<User>) {
-    super();
-    Object.assign(this, props);
+    super(props);
   }
 
   public static create(props: Omit<Fields<User>, 'id' | 'registeredAt' | 'createdAt' | 'updatedAt' | 'deletedAt'>): User {

@@ -5,4 +5,8 @@ export type Fields<T> = Pick<T, {
 
 export class Entity<T> {
   public readonly id!: T;
+
+  constructor(props: Fields<Entity<T>>) {
+    Object.assign(this, props);
+  }
 }

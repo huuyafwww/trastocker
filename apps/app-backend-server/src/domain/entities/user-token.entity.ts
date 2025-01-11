@@ -18,16 +18,15 @@ type SerializedUserToken = {
 };
 
 export class UserToken extends Entity<UserTokenId> {
-  public readonly userId!: UserId;
-  public readonly accessToken!: UserTokenAccessToken;
-  public readonly refreshToken!: UserTokenRefreshToken;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
-  public readonly deletedAt: Date | null = null;
+  declare public readonly userId: UserId;
+  declare public readonly accessToken: UserTokenAccessToken;
+  declare public readonly refreshToken: UserTokenRefreshToken;
+  declare public readonly createdAt: Date;
+  declare public readonly updatedAt: Date;
+  declare public readonly deletedAt: Date | null;
 
   public constructor(props: Fields<UserToken>) {
-    super();
-    Object.assign(this, props);
+    super(props);
   }
 
   public static create(props: Omit<Fields<UserToken>, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>): UserToken {
