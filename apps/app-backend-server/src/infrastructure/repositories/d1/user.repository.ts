@@ -54,15 +54,7 @@ export class D1UserRepository extends UserRepository {
     }
 
     const rows = await this.database.insert(schema.user).values([{
-      id: user.id.toString(),
-      name: user.name,
-      email: user.email.toString(),
-      password: user.password.toString(),
-      registeredAt: user.registeredAt,
-      verifiedAt: user.verifiedAt,
-      createdAt: user.createdAt,
-      updatedAt: user.updatedAt,
-      deletedAt: user.deletedAt,
+      ...user.serialize(),
     }]).returning();
 
     const row = rows[0];
@@ -74,7 +66,6 @@ export class D1UserRepository extends UserRepository {
     const row = await this.database.query.user.findFirst({
       where: and(
         eq(schema.user.id, id.toString()),
-        isNull(schema.user.deletedAt),
       ),
     });
     if (!row) return null;
@@ -85,7 +76,6 @@ export class D1UserRepository extends UserRepository {
     const row = await this.database.query.user.findFirst({
       where: and(
         eq(schema.user.email, email.toString()),
-        isNull(schema.user.deletedAt),
       ),
     });
     if (!row) return null;

@@ -51,13 +51,7 @@ export class D1UserTokenRepository extends UserTokenRepository {
     }
 
     const rows = await this.database.insert(schema.userToken).values([{
-      id: userToken.id.toString(),
-      userId: userToken.userId.toString(),
-      accessToken: userToken.accessToken.toString(),
-      refreshToken: userToken.refreshToken.toString(),
-      createdAt: userToken.createdAt,
-      updatedAt: userToken.updatedAt,
-      deletedAt: userToken.deletedAt,
+      ...userToken.serialize(),
     }]).returning();
 
     const row = rows[0];

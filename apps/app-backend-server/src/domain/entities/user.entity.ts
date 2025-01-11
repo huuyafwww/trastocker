@@ -28,7 +28,8 @@ export class User extends Entity<UserId> {
   public readonly deletedAt: Date | null = null;
 
   public constructor(props: Fields<User>) {
-    super(props);
+    super();
+    Object.assign(this, props);
   }
 
   public static create(props: Omit<Fields<User>, 'id' | 'registeredAt' | 'createdAt' | 'updatedAt' | 'deletedAt'>): User {

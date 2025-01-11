@@ -3,6 +3,8 @@ import { createSQLiteDB } from '@miniflare/shared';
 import { connectDatabase } from '@trastocker/database-definition';
 
 import { users } from './user';
+import { workspaces } from './workspace';
+import { workspaceUsers } from './workspace-user';
 
 import type { Database } from '@trastocker/database-definition';
 
@@ -16,6 +18,8 @@ export type Seeder = (database: Database) => Promise<void>;
 
 const seeders: Seeder[] = [
   users,
+  workspaces,
+  workspaceUsers,
 ];
 
 for (const seeder of seeders) {
