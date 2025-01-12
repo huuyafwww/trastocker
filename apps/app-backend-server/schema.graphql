@@ -1,4 +1,10 @@
 type Mutation {
+  """create Workspace"""
+  createWorkspace(
+    """Workspace name"""
+    name: String!
+  ): Workspace
+
   """login user"""
   loginUser(
     """email"""
@@ -18,6 +24,15 @@ type Query {
     """User ID"""
     userId: ID!
   ): User
+
+  """get Workspace"""
+  workspace(
+    """Workspace Invite code"""
+    inviteCode: String
+
+    """Workspace ID"""
+    workspaceId: ID
+  ): Workspace
 }
 
 """User"""
@@ -29,5 +44,17 @@ type User {
   id: ID!
 
   """User Name"""
+  name: String!
+}
+
+"""Workspace"""
+type Workspace {
+  """Workspace ID"""
+  id: ID!
+
+  """Workspace Invite Code"""
+  inviteCode: String!
+
+  """Workspace Name"""
   name: String!
 }
