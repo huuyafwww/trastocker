@@ -43,6 +43,9 @@ type User {
   """User ID"""
   id: ID!
 
+  """User isDeleted"""
+  isDeleted: Boolean!
+
   """User Name"""
   name: String!
 }

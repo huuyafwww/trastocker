@@ -5,7 +5,7 @@ import type { Fields } from '@domain/entities/entity';
 import type { UserEmail } from '@domain/value-objects/user/email.value-object';
 import type { UserPassword } from '@domain/value-objects/user/password.value-object';
 
-type SerializedUser = {
+export type SerializedUser = {
   id: string;
   name: string;
   email: string;
@@ -50,11 +50,11 @@ export class User extends Entity<UserId> {
     });
   }
 
-  public isVerified(): boolean {
+  public get isVerified(): boolean {
     return this.verifiedAt !== null;
   }
 
-  public isDeleted(): boolean {
+  public get isDeleted(): boolean {
     return this.deletedAt !== null;
   }
 

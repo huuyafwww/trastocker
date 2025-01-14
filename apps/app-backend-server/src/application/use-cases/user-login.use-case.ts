@@ -29,7 +29,7 @@ export class UserLoginUseCase {
   async execute(props: UserLoginUseCaseProps): Promise<UserLoginUseCaseOutput> {
     const email = UserEmail.fromString(props.email);
     const user = await this.userRepository.findByEmail(email);
-    if (!user || !user.isVerified() || user.isDeleted()) return { user: null, userToken: null };
+    if (!user || !user.isVerified || user.isDeleted) return { user: null, userToken: null };
 
     if (!user.password.isEqual(props.password)) return { user: null, userToken: null };
 
