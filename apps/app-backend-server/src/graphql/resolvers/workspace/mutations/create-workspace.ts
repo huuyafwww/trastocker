@@ -1,9 +1,8 @@
 import { WorkspaceNameSchema } from '@trastocker/validation-schema-definition';
 
+import { Workspace } from '@domain/entities/workspace.entity';
 import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service';
 import { builder } from '@graphql/builder';
-
-import { Workspace } from '../types/workspace';
 
 builder.mutationField('createWorkspace', t => t.field({
   type: Workspace,
@@ -21,6 +20,6 @@ builder.mutationField('createWorkspace', t => t.field({
       await (context.container.get<CreateWorkspaceByNameService>(CreateWorkspaceByNameService)).execute({
         name: args.name,
       })
-    )?.serialize();
+    );
   },
 }));
