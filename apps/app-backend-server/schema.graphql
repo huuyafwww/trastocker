@@ -1,4 +1,13 @@
 type Mutation {
+  """Assign user to workspace"""
+  assignUserToWorkspace(
+    """User ID"""
+    userId: String!
+
+    """Workspace ID"""
+    workspaceId: String!
+  ): Workspace
+
   """create Workspace"""
   createWorkspace(
     """Workspace name"""
