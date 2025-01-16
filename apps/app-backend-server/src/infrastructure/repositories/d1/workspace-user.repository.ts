@@ -2,6 +2,7 @@ import { schema } from '@trastocker/database-definition';
 import { eq, and, isNull } from 'drizzle-orm';
 import { injectable, inject } from 'inversify';
 
+import { WorkspaceUsers } from '@domain/collections/workspace-user.collection';
 import { WorkspaceUser } from '@domain/entities/workspace-user.entity';
 import { WorkspaceUserRepository } from '@domain/repositories/workspace-user.repository';
 import { UserId } from '@domain/value-objects/user/id.value-object';
@@ -66,21 +67,21 @@ export class D1WorkspaceUserRepository extends WorkspaceUserRepository {
     return convert(row);
   }
 
-  async findByUserId(userId: UserId): Promise<WorkspaceUser[] | null> {
+  async findByUserId(userId: UserId): Promise<WorkspaceUsers> {
     const rows = await this.database.query.workspaceUser.findMany({
       where: and(
         eq(schema.workspaceUser.userId, userId.toString()),
       ),
     });
-    return rows.map(convert);
+    return WorkspaceUsers.from(rows.map(convert));
   }
 
-  async findByWorkspaceId(workspaceId: WorkspaceId): Promise<WorkspaceUser[] | null> {
+  async findByWorkspaceId(workspaceId: WorkspaceId): Promise<WorkspaceUsers> {
     const rows = await this.database.query.workspaceUser.findMany({
       where: and(
         eq(schema.workspaceUser.workspaceId, workspaceId.toString()),
       ),
     });
-    return rows.map(convert);
+    return WorkspaceUsers.from(rows.map(convert));
   }
 }

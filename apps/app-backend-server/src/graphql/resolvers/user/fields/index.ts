@@ -5,6 +5,7 @@ import { email } from './email';
 import { id } from './id';
 import { isDeleted } from './isDeleted';
 import { name } from './name';
+import { workspaces } from './workspaces';
 
 import type { SchemaBuilderType } from '@graphql/builder';
 
@@ -21,5 +22,6 @@ builder.objectType(User, {
     name: name(t),
     email: email(t),
     isDeleted: isDeleted(t),
+    workspaces: workspaces(t),
   }),
 });

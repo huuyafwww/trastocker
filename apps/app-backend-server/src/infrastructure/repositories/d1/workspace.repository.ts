@@ -1,7 +1,8 @@
 import { schema } from '@trastocker/database-definition';
-import { eq, and, isNull } from 'drizzle-orm';
+import { eq, and, isNull, inArray } from 'drizzle-orm';
 import { injectable, inject } from 'inversify';
 
+import { Workspaces } from '@domain/collections/workspace.collection';
 import { Workspace } from '@domain/entities/workspace.entity';
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
@@ -64,6 +65,16 @@ export class D1WorkspaceRepository extends WorkspaceRepository {
     });
     if (!row) return null;
     return convert(row);
+  }
+
+  async findByIds(ids: WorkspaceId[]): Promise<Workspaces> {
+    const rows = await this.database.query.workspace.findMany({
+      where: and(
+        inArray(schema.workspace.id, ids.map(id => id.toString())),
+        isNull(schema.workspace.deletedAt),
+      ),
+    });
+    return Workspaces.from(rows.map(convert));
   }
 
   async findByInviteCode(inviteCode: WorkspaceInviteCode): Promise<Workspace | null> {

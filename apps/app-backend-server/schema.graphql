@@ -48,6 +48,9 @@ type User {
 
   """User Name"""
   name: String!
+
+  """Workspaces"""
+  workspaces: [Workspace!]!
 }
 
 """Workspace"""
