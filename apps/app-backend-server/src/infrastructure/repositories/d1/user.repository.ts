@@ -1,7 +1,8 @@
 import { schema } from '@trastocker/database-definition';
-import { eq, and, isNull } from 'drizzle-orm';
+import { eq, and, isNull, inArray } from 'drizzle-orm';
 import { injectable, inject } from 'inversify';
 
+import { Users } from '@domain/collections/user.collection';
 import { User } from '@domain/entities/user.entity';
 import { UserRepository } from '@domain/repositories/user.repository';
 import { UserEmail } from '@domain/value-objects/user/email.value-object';
@@ -70,6 +71,16 @@ export class D1UserRepository extends UserRepository {
     });
     if (!row) return null;
     return convert(row);
+  }
+
+  async findByIds(ids: UserId[]): Promise<Users> {
+    const rows = await this.database.query.user.findMany({
+      where: and(
+        inArray(schema.user.id, ids.map(id => id.toString())),
+        isNull(schema.user.deletedAt),
+      ),
+    });
+    return Users.from(rows.map(convert));
   }
 
   async findByEmail(email: UserEmail): Promise<User | null> {

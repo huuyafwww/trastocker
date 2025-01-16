@@ -4,6 +4,7 @@ import { builder } from '@graphql/builder';
 import { id } from './id';
 import { inviteCode } from './inviteCode';
 import { name } from './name';
+import { users } from './users';
 
 import type { SchemaBuilderType } from '@graphql/builder';
 
@@ -19,5 +20,6 @@ builder.objectType(Workspace, {
     id: id(t),
     name: name(t),
     inviteCode: inviteCode(t),
+    users: users(t),
   }),
 });

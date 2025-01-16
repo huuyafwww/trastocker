@@ -10,6 +10,7 @@ import { WorkspaceUserRepository } from '@domain/repositories/workspace-user.rep
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service';
 import { GetJoinedWorkspacesByUserIdService } from '@domain/services/get-joined-workspaces-by-user-id.service';
+import { GetWorkspaceJoinedUsersService } from '@domain/services/get-workspace-joined-users.service';
 import { D1UserTokenRepository } from '@infrastructure/repositories/d1/user-token.repository';
 import { D1UserRepository } from '@infrastructure/repositories/d1/user.repository';
 import { D1WorkspaceUserRepository } from '@infrastructure/repositories/d1/workspace-user.repository';
@@ -25,6 +26,7 @@ const createContainer: (props: {
   container.bind<GetAuthUserUseCase>(GetAuthUserUseCase).to(GetAuthUserUseCase);
   container.bind<CreateWorkspaceByNameService>(CreateWorkspaceByNameService).to(CreateWorkspaceByNameService);
   container.bind<GetJoinedWorkspacesByUserIdService>(GetJoinedWorkspacesByUserIdService).to(GetJoinedWorkspacesByUserIdService);
+  container.bind<GetWorkspaceJoinedUsersService>(GetWorkspaceJoinedUsersService).to(GetWorkspaceJoinedUsersService);
   container.bind<UserRepository>(UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(UserTokenRepository).to(D1UserTokenRepository);
   container.bind<WorkspaceRepository>(WorkspaceRepository).to(D1WorkspaceRepository);
