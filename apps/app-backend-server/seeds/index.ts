@@ -1,6 +1,7 @@
 import { D1Database, D1DatabaseAPI } from '@miniflare/d1';
 import { createSQLiteDB } from '@miniflare/shared';
 import { connectDatabase } from '@trastocker/database-definition';
+import { schema } from '@trastocker/database-definition';
 
 import { users } from './user';
 import { workspaces } from './workspace';
@@ -21,6 +22,11 @@ const seeders: Seeder[] = [
   workspaces,
   workspaceUsers,
 ];
+
+// The order of deletion takes foreign keys into account.
+await database.delete(schema.workspaceUser);
+await database.delete(schema.user);
+await database.delete(schema.workspace);
 
 for (const seeder of seeders) {
   await seeder(database);

@@ -6,16 +6,25 @@ import { UserPassword } from '@domain/value-objects/user/password.value-object';
 
 import type { Seeder } from './index';
 
-export const user = User.create({
-  name: 'user',
+export const adminUser = User.create({
+  name: 'adminUser',
   email: UserEmail.fromString('admin@admin.com'),
   password: UserPassword.fromRawString('t2t2tN{b((t&'),
   verifiedAt: new Date(),
 });
 
+const generalUser = User.create({
+  name: 'generalUser',
+  email: UserEmail.fromString('general@general.com'),
+  password: UserPassword.fromRawString('t2t2tN{b((t&'),
+  verifiedAt: new Date(),
+});
+
 export const users: Seeder = async (database) => {
-  await database.delete(schema.user);
   await database.insert(schema.user).values({
-    ...user.serialize(),
+    ...adminUser.serialize(),
+  });
+  await database.insert(schema.user).values({
+    ...generalUser.serialize(),
   });
 };

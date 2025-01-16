@@ -12,7 +12,6 @@ export const workspace = Workspace.create({
 });
 
 export const workspaces: Seeder = async (database) => {
-  await database.delete(schema.workspace);
   await database.insert(schema.workspace).values({
     ...workspace.serialize(),
   });
