@@ -51,6 +51,10 @@ export class WorkspaceUser extends Entity<WorkspaceUserId> {
     });
   }
 
+  public isDeleted(): boolean {
+    return this.deletedAt !== null;
+  }
+
   public serialize(): SerializedWorkspaceUser {
     return {
       id: this.id.toString(),

@@ -31,7 +31,7 @@ export class GetAuthUserUseCase {
 
     const user = await this.userRepository.findById(decodedAccessToken.userId);
     if (!user) throw new Error('User not found');
-    if (!user.isVerified || user.isDeleted) throw new Error('User is not active');
+    if (!user.isVerified() || user.isDeleted()) throw new Error('User is not active');
 
     if (user.email.isEqual(decodedAccessToken.email)) throw new Error('Invalid access token');
     if (user.email.isEqual(decodedRefreshToken.email)) throw new Error('Invalid refresh token');
