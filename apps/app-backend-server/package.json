@@ -52,7 +52,7 @@
     "@cloudflare/workers-types": "^4.20241216.0",
     "@huuyafwww/eslint-config-common": "^1.0.6",
     "@huuyafwww/eslint-config-node": "^1.0.3",
-    "@huuyafwww/tsconfig-common": "^1.1.0",
+    "@huuyafwww/tsconfig-common": "^1.1.1",
     "@miniflare/d1": "^2.14.4",
     "@miniflare/shared": "^2.14.4",
     "@types/jsonwebtoken": "^9.0.7",

@@ -123,8 +123,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(eslint@9.14.0(jiti@2.4.2))
       '@huuyafwww/tsconfig-common':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.1.1
+        version: 1.1.1
       '@miniflare/d1':
         specifier: ^2.14.4
         version: 2.14.4
@@ -253,8 +253,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(eslint@9.14.0(jiti@2.4.2))(typescript@5.7.2)
       '@huuyafwww/tsconfig-common':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.1.1
+        version: 1.1.1
       '@huuyafwww/tsconfig-next':
         specifier: ^1.2.0
         version: 1.2.0
@@ -389,8 +389,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(eslint@9.14.0(jiti@2.4.2))
       '@huuyafwww/tsconfig-common':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.1.1
+        version: 1.1.1
       better-sqlite3:
         specifier: ^11.7.0
         version: 11.7.0
@@ -422,8 +422,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(eslint@9.14.0(jiti@2.4.2))
       '@huuyafwww/tsconfig-common':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.1.1
+        version: 1.1.1
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -447,8 +447,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(eslint@9.14.0(jiti@2.4.2))
       '@huuyafwww/tsconfig-common':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.1.1
+        version: 1.1.1
       pkgroll:
         specifier: ^2.5.1
         version: 2.6.0(typescript@5.7.2)
@@ -475,8 +475,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(eslint@9.14.0(jiti@2.4.2))
       '@huuyafwww/tsconfig-common':
-        specifier: ^1.1.0
-        version: 1.1.0
+        specifier: ^1.1.1
+        version: 1.1.1
       pkgroll:
         specifier: ^2.5.1
         version: 2.6.0(typescript@5.7.2)
@@ -2772,8 +2772,8 @@ packages:
     peerDependencies:
       eslint: 9.14.0
 
-  '@huuyafwww/tsconfig-common@1.1.0':
-    resolution: {integrity: sha512-p7Rshnz6kKQuz/ou840zMLc+cmSV2SVRIkJBUyi47eslvSWPBvfbfUGW6EWs/dc8bnKz7ZWLF2rocZ8jwFZg6Q==}
+  '@huuyafwww/tsconfig-common@1.1.1':
+    resolution: {integrity: sha512-sa9Z08zRNOYW9WZyixL0smJ+yabDc23hX2Dfq/lAvnPz/oIBfw0GvtL9oJPeGqc7jl9vLlfef78dAAZNjRB4zg==}
 
   '@huuyafwww/tsconfig-next@1.2.0':
     resolution: {integrity: sha512-jDsKGCjU2qAL/wY8J1X4J+3/DoSk7XiyFPymjMm4vBs1Hpuzp8JHh9chEDcHfi7uinWwb/iRr7t/JLEaRo9ikQ==}
@@ -13582,7 +13582,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@huuyafwww/tsconfig-common@1.1.0': {}
+  '@huuyafwww/tsconfig-common@1.1.1': {}
 
   '@huuyafwww/tsconfig-next@1.2.0': {}
 
