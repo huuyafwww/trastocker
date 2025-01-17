@@ -1,7 +1,12 @@
-import type { Workspace } from '@domain/entities/workspace.entity';
+import { Collection } from '@domain/collections/collection';
 
-export class Workspaces {
-  private constructor(private entities: Workspace[]) {}
+import type { Workspace } from '@domain/entities/workspace.entity';
+import type { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
+
+export class Workspaces extends Collection<Workspace, WorkspaceId> {
+  private constructor(entities: Workspace[]) {
+    super(entities);
+  }
 
   public static from(entities: Workspace[]): Workspaces {
     return new Workspaces(entities);
@@ -9,9 +14,5 @@ export class Workspaces {
 
   public filterActive(): Workspaces {
     return Workspaces.from(this.entities.filter(entity => !entity.isDeleted()));
-  }
-
-  public toEntities(): Workspace[] {
-    return this.entities;
   }
 }

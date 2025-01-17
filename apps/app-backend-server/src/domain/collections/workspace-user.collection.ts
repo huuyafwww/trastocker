@@ -1,9 +1,14 @@
+import { Collection } from '@domain/collections/collection';
+
 import type { WorkspaceUser } from '@domain/entities/workspace-user.entity';
 import type { UserId } from '@domain/value-objects/user/id.value-object';
 import type { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
+import type { WorkspaceUserId } from '@domain/value-objects/workspace-user/id.value-object';
 
-export class WorkspaceUsers {
-  private constructor(private entities: WorkspaceUser[]) {}
+export class WorkspaceUsers extends Collection<WorkspaceUser, WorkspaceUserId> {
+  private constructor(entities: WorkspaceUser[]) {
+    super(entities);
+  }
 
   public static from(entities: WorkspaceUser[]): WorkspaceUsers {
     return new WorkspaceUsers(entities);
@@ -19,9 +24,5 @@ export class WorkspaceUsers {
 
   public pickUserIds(): UserId[] {
     return this.entities.map(entity => entity.userId);
-  }
-
-  public toEntities(): WorkspaceUser[] {
-    return this.entities;
   }
 }
