@@ -24,13 +24,13 @@ const createContainer: (props: {
   database: AnyD1Database;
 }) => Container = ({ database }) => {
   const container = new Container();
-  container.bind<UserLoginUseCase>(UserLoginUseCase).to(UserLoginUseCase);
-  container.bind<GetAuthUserUseCase>(GetAuthUserUseCase).to(GetAuthUserUseCase);
-  container.bind<AssignWorkspaceByInviteCodeService>(AssignWorkspaceByInviteCodeService).to(AssignWorkspaceByInviteCodeService);
-  container.bind<CreateWorkspaceByNameService>(CreateWorkspaceByNameService).to(CreateWorkspaceByNameService);
-  container.bind<AssignWorkspaceByIdService>(AssignWorkspaceByIdService).to(AssignWorkspaceByIdService);
-  container.bind<GetUserJoinedWorkspacesService>(GetUserJoinedWorkspacesService).to(GetUserJoinedWorkspacesService);
-  container.bind<GetWorkspaceJoinedUsersService>(GetWorkspaceJoinedUsersService).to(GetWorkspaceJoinedUsersService);
+  container.bind<UserLoginUseCase>(UserLoginUseCase).toSelf();
+  container.bind<GetAuthUserUseCase>(GetAuthUserUseCase).toSelf();
+  container.bind<AssignWorkspaceByInviteCodeService>(AssignWorkspaceByInviteCodeService).toSelf();
+  container.bind<CreateWorkspaceByNameService>(CreateWorkspaceByNameService).toSelf();
+  container.bind<AssignWorkspaceByIdService>(AssignWorkspaceByIdService).toSelf();
+  container.bind<GetUserJoinedWorkspacesService>(GetUserJoinedWorkspacesService).toSelf();
+  container.bind<GetWorkspaceJoinedUsersService>(GetWorkspaceJoinedUsersService).toSelf();
   container.bind<UserRepository>(UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(UserTokenRepository).to(D1UserTokenRepository);
   container.bind<WorkspaceRepository>(WorkspaceRepository).to(D1WorkspaceRepository);
