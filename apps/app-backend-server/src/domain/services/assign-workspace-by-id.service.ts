@@ -8,15 +8,15 @@ import { Service } from '@domain/services/service';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
 
-export type AssignUserToWorkspaceServiceProps = {
+export type AssignWorkspaceByIdServiceProps = {
   userId: string;
   workspaceId: string;
 };
 
-export type AssignUserToWorkspaceServiceOutput = WorkspaceUser | null;
+export type AssignWorkspaceByIdServiceOutput = WorkspaceUser | null;
 
 @injectable()
-export class AssignUserToWorkspaceService implements Service<AssignUserToWorkspaceServiceProps, AssignUserToWorkspaceServiceOutput> {
+export class AssignWorkspaceByIdService implements Service<AssignWorkspaceByIdServiceProps, AssignWorkspaceByIdServiceOutput> {
   constructor(
     @inject(UserRepository) private userRepository: UserRepository,
     @inject(WorkspaceRepository) private workspaceRepository: WorkspaceRepository,
@@ -24,7 +24,7 @@ export class AssignUserToWorkspaceService implements Service<AssignUserToWorkspa
   ) {
   }
 
-  async execute(props: AssignUserToWorkspaceServiceProps): Promise<AssignUserToWorkspaceServiceOutput> {
+  async execute(props: AssignWorkspaceByIdServiceProps): Promise<AssignWorkspaceByIdServiceOutput> {
     const user = await this.userRepository.findById(UserId.fromString(props.userId));
     if (!user) throw new Error('User not found');
     if (user.isDeleted()) throw new Error('User is deleted');
