@@ -137,6 +137,9 @@ importers:
       '@types/ms':
         specifier: ^0.7.34
         version: 0.7.34
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
       dotenv-cli:
         specifier: ^7.4.4
         version: 7.4.4

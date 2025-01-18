@@ -8,6 +8,9 @@
       "@*": [
         "./src/*"
       ],
+      "@test/*": [
+        "./tests/*"
+      ]
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

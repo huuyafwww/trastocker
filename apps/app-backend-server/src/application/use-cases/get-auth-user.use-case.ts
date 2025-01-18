@@ -33,8 +33,8 @@ export class GetAuthUserUseCase {
     if (!user) throw new Error('User not found');
     if (!user.isVerified() || user.isDeleted()) throw new Error('User is not active');
 
-    if (user.email.isEqual(decodedAccessToken.email)) throw new Error('Invalid access token');
-    if (user.email.isEqual(decodedRefreshToken.email)) throw new Error('Invalid refresh token');
+    if (!user.id.isEqual(decodedAccessToken.userId)) throw new Error('Invalid access token');
+    if (!user.id.isEqual(decodedRefreshToken.userId)) throw new Error('Invalid refresh token');
 
     if (accessToken.canVerify()) return user;
     if (!refreshToken.canVerify()) throw new Error('Refresh token is expired');

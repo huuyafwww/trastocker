@@ -10,6 +10,7 @@ export default defineConfig({
       '@constants': path.resolve(__dirname, 'src/constants'),
       '@graphql': path.resolve(__dirname, 'src/graphql'),
       '@infrastructure': path.resolve(__dirname, 'src/infrastructure'),
+      '@test': path.resolve(__dirname, 'tests'),
     },
   },
   test: {

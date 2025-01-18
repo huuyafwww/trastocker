@@ -57,6 +57,7 @@
     "@miniflare/shared": "^2.14.4",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/ms": "^0.7.34",
+    "dotenv": "^16.4.7",
     "dotenv-cli": "^7.4.4",
     "npm-run-all2": "^7.0.2",
     "tsx": "^4.19.2",
