@@ -19,9 +19,10 @@ afterEach(() => {
 });
 
 describe('Positive', () => {
+  const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
+  const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
+
   it('If the token is valid', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
     const user = await container.get(GetAuthUserUseCase).execute({
       accessToken: accessToken.toString(),
       refreshToken: refreshToken.toString(),
@@ -30,8 +31,6 @@ describe('Positive', () => {
   });
 
   it('If the access token is expired', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
     const spy = vi.spyOn(UserTokenAccessToken.prototype, 'canVerify').mockReturnValue(false);
     const user = await container.get(GetAuthUserUseCase).execute({
       accessToken: accessToken.toString(),
@@ -43,10 +42,14 @@ describe('Positive', () => {
 });
 
 describe('Negative', () => {
+  const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
+  const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
+
   it('If the access token is invalid', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const spy = vi.spyOn(UserTokenAccessToken.prototype, 'decode').mockReturnValue({ userId: UserId.generate(), email: mockedUserEmail });
+    const spy = vi.spyOn(UserTokenAccessToken.prototype, 'decode').mockReturnValue({
+      userId: UserId.generate(),
+      email: mockedUserEmail,
+    });
     await expect(container.get(GetAuthUserUseCase).execute({
       accessToken: accessToken.toString(),
       refreshToken: refreshToken.toString(),
@@ -55,9 +58,10 @@ describe('Negative', () => {
   });
 
   it('If the refresh token is invalid', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const spy = vi.spyOn(UserTokenRefreshToken.prototype, 'decode').mockReturnValue({ userId: UserId.generate(), email: mockedUserEmail });
+    const spy = vi.spyOn(UserTokenRefreshToken.prototype, 'decode').mockReturnValue({
+      userId: UserId.generate(),
+      email: mockedUserEmail,
+    });
     await expect(container.get(GetAuthUserUseCase).execute({
       accessToken: accessToken.toString(),
       refreshToken: refreshToken.toString(),
@@ -66,8 +70,6 @@ describe('Negative', () => {
   });
 
   it('If the user is not found', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
     const spy = vi.spyOn(D1UserRepository.prototype, 'findById').mockResolvedValue(null);
     await expect(container.get(GetAuthUserUseCase).execute({
       accessToken: accessToken.toString(),
@@ -77,8 +79,6 @@ describe('Negative', () => {
   });
 
   it('If the user is not verified', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
     const spy = vi.spyOn(mockedUser, 'isVerified').mockReturnValue(false);
     await expect(container.get(GetAuthUserUseCase).execute({
       accessToken: accessToken.toString(),
@@ -88,8 +88,6 @@ describe('Negative', () => {
   });
 
   it('If the user is deleted', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
     const spy = vi.spyOn(mockedUser, 'isDeleted').mockReturnValue(true);
     await expect(container.get(GetAuthUserUseCase).execute({
       accessToken: accessToken.toString(),
@@ -99,8 +97,6 @@ describe('Negative', () => {
   });
 
   it('If the refresh token is expired', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
     const spy1 = vi.spyOn(UserTokenAccessToken.prototype, 'canVerify').mockReturnValue(false);
     const spy2 = vi.spyOn(UserTokenRefreshToken.prototype, 'canVerify').mockReturnValue(false);
     await expect(container.get(GetAuthUserUseCase).execute({
@@ -112,8 +108,6 @@ describe('Negative', () => {
   });
 
   it('If the refresh token is expired', async () => {
-    const accessToken = UserTokenAccessToken.generate({ userId: mockedUserId, email: mockedUserEmail });
-    const refreshToken = UserTokenRefreshToken.generate({ userId: mockedUserId, email: mockedUserEmail });
     const spy1 = vi.spyOn(UserTokenAccessToken.prototype, 'canVerify').mockReturnValue(false);
     const spy2 = vi.spyOn(UserTokenRefreshToken.prototype, 'canVerify').mockReturnValue(true);
     const spy3 = vi.spyOn(D1UserTokenRepository.prototype, 'findByUserId').mockResolvedValue(null);
