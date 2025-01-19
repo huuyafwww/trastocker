@@ -27,12 +27,10 @@ const convert = (user: UserSelectColumns): User => {
 };
 
 @injectable()
-export class D1UserRepository extends UserRepository {
+export class D1UserRepository implements UserRepository {
   constructor(
     @inject('D1Database') private database: Database,
-  ) {
-    super();
-  }
+  ) {}
 
   async save(user: User): Promise<User> {
     if (!!(await this.findById(user.id))) {

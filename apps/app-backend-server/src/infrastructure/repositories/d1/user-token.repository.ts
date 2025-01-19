@@ -25,12 +25,10 @@ const convert = (userToken: UserTokenSelectColumns): UserToken => {
 };
 
 @injectable()
-export class D1UserTokenRepository extends UserTokenRepository {
+export class D1UserTokenRepository implements UserTokenRepository {
   constructor(
     @inject('D1Database') private database: Database,
-  ) {
-    super();
-  }
+  ) {}
 
   async save(userToken: UserToken): Promise<UserToken> {
     if (!!(await this.findById(userToken.id))) {

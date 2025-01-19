@@ -24,12 +24,10 @@ const convert = (workspaceUser: WorkspaceUserSelectColumns): WorkspaceUser => {
 };
 
 @injectable()
-export class D1WorkspaceUserRepository extends WorkspaceUserRepository {
+export class D1WorkspaceUserRepository implements WorkspaceUserRepository {
   constructor(
     @inject('D1Database') private database: Database,
-  ) {
-    super();
-  }
+  ) {}
 
   async save(workspaceUser: WorkspaceUser): Promise<WorkspaceUser> {
     if (!!(await this.findById(workspaceUser.id))) {
