@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import { connectDatabase } from '@trastocker/database-definition';
 import { Container } from 'inversify';
 
+import { GetAuthUserUseCase } from '@application/use-cases/get-auth-user.use-case.mock';
 import { UserTokenRepository } from '@domain/repositories/user-token.repository';
 import { UserRepository } from '@domain/repositories/user.repository';
 import { D1UserTokenRepository } from '@infrastructure/repositories/d1/user-token.repository.mock';
@@ -13,6 +14,7 @@ const createContainer: (props?: {
   database?: AnyD1Database;
 }) => Container = (props) => {
   const container = new Container();
+  container.bind(GetAuthUserUseCase).toSelf();
   container.bind<UserRepository>(UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(UserTokenRepository).to(D1UserTokenRepository);
   if (props?.database) {
