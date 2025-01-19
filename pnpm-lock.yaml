@@ -147,8 +147,8 @@ importers:
         specifier: ^7.4.4
         version: 7.4.4
       has-throw:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       npm-run-all2:
         specifier: ^7.0.2
         version: 7.0.2
@@ -7180,8 +7180,8 @@ packages:
     resolution: {integrity: sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==}
     engines: {node: '>= 0.4'}
 
-  has-throw@1.0.0:
-    resolution: {integrity: sha512-PifZOpb34EKErrT/1AY3YuJSGfJBP/wIYGiCBz36E4ZYDeFz/GvmsIJ++cxax0I5o9t6N/IOzlkeP/mo41Srww==}
+  has-throw@1.0.1:
+    resolution: {integrity: sha512-aY7tOg8cZLPU5xDCSiRgWy8aFPMvsPGpFDJggOdUNeFwnP9gm1m2KbtgtzrDVAtcKD3tCOMNxYJjZR77Ae/0aA==}
     engines: {node: '>=22.12.0', pnpm: '>=9.15.0'}
 
   has-tostringtag@1.0.2:
@@ -19243,7 +19243,7 @@ snapshots:
 
   has-symbols@1.1.0: {}
 
-  has-throw@1.0.0: {}
+  has-throw@1.0.1: {}
 
   has-tostringtag@1.0.2:
     dependencies:
