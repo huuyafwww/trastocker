@@ -1,8 +1,11 @@
 import path from 'node:path';
 
+import vCache from '@raegen/vite-plugin-vitest-cache';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+  // TODO: Support for CI=true
+  plugins: [!process.env.CI && vCache()].filter(Boolean),
   resolve: {
     alias: {
       '@application': path.resolve(__dirname, 'src/application'),

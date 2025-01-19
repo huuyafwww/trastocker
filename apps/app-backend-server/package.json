@@ -55,6 +55,7 @@
     "@huuyafwww/tsconfig-common": "^1.1.1",
     "@miniflare/d1": "^2.14.4",
     "@miniflare/shared": "^2.14.4",
+    "@raegen/vite-plugin-vitest-cache": "^0.3.3",
     "@types/jsonwebtoken": "^9.0.7",
     "@types/ms": "^0.7.34",
     "dotenv": "^16.4.7",

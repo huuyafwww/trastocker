@@ -11,5 +11,6 @@ declare namespace NodeJS {
     JWT_REFRESH_TOKEN_SECRET: string;
     JWT_REFRESH_TOKEN_EXPIRES_IN: string;
     DATABASE_URL?: string;
+    CI?: string;
   }
 }
