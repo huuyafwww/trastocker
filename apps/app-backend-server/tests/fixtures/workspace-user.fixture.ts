@@ -14,4 +14,4 @@ export const mockedWorkspaceUserData = {
   updatedAt: new Date(),
   deletedAt: null,
 };
-export const mockedWorkspace = new WorkspaceUser(mockedWorkspaceUserData);
+export const mockedWorkspaceUser = new WorkspaceUser(mockedWorkspaceUserData);
