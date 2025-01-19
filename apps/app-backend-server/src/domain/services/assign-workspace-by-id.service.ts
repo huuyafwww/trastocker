@@ -1,6 +1,7 @@
 import { injectable, inject } from 'inversify';
 
 import { WorkspaceUser } from '@domain/entities/workspace-user.entity';
+import { Workspace } from '@domain/entities/workspace.entity';
 import { UserRepository } from '@domain/repositories/user.repository';
 import { WorkspaceUserRepository } from '@domain/repositories/workspace-user.repository';
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
@@ -13,7 +14,7 @@ export type AssignWorkspaceByIdServiceProps = {
   workspaceId: string;
 };
 
-export type AssignWorkspaceByIdServiceOutput = WorkspaceUser | null;
+export type AssignWorkspaceByIdServiceOutput = Workspace | null;
 
 @injectable()
 export class AssignWorkspaceByIdService implements Service<AssignWorkspaceByIdServiceProps, AssignWorkspaceByIdServiceOutput> {
@@ -35,12 +36,13 @@ export class AssignWorkspaceByIdService implements Service<AssignWorkspaceByIdSe
     if (workspace.isDeleted()) throw new Error('Workspace is deleted');
 
     const workspaceUsers = await this.workspaceUserRepository.findByUserId(user.id);
-    if (workspaceUsers.toEntities().length > 0) throw new Error('User already assigned to workspace');
+    if (workspaceUsers.filterActive().filterByWorkspaceId(workspace.id).toEntities().length > 0) throw new Error('User already assigned to workspace');
 
-    const workspaceUser = WorkspaceUser.create({
+    const workspaceUser = await this.workspaceUserRepository.save(WorkspaceUser.create({
       userId: user.id,
       workspaceId: workspace.id,
-    });
-    return await this.workspaceUserRepository.save(workspaceUser);
+    }));
+    if (!workspaceUser) throw new Error('Failed to assign user to workspace');
+    return workspace;
   }
 }

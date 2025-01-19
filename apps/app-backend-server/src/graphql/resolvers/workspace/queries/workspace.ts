@@ -27,6 +27,7 @@ builder.queryField('workspace', t => t.field({
       const workspaceId = WorkspaceId.fromString(args.workspaceId);
       const workspace = await (context.container.get<WorkspaceRepository>(WorkspaceRepository)).findById(workspaceId);
       if (!workspace) throw new Error('Workspace not found');
+      if (workspace.isDeleted()) throw new Error('Workspace is deleted');
       return workspace;
     }
 
@@ -34,6 +35,7 @@ builder.queryField('workspace', t => t.field({
       const inviteCode = WorkspaceInviteCode.fromString(args.inviteCode);
       const workspace = await (context.container.get<WorkspaceRepository>(WorkspaceRepository)).findByInviteCode(inviteCode);
       if (!workspace) throw new Error('Workspace not found');
+      if (workspace.isDeleted()) throw new Error('Workspace is deleted');
       return workspace;
     }
 

@@ -18,6 +18,14 @@ export class WorkspaceUsers extends Collection<WorkspaceUser, WorkspaceUserId> {
     return WorkspaceUsers.from(this.entities.filter(entity => !entity.isDeleted()));
   }
 
+  public filterByUserId(userId: UserId): WorkspaceUsers {
+    return WorkspaceUsers.from(this.entities.filter(entity => entity.userId.isEqual(userId)));
+  }
+
+  public filterByWorkspaceId(workspaceId: WorkspaceId): WorkspaceUsers {
+    return WorkspaceUsers.from(this.entities.filter(entity => entity.workspaceId.isEqual(workspaceId)));
+  }
+
   public pickWorkspaceIds(): WorkspaceId[] {
     return this.entities.map(entity => entity.workspaceId);
   }

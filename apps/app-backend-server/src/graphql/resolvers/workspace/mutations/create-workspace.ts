@@ -24,10 +24,9 @@ builder.mutationField('createWorkspace', t => t.field({
     });
     if (!workspace) throw new Error('Workspace not created');
 
-    await (context.container.get<AssignWorkspaceByIdService>(AssignWorkspaceByIdService)).execute({
+    return await (context.container.get<AssignWorkspaceByIdService>(AssignWorkspaceByIdService)).execute({
       userId: context.authUser.id.toString(),
       workspaceId: workspace.id.toString(),
     });
-    return workspace;
   },
 }));
