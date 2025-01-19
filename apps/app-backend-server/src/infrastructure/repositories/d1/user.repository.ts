@@ -72,6 +72,7 @@ export class D1UserRepository implements UserRepository {
   }
 
   async findByIds(ids: UserId[]): Promise<Users> {
+    if (ids.length === 0) return Users.from([]);
     const rows = await this.database.query.user.findMany({
       where: and(
         inArray(schema.user.id, ids.map(id => id.toString())),

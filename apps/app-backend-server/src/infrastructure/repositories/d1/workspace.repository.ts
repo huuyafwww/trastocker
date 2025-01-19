@@ -66,6 +66,7 @@ export class D1WorkspaceRepository implements WorkspaceRepository {
   }
 
   async findByIds(ids: WorkspaceId[]): Promise<Workspaces> {
+    if (ids.length === 0) return Workspaces.from([]);
     const rows = await this.database.query.workspace.findMany({
       where: and(
         inArray(schema.workspace.id, ids.map(id => id.toString())),
