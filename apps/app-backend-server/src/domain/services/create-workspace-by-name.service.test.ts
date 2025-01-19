@@ -1,7 +1,8 @@
+import { hasAsyncThrow } from 'has-throw';
+
 import { D1WorkspaceRepository } from '@infrastructure/repositories/d1/workspace.repository.mock';
 import { mockedWorkspace } from '@test/fixtures/workspace.fixture';
 import { mockedWorkspaceName } from '@test/fixtures/workspace.fixture';
-import { hasAsyncThrow } from '@test/helpers/has-async-throw';
 import { createContainer } from '@test/inversify.config';
 
 import { CreateWorkspaceByNameService } from './create-workspace-by-name.service';
@@ -27,11 +28,11 @@ describe('Positive', () => {
 });
 
 describe('Negative', () => {
-  it('If the workspace creation failed', () => {
+  it('If the workspace creation failed', async () => {
     const spy = vi.spyOn(D1WorkspaceRepository.prototype, 'save').mockRejectedValue(new Error());
-    expect(hasAsyncThrow(async () => await container.get(CreateWorkspaceByNameService).execute({
+    await expect(hasAsyncThrow(async () => await container.get(CreateWorkspaceByNameService).execute({
       name: mockedWorkspaceName.toString(),
-    }))).toBeTruthy();
+    }))).resolves.toStrictEqual(true);
     spy.mockRestore();
   });
 });
