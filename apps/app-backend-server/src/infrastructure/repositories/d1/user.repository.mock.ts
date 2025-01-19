@@ -15,21 +15,21 @@ export class D1UserRepository extends UserRepository {
 
   // eslint-disable-next-line
   async save(user: User): Promise<User> {
-    return mockedUser;
+    return new Promise(resolve => resolve(mockedUser));
   }
 
   // eslint-disable-next-line
   async findById(id: UserId): Promise<User | null> {
-    return mockedUser;
+    return new Promise(resolve => resolve(mockedUser));
   }
 
   // eslint-disable-next-line
   async findByIds(ids: UserId[]): Promise<Users> {
-    return Users.from([mockedUser]);
+    return new Promise(resolve => resolve(Users.from([mockedUser])));
   }
 
   // eslint-disable-next-line
   async findByEmail(email: UserEmail): Promise<User | null> {
-    return mockedUser;
+    return new Promise(resolve => resolve(mockedUser));
   }
 }

@@ -17,26 +17,26 @@ export class D1UserTokenRepository extends UserTokenRepository {
 
   // eslint-disable-next-line
   async save(userToken: UserToken): Promise<UserToken> {
-    return mockedUserToken;
+    return new Promise(resolve => resolve(mockedUserToken));
   }
 
   // eslint-disable-next-line
   async findById(id: UserTokenId): Promise<UserToken | null> {
-    return mockedUserToken;
+    return new Promise(resolve => resolve(mockedUserToken));
   }
 
   // eslint-disable-next-line
   async findByUserId(userId: UserId): Promise<UserToken | null> {
-    return mockedUserToken;
+    return new Promise(resolve => resolve(mockedUserToken));
   }
 
   // eslint-disable-next-line
   async findByAccessToken(accessToken: UserTokenAccessToken): Promise<UserToken | null> {
-    return mockedUserToken;
+    return new Promise(resolve => resolve(mockedUserToken));
   }
 
   // eslint-disable-next-line
   async findByRefreshToken(refreshToken: UserTokenRefreshToken): Promise<UserToken | null> {
-    return mockedUserToken;
+    return new Promise(resolve => resolve(mockedUserToken));
   }
 }
