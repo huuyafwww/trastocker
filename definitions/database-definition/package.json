@@ -38,8 +38,8 @@
     "drizzle-orm": "^0.38.3"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-common": "^1.0.6",
-    "@huuyafwww/eslint-config-node": "^1.0.3",
+    "@huuyafwww/eslint-config-common": "^1.1.1",
+    "@huuyafwww/eslint-config-node": "^1.1.1",
     "@huuyafwww/tsconfig-common": "^1.1.1",
     "better-sqlite3": "^11.7.0",
     "dotenv-cli": "^7.4.4",
