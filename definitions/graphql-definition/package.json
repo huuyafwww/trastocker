@@ -20,7 +20,7 @@
     "@graphql-codegen/typescript-operations": "^4.4.0",
     "@huuyafwww/eslint-config-common": "^1.0.6",
     "@huuyafwww/eslint-config-node": "^1.0.3",
-    "@huuyafwww/tsconfig-common": "^1.1.0",
+    "@huuyafwww/tsconfig-common": "^1.1.1",
     "graphql": "^16.10.0",
     "nodemon": "^3.1.9",
     "typescript": "^5.7.2"

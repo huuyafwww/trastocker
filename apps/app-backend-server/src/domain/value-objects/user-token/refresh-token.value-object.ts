@@ -26,6 +26,7 @@ type UserTokenRefreshTokenDecodedPayload = {
 };
 
 export class UserTokenRefreshToken extends ValueObject<string> {
+  declare readonly __brand: 'UserTokenRefreshToken';
   private static readonly schema = v.string();
 
   protected constructor(value: string) {

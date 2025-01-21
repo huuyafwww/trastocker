@@ -3,9 +3,8 @@ import ms from 'ms';
 
 import { UserLoginUseCase } from '@application/use-cases/user-login.use-case';
 import { CookieKeys } from '@constants/cookie';
+import { User } from '@domain/entities/user.entity';
 import { builder } from '@graphql/builder';
-
-import { User } from '../types/user';
 
 builder.mutationField('loginUser', t => t.field({
   type: User,
@@ -23,8 +22,6 @@ builder.mutationField('loginUser', t => t.field({
   },
   resolve: async (_, args, context) => {
     const { user, userToken } = await context.container.get<UserLoginUseCase>(UserLoginUseCase).execute(args);
-
-    if (!user || !userToken) return null;
 
     await context.request.cookieStore?.set({
       name: CookieKeys.ACCESS_TOKEN,
@@ -46,6 +43,6 @@ builder.mutationField('loginUser', t => t.field({
       secure: process.env.APP_ENV === 'production',
     });
 
-    return user.serialize();
+    return user;
   },
 }));

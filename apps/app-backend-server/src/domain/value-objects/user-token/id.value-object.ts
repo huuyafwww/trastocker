@@ -11,6 +11,7 @@ export class InvalidUserTokenIdError extends Error {
 }
 
 export class UserTokenId extends ValueObject<string> {
+  declare readonly __brand: 'UserTokenId';
   private static readonly schema = v.pipe(
     v.string(),
     v.uuid(),

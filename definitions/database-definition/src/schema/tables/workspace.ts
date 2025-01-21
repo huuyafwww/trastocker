@@ -8,7 +8,7 @@ export const workspace = sqliteTable('workspace', {
   updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
   deletedAt: integer('deleted_at', { mode: 'timestamp' }),
   name: text('name').notNull(),
-  invite_code: text('invite_code').notNull(),
+  inviteCode: text('invite_code').notNull(),
 });
 
 export type WorkspaceSelectColumns = InferSelectModel<typeof workspace>;

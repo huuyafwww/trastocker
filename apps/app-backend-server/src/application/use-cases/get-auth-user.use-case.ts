@@ -12,6 +12,8 @@ export type GetAuthUserUseCaseProps = {
   refreshToken: string;
 };
 
+export type GetAuthUserUseCaseOutput = Promise<User>;
+
 @injectable()
 export class GetAuthUserUseCase {
   constructor(
@@ -20,7 +22,7 @@ export class GetAuthUserUseCase {
   ) {
   }
 
-  async execute(props: GetAuthUserUseCaseProps): Promise<User> {
+  async execute(props: GetAuthUserUseCaseProps): GetAuthUserUseCaseOutput {
     const accessToken = UserTokenAccessToken.fromString(props.accessToken);
     const decodedAccessToken = accessToken.decode();
     if (!decodedAccessToken) throw new Error('Invalid access token');
@@ -31,9 +33,10 @@ export class GetAuthUserUseCase {
 
     const user = await this.userRepository.findById(decodedAccessToken.userId);
     if (!user) throw new Error('User not found');
+    if (!user.isVerified() || user.isDeleted()) throw new Error('User is not active');
 
-    if (user.email.isEqual(decodedAccessToken.email)) throw new Error('Invalid access token');
-    if (user.email.isEqual(decodedRefreshToken.email)) throw new Error('Invalid refresh token');
+    if (!user.id.isEqual(decodedAccessToken.userId)) throw new Error('Invalid access token');
+    if (!user.id.isEqual(decodedRefreshToken.userId)) throw new Error('Invalid refresh token');
 
     if (accessToken.canVerify()) return user;
     if (!refreshToken.canVerify()) throw new Error('Refresh token is expired');

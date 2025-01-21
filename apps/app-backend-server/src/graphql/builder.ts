@@ -17,7 +17,7 @@ type Scalars = {
   };
 };
 
-export const builder = new SchemaBuilder<{
+export type SchemaBuilderType = {
   DefaultFieldNullability: false;
   DefaultInputFieldRequiredness: true;
   Scalars: Scalars;
@@ -25,7 +25,9 @@ export const builder = new SchemaBuilder<{
   AuthScopes: {
     private: boolean;
   };
-}>({
+};
+
+export const builder = new SchemaBuilder<SchemaBuilderType>({
   defaultFieldNullability: false,
   defaultInputFieldRequiredness: true,
   plugins: [

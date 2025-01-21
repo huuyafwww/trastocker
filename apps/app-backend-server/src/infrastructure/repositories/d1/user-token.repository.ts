@@ -8,6 +8,7 @@ import { UserId } from '@domain/value-objects/user/id.value-object';
 import { UserTokenAccessToken } from '@domain/value-objects/user-token/access-token.value-object';
 import { UserTokenId } from '@domain/value-objects/user-token/id.value-object';
 import { UserTokenRefreshToken } from '@domain/value-objects/user-token/refresh-token.value-object';
+import { Repository } from '@infrastructure/repositories/d1/repository';
 
 import type { UserTokenSelectColumns } from '@trastocker/database-definition';
 import type { Database } from '@trastocker/database-definition';
@@ -25,7 +26,7 @@ const convert = (userToken: UserTokenSelectColumns): UserToken => {
 };
 
 @injectable()
-export class D1UserTokenRepository extends UserTokenRepository {
+export class D1UserTokenRepository extends Repository<UserToken, UserTokenId> implements UserTokenRepository {
   constructor(
     @inject('D1Database') private database: Database,
   ) {
@@ -51,13 +52,7 @@ export class D1UserTokenRepository extends UserTokenRepository {
     }
 
     const rows = await this.database.insert(schema.userToken).values([{
-      id: userToken.id.toString(),
-      userId: userToken.userId.toString(),
-      accessToken: userToken.accessToken.toString(),
-      refreshToken: userToken.refreshToken.toString(),
-      createdAt: userToken.createdAt,
-      updatedAt: userToken.updatedAt,
-      deletedAt: userToken.deletedAt,
+      ...userToken.serialize(),
     }]).returning();
 
     const row = rows[0];

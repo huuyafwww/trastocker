@@ -12,6 +12,7 @@ export class InvalidUserPasswordError extends Error {
 }
 
 export class UserPassword extends ValueObject<string> {
+  declare readonly __brand: 'UserPassword';
   private static readonly schema = UserPasswordSchema;
 
   protected constructor(value: string) {

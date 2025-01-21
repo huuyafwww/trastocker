@@ -7,13 +7,23 @@ import type { UserEmail } from '@domain/value-objects/user/email.value-object';
 import type { UserId } from '@domain/value-objects/user/id.value-object';
 import type { UserTokenRefreshToken } from '@domain/value-objects/user-token/refresh-token.value-object';
 
+type SerializedUserToken = {
+  id: string;
+  userId: string;
+  accessToken: string;
+  refreshToken: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: Date | null;
+};
+
 export class UserToken extends Entity<UserTokenId> {
-  public readonly userId!: UserId;
-  public readonly accessToken!: UserTokenAccessToken;
-  public readonly refreshToken!: UserTokenRefreshToken;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
-  public readonly deletedAt: Date | null = null;
+  declare public readonly userId: UserId;
+  declare public readonly accessToken: UserTokenAccessToken;
+  declare public readonly refreshToken: UserTokenRefreshToken;
+  declare public readonly createdAt: Date;
+  declare public readonly updatedAt: Date;
+  declare public readonly deletedAt: Date | null;
 
   public constructor(props: Fields<UserToken>) {
     super(props);
@@ -53,5 +63,17 @@ export class UserToken extends Entity<UserTokenId> {
         email: props.email,
       }),
     });
+  }
+
+  public serialize(): SerializedUserToken {
+    return {
+      id: this.id.toString(),
+      userId: this.userId.toString(),
+      accessToken: this.accessToken.toString(),
+      refreshToken: this.refreshToken.toString(),
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt,
+      deletedAt: this.deletedAt,
+    };
   }
 }
