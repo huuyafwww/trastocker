@@ -6,10 +6,10 @@ import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
 import { mockedWorkspace } from '@test/fixtures/workspace.fixture';
 
-@injectable()
-export class D1WorkspaceRepository implements WorkspaceRepository {
-  constructor() {}
+import { Repository } from './repository';
 
+@injectable()
+export class D1WorkspaceRepository extends Repository<Workspace, WorkspaceId> implements WorkspaceRepository {
   async save(): Promise<Workspace> {
     return new Promise(resolve => resolve(mockedWorkspace));
   }

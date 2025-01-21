@@ -4,10 +4,11 @@ import { Users } from '@domain/collections/user.collection';
 import { User } from '@domain/entities/user.entity';
 import { UserRepository } from '@domain/repositories/user.repository';
 import { UserId } from '@domain/value-objects/user/id.value-object';
+import { Repository } from '@infrastructure/repositories/d1/repository';
 import { mockedUser } from '@test/fixtures/user.fixture';
 
 @injectable()
-export class D1UserRepository implements UserRepository {
+export class D1UserRepository extends Repository<User, UserId> implements UserRepository {
   async save(): Promise<User> {
     return new Promise(resolve => resolve(mockedUser));
   }

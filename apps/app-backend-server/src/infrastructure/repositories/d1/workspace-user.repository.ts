@@ -9,6 +9,8 @@ import { UserId } from '@domain/value-objects/user/id.value-object';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
 import { WorkspaceUserId } from '@domain/value-objects/workspace-user/id.value-object';
 
+import { Repository } from './repository';
+
 import type { WorkspaceUserSelectColumns } from '@trastocker/database-definition';
 import type { Database } from '@trastocker/database-definition';
 
@@ -24,10 +26,12 @@ const convert = (workspaceUser: WorkspaceUserSelectColumns): WorkspaceUser => {
 };
 
 @injectable()
-export class D1WorkspaceUserRepository implements WorkspaceUserRepository {
+export class D1WorkspaceUserRepository extends Repository<WorkspaceUser, WorkspaceUserId> implements WorkspaceUserRepository {
   constructor(
     @inject('D1Database') private database: Database,
-  ) {}
+  ) {
+    super();
+  }
 
   async save(workspaceUser: WorkspaceUser): Promise<WorkspaceUser> {
     if (!!(await this.findById(workspaceUser.id))) {
