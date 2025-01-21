@@ -5,8 +5,10 @@ import { react } from '@huuyafwww/eslint-config-react';
 import { storybook } from '@huuyafwww/eslint-config-storybook';
 import { define } from '@praha/eslint-config-definer';
 
+import type { Linter } from 'eslint';
+
 const config = define([
-  () => ({
+  () => ([{
     ignores: [
       'next.config.mjs',
       'postcss.config.cjs',
@@ -14,7 +16,7 @@ const config = define([
       'storybook-static/**',
       '.storybook/public/**',
     ],
-  }),
+  }]),
   common,
   browser,
   react,
@@ -24,4 +26,4 @@ const config = define([
 
 export default config({
   tsconfigPath: './tsconfig.json',
-});
+}) satisfies Linter.Config[];
