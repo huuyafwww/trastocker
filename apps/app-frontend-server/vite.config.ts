@@ -16,7 +16,10 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, 'src/styles'),
     },
   },
-  plugins: [react()],
+  plugins: [
+    // @ts-expect-error Type 'PluginOption[]' cannot be assigned to type 'PluginOption'.
+    react(),
+  ],
   test: {
     globals: true,
     environment: 'happy-dom',

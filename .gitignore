@@ -37,3 +37,6 @@ dist
 # Cloudflare
 .wrangler
 .worker-next
+
+# TypeScript
+tsconfig.tsbuildinfo

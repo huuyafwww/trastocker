@@ -1,0 +1,22 @@
+name: Type test
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: ./.github/actions/setup/pnpm
+
+      - name: Build packages
+        run: pnpm run build:definition
+
+      - name: Test Type
+        run: pnpm run lint:type

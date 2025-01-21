@@ -1,5 +1,5 @@
 import { schema } from '@trastocker/database-definition';
-import { eq } from 'drizzle-orm';
+import { and, eq, inArray, isNull } from 'drizzle-orm';
 import { graphql, HttpResponse } from 'msw';
 
 import type { CreateHandler } from '../';
@@ -11,11 +11,46 @@ export const user: CreateHandler = ({ promiseDatabase }) => {
     { user: IQuery['user'] },
     IQueryUserArgs
   >('user', async ({ variables }) => {
+    const user = await (await promiseDatabase).query.user.findFirst({
+      where: eq(schema.user.id, variables.userId),
+    });
+
+    if (!user) {
+      return HttpResponse.json({
+        data: { user: null },
+      });
+    }
+
+    const workspaceUsers = await (await promiseDatabase).query.workspaceUser.findMany({
+      where: and(
+        eq(schema.workspaceUser.userId, user.id),
+        isNull(schema.workspace.deletedAt),
+      ),
+    });
+
+    const workspaces = await (await promiseDatabase).query.workspace.findMany({
+      where: and(
+        inArray(schema.workspace.id, workspaceUsers.map(workspaceUser => workspaceUser.workspaceId)),
+        isNull(schema.workspace.deletedAt),
+      ),
+    });
+
+    if (workspaces.length === 0) {
+      return HttpResponse.json({
+        data: { user: null },
+      });
+    }
     return HttpResponse.json({
       data: {
-        user: await (await promiseDatabase).query.user.findFirst({
-          where: eq(schema.user.id, variables.userId),
-        }) ?? null,
+        user: {
+          ...user,
+          isDeleted: user.deletedAt !== null,
+          // @ts-expect-error Because of circular reference
+          workspaces: workspaces.map(workspace => ({
+            ...workspace,
+            isDeleted: workspace.deletedAt !== null,
+          })),
+        },
       },
     });
   });
