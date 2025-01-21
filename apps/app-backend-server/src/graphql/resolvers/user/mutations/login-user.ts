@@ -23,8 +23,6 @@ builder.mutationField('loginUser', t => t.field({
   resolve: async (_, args, context) => {
     const { user, userToken } = await context.container.get<UserLoginUseCase>(UserLoginUseCase).execute(args);
 
-    if (!user || !userToken) return null;
-
     await context.request.cookieStore?.set({
       name: CookieKeys.ACCESS_TOKEN,
       value: userToken.accessToken.toString(),

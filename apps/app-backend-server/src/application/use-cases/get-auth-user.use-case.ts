@@ -12,6 +12,8 @@ export type GetAuthUserUseCaseProps = {
   refreshToken: string;
 };
 
+export type GetAuthUserUseCaseOutput = Promise<User>;
+
 @injectable()
 export class GetAuthUserUseCase {
   constructor(
@@ -20,7 +22,7 @@ export class GetAuthUserUseCase {
   ) {
   }
 
-  async execute(props: GetAuthUserUseCaseProps): Promise<User> {
+  async execute(props: GetAuthUserUseCaseProps): GetAuthUserUseCaseOutput {
     const accessToken = UserTokenAccessToken.fromString(props.accessToken);
     const decodedAccessToken = accessToken.decode();
     if (!decodedAccessToken) throw new Error('Invalid access token');
