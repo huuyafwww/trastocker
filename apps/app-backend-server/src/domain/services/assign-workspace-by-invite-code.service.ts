@@ -26,27 +26,22 @@ export class AssignWorkspaceByInviteCodeService implements Service<AssignWorkspa
   }
 
   async execute(props: AssignWorkspaceByInviteCodeServiceProps): Promise<AssignWorkspaceByInviteCodeServiceOutput> {
-    if (!props.inviteCode) throw new Error('Invite code or workspace ID is required');
-    if (!props.userId) throw new Error('User ID is required');
-
-    const inviteCode = WorkspaceInviteCode.fromString(props.inviteCode);
-    const workspace = await this.workspaceRepository.findByInviteCode(inviteCode);
-    if (!workspace) throw new Error('Workspace not found');
-    if (workspace.isDeleted()) throw new Error('Workspace is deleted');
-
     const user = await this.userRepository.findById(UserId.fromString(props.userId));
     if (!user) throw new Error('User not found');
     if (user.isDeleted()) throw new Error('User is deleted');
     if (!user.isVerified()) throw new Error('User is not verified');
 
+    const workspace = await this.workspaceRepository.findByInviteCode(WorkspaceInviteCode.fromString(props.inviteCode));
+    if (!workspace) throw new Error('Workspace not found');
+    if (workspace.isDeleted()) throw new Error('Workspace is deleted');
+
     const workspaceUsers = await this.workspaceUserRepository.findByUserId(user.id);
     if (workspaceUsers.filterActive().filterByWorkspaceId(workspace.id).toEntities().length > 0) throw new Error('User already assigned to workspace');
 
-    const workspaceUser = await this.workspaceUserRepository.save(WorkspaceUser.create({
+    await this.workspaceUserRepository.save(WorkspaceUser.create({
       userId: user.id,
       workspaceId: workspace.id,
     }));
-    if (!workspaceUser) throw new Error('Failed to assign user to workspace');
     return workspace;
   }
 }

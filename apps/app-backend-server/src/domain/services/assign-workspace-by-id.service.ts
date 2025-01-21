@@ -38,11 +38,10 @@ export class AssignWorkspaceByIdService implements Service<AssignWorkspaceByIdSe
     const workspaceUsers = await this.workspaceUserRepository.findByUserId(user.id);
     if (workspaceUsers.filterActive().filterByWorkspaceId(workspace.id).toEntities().length > 0) throw new Error('User already assigned to workspace');
 
-    const workspaceUser = await this.workspaceUserRepository.save(WorkspaceUser.create({
+    await this.workspaceUserRepository.save(WorkspaceUser.create({
       userId: user.id,
       workspaceId: workspace.id,
     }));
-    if (!workspaceUser) throw new Error('Failed to assign user to workspace');
     return workspace;
   }
 }
