@@ -14,7 +14,7 @@ export type AssignWorkspaceByIdServiceProps = {
   workspaceId: string;
 };
 
-export type AssignWorkspaceByIdServiceOutput = Workspace | null;
+export type AssignWorkspaceByIdServiceOutput = Workspace;
 
 @injectable()
 export class AssignWorkspaceByIdService implements Service<AssignWorkspaceByIdServiceProps, AssignWorkspaceByIdServiceOutput> {

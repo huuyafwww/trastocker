@@ -18,12 +18,9 @@ builder.mutationField('assignWorkspace', t => t.field({
   resolve: async (_, args, context) => {
     if (!context.authUser) throw new Error('Unauthorized');
 
-    const workspace = await (context.container.get<AssignWorkspaceByInviteCodeService>(AssignWorkspaceByInviteCodeService)).execute({
+    return await (context.container.get<AssignWorkspaceByInviteCodeService>(AssignWorkspaceByInviteCodeService)).execute({
       inviteCode: args.inviteCode,
       userId: context.authUser.id.toString(),
     });
-    if (!workspace) throw new Error('Failed to assign workspace');
-
-    return workspace;
   },
 }));

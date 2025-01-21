@@ -7,7 +7,7 @@ import { builder } from '@graphql/builder';
 
 builder.mutationField('createWorkspace', t => t.field({
   type: Workspace,
-  nullable: true,
+  nullable: false,
   description: 'create Workspace',
   args: {
     name: t.arg.string({

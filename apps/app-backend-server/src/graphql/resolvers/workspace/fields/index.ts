@@ -3,6 +3,7 @@ import { builder } from '@graphql/builder';
 
 import { id } from './id';
 import { inviteCode } from './inviteCode';
+import { isDeleted } from './isDeleted';
 import { name } from './name';
 import { users } from './users';
 
@@ -20,6 +21,7 @@ builder.objectType(Workspace, {
     id: id(t),
     name: name(t),
     inviteCode: inviteCode(t),
+    isDeleted: isDeleted(t),
     users: users(t),
   }),
 });
