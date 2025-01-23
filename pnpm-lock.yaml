@@ -5,11 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  '@mswjs/data':
-    hash: 7qx6k6m4svcveq43bnmahfrnem
-    path: patches/@mswjs__data.patch
   msw:
-    hash: pucj7an5jhnl57iwqchvbph5ke
+    hash: fs2kyesztyfe2y3aftpuha3w2u
     path: patches/msw.patch
 
 importers:
@@ -136,7 +133,7 @@ importers:
         version: 2.14.4
       '@raegen/vite-plugin-vitest-cache':
         specifier: ^0.3.3
-        version: 0.3.3(@types/node@22.10.2)(@vitest/runner@2.1.8)(terser@5.37.0)(vitest@2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0))
+        version: 0.3.3(@types/node@22.10.2)(@vitest/runner@2.1.8)(terser@5.37.0)(vitest@2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0))
       '@types/jsonwebtoken':
         specifier: ^9.0.7
         version: 9.0.7
@@ -166,7 +163,7 @@ importers:
         version: 6.0.5(@types/node@22.10.2)(jiti@2.4.2)(terser@5.37.0)(tsx@4.19.2)(yaml@2.6.1)
       vitest:
         specifier: ^2.1.8
-        version: 2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0)
+        version: 2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0)
 
   apps/app-frontend-server:
     dependencies:
@@ -270,9 +267,6 @@ importers:
       '@huuyafwww/tsconfig-next':
         specifier: ^1.2.0
         version: 1.2.0
-      '@mswjs/data':
-        specifier: ^0.16.2
-        version: 0.16.2(patch_hash=7qx6k6m4svcveq43bnmahfrnem)(@types/node@22.10.2)(typescript@5.7.2)
       '@storybook/addon-actions':
         specifier: ^8.4.7
         version: 8.4.7(storybook@8.4.7)
@@ -338,10 +332,10 @@ importers:
         version: 14.1.1
       msw:
         specifier: ^2.7.0
-        version: 2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2)
+        version: 2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2)
       msw-storybook-addon:
         specifier: ^2.0.4
-        version: 2.0.4(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))
+        version: 2.0.4(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))
       npm-run-all2:
         specifier: ^7.0.2
         version: 7.0.2
@@ -380,7 +374,7 @@ importers:
         version: 5.7.2
       vitest:
         specifier: ^2.1.8
-        version: 2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0)
+        version: 2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0)
       webpack-merge:
         specifier: ^6.0.1
         version: 6.0.1
@@ -3004,9 +2998,6 @@ packages:
     resolution: {integrity: sha512-PYn05ET2USfBAeXF6NZfWl0O32KVyE8ncQ/ngysrh3hoIV7l3qGGH7ubeFx+D8VWQ682qYhwGygUzQv2j1tGGg==}
     engines: {node: '>=16.13'}
 
-  '@mswjs/data@0.16.2':
-    resolution: {integrity: sha512-/C0d/PBcJyQJokUhcjO4HiZPc67hzllKlRtD1XELygl2t991/ATAAQJVcStn4YtVALsNodruzOHT0JIvgr0hnA==}
-
   '@mswjs/interceptors@0.37.3':
     resolution: {integrity: sha512-USvgCL/uOGFtVa6SVyRrC8kIAedzRohxIXN5LISlg5C5vLZCn7dgMFVSNhSF9cuBEFrm/O2spDWEZeMnw4ZXYg==}
     engines: {node: '>=18'}
@@ -4429,9 +4420,6 @@ packages:
   '@types/lodash@4.17.13':
     resolution: {integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==}
 
-  '@types/md5@2.3.5':
-    resolution: {integrity: sha512-/i42wjYNgE6wf0j2bcTX6kuowmdL/6PE4IVitMpm2eYKBUuYCprdcWVK+xEF0gcV6ufMCRhtxmReGfc6hIK7Jw==}
-
   '@types/mdx@2.0.13':
     resolution: {integrity: sha512-+OWZQfAYyio6YkJb3HLxDrvnx6SWWDbC0zVPfBRzUk0/nqoDyf6dNxQi3eArPe8rJ473nobTMQ/8Zk+LxJ+Yuw==}
 
@@ -4465,9 +4453,6 @@ packages:
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
 
-  '@types/pluralize@0.0.29':
-    resolution: {integrity: sha512-BYOID+l2Aco2nBik+iYS4SZX0Lf20KPILP5RGmM1IgzdwNdTs0eebiFriOPcej1sX9mLnSoiNte5zcFxssgpGA==}
-
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
 
@@ -4496,9 +4481,6 @@ packages:
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
-
-  '@types/uuid@8.3.4':
-    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
 
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
@@ -5378,9 +5360,6 @@ packages:
   chardet@0.7.0:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
 
-  charenc@0.0.2:
-    resolution: {integrity: sha512-yrLQ/yVUFXkzg7EDQsPieE/53+0RlaWTs+wBrvW36cyilJ2SaDWfl4Yj7MtLTXleV9uEKefbAGUPv2/iWSooRA==}
-
   check-error@2.1.1:
     resolution: {integrity: sha512-OAlb+T7V4Op9OwdkjmguYRqncdlx5JiofwOAUkmTF+jNdHwzTaTs4sRAGpzLF3oOz5xAyDGrPgeIDFQmDOTiJw==}
     engines: {node: '>= 16'}
@@ -5690,9 +5669,6 @@ packages:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
-  crypt@0.0.2:
-    resolution: {integrity: sha512-mCxBlsHFYh9C+HVpiEacem8FEBnMXgU9gy4zmNC+SXAZNB/1idgp/aulFJ4FgCi7GPEVbfyng092GqL2k2rmow==}
-
   crypto-browserify@3.12.1:
     resolution: {integrity: sha512-r4ESw/IlusD17lgQi1O20Fa3qNnsckR126TdUuBgAu7GBYSIPvdNyONd3Zrxh0xCwA4+6w/TDArBPsMvhur+KQ==}
     engines: {node: '>= 0.10'}
@@ -5805,10 +5781,6 @@ packages:
 
   dataloader@2.2.3:
     resolution: {integrity: sha512-y2krtASINtPFS1rSDjacrFgn1dcUuoREVabwlOGOe4SdxenREqwjwjElAdwvbGM7kgZz9a3KVicWR7vcz8rnzA==}
-
-  date-fns@2.30.0:
-    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
-    engines: {node: '>=0.11'}
 
   date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
@@ -8061,9 +8033,6 @@ packages:
   md5.js@1.3.5:
     resolution: {integrity: sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==}
 
-  md5@2.3.0:
-    resolution: {integrity: sha512-T1GITYmFaKuO91vxyoQMFETst+O71VUPEU3ze5GNzDm0OWdP8v1ziTaAEPUr/3kLsY3Sftgz242A1SetQiDL7g==}
-
   mdn-data@2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}
 
@@ -8811,10 +8780,6 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-
-  pluralize@8.0.0:
-    resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
-    engines: {node: '>=4'}
 
   pngjs@6.0.0:
     resolution: {integrity: sha512-TRzzuFRRmEoSW/p1KVAmiOgPco2Irlah+bGFCeNfJXxxYGwSw7YwAOAcd7X28K/m5bjBWKsC29KyoMfHbypayg==}
@@ -10624,10 +10589,6 @@ packages:
   uuid@3.3.2:
     resolution: {integrity: sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==}
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
-    hasBin: true
-
-  uuid@8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
   uuid@9.0.1:
@@ -13873,28 +13834,6 @@ snapshots:
     dependencies:
       '@miniflare/shared': 2.14.4
 
-  '@mswjs/data@0.16.2(patch_hash=7qx6k6m4svcveq43bnmahfrnem)(@types/node@22.10.2)(typescript@5.7.2)':
-    dependencies:
-      '@types/lodash': 4.17.13
-      '@types/md5': 2.3.5
-      '@types/pluralize': 0.0.29
-      '@types/uuid': 8.3.4
-      date-fns: 2.30.0
-      debug: 4.4.0(supports-color@5.5.0)
-      graphql: 16.10.0
-      lodash: 4.17.21
-      md5: 2.3.0
-      outvariant: 1.4.3
-      pluralize: 8.0.0
-      strict-event-emitter: 0.5.1
-      uuid: 8.3.2
-    optionalDependencies:
-      msw: 2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2)
-    transitivePeerDependencies:
-      - '@types/node'
-      - supports-color
-      - typescript
-
   '@mswjs/interceptors@0.37.3':
     dependencies:
       '@open-draft/deferred-promise': 2.2.0
@@ -14026,14 +13965,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@raegen/vite-plugin-vitest-cache@0.3.3(@types/node@22.10.2)(@vitest/runner@2.1.8)(terser@5.37.0)(vitest@2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0))':
+  '@raegen/vite-plugin-vitest-cache@0.3.3(@types/node@22.10.2)(@vitest/runner@2.1.8)(terser@5.37.0)(vitest@2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0))':
     dependencies:
       '@ungap/structured-clone': 1.2.1
       '@vitest/runner': 2.1.8
       chalk: 5.4.1
       fast-glob: 3.3.2
       vite: 5.4.11(@types/node@22.10.2)(terser@5.37.0)
-      vitest: 2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0)
+      vitest: 2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -15971,8 +15910,6 @@ snapshots:
 
   '@types/lodash@4.17.13': {}
 
-  '@types/md5@2.3.5': {}
-
   '@types/mdx@2.0.13': {}
 
   '@types/mime-types@2.1.4': {}
@@ -16001,8 +15938,6 @@ snapshots:
 
   '@types/parse-json@4.0.2': {}
 
-  '@types/pluralize@0.0.29': {}
-
   '@types/prop-types@15.7.14': {}
 
   '@types/react-dom@18.3.5(@types/react@18.3.18)':
@@ -16028,8 +15963,6 @@ snapshots:
   '@types/statuses@2.0.5': {}
 
   '@types/tough-cookie@4.0.5': {}
-
-  '@types/uuid@8.3.4': {}
 
   '@types/uuid@9.0.8': {}
 
@@ -16424,13 +16357,13 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.8(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))':
+  '@vitest/mocker@2.1.8(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))':
     dependencies:
       '@vitest/spy': 2.1.8
       estree-walker: 3.0.3
       magic-string: 0.30.17
     optionalDependencies:
-      msw: 2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2)
+      msw: 2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2)
       vite: 5.4.11(@types/node@22.10.2)(terser@5.37.0)
 
   '@vitest/pretty-format@2.0.5':
@@ -17289,8 +17222,6 @@ snapshots:
 
   chardet@0.7.0: {}
 
-  charenc@0.0.2: {}
-
   check-error@2.1.1: {}
 
   chokidar@3.6.0:
@@ -17593,8 +17524,6 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  crypt@0.0.2: {}
-
   crypto-browserify@3.12.1:
     dependencies:
       browserify-cipher: 1.0.1
@@ -17757,10 +17686,6 @@ snapshots:
       is-data-view: 1.0.2
 
   dataloader@2.2.3: {}
-
-  date-fns@2.30.0:
-    dependencies:
-      '@babel/runtime': 7.26.0
 
   date-fns@4.1.0: {}
 
@@ -20185,12 +20110,6 @@ snapshots:
       inherits: 2.0.4
       safe-buffer: 5.2.1
 
-  md5@2.3.0:
-    dependencies:
-      charenc: 0.0.2
-      crypt: 0.0.2
-      is-buffer: 1.1.6
-
   mdn-data@2.0.14: {}
 
   mdn-data@2.0.28: {}
@@ -20373,12 +20292,12 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw-storybook-addon@2.0.4(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2)):
+  msw-storybook-addon@2.0.4(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2)):
     dependencies:
       is-node-process: 1.2.0
-      msw: 2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2)
+      msw: 2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2)
 
-  msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2):
+  msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2):
     dependencies:
       '@bundled-es-modules/cookie': 2.0.1
       '@bundled-es-modules/statuses': 1.0.1
@@ -21005,8 +20924,6 @@ snapshots:
       rollup: 4.29.1
     optionalDependencies:
       typescript: 5.7.2
-
-  pluralize@8.0.0: {}
 
   pngjs@6.0.0: {}
 
@@ -23173,8 +23090,6 @@ snapshots:
 
   uuid@3.3.2: {}
 
-  uuid@8.3.2: {}
-
   uuid@9.0.1: {}
 
   v8-compile-cache-lib@3.0.1: {}
@@ -23273,10 +23188,10 @@ snapshots:
       tsx: 4.19.2
       yaml: 2.6.1
 
-  vitest@2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0):
+  vitest@2.1.8(@edge-runtime/vm@3.2.0)(@types/node@22.10.2)(happy-dom@15.11.7)(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(terser@5.37.0):
     dependencies:
       '@vitest/expect': 2.1.8
-      '@vitest/mocker': 2.1.8(msw@2.7.0(patch_hash=pucj7an5jhnl57iwqchvbph5ke)(@types/node@22.10.2)(typescript@5.7.2))(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))
+      '@vitest/mocker': 2.1.8(msw@2.7.0(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.10.2)(typescript@5.7.2))(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))
       '@vitest/pretty-format': 2.1.8
       '@vitest/runner': 2.1.8
       '@vitest/snapshot': 2.1.8
