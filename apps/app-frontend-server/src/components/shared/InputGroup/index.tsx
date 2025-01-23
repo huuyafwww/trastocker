@@ -5,13 +5,11 @@ const InputGroup: React.FC<{
 }> & {
   Label: typeof InputGroupLabel;
   Input: typeof InputGroupInput;
-} = ({ children }) => {
-  return (
-    <div className={inputGroupWrapper}>
-      {children}
-    </div>
-  );
-};
+} = ({ children }) => (
+  <div className={inputGroupWrapper}>
+    {children}
+  </div>
+);
 
 const InputGroupLabel: React.FC<{
   children: React.ReactNode;

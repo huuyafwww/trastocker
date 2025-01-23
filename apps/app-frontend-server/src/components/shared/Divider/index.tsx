@@ -10,17 +10,15 @@ const Divider: React.FC<{
   children,
   className,
   $horizontal = false,
-}) => {
-  return (
-    <div className={twMerge([
-      wrapper,
-      $horizontal && horizontal,
-      className,
-    ].filter(Boolean))}
-    >
-      {children}
-    </div>
-  );
-};
+}) => (
+  <div className={twMerge([
+    wrapper,
+    $horizontal && horizontal,
+    className,
+  ].filter(Boolean))}
+  >
+    {children}
+  </div>
+);
 
 export default Divider;
