@@ -9,7 +9,7 @@ const useUrql = (): {
 } => {
   return useMemo(() => {
     const client = createClient({
-      url: 'graphql',
+      url: '/graphql',
       exchanges: [cacheExchange, fetchExchange],
       suspense: true,
     });

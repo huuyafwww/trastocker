@@ -27,7 +27,7 @@ const WorkspaceCreateForm: React.FC = () => {
             <InputControl
               id={inputNameId}
               className={input}
-              name="email"
+              name="name"
               type="text"
               variant={{
                 mode: 'with',
