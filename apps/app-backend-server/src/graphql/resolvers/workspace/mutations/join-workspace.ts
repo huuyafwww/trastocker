@@ -4,10 +4,10 @@ import { Workspace } from '@domain/entities/workspace.entity';
 import { AssignWorkspaceByInviteCodeService } from '@domain/services/assign-workspace-by-invite-code.service';
 import { builder } from '@graphql/builder';
 
-builder.mutationField('assignWorkspace', t => t.field({
+builder.mutationField('joinWorkspace', t => t.field({
   type: Workspace,
   nullable: true,
-  description: 'Assign workspace',
+  description: 'Join workspace',
   args: {
     inviteCode: t.arg.string({
       description: 'Workspace Invite Code',

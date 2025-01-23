@@ -1,4 +1,4 @@
-import WorkspaceCreateForm from './';
+import WorkspaceCreateForm from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
