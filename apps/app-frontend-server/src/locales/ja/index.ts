@@ -8,4 +8,5 @@ export default {
   'Create': '作成',
   'Join': '参加',
   'Invite Code': '招待コード',
+  'OR': 'もしくは',
 };

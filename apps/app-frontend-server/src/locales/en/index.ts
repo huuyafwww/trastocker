@@ -8,4 +8,5 @@ export default {
   'Create': 'Create',
   'Join': 'Join',
   'Invite Code': 'Invite code',
+  'OR': 'OR',
 };
