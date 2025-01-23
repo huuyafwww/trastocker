@@ -1,15 +1,15 @@
 type Mutation {
-  """Assign workspace"""
-  assignWorkspace(
-    """Workspace Invite Code"""
-    inviteCode: String!
-  ): Workspace
-
   """create Workspace"""
   createWorkspace(
     """Workspace name"""
     name: String!
   ): Workspace!
+
+  """Join workspace"""
+  joinWorkspace(
+    """Workspace Invite Code"""
+    inviteCode: String!
+  ): Workspace
 
   """login user"""
   loginUser(

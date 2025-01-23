@@ -1,5 +1,5 @@
 import { schema } from '@trastocker/database-definition';
-import { and, eq, isNull, isNotNull } from 'drizzle-orm';
+import { and, eq, isNull, isNotNull, inArray } from 'drizzle-orm';
 import { graphql, HttpResponse } from 'msw';
 
 import type { CreateHandler } from '../';
@@ -18,14 +18,38 @@ export const loginUser: CreateHandler = ({ promiseDatabase }) => {
         isNotNull(schema.user.verifiedAt),
       ),
     });
-    if (!user || !user.id) {
+
+    if (!user) {
       return HttpResponse.json({
         data: { loginUser: null },
       });
     }
+
+    const workspaceUsers = await (await promiseDatabase).query.workspaceUser.findMany({
+      where: and(
+        eq(schema.workspaceUser.userId, user.id),
+        isNull(schema.workspace.deletedAt),
+      ),
+    });
+
+    const workspaces = await (await promiseDatabase).query.workspace.findMany({
+      where: and(
+        inArray(schema.workspace.id, workspaceUsers.map(workspaceUser => workspaceUser.workspaceId)),
+        isNull(schema.workspace.deletedAt),
+      ),
+    });
+
     return HttpResponse.json({
       data: {
-        loginUser: user,
+        loginUser: {
+          ...user,
+          isDeleted: user.deletedAt !== null,
+          // @ts-expect-error Because of circular reference
+          workspaces: workspaces.map(workspace => ({
+            ...workspace,
+            isDeleted: workspace.deletedAt !== null,
+          })),
+        },
       },
     });
   });

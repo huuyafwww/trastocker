@@ -18,4 +18,8 @@ const logoWrapper = twMerge(
   'mb-4',
 );
 
-export { wrapper, inner, logoWrapper };
+const divider = twMerge(
+  'mt-8',
+);
+
+export { wrapper, inner, logoWrapper, divider };
