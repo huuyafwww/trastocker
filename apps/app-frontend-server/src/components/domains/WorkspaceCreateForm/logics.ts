@@ -37,6 +37,8 @@ export const useWorkspaceCreateForm = () => {
       toast.error(t('Login failed'));
       return;
     }
+
+    // TODO: redirect to logined page
   }, [createWorkspace, t]);
 
   return {
