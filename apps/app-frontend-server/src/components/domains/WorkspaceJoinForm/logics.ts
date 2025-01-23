@@ -34,7 +34,7 @@ export const useWorkspaceJoinForm = () => {
     const result = await joinWorkspace(data);
 
     if (result.error) {
-      toast.error(t('Login failed'));
+      toast.error(t('Failed to join workspace'));
       return;
     }
 

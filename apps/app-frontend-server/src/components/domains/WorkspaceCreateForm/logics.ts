@@ -34,7 +34,7 @@ export const useWorkspaceCreateForm = () => {
     const result = await createWorkspace(data);
 
     if (result.error) {
-      toast.error(t('Login failed'));
+      toast.error(t('Failed to create workspace'));
       return;
     }
 

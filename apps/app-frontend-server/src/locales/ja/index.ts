@@ -9,4 +9,6 @@ export default {
   'Join': '参加',
   'Invite Code': '招待コード',
   'OR': 'もしくは',
+  'Failed to create workspace': 'ワークスペースの作成に失敗しました',
+  'Failed to join workspace': 'ワークスペースの参加に失敗しました',
 };

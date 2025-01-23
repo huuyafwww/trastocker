@@ -9,4 +9,6 @@ export default {
   'Join': 'Join',
   'Invite Code': 'Invite code',
   'OR': 'OR',
+  'Failed to create workspace': 'Failed to create workspace',
+  'Failed to join workspace': 'Failed to join workspace',
 };

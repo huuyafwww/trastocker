@@ -39,11 +39,6 @@ export const loginUser: CreateHandler = ({ promiseDatabase }) => {
       ),
     });
 
-    if (workspaces.length === 0) {
-      return HttpResponse.json({
-        data: { loginUser: null },
-      });
-    }
     return HttpResponse.json({
       data: {
         loginUser: {
