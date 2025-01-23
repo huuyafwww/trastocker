@@ -15,7 +15,7 @@ const inner = twMerge(
 
 const logoWrapper = twMerge(
   'mt-4',
-  'mb-8',
+  'mb-4',
 );
 
 export { wrapper, inner, logoWrapper };
