@@ -22,12 +22,6 @@ const iconButton = twMerge(
   'min-h-10',
   'h-10',
 );
-
-const logoWrapper = twMerge(
-  'mt-4',
-  'mb-8',
-);
-
 const label = twMerge(
   'label',
 );
@@ -41,4 +35,4 @@ const loginButtonWrapper = twMerge(
   'mt-10',
 );
 
-export { inputGroupWrapper, inputWrapper, input, iconButton, logoWrapper, label, labelText, loginButtonWrapper };
+export { inputGroupWrapper, inputWrapper, input, iconButton, label, labelText, loginButtonWrapper };

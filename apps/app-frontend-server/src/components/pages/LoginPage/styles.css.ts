@@ -13,4 +13,9 @@ const inner = twMerge(
   'card-body',
 );
 
-export { wrapper, inner };
+const logoWrapper = twMerge(
+  'mt-4',
+  'mb-8',
+);
+
+export { wrapper, inner, logoWrapper };

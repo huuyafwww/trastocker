@@ -3,7 +3,7 @@ import { useId } from 'react';
 import { FormProvider } from 'react-hook-form';
 import { useToggle } from 'react-use';
 
-import { inputGroupWrapper, inputWrapper, input, iconButton, logoWrapper, label, labelText, loginButtonWrapper } from './styles.css';
+import { inputGroupWrapper, inputWrapper, input, iconButton, label, labelText, loginButtonWrapper } from './styles.css';
 
 import type React from 'react';
 
@@ -13,12 +13,11 @@ import ErrorMessage from '@components/shared/ErrorMessage';
 import IconEye from '@components/shared/IconEye';
 import IconEyeOff from '@components/shared/IconEyeOff';
 import InputControl from '@components/shared/InputControl';
-import LogoTrastocker from '@components/shared/LogoTrastocker';
 import { useTranslation } from '@hooks/useTranslation';
 
 const LoginForm: React.FC = () => {
-  const emailInputId = useId();
-  const passwordInputId = useId();
+  const inputEmailId = useId();
+  const inputPasswordId = useId();
   const { t } = useTranslation();
   const { methods, handleSubmit } = useLoginForm();
   const [on, toggle] = useToggle(true);
@@ -26,18 +25,15 @@ const LoginForm: React.FC = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit}>
-        <div className={logoWrapper}>
-          <LogoTrastocker />
-        </div>
         <div className={inputGroupWrapper}>
-          <label className={label} htmlFor={emailInputId}>
+          <label className={label} htmlFor={inputEmailId}>
             <span className={labelText}>
               {t('Email')}
             </span>
           </label>
           <div className={inputWrapper}>
             <InputControl
-              id={emailInputId}
+              id={inputEmailId}
               className={input}
               name="email"
               type="email"
@@ -56,14 +52,14 @@ const LoginForm: React.FC = () => {
           )}
         </div>
         <div className={inputGroupWrapper}>
-          <label className={label} htmlFor={passwordInputId}>
+          <label className={label} htmlFor={inputPasswordId}>
             <span className={labelText}>
               {t('Password')}
             </span>
           </label>
           <div className={inputWrapper}>
             <InputControl
-              id={passwordInputId}
+              id={inputPasswordId}
               className={input}
               name="password"
               type={on ? 'text' : 'password'}
