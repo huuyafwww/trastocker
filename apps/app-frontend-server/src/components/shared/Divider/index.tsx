@@ -11,11 +11,13 @@ const Divider: React.FC<{
   className,
   $horizontal = false,
 }) => (
-  <div className={twMerge([
-    wrapper,
-    $horizontal && horizontal,
-    className,
-  ].filter(Boolean))}
+  <div className={
+    twMerge([
+      wrapper,
+      $horizontal && horizontal,
+      className,
+    ].filter(Boolean))
+  }
   >
     {children}
   </div>
