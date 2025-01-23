@@ -3,16 +3,18 @@ import { useId } from 'react';
 import { FormProvider } from 'react-hook-form';
 import { useToggle } from 'react-use';
 
-import { inputGroupWrapper, inputWrapper, input, iconButton, label, labelText, loginButtonWrapper } from './styles.css';
+import { input, iconButton } from './styles.css';
 
 import type React from 'react';
 
 import { useLoginForm } from '@components/domains/LoginForm/logics';
 import Button from '@components/shared/Button';
 import ErrorMessage from '@components/shared/ErrorMessage';
+import FormGroup from '@components/shared/FormGroup';
 import IconEye from '@components/shared/IconEye';
 import IconEyeOff from '@components/shared/IconEyeOff';
 import InputControl from '@components/shared/InputControl';
+import InputGroup from '@components/shared/InputGroup';
 import { useTranslation } from '@hooks/useTranslation';
 
 const LoginForm: React.FC = () => {
@@ -25,13 +27,11 @@ const LoginForm: React.FC = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit}>
-        <div className={inputGroupWrapper}>
-          <label className={label} htmlFor={inputEmailId}>
-            <span className={labelText}>
-              {t('Email')}
-            </span>
-          </label>
-          <div className={inputWrapper}>
+        <InputGroup>
+          <InputGroup.Label inputId={inputEmailId}>
+            {t('Email')}
+          </InputGroup.Label>
+          <InputGroup.Input>
             <InputControl
               id={inputEmailId}
               className={input}
@@ -44,20 +44,18 @@ const LoginForm: React.FC = () => {
               }}
               rules={{ required: true }}
             />
-          </div>
+          </InputGroup.Input>
           {methods.formState.errors['email']?.message && (
             <div className="mt-2">
               <ErrorMessage message={methods.formState.errors['email'].message} />
             </div>
           )}
-        </div>
-        <div className={inputGroupWrapper}>
-          <label className={label} htmlFor={inputPasswordId}>
-            <span className={labelText}>
-              {t('Password')}
-            </span>
-          </label>
-          <div className={inputWrapper}>
+        </InputGroup>
+        <InputGroup>
+          <InputGroup.Label inputId={inputPasswordId}>
+            {t('Password')}
+          </InputGroup.Label>
+          <InputGroup.Input>
             <InputControl
               id={inputPasswordId}
               className={input}
@@ -80,18 +78,16 @@ const LoginForm: React.FC = () => {
             >
               {on ? <IconEye /> : <IconEyeOff />}
             </Button>
-          </div>
+          </InputGroup.Input>
           {methods.formState.errors['password']?.message && (
             <div className="mt-2">
               <ErrorMessage message={methods.formState.errors['password'].message} />
             </div>
           )}
-        </div>
-        <div className={loginButtonWrapper}>
-          <Button type="submit">
-            {t('Login')}
-          </Button>
-        </div>
+        </InputGroup>
+        <FormGroup.Button>
+          {t('Login')}
+        </FormGroup.Button>
       </form>
     </FormProvider>
   );
