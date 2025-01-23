@@ -35,5 +35,4 @@ const InputGroupInput: React.FC<{
 InputGroup.Label = InputGroupLabel;
 InputGroup.Input = InputGroupInput;
 
-console.log('InputGroup', InputGroup);
 export default InputGroup;
