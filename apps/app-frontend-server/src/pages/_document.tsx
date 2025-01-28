@@ -6,7 +6,7 @@ const Document: React.FC = () => {
   return (
     <Html lang="ja" className="light">
       <Head>
-        <link rel="icon" href="next.svg" type="image/svg+xml" sizes="any" />
+        <link rel="icon" href="/next.svg" type="image/svg+xml" sizes="any" />
       </Head>
       <body>
         <Main />

@@ -1,4 +1,4 @@
 import './queries/workspace';
-import './mutations/create-workspace';
-import './mutations/assign-workspace';
+import './mutations/createWorkspace';
+import './mutations/joinWorkspace';
 import './fields';

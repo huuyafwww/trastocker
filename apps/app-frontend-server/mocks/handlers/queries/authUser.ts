@@ -7,7 +7,7 @@ import type { IQuery } from '@trastocker/graphql-definition';
 
 export const authUser: CreateHandler = ({ promiseDatabase }) => {
   return graphql.query<
-    { user: IQuery['authUser'] },
+    { authUser: IQuery['authUser'] },
     {}
   >('authUser', async () => {
     const user = await (await promiseDatabase).query.user.findFirst({
@@ -19,7 +19,7 @@ export const authUser: CreateHandler = ({ promiseDatabase }) => {
 
     if (!user) {
       return HttpResponse.json({
-        data: { user: null },
+        data: { authUser: null },
       });
     }
 
@@ -39,19 +39,25 @@ export const authUser: CreateHandler = ({ promiseDatabase }) => {
 
     if (workspaces.length === 0) {
       return HttpResponse.json({
-        data: { user: null },
+        data: {
+          authUser: {
+            ...user,
+            isDeleted: user.deletedAt !== null,
+            workspaces: [],
+          },
+        },
       });
     }
 
     return HttpResponse.json({
       data: {
-        user: {
+        authUser: {
           ...user,
           isDeleted: user.deletedAt !== null,
-          // @ts-expect-error Because of circular reference
           workspaces: workspaces.map(workspace => ({
             ...workspace,
             isDeleted: workspace.deletedAt !== null,
+            users: [],
           })),
         },
       },

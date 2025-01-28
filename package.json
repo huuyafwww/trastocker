@@ -37,7 +37,6 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@mswjs/data": "patches/@mswjs__data.patch",
       "msw": "patches/msw.patch"
     }
   }

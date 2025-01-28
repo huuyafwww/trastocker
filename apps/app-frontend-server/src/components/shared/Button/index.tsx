@@ -36,14 +36,14 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   return (
     <Wrapper
       {...buttonProps}
-      className={twMerge(
+      className={twMerge([
         classNames.wrapper,
         variants.color[variant.color],
         variants.shape[variant.shape],
         variants.size[variant.size],
         variants.border[variant.border],
         props.className,
-      )}
+      ])}
     >
       {children}
     </Wrapper>

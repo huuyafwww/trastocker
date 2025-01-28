@@ -1,13 +1,13 @@
-import LoginForm from '.';
+import WorkspaceCreateForm from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Domain/LoginForm',
-  component: LoginForm,
+  title: 'Domain/WorkspaceCreateForm',
+  component: WorkspaceCreateForm,
   args: {},
   argTypes: {},
-} satisfies Meta<typeof LoginForm>;
+} satisfies Meta<typeof WorkspaceCreateForm>;
 
 type Story = StoryObj<typeof meta>;
 
