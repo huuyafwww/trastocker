@@ -79,7 +79,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
-    "drizzle-orm": "^0.38.3",
+    "drizzle-orm": "^0.39.0",
     "happy-dom": "^15.11.7",
     "http-server": "^14.1.1",
     "msw": "^2.7.0",
