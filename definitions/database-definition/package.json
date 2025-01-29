@@ -43,7 +43,7 @@
     "@huuyafwww/tsconfig-common": "^1.1.1",
     "better-sqlite3": "^11.8.1",
     "dotenv-cli": "^7.4.4",
-    "drizzle-kit": "^0.28.1",
+    "drizzle-kit": "^0.30.3",
     "pkgroll": "^2.6.1",
     "typescript": "^5.7.3"
   }
