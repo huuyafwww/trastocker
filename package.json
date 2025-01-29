@@ -20,15 +20,15 @@
   },
   "devDependencies": {
     "@praha/eslint-config-definer": "^2.0.1",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.12.0",
     "eslint": "9.18.0",
     "husky": "^9.1.7",
     "jiti": "^2.4.2",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.4.3",
     "rimraf": "^6.0.1",
-    "sort-package-json": "^2.12.0",
-    "turbo": "^2.3.3",
-    "wrangler": "^3.97.0"
+    "sort-package-json": "^2.14.0",
+    "turbo": "^2.3.4",
+    "wrangler": "^3.106.0"
   },
   "packageManager": "pnpm@9.14.4",
   "engines": {
