@@ -41,10 +41,10 @@
     "@huuyafwww/eslint-config-common": "^1.1.1",
     "@huuyafwww/eslint-config-node": "^1.1.1",
     "@huuyafwww/tsconfig-common": "^1.1.1",
-    "better-sqlite3": "^11.7.0",
-    "dotenv-cli": "^7.4.4",
-    "drizzle-kit": "^0.28.1",
-    "pkgroll": "^2.5.1",
-    "typescript": "^5.7.2"
+    "better-sqlite3": "^11.8.1",
+    "dotenv-cli": "^8.0.0",
+    "drizzle-kit": "^0.30.3",
+    "pkgroll": "^2.6.1",
+    "typescript": "^5.7.3"
   }
 }
