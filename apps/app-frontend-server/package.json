@@ -84,7 +84,7 @@
     "msw-storybook-addon": "^2.0.4",
     "npm-run-all2": "^7.0.2",
     "postcss": "^8.5.1",
-    "puppeteer": "^23.11.1",
+    "puppeteer": "^24.1.1",
     "reg-keygen-git-hash-plugin": "^0.14.3",
     "reg-notify-github-plugin": "^0.14.4",
     "reg-publish-s3-plugin": "^0.14.4",
