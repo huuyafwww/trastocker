@@ -25,8 +25,7 @@
     "clean": "rimraf node_modules dist",
     "dev": "pkgroll --watch",
     "lint:code": "eslint . --cache",
-    "lint:type": "tsc --pretty --noEmit",
-    "sort:package": "sort-package-json"
+    "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
     "valibot": "1.0.0-beta.14"

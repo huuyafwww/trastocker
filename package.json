@@ -10,7 +10,7 @@
     "lint:code": "turbo lint:code",
     "lint:type": "turbo lint:type",
     "prepare": "husky",
-    "sort:package": "sort-package-json && turbo run sort:package",
+    "sort:package": "sort-package-json 'package.json' 'apps/*/package.json' 'definitions/*/package.json' 'middlewares/*/package.json'",
     "test": "turbo run test --filter=@trastocker/app-*"
   },
   "lint-staged": {

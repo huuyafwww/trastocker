@@ -14,10 +14,6 @@
     "clean": {
       "cache": false
     },
-    "sort:package": {
-      "dependsOn": [],
-      "inputs": ["package.json"]
-    },
     "lint:code": {
       "dependsOn": [],
       "inputs": ["**/*.ts", "**/*.tsx"]

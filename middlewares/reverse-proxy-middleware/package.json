@@ -26,8 +26,7 @@
     "clean": "rimraf node_modules dist",
     "dev": "sudo tsx watch src/server.ts",
     "lint:code": "eslint . --cache",
-    "lint:type": "tsc --pretty --noEmit",
-    "sort:package": "sort-package-json"
+    "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
     "@fastify/http-proxy": "^11.0.1",

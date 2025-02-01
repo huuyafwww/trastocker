@@ -12,8 +12,7 @@
     "build": "graphql-code-generator --config codegen.ts",
     "clean": "rimraf node_modules dist",
     "dev": "nodemon --watch ../../apps/app-backend-server/schema.graphql --exec 'pnpm run build'",
-    "lint:code": "eslint . --cache",
-    "sort:package": "sort-package-json"
+    "lint:code": "eslint . --cache"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.4",
