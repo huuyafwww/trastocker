@@ -7,6 +7,7 @@ on:
 
 jobs:
   test:
+    # MEMO: https://github.com/puppeteer/puppeteer/issues/7740
     runs-on: ubuntu-24.04
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -34,8 +35,8 @@ jobs:
         id: puppeteer-cache
         with:
           path: /home/runner/.cache/puppeteer
-          key: ${{ runner.os }}-puppeteer-${{ steps.puppeteer-version.outputs.PUPPETEER_VERSION }}
-          restore-keys: ${{ runner.os }}-puppeteer-
+          key: ${{ runner.os }}-${{ runner.arch }}-puppeteer-${{ steps.puppeteer-version.outputs.PUPPETEER_VERSION }}
+          restore-keys: ${{ runner.os }}-${{ runner.arch }}-puppeteer-
 
       - name: Install Chrome
         if: steps.puppeteer-cache.outputs.cache-hit != 'true'
