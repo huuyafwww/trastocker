@@ -7,7 +7,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-24.04-arm
+    # MEMO: https://github.com/puppeteer/puppeteer/issues/7740
+    runs-on: ubuntu-24.04
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
