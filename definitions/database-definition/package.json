@@ -30,8 +30,7 @@
     "lint:type": "tsc --pretty --noEmit",
     "migrate:apply:local": "wrangler d1 migrations apply trastocker --local --persist-to ../../apps/app-backend-server/.wrangler/state",
     "migrate:apply:remote": "wrangler d1 migrations apply trastocker --remote",
-    "migrate:generate": "drizzle-kit generate",
-    "sort:package": "sort-package-json"
+    "migrate:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

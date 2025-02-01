@@ -17,7 +17,6 @@
     "lint:type": "tsc --pretty --noEmit",
     "pages:build": "pnpm next-on-pages",
     "preview": "pnpm pages:build && wrangler pages dev",
-    "sort:package": "sort-package-json",
     "storybook:build": "storybook build --test",
     "storybook:screenshot": "storycap http://localhost:6007 --serverCmd 'http-server storybook-static --port 6007'",
     "test": "vitest run",

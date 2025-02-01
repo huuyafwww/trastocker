@@ -15,7 +15,6 @@
     "dev:server": "wrangler dev --env dev",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
-    "sort:package": "sort-package-json",
     "test": "vitest run",
     "test:watch": "vitest run --watch"
   },
