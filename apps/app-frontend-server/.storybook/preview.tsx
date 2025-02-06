@@ -59,6 +59,7 @@ const preview: Preview = {
     screenshot: {
       fullPage: false,
       captureBeyondViewport: false,
+      delay: 500,
       viewports: {
         desktop: {
           width: 1920,
