@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.7",
-    "@cloudflare/workers-types": "^4.20250124.3",
+    "@cloudflare/workers-types": "^4.20250204.0",
     "@huuyafwww/eslint-config-browser": "^1.1.1",
     "@huuyafwww/eslint-config-common": "^1.1.1",
     "@huuyafwww/eslint-config-next": "^1.1.1",

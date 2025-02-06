@@ -47,7 +47,7 @@
     "valibot": "1.0.0-beta.14"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250124.3",
+    "@cloudflare/workers-types": "^4.20250204.0",
     "@huuyafwww/eslint-config-common": "^1.1.1",
     "@huuyafwww/eslint-config-node": "^1.1.1",
     "@huuyafwww/tsconfig-common": "^1.1.1",
