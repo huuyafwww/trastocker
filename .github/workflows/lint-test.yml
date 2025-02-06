@@ -34,7 +34,7 @@ jobs:
             ${{ runner.os }}-eslint-cache-
 
       - name: Build packages
-        run: pnpm run build:definition
+        run: pnpm run build:libraries
 
       - name: Lint Code
         run: pnpm run lint:code
