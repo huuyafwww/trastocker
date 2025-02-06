@@ -3,7 +3,7 @@ import IconTrastocker from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Shared/IconTrastocker',
+  title: 'Shared/Icon/Trastocker',
   component: IconTrastocker,
   args: {
     alt: 'Trastocker',

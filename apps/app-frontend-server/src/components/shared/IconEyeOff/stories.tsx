@@ -3,7 +3,7 @@ import IconEyeOff from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Shared/Icon/IconEyeOff',
+  title: 'Shared/Icon/EyeOff',
   component: IconEyeOff,
   args: {},
   argTypes: {},

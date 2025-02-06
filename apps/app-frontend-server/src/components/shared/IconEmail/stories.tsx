@@ -3,7 +3,7 @@ import IconEmail from './';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Shared/Icon/IconEmail',
+  title: 'Shared/Icon/Email',
   component: IconEmail,
   args: {},
   argTypes: {},
