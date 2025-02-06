@@ -1,5 +1,5 @@
 {
-  "name": "@trastocker/reverse-proxy-middleware",
+  "name": "@trastocker/nodejs-utility-helper",
   "version": "0.1.0",
   "private": true,
   "description": "",
@@ -21,24 +21,17 @@
     "dist"
   ],
   "scripts": {
+    "build": "pkgroll --minify",
+    "build:watch": "pkgroll --watch",
     "clean": "rimraf node_modules dist",
-    "dev": "tsx watch src/server.ts",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit"
-  },
-  "dependencies": {
-    "@fastify/http-proxy": "^11.0.1",
-    "@trastocker/nodejs-utility-helper": "workspace:*",
-    "fastify": "^5.2.1",
-    "ms": "^2.1.3",
-    "open": "^10.1.0"
   },
   "devDependencies": {
     "@huuyafwww/eslint-config-common": "^1.1.1",
     "@huuyafwww/eslint-config-node": "^1.1.1",
     "@huuyafwww/tsconfig-common": "^1.1.1",
-    "@types/ms": "^0.7.34",
-    "tsx": "^4.19.2",
+    "pkgroll": "^2.6.1",
     "typescript": "^5.7.3"
   }
 }

@@ -20,4 +20,4 @@ jobs:
         uses: ./.github/actions/setup/pnpm
 
       - name: Build packages
-        run: pnpm run build:definition
+        run: pnpm run build:libraries

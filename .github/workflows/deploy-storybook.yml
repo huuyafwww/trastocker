@@ -19,7 +19,7 @@ jobs:
         uses: ./.github/actions/setup/pnpm
 
       - name: Build packages
-        run: pnpm run build:definition
+        run: pnpm run build:libraries
 
       - name: Build Storybook
         run: pnpm run generate:mock-database

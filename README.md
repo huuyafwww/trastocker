@@ -12,5 +12,5 @@
 
 ```bash
 pnpm install
-pnpm run build:definition
+pnpm run build:libraries
 ```
