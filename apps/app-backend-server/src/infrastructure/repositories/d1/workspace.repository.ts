@@ -8,8 +8,7 @@ import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
 import { WorkspaceInviteCode } from '@domain/value-objects/workspace/invite-code.value-object';
 import { WorkspaceName } from '@domain/value-objects/workspace/name.value-object';
-
-import { Repository } from './repository';
+import { Repository } from '@infrastructure/repositories/repository';
 
 import type { WorkspaceSelectColumns } from '@trastocker/database-definition';
 import type { Database } from '@trastocker/database-definition';

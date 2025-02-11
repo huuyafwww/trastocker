@@ -10,6 +10,8 @@ declare namespace NodeJS {
     JWT_ACCESS_TOKEN_EXPIRES_IN: string;
     JWT_REFRESH_TOKEN_SECRET: string;
     JWT_REFRESH_TOKEN_EXPIRES_IN: string;
+    RESEND_API_KEY: string;
+    NOREPLY_EMAIL: string extends SystemEmail ? string : never;
     DATABASE_URL?: string;
     CI?: string;
   }

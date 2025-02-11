@@ -7,9 +7,9 @@ import { User } from '@domain/entities/user.entity';
 import { UserRepository } from '@domain/repositories/user.repository';
 import { UserEmail } from '@domain/value-objects/user/email.value-object';
 import { UserId } from '@domain/value-objects/user/id.value-object';
+import { UserName } from '@domain/value-objects/user/name.value-object';
 import { UserPassword } from '@domain/value-objects/user/password.value-object';
-
-import { Repository } from './repository';
+import { Repository } from '@infrastructure/repositories/repository';
 
 import type { UserSelectColumns } from '@trastocker/database-definition';
 import type { Database } from '@trastocker/database-definition';
@@ -17,7 +17,7 @@ import type { Database } from '@trastocker/database-definition';
 const convert = (user: UserSelectColumns): User => {
   return new User({
     id: UserId.fromString(user.id),
-    name: user.name,
+    name: UserName.fromString(user.name),
     email: UserEmail.fromString(user.email),
     password: UserPassword.fromString(user.password),
     registeredAt: user.registeredAt,
@@ -39,7 +39,7 @@ export class D1UserRepository extends Repository<User, UserId> implements UserRe
   async save(user: User): Promise<User> {
     if (!!(await this.findById(user.id))) {
       const rows = await this.database.update(schema.user).set({
-        name: user.name,
+        name: user.name.toString(),
         email: user.email.toString(),
         password: user.password.toString(),
         registeredAt: user.registeredAt,
