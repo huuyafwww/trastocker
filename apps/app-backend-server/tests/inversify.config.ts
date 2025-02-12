@@ -3,15 +3,18 @@ import { connectDatabase } from '@trastocker/database-definition';
 import { Container } from 'inversify';
 
 import { GetAuthUserUseCase } from '@application/use-cases/get-auth-user.use-case.mock';
+import { EmailNotification } from '@domain/notifications/email.notification';
 import { UserTokenRepository } from '@domain/repositories/user-token.repository';
 import { UserRepository } from '@domain/repositories/user.repository';
 import { WorkspaceUserRepository } from '@domain/repositories/workspace-user.repository';
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { AssignWorkspaceByIdService } from '@domain/services/assign-workspace-by-id.service.mock';
 import { AssignWorkspaceByInviteCodeService } from '@domain/services/assign-workspace-by-invite-code.service.mock';
+import { CreateUserService } from '@domain/services/create-user.service.mock';
 import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service.mock';
 import { GetUserJoinedWorkspacesService } from '@domain/services/get-user-joined-workspaces.service.mock';
 import { GetWorkspaceJoinedUsersService } from '@domain/services/get-workspace-joined-users.service.mock';
+import { ResendEmailNotification } from '@infrastructure/notifications/resend/email.notification.mock';
 import { D1UserTokenRepository } from '@infrastructure/repositories/d1/user-token.repository.mock';
 import { D1UserRepository } from '@infrastructure/repositories/d1/user.repository.mock';
 import { D1WorkspaceUserRepository } from '@infrastructure/repositories/d1/workspace-user.repository.mock';
@@ -29,10 +32,12 @@ const createContainer: (props?: {
   container.bind<AssignWorkspaceByIdService>(AssignWorkspaceByIdService).toSelf();
   container.bind<GetUserJoinedWorkspacesService>(GetUserJoinedWorkspacesService).toSelf();
   container.bind<GetWorkspaceJoinedUsersService>(GetWorkspaceJoinedUsersService).toSelf();
+  container.bind<CreateUserService>(CreateUserService).toSelf();
   container.bind<UserRepository>(UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(UserTokenRepository).to(D1UserTokenRepository);
   container.bind<WorkspaceRepository>(WorkspaceRepository).to(D1WorkspaceRepository);
   container.bind<WorkspaceUserRepository>(WorkspaceUserRepository).to(D1WorkspaceUserRepository);
+  container.bind<EmailNotification>(EmailNotification).to(ResendEmailNotification);
   if (props?.database) {
     container.bind('D1Database').toConstantValue(connectDatabase(props.database));
   }
