@@ -30,14 +30,12 @@ export class CreateUserService implements Service<CreateUserServiceProps, Create
   }
 
   async execute(props: CreateUserServiceProps): Promise<CreateUserServiceOutput> {
-    // TODO: exists user validation
-
-    const user = User.create({
+    const user = await this.userRepository.save(User.create({
       name: UserName.fromString(props.name),
       email: UserEmail.fromString(props.email),
       password: UserPassword.fromRawString(props.password),
       verifiedAt: null,
-    });
+    }));
 
     const result = await this.emailNotification.dispatch(TextEmail.create({
       from: EmailFrom.fromString(systemEmail.register),
@@ -49,6 +47,6 @@ export class CreateUserService implements Service<CreateUserServiceProps, Create
       throw result.error;
     }
 
-    return await this.userRepository.save(user);
+    return user;
   }
 }

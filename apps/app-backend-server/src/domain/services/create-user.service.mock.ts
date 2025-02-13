@@ -8,9 +8,6 @@ export type CreateUserServiceOutput = User;
 
 @injectable()
 export class CreateUserService implements Service<{}, CreateUserServiceOutput> {
-  constructor() {
-  }
-
   async execute(): Promise<CreateUserServiceOutput> {
     return new Promise(resolve => resolve(mockedUser));
   }

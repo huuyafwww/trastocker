@@ -3,6 +3,7 @@ import { connectDatabase } from '@trastocker/database-definition';
 import { Container } from 'inversify';
 import { Resend } from 'resend';
 
+import { CreateUserUseCase } from '@application/use-cases/create-user.use-case';
 import { GetAuthUserUseCase } from '@application/use-cases/get-auth-user.use-case';
 import { UserLoginUseCase } from '@application/use-cases/user-login.use-case';
 import { EmailNotification } from '@domain/notifications/email.notification';
@@ -12,6 +13,7 @@ import { WorkspaceUserRepository } from '@domain/repositories/workspace-user.rep
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { AssignWorkspaceByIdService } from '@domain/services/assign-workspace-by-id.service';
 import { AssignWorkspaceByInviteCodeService } from '@domain/services/assign-workspace-by-invite-code.service';
+import { CanCreateUserService } from '@domain/services/can-create-user.service';
 import { CreateUserService } from '@domain/services/create-user.service';
 import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service';
 import { GetUserJoinedWorkspacesService } from '@domain/services/get-user-joined-workspaces.service';
@@ -30,11 +32,13 @@ const createContainer: (props: {
   const container = new Container();
   container.bind<UserLoginUseCase>(UserLoginUseCase).toSelf();
   container.bind<GetAuthUserUseCase>(GetAuthUserUseCase).toSelf();
-  container.bind<AssignWorkspaceByInviteCodeService>(AssignWorkspaceByInviteCodeService).toSelf();
+  container.bind<CreateUserUseCase>(CreateUserUseCase).toSelf();
   container.bind<CreateWorkspaceByNameService>(CreateWorkspaceByNameService).toSelf();
+  container.bind<AssignWorkspaceByInviteCodeService>(AssignWorkspaceByInviteCodeService).toSelf();
   container.bind<AssignWorkspaceByIdService>(AssignWorkspaceByIdService).toSelf();
-  container.bind<GetUserJoinedWorkspacesService>(GetUserJoinedWorkspacesService).toSelf();
+  container.bind<CanCreateUserService>(CanCreateUserService).toSelf();
   container.bind<CreateUserService>(CreateUserService).toSelf();
+  container.bind<GetUserJoinedWorkspacesService>(GetUserJoinedWorkspacesService).toSelf();
   container.bind<GetWorkspaceJoinedUsersService>(GetWorkspaceJoinedUsersService).toSelf();
   container.bind<UserRepository>(UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(UserTokenRepository).to(D1UserTokenRepository);
