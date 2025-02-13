@@ -1,0 +1,18 @@
+import { v4 as uuidv4 } from 'uuid';
+
+import type { Resend } from 'resend';
+
+export class ResendClient implements Partial<Resend> {
+  constructor() {
+    Object.assign(this, {
+      emails: {
+        send: async () => (
+          new Promise(resolve => resolve({
+            data: { id: uuidv4() },
+            error: null,
+          }))
+        ),
+      },
+    });
+  }
+}

@@ -22,6 +22,8 @@ import { D1UserRepository } from '@infrastructure/repositories/d1/user.repositor
 import { D1WorkspaceUserRepository } from '@infrastructure/repositories/d1/workspace-user.repository.mock';
 import { D1WorkspaceRepository } from '@infrastructure/repositories/d1/workspace.repository.mock';
 
+import { ResendClient } from './clients/resend';
+
 import type { AnyD1Database } from 'drizzle-orm/d1';
 
 const createContainer: (props?: {
@@ -45,6 +47,7 @@ const createContainer: (props?: {
   if (props?.database) {
     container.bind('D1Database').toConstantValue(connectDatabase(props.database));
   }
+  container.bind('Resend').toConstantValue(new ResendClient());
   return container;
 };
 
