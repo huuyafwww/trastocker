@@ -7,7 +7,8 @@ import { UserPassword } from '@domain/value-objects/user/password.value-object';
 export const mockedUserId = UserId.generate();
 export const mockedUserName = UserName.fromString('user');
 export const mockedUserEmail = UserEmail.fromString('user@user.com');
-export const mockedUserPassword = UserPassword.fromRawString('t2t2tN{b((t&');
+export const mockedUserPasswordRaw = 't2t2tN{b((t&';
+export const mockedUserPassword = UserPassword.fromRawString(mockedUserPasswordRaw);
 
 export const mockedUserData = {
   id: mockedUserId,

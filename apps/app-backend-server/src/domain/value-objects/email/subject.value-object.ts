@@ -16,7 +16,6 @@ export class EmailSubject extends ValueObject<string> {
   declare readonly __brand: 'EmailSubject';
   private static readonly schema = v.pipe(
     v.string(),
-    v.email(),
     v.check(value => value.length >= 5),
   );
 

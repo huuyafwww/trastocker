@@ -25,7 +25,7 @@ export type CreateUserServiceOutput = User;
 export class CreateUserService implements Service<CreateUserServiceProps, CreateUserServiceOutput> {
   constructor(
     @inject(UserRepository) private userRepository: UserRepository,
-    @inject('EmailNotification') private emailNotification: EmailNotification,
+    @inject(EmailNotification) private emailNotification: EmailNotification,
   ) {
   }
 
