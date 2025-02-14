@@ -14,8 +14,7 @@ export type CanCreateUserServiceOutput = boolean;
 export class CanCreateUserService implements Service<CanCreateUserServiceProps, CanCreateUserServiceOutput> {
   constructor(
     @inject(UserRepository) private userRepository: UserRepository,
-  ) {
-  }
+  ) {}
 
   async execute(props: CanCreateUserServiceProps): Promise<CanCreateUserServiceOutput> {
     const user = await this.userRepository.findByEmail(UserEmail.fromString(props.email));

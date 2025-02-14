@@ -18,8 +18,7 @@ export class CreateUserUseCase {
   constructor(
     @inject(CanCreateUserService) private canCreateUserService: CanCreateUserService,
     @inject(CreateUserService) private createUserService: CreateUserService,
-  ) {
-  }
+  ) {}
 
   async execute(props: CreateUserUseCaseProps): CreateUserUseCaseOutput {
     const canCreate = await this.canCreateUserService.execute({
