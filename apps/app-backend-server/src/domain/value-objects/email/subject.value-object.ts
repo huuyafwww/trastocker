@@ -2,7 +2,7 @@ import * as v from 'valibot';
 
 import { ValueObject } from '../core/value-object';
 
-import type { systemEmailSubject } from '@constants/system-email-subject';
+import type { SYSTEM_EMAIL_SUBJECT } from '@constants/system-email-subject';
 import type { ValueOf } from 'type-fest';
 
 export class InvalidEmailSubjectError extends Error {
@@ -23,7 +23,7 @@ export class EmailSubject extends ValueObject<string> {
     super(value);
   }
 
-  public static fromString(value: ValueOf<typeof systemEmailSubject>): EmailSubject {
+  public static fromString(value: ValueOf<typeof SYSTEM_EMAIL_SUBJECT>): EmailSubject {
     if (!EmailSubject.isValid(value)) {
       throw new InvalidEmailSubjectError();
     }

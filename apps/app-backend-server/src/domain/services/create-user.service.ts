@@ -1,7 +1,8 @@
 import { injectable, inject } from 'inversify';
 
-import { systemEmail } from '@constants/system-email';
-import { systemEmailSubject } from '@constants/system-email-subject';
+import { INJECT_KEYS } from '@constants/inject-key';
+import { SYSTEM_EMAIL } from '@constants/system-email';
+import { SYSTEM_EMAIL_SUBJECT } from '@constants/system-email-subject';
 import { TextEmail } from '@domain/entities/text-email.entity';
 import { User } from '@domain/entities/user.entity';
 import { EmailNotification } from '@domain/notifications/email.notification';
@@ -24,8 +25,8 @@ export type CreateUserServiceOutput = User;
 @injectable()
 export class CreateUserService implements Service<CreateUserServiceProps, CreateUserServiceOutput> {
   constructor(
-    @inject(UserRepository) private userRepository: UserRepository,
-    @inject(EmailNotification) private emailNotification: EmailNotification,
+    @inject(INJECT_KEYS.UserRepository) private userRepository: UserRepository,
+    @inject(INJECT_KEYS.EmailNotification) private emailNotification: EmailNotification,
   ) {
   }
 
@@ -33,14 +34,14 @@ export class CreateUserService implements Service<CreateUserServiceProps, Create
     const user = await this.userRepository.save(User.create({
       name: UserName.fromString(props.name),
       email: UserEmail.fromString(props.email),
-      password: UserPassword.fromRawString(props.password),
+      password: UserPassword.fromRawString(props.password, { rounds: 1 }),
       verifiedAt: null,
     }));
 
     const result = await this.emailNotification.dispatch(TextEmail.create({
-      from: EmailFrom.fromString(systemEmail.register),
+      from: EmailFrom.fromString(SYSTEM_EMAIL.register),
       to: user.email,
-      subject: EmailSubject.fromString(systemEmailSubject.register),
+      subject: EmailSubject.fromString(SYSTEM_EMAIL_SUBJECT.register),
       text: `Hello, ${user.name.toString()}!`,
     }));
     if (result.isErr()) {

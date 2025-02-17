@@ -1,5 +1,6 @@
 import { injectable, inject } from 'inversify';
 
+import { INJECT_KEYS } from '@constants/inject-key';
 import { WorkspaceUser } from '@domain/entities/workspace-user.entity';
 import { Workspace } from '@domain/entities/workspace.entity';
 import { UserRepository } from '@domain/repositories/user.repository';
@@ -19,9 +20,9 @@ export type AssignWorkspaceByIdServiceOutput = Workspace;
 @injectable()
 export class AssignWorkspaceByIdService implements Service<AssignWorkspaceByIdServiceProps, AssignWorkspaceByIdServiceOutput> {
   constructor(
-    @inject(UserRepository) private userRepository: UserRepository,
-    @inject(WorkspaceRepository) private workspaceRepository: WorkspaceRepository,
-    @inject(WorkspaceUserRepository) private workspaceUserRepository: WorkspaceUserRepository,
+    @inject(INJECT_KEYS.UserRepository) private userRepository: UserRepository,
+    @inject(INJECT_KEYS.WorkspaceRepository) private workspaceRepository: WorkspaceRepository,
+    @inject(INJECT_KEYS.WorkspaceUserRepository) private workspaceUserRepository: WorkspaceUserRepository,
   ) {
   }
 

@@ -1,5 +1,6 @@
 import { hasAsyncThrow } from 'has-throw';
 
+import { INJECT_KEYS } from '@constants/inject-key';
 import { WorkspaceUsers } from '@domain/collections/workspace-user.collection';
 import { User } from '@domain/entities/user.entity';
 import { Workspace } from '@domain/entities/workspace.entity';
@@ -15,7 +16,7 @@ const container = createContainer();
 
 beforeEach(() => {
   container.snapshot();
-  container.bind<AssignWorkspaceByIdService>(AssignWorkspaceByIdService).toSelf();
+  container.rebind<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).to(AssignWorkspaceByIdService);
 });
 
 afterEach(() => {
@@ -25,7 +26,7 @@ afterEach(() => {
 describe('Positive', () => {
   it('If the workspace is assigned successfully', async () => {
     const spy = vi.spyOn(D1WorkspaceUserRepository.prototype, 'findByUserId').mockResolvedValue(WorkspaceUsers.from([]));
-    const workspace = await container.get(AssignWorkspaceByIdService).execute({
+    const workspace = await container.get<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).execute({
       userId: mockedUserId.toString(),
       workspaceId: mockedWorkspaceId.toString(),
     });
@@ -37,7 +38,7 @@ describe('Positive', () => {
 describe('Negative', () => {
   it('If the user is not found', async () => {
     const spy = vi.spyOn(D1UserRepository.prototype, 'findById').mockResolvedValue(null);
-    await expect(hasAsyncThrow(async () => await container.get(AssignWorkspaceByIdService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).execute({
       userId: mockedUserId.toString(),
       workspaceId: mockedWorkspaceId.toString(),
     }))).resolves.toStrictEqual(true);
@@ -46,7 +47,7 @@ describe('Negative', () => {
 
   it('If the user is deleted', async () => {
     const spy = vi.spyOn(User.prototype, 'isDeleted').mockResolvedValue(true);
-    await expect(hasAsyncThrow(async () => await container.get(AssignWorkspaceByIdService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).execute({
       userId: mockedUserId.toString(),
       workspaceId: mockedWorkspaceId.toString(),
     }))).resolves.toStrictEqual(true);
@@ -55,7 +56,7 @@ describe('Negative', () => {
 
   it('If the user is not verified', async () => {
     const spy = vi.spyOn(User.prototype, 'isVerified').mockResolvedValue(false);
-    await expect(hasAsyncThrow(async () => await container.get(AssignWorkspaceByIdService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).execute({
       userId: mockedUserId.toString(),
       workspaceId: mockedWorkspaceId.toString(),
     }))).resolves.toStrictEqual(true);
@@ -64,7 +65,7 @@ describe('Negative', () => {
 
   it('If the workspace is not found', async () => {
     const spy = vi.spyOn(D1WorkspaceRepository.prototype, 'findById').mockResolvedValue(null);
-    await expect(hasAsyncThrow(async () => await container.get(AssignWorkspaceByIdService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).execute({
       userId: mockedUserId.toString(),
       workspaceId: mockedWorkspaceId.toString(),
     }))).resolves.toStrictEqual(true);
@@ -73,7 +74,7 @@ describe('Negative', () => {
 
   it('If the workspace assignment failed due to deleted workspace', async () => {
     const spy = vi.spyOn(Workspace.prototype, 'isDeleted').mockResolvedValue(true);
-    await expect(hasAsyncThrow(async () => await container.get(AssignWorkspaceByIdService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).execute({
       userId: mockedUserId.toString(),
       workspaceId: mockedWorkspaceId.toString(),
     }))).resolves.toStrictEqual(true);
@@ -81,7 +82,7 @@ describe('Negative', () => {
   });
 
   it('If the user is already assigned to the workspace', async () => {
-    await expect(hasAsyncThrow(async () => await container.get(AssignWorkspaceByIdService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<AssignWorkspaceByIdService>(INJECT_KEYS.AssignWorkspaceByIdService).execute({
       userId: mockedUserId.toString(),
       workspaceId: mockedWorkspaceId.toString(),
     }))).resolves.toStrictEqual(true);

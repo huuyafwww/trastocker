@@ -2,6 +2,7 @@ import { schema } from '@trastocker/database-definition';
 import { eq, and, isNull, inArray } from 'drizzle-orm';
 import { injectable, inject } from 'inversify';
 
+import { INJECT_KEYS } from '@constants/inject-key';
 import { Workspaces } from '@domain/collections/workspace.collection';
 import { Workspace } from '@domain/entities/workspace.entity';
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
@@ -27,7 +28,7 @@ const convert = (workspace: WorkspaceSelectColumns): Workspace => {
 @injectable()
 export class D1WorkspaceRepository extends Repository<Workspace, WorkspaceId> implements WorkspaceRepository {
   constructor(
-    @inject('D1Database') private database: Database,
+    @inject(INJECT_KEYS.D1Database) private database: Database,
   ) {
     super();
   }

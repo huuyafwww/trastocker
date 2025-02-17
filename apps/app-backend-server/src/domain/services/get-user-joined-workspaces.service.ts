@@ -1,5 +1,6 @@
 import { injectable, inject } from 'inversify';
 
+import { INJECT_KEYS } from '@constants/inject-key';
 import { Workspace } from '@domain/entities/workspace.entity';
 import { WorkspaceUserRepository } from '@domain/repositories/workspace-user.repository';
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
@@ -15,8 +16,8 @@ export type GetUserJoinedWorkspacesServiceOutput = Workspace[];
 @injectable()
 export class GetUserJoinedWorkspacesService implements Service<GetUserJoinedWorkspacesServiceProps, GetUserJoinedWorkspacesServiceOutput> {
   constructor(
-    @inject(WorkspaceRepository) private workspaceRepository: WorkspaceRepository,
-    @inject(WorkspaceUserRepository) private workspaceUserRepository: WorkspaceUserRepository,
+    @inject(INJECT_KEYS.WorkspaceRepository) private workspaceRepository: WorkspaceRepository,
+    @inject(INJECT_KEYS.WorkspaceUserRepository) private workspaceUserRepository: WorkspaceUserRepository,
   ) {
   }
 

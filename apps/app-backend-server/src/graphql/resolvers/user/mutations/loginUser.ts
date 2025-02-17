@@ -2,7 +2,7 @@ import { UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-sche
 import ms from 'ms';
 
 import { UserLoginUseCase } from '@application/use-cases/user-login.use-case';
-import { CookieKeys } from '@constants/cookie';
+import { COOKIE_KEYS } from '@constants/cookie';
 import { User } from '@domain/entities/user.entity';
 import { builder } from '@graphql/builder';
 
@@ -24,7 +24,7 @@ builder.mutationField('loginUser', t => t.field({
     const { user, userToken } = await context.container.get<UserLoginUseCase>(UserLoginUseCase).execute(args);
 
     await context.request.cookieStore?.set({
-      name: CookieKeys.ACCESS_TOKEN,
+      name: COOKIE_KEYS.ACCESS_TOKEN,
       value: userToken.accessToken.toString(),
       domain: process.env.APP_DOMAIN,
       expires: new Date().getTime() + ms(process.env.JWT_ACCESS_TOKEN_EXPIRES_IN),
@@ -34,7 +34,7 @@ builder.mutationField('loginUser', t => t.field({
     });
 
     await context.request.cookieStore?.set({
-      name: CookieKeys.REFRESH_TOKEN,
+      name: COOKIE_KEYS.REFRESH_TOKEN,
       value: userToken.refreshToken.toString(),
       domain: process.env.APP_DOMAIN,
       expires: new Date().getTime() + ms(process.env.JWT_REFRESH_TOKEN_EXPIRES_IN),
