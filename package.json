@@ -9,22 +9,15 @@
     "dev": "turbo run dev",
     "lint:code": "turbo lint:code",
     "lint:type": "turbo lint:type",
-    "prepare": "husky",
     "sort:package": "sort-package-json 'package.json' 'apps/*/package.json' 'definitions/*/package.json' 'middlewares/*/package.json'",
     "test": "turbo run test --filter=@trastocker/app-*"
-  },
-  "lint-staged": {
-    "{package.json,**/package.json}": [
-      "bash -c 'pnpm run sort:package'"
-    ]
   },
   "devDependencies": {
     "@praha/eslint-config-definer": "^2.0.1",
     "@types/node": "^22.12.0",
     "eslint": "9.18.0",
-    "husky": "^9.1.7",
     "jiti": "^2.4.2",
-    "lint-staged": "^15.4.3",
+    "lefthook": "^1.10.10",
     "rimraf": "^6.0.1",
     "sort-package-json": "^2.14.0",
     "turbo": "^2.3.4",
