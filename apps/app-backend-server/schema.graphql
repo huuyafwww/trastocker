@@ -19,6 +19,18 @@ type Mutation {
     """password"""
     password: String!
   ): User
+
+  """register user"""
+  registerUser(
+    """email"""
+    email: String!
+
+    """name"""
+    name: String!
+
+    """password"""
+    password: String!
+  ): User
 }
 
 type Query {

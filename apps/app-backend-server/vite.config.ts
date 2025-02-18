@@ -1,5 +1,6 @@
 import path from 'node:path';
 
+import dotenv from 'dotenv';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -19,5 +20,6 @@ export default defineConfig({
     isolate: true,
     setupFiles: 'tests/setup.ts',
     include: ['src/**/*.test.ts', 'tests/**/*.test.ts'],
+    env: dotenv.config({ path: '.env.test' }).parsed,
   },
 });

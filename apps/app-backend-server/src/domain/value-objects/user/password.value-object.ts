@@ -2,6 +2,8 @@ import { UserPasswordSchema } from '@trastocker/validation-schema-definition';
 import bcrypt from 'bcryptjs';
 import * as v from 'valibot';
 
+import { SALT_ROUNDS } from '@constants/hash';
+
 import { ValueObject } from '../core/value-object';
 
 export class InvalidUserPasswordError extends Error {
@@ -19,13 +21,11 @@ export class UserPassword extends ValueObject<string> {
     super(value);
   }
 
-  public static fromRawString(value: string, options?: {
-    rounds?: number;
-  }): UserPassword {
+  public static fromRawString(value: string): UserPassword {
     if (!UserPassword.isValid(value)) {
       throw new InvalidUserPasswordError();
     }
-    return new this(bcrypt.hashSync(value, options?.rounds ?? 10));
+    return new this(bcrypt.hashSync(value, SALT_ROUNDS));
   }
 
   public static fromString(value: string): UserPassword {
