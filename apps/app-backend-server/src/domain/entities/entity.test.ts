@@ -1,11 +1,12 @@
 import { User } from '@domain/entities/user.entity';
 import { UserEmail } from '@domain/value-objects/user/email.value-object';
+import { UserName } from '@domain/value-objects/user/name.value-object';
 import { UserPassword } from '@domain/value-objects/user/password.value-object';
 
 describe('integrity', () => {
   it('should hold props.', () => {
     const props = {
-      name: 'user',
+      name: UserName.fromString('user'),
       email: UserEmail.fromString('admin@admin.com'),
       password: UserPassword.fromRawString('t2t2tN{b((t&'),
       verifiedAt: new Date(),

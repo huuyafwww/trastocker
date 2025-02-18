@@ -1,5 +1,6 @@
 import { hasAsyncThrow } from 'has-throw';
 
+import { INJECT_KEY } from '@constants/inject-key';
 import { D1WorkspaceRepository } from '@infrastructure/repositories/d1/workspace.repository.mock';
 import { mockedWorkspace } from '@test/fixtures/workspace.fixture';
 import { mockedWorkspaceName } from '@test/fixtures/workspace.fixture';
@@ -11,7 +12,7 @@ const container = createContainer();
 
 beforeEach(() => {
   container.snapshot();
-  container.bind<CreateWorkspaceByNameService>(CreateWorkspaceByNameService).toSelf();
+  container.rebind<CreateWorkspaceByNameService>(INJECT_KEY.CreateWorkspaceByNameService).to(CreateWorkspaceByNameService);
 });
 
 afterEach(() => {
@@ -20,7 +21,7 @@ afterEach(() => {
 
 describe('Positive', () => {
   it('If the workspace is created successfully', async () => {
-    const workspace = await container.get(CreateWorkspaceByNameService).execute({
+    const workspace = await container.get<CreateWorkspaceByNameService>(INJECT_KEY.CreateWorkspaceByNameService).execute({
       name: mockedWorkspaceName.toString(),
     });
     expect(workspace).toEqual(mockedWorkspace);
@@ -30,7 +31,7 @@ describe('Positive', () => {
 describe('Negative', () => {
   it('If the workspace creation failed', async () => {
     const spy = vi.spyOn(D1WorkspaceRepository.prototype, 'save').mockRejectedValue(new Error());
-    await expect(hasAsyncThrow(async () => await container.get(CreateWorkspaceByNameService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<CreateWorkspaceByNameService>(INJECT_KEY.CreateWorkspaceByNameService).execute({
       name: mockedWorkspaceName.toString(),
     }))).resolves.toStrictEqual(true);
     spy.mockRestore();

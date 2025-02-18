@@ -3,7 +3,7 @@ import { injectable } from 'inversify';
 import { UserToken } from '@domain/entities/user-token.entity';
 import { UserTokenRepository } from '@domain/repositories/user-token.repository';
 import { UserTokenId } from '@domain/value-objects/user-token/id.value-object';
-import { Repository } from '@infrastructure/repositories/d1/repository';
+import { Repository } from '@infrastructure/repositories/repository';
 import { mockedUserToken } from '@test/fixtures/user-token.fixture';
 
 @injectable()

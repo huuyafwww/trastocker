@@ -4,7 +4,7 @@ import { WorkspaceUsers } from '@domain/collections/workspace-user.collection';
 import { WorkspaceUser } from '@domain/entities/workspace-user.entity';
 import { WorkspaceUserRepository } from '@domain/repositories/workspace-user.repository';
 import { WorkspaceUserId } from '@domain/value-objects/workspace-user/id.value-object';
-import { Repository } from '@infrastructure/repositories/d1/repository';
+import { Repository } from '@infrastructure/repositories/repository';
 import { mockedWorkspaceUser } from '@test/fixtures/workspace-user.fixture';
 
 @injectable()
