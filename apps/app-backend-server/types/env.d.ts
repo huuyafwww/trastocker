@@ -14,5 +14,6 @@ declare namespace NodeJS {
     NOREPLY_EMAIL: string extends SystemEmail ? string : never;
     DATABASE_URL?: string;
     CI?: string;
+    TEST?: string;
   }
 }
