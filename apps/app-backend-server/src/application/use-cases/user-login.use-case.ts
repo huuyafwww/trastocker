@@ -1,6 +1,6 @@
 import { injectable, inject } from 'inversify';
 
-import { INJECT_KEYS } from '@constants/inject-key';
+import { INJECT_KEY } from '@constants/inject-key';
 import { UserToken } from '@domain/entities/user-token.entity';
 import { User } from '@domain/entities/user.entity';
 import { UserTokenRepository } from '@domain/repositories/user-token.repository';
@@ -22,8 +22,8 @@ export type UserLoginUseCaseOutput = {
 @injectable()
 export class UserLoginUseCase {
   constructor(
-    @inject(INJECT_KEYS.UserRepository) private userRepository: UserRepository,
-    @inject(INJECT_KEYS.UserTokenRepository) private userTokenRepository: UserTokenRepository,
+    @inject(INJECT_KEY.UserRepository) private userRepository: UserRepository,
+    @inject(INJECT_KEY.UserTokenRepository) private userTokenRepository: UserTokenRepository,
   ) {
   }
 

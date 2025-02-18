@@ -1,4 +1,4 @@
-import { INJECT_KEYS } from '@constants/inject-key';
+import { INJECT_KEY } from '@constants/inject-key';
 import { WorkspaceUsers } from '@domain/collections/workspace-user.collection';
 import { GetUserJoinedWorkspacesService } from '@domain/services/get-user-joined-workspaces.service';
 import { D1WorkspaceUserRepository } from '@infrastructure/repositories/d1/workspace-user.repository.mock';
@@ -10,7 +10,7 @@ const container = createContainer();
 
 beforeEach(() => {
   container.snapshot();
-  container.rebind<GetUserJoinedWorkspacesService>(INJECT_KEYS.GetUserJoinedWorkspacesService).to(GetUserJoinedWorkspacesService);
+  container.rebind<GetUserJoinedWorkspacesService>(INJECT_KEY.GetUserJoinedWorkspacesService).to(GetUserJoinedWorkspacesService);
 });
 
 afterEach(() => {
@@ -19,7 +19,7 @@ afterEach(() => {
 
 describe('Positive', () => {
   it('If the user is joined some workspaces', async () => {
-    const workspaces = await container.get<GetUserJoinedWorkspacesService>(INJECT_KEYS.GetUserJoinedWorkspacesService).execute({
+    const workspaces = await container.get<GetUserJoinedWorkspacesService>(INJECT_KEY.GetUserJoinedWorkspacesService).execute({
       id: mockedUserId,
     });
     expect(workspaces).toEqual([mockedWorkspace]);
@@ -29,7 +29,7 @@ describe('Positive', () => {
 describe('Negative', () => {
   it('If the user is not joined any workspace', async () => {
     const spy = vi.spyOn(D1WorkspaceUserRepository.prototype, 'findByUserId').mockResolvedValue(WorkspaceUsers.from([]));
-    const workspaces = await container.get<GetUserJoinedWorkspacesService>(INJECT_KEYS.GetUserJoinedWorkspacesService).execute({
+    const workspaces = await container.get<GetUserJoinedWorkspacesService>(INJECT_KEY.GetUserJoinedWorkspacesService).execute({
       id: mockedUserId,
     });
     expect(workspaces).toEqual([]);

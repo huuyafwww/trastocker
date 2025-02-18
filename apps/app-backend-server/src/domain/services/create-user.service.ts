@@ -1,6 +1,6 @@
 import { injectable, inject } from 'inversify';
 
-import { INJECT_KEYS } from '@constants/inject-key';
+import { INJECT_KEY } from '@constants/inject-key';
 import { SYSTEM_EMAIL } from '@constants/system-email';
 import { SYSTEM_EMAIL_SUBJECT } from '@constants/system-email-subject';
 import { TextEmail } from '@domain/entities/text-email.entity';
@@ -25,8 +25,8 @@ export type CreateUserServiceOutput = User;
 @injectable()
 export class CreateUserService implements Service<CreateUserServiceProps, CreateUserServiceOutput> {
   constructor(
-    @inject(INJECT_KEYS.UserRepository) private userRepository: UserRepository,
-    @inject(INJECT_KEYS.EmailNotification) private emailNotification: EmailNotification,
+    @inject(INJECT_KEY.UserRepository) private userRepository: UserRepository,
+    @inject(INJECT_KEY.EmailNotification) private emailNotification: EmailNotification,
   ) {
   }
 

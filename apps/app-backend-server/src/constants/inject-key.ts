@@ -1,4 +1,4 @@
-export const INJECT_KEYS = {
+export const INJECT_KEY = {
   UserLoginUseCase: Symbol.for('UserLoginUseCase'),
   GetAuthUserUseCase: Symbol.for('GetAuthUserUseCase'),
   CreateUserUseCase: Symbol.for('CreateUserUseCase'),

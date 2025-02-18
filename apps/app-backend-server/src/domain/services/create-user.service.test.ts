@@ -1,7 +1,7 @@
 import { hasAsyncThrow } from 'has-throw';
 import { err } from 'neverthrow';
 
-import { INJECT_KEYS } from '@constants/inject-key';
+import { INJECT_KEY } from '@constants/inject-key';
 import { ResendEmailNotification } from '@infrastructure/notifications/resend/email.notification.mock';
 import { mockedUser } from '@test/fixtures/user.fixture';
 import { mockedUserPasswordRaw } from '@test/fixtures/user.fixture';
@@ -13,7 +13,7 @@ const container = createContainer();
 
 beforeEach(() => {
   container.snapshot();
-  container.rebind<CreateUserService>(INJECT_KEYS.CreateUserService).to(CreateUserService);
+  container.rebind<CreateUserService>(INJECT_KEY.CreateUserService).to(CreateUserService);
 });
 
 afterEach(() => {
@@ -22,7 +22,7 @@ afterEach(() => {
 
 describe('Positive', () => {
   it('If the user can create ', async () => {
-    const user = await container.get<CreateUserService>(INJECT_KEYS.CreateUserService).execute({
+    const user = await container.get<CreateUserService>(INJECT_KEY.CreateUserService).execute({
       name: mockedUser.name.toString(),
       email: mockedUser.email.toString(),
       password: mockedUserPasswordRaw,
@@ -34,7 +34,7 @@ describe('Positive', () => {
 describe('Negative', () => {
   it('If the email notification dispatch fails', async () => {
     const spy = vi.spyOn(ResendEmailNotification.prototype, 'dispatch').mockResolvedValue(err(new Error('Failed to send email')));
-    await expect(hasAsyncThrow(async () => await container.get<CreateUserService>(INJECT_KEYS.CreateUserService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<CreateUserService>(INJECT_KEY.CreateUserService).execute({
       name: mockedUser.name.toString(),
       email: mockedUser.email.toString(),
       password: mockedUserPasswordRaw,

@@ -2,7 +2,7 @@ import { schema } from '@trastocker/database-definition';
 import { eq, and, isNull } from 'drizzle-orm';
 import { injectable, inject } from 'inversify';
 
-import { INJECT_KEYS } from '@constants/inject-key';
+import { INJECT_KEY } from '@constants/inject-key';
 import { UserToken } from '@domain/entities/user-token.entity';
 import { UserTokenRepository } from '@domain/repositories/user-token.repository';
 import { UserId } from '@domain/value-objects/user/id.value-object';
@@ -29,7 +29,7 @@ const convert = (userToken: UserTokenSelectColumns): UserToken => {
 @injectable()
 export class D1UserTokenRepository extends Repository<UserToken, UserTokenId> implements UserTokenRepository {
   constructor(
-    @inject(INJECT_KEYS.D1Database) private database: Database,
+    @inject(INJECT_KEY.D1Database) private database: Database,
   ) {
     super();
   }
