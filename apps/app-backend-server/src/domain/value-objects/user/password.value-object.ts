@@ -21,9 +21,7 @@ export class UserPassword extends ValueObject<string> {
     super(value);
   }
 
-  public static fromRawString(value: string, options?: {
-    rounds?: number;
-  }): UserPassword {
+  public static fromRawString(value: string): UserPassword {
     if (!UserPassword.isValid(value)) {
       throw new InvalidUserPasswordError();
     }

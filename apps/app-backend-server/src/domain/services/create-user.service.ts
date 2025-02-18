@@ -34,7 +34,7 @@ export class CreateUserService implements Service<CreateUserServiceProps, Create
     const user = await this.userRepository.save(User.create({
       name: UserName.fromString(props.name),
       email: UserEmail.fromString(props.email),
-      password: UserPassword.fromRawString(props.password, { rounds: 1 }),
+      password: UserPassword.fromRawString(props.password),
       verifiedAt: null,
     }));
 
