@@ -28,10 +28,10 @@
     "lint:type": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-common": "^1.1.1",
-    "@huuyafwww/eslint-config-node": "^1.1.1",
+    "@huuyafwww/eslint-config-common": "^1.1.2",
+    "@huuyafwww/eslint-config-node": "^1.1.2",
     "@huuyafwww/tsconfig-common": "^1.1.1",
-    "pkgroll": "^2.6.1",
+    "pkgroll": "^2.10.0",
     "typescript": "^5.7.3"
   }
 }
