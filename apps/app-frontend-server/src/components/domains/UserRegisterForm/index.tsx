@@ -44,12 +44,12 @@ const UserRegisterForm: React.FC = () => {
               label={inputNameId}
               rules={{ required: true }}
             />
-            {methods.formState.errors['name']?.message && (
-              <div className="mt-2">
-                <ErrorMessage message={methods.formState.errors['name'].message} />
-              </div>
-            )}
           </InputGroup.Input>
+          {methods.formState.errors['name']?.message && (
+            <div className="mt-2">
+              <ErrorMessage message={methods.formState.errors['name'].message} />
+            </div>
+          )}
         </InputGroup>
         <InputGroup>
           <InputGroup.Label inputId={inputEmailId}>
