@@ -1,8 +1,8 @@
-import AuthLayout from '@layouts/AuthLayout';
-
 import UserRegisterPage from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
+
+import AuthLayout from '@layouts/AuthLayout';
 
 const meta = {
   title: 'Pages/UserRegisterPage',
