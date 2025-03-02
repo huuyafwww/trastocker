@@ -19,7 +19,12 @@ const options: {
   serviceWorker?: {
     url: string;
   };
-} = {};
+  quiet: boolean;
+  onUnhandledRequest: 'bypass';
+} = {
+  quiet: true,
+  onUnhandledRequest: 'bypass',
+};
 
 // for GitHub Pages
 if (location.hostname === 'huuyafwww.github.io') {
