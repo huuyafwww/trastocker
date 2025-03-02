@@ -35,6 +35,7 @@ const WorkspaceJoinForm: React.FC = () => {
                 border: 'none',
                 size: 'none',
               }}
+              label={inputInviteCodeId}
               rules={{ required: true }}
             />
           </InputGroup.Input>

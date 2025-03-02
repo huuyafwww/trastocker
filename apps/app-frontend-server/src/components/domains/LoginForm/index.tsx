@@ -42,6 +42,7 @@ const LoginForm: React.FC = () => {
                 border: 'none',
                 size: 'none',
               }}
+              label={inputEmailId}
               rules={{ required: true }}
             />
           </InputGroup.Input>
@@ -66,6 +67,7 @@ const LoginForm: React.FC = () => {
                 border: 'none',
                 size: 'none',
               }}
+              label={inputPasswordId}
               rules={{ required: true }}
             />
             <Button

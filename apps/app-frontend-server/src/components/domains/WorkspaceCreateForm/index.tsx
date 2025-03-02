@@ -34,6 +34,7 @@ const WorkspaceCreateForm: React.FC = () => {
                 border: 'none',
                 size: 'none',
               }}
+              label={inputNameId}
               rules={{ required: true }}
             />
           </InputGroup.Input>
