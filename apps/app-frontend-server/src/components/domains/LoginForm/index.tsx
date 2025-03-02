@@ -21,8 +21,8 @@ const LoginForm: React.FC = () => {
   const inputEmailId = useId();
   const inputPasswordId = useId();
   const { t } = useTranslation();
-  const [on, toggle] = useToggle(true);
   const { methods, handleSubmit, canSubmit } = useLoginForm();
+  const [on, toggle] = useToggle(false);
 
   return (
     <FormProvider {...methods}>
