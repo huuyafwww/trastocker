@@ -1,0 +1,33 @@
+{
+  "name": "@trastocker/typescript-utility-helper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "exports": {
+    "require": {
+      "types": "./dist/index.d.cts"
+    },
+    "import": {
+      "types": "./dist/index.d.mts"
+    }
+  },
+  "types": "./dist/index.d.cts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pkgroll --minify",
+    "build:watch": "pkgroll --watch",
+    "clean": "rimraf node_modules dist",
+    "lint:code": "eslint . --cache",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "@huuyafwww/eslint-config-common": "^1.1.2",
+    "@huuyafwww/eslint-config-node": "^1.1.2",
+    "@huuyafwww/tsconfig-common": "^1.1.1",
+    "pkgroll": "^2.10.0",
+    "typescript": "^5.7.3"
+  }
+}
