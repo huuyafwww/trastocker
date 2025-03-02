@@ -1,7 +1,12 @@
 export default {
+  'User name': 'User name',
+  'Register': 'Register',
   'Login': 'Login',
   'Email': 'Email',
   'Password': 'Password',
+  'User Register failed': 'User register failed',
+  'User Register success': 'User register success',
+  'Send a temporary user registration': (props: { email: string }) => `Send a temporary user registration email to ${props.email}. Please click the link in the email to complete the registration.`,
   'Login failed': 'Login failed',
   'Email address or password is incorrect.': 'Email address or password is incorrect.',
   'Workspace Name': 'Workspace name',
