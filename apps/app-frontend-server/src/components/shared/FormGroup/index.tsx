@@ -1,12 +1,14 @@
 import { wrapper } from './styles.css';
 
+import type { ButtonProps } from '@components/shared/Button';
+
 import Button from '@components/shared/Button';
 
 const FormGroupButton: React.FC<{
   children: React.ReactNode;
-}> = ({ children }) => (
+} & ButtonProps> = ({ children, ...props }) => (
   <div className={wrapper}>
-    <Button type="submit">
+    <Button type="submit" {...props}>
       {children}
     </Button>
   </div>

@@ -14,7 +14,7 @@ import { useTranslation } from '@hooks/useTranslation';
 const WorkspaceCreateForm: React.FC = () => {
   const inputNameId = useId();
   const { t } = useTranslation();
-  const { methods, handleSubmit } = useWorkspaceCreateForm();
+  const { methods, handleSubmit, canSubmit } = useWorkspaceCreateForm();
 
   return (
     <FormProvider {...methods}>
@@ -44,7 +44,7 @@ const WorkspaceCreateForm: React.FC = () => {
             </div>
           )}
         </InputGroup>
-        <FormGroup.Button>
+        <FormGroup.Button isDisabled={!canSubmit}>
           {t('Create')}
         </FormGroup.Button>
       </form>

@@ -21,8 +21,8 @@ const LoginForm: React.FC = () => {
   const inputEmailId = useId();
   const inputPasswordId = useId();
   const { t } = useTranslation();
-  const { methods, handleSubmit } = useLoginForm();
   const [on, toggle] = useToggle(true);
+  const { methods, handleSubmit, canSubmit } = useLoginForm();
 
   return (
     <FormProvider {...methods}>
@@ -87,7 +87,7 @@ const LoginForm: React.FC = () => {
             </div>
           )}
         </InputGroup>
-        <FormGroup.Button>
+        <FormGroup.Button isDisabled={!canSubmit}>
           {t('Login')}
         </FormGroup.Button>
       </form>
