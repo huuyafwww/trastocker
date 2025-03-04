@@ -1,12 +1,12 @@
-import WorkspaceCreatePage from '.';
+import UserRegisterPage from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 import AuthLayout from '@layouts/AuthLayout';
 
 const meta = {
-  title: 'Pages/WorkspaceCreatePage',
-  component: WorkspaceCreatePage,
+  title: 'Pages/UserRegisterPage',
+  component: UserRegisterPage,
   args: {},
   argTypes: {},
   decorators: [
@@ -16,7 +16,7 @@ const meta = {
       </AuthLayout>
     ),
   ],
-} satisfies Meta<typeof WorkspaceCreatePage>;
+} satisfies Meta<typeof UserRegisterPage>;
 
 type Story = StoryObj<typeof meta>;
 

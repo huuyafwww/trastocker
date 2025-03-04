@@ -1,9 +1,9 @@
 import { Entity } from '@domain/entities/entity';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
 
-import type { Fields } from '@domain/entities/entity';
 import type { WorkspaceInviteCode } from '@domain/value-objects/workspace/invite-code.value-object';
 import type { WorkspaceName } from '@domain/value-objects/workspace/name.value-object';
+import type { ClassFields } from '@trastocker/typescript-utility-helper';
 
 type SerializedWorkspace = {
   id: string;
@@ -21,11 +21,11 @@ export class Workspace extends Entity<WorkspaceId> {
   declare public readonly updatedAt: Date;
   declare public readonly deletedAt: Date | null;
 
-  public constructor(props: Fields<Workspace>) {
+  public constructor(props: ClassFields<Workspace>) {
     super(props);
   }
 
-  public static create(props: Omit<Fields<Workspace>, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>): Workspace {
+  public static create(props: Omit<ClassFields<Workspace>, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>): Workspace {
     return new Workspace({
       id: WorkspaceId.generate(),
       createdAt: new Date(),
@@ -35,7 +35,7 @@ export class Workspace extends Entity<WorkspaceId> {
     });
   }
 
-  private update(props: Partial<Fields<Workspace>>): Workspace {
+  private update(props: Partial<ClassFields<Workspace>>): Workspace {
     return new Workspace({
       ...this,
       ...props,

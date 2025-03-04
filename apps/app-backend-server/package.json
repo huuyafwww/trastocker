@@ -25,6 +25,7 @@
     "@pothos/plugin-scope-auth": "^4.1.1",
     "@pothos/plugin-simple-objects": "^4.1.0",
     "@trastocker/database-definition": "workspace:*",
+    "@trastocker/typescript-utility-helper": "workspace:*",
     "@trastocker/validation-schema-definition": "workspace:*",
     "@types/bcryptjs": "^2.4.6",
     "@whatwg-node/server-plugin-cookies": "^1.0.3",

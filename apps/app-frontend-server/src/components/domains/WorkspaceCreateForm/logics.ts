@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { valibotResolver } from '@hookform/resolvers/valibot';
 import { WorkspaceNameSchema } from '@trastocker/validation-schema-definition';
@@ -30,6 +30,13 @@ export const useWorkspaceCreateForm = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, createWorkspace] = useMutation<CreateWorkspaceMutation, CreateWorkspaceMutationVariables>(createWorkspaceMutation);
 
+  const canSubmit = useMemo(() => {
+    if (methods.formState.isLoading) return false;
+    if (methods.formState.isSubmitting) return false;
+    if (methods.formState.isSubmitSuccessful) return false;
+    return methods.formState.isValid;
+  }, [methods.formState]);
+
   const handleSubmit = useCallback(async (data: WorkspaceCreateFormValues) => {
     const result = await createWorkspace(data);
 
@@ -42,6 +49,7 @@ export const useWorkspaceCreateForm = () => {
   }, [createWorkspace, t]);
 
   return {
+    canSubmit,
     methods,
     handleSubmit: methods.handleSubmit(handleSubmit),
   };

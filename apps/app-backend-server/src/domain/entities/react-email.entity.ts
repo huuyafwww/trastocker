@@ -1,10 +1,10 @@
 import { Entity } from '@domain/entities/entity';
 import { EmailId } from '@domain/value-objects/email/id.value-object';
 
-import type { Fields } from '@domain/entities/entity';
 import type { EmailFrom } from '@domain/value-objects/email/from.value-object';
 import type { EmailSubject } from '@domain/value-objects/email/subject.value-object';
 import type { UserEmail } from '@domain/value-objects/user/email.value-object';
+import type { ClassFields } from '@trastocker/typescript-utility-helper';
 
 export type SerializedReactEmail = {
   id: string;
@@ -20,11 +20,11 @@ export class ReactEmail extends Entity<EmailId> {
   declare public readonly subject: EmailSubject;
   declare public readonly react: React.ReactNode;
 
-  private constructor(props: Fields<ReactEmail>) {
+  private constructor(props: ClassFields<ReactEmail>) {
     super(props);
   }
 
-  public static create(props: Omit<Fields<ReactEmail>, 'id'>): ReactEmail {
+  public static create(props: Omit<ClassFields<ReactEmail>, 'id'>): ReactEmail {
     return new ReactEmail({
       id: EmailId.generate(),
       ...props,

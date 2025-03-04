@@ -61,6 +61,9 @@ importers:
       '@trastocker/database-definition':
         specifier: workspace:*
         version: link:../../definitions/database-definition
+      '@trastocker/typescript-utility-helper':
+        specifier: workspace:*
+        version: link:../../helpers/typescript-utility-helper
       '@trastocker/validation-schema-definition':
         specifier: workspace:*
         version: link:../../definitions/validation-schema-definition
@@ -173,6 +176,9 @@ importers:
       '@trastocker/graphql-definition':
         specifier: workspace:*
         version: link:../../definitions/graphql-definition
+      '@trastocker/typescript-utility-helper':
+        specifier: workspace:*
+        version: link:../../helpers/typescript-utility-helper
       '@trastocker/validation-schema-definition':
         specifier: workspace:*
         version: link:../../definitions/validation-schema-definition
@@ -460,6 +466,24 @@ importers:
         version: 5.7.3
 
   helpers/nodejs-utility-helper:
+    devDependencies:
+      '@huuyafwww/eslint-config-common':
+        specifier: ^1.1.2
+        version: 1.1.2(eslint@9.18.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.7.3)
+      '@huuyafwww/eslint-config-node':
+        specifier: ^1.1.2
+        version: 1.1.2(eslint@9.18.0(jiti@2.4.2))(jiti@2.4.2)
+      '@huuyafwww/tsconfig-common':
+        specifier: ^1.1.1
+        version: 1.1.1
+      pkgroll:
+        specifier: ^2.10.0
+        version: 2.10.0(typescript@5.7.3)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
+
+  helpers/typescript-utility-helper:
     devDependencies:
       '@huuyafwww/eslint-config-common':
         specifier: ^1.1.2

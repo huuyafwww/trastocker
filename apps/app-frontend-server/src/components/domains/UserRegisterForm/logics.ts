@@ -1,36 +1,36 @@
 import { useCallback, useMemo } from 'react';
 
 import { valibotResolver } from '@hookform/resolvers/valibot';
-import { UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-schema-definition';
+import { UserNameSchema, UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-schema-definition';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useMutation } from 'urql';
 import * as v from 'valibot';
 
-import { loginUserMutation } from './gql';
-
-import type { LoginUserMutation, LoginUserMutationVariables } from './gql';
+import { registerUserMutation, type RegisterUserMutation, type RegisterUserMutationVariables } from './gql';
 
 import { useTranslation } from '@hooks/useTranslation';
 
-type LoginFormValues = {
+type UserRegisterFormValues = {
+  name: string;
   email: string;
   password: string;
 };
 
-const schema = v.object({
+export const schema = v.object({
+  name: UserNameSchema,
   email: UserEmailSchema,
   password: UserPasswordSchema,
 });
 
-export const useLoginForm = () => {
+export const useUserRegisterForm = () => {
   const { t } = useTranslation();
-  const methods = useForm<LoginFormValues>({
+  const methods = useForm<UserRegisterFormValues>({
     resolver: valibotResolver(schema),
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, login] = useMutation<LoginUserMutation, LoginUserMutationVariables>(loginUserMutation);
+  const [_, register] = useMutation<RegisterUserMutation, RegisterUserMutationVariables>(registerUserMutation);
 
   const canSubmit = useMemo(() => {
     if (methods.formState.isLoading) return false;
@@ -39,21 +39,24 @@ export const useLoginForm = () => {
     return methods.formState.isValid;
   }, [methods.formState]);
 
-  const handleSubmit = useCallback(async (data: LoginFormValues) => {
-    const result = await login(data);
+  const handleSubmit = useCallback(async (data: UserRegisterFormValues) => {
+    const result = await register(data);
 
-    if (!result.data?.loginUser) {
+    if (!result.data?.registerUser) {
       toast.error(t('Email address or password is incorrect.'));
       return;
     }
 
     if (result.error) {
-      toast.error(t('Login failed'));
+      toast.error(t('User Register failed'));
       return;
     }
 
-    // TODO: redirect to logined page
-  }, [login, t]);
+    toast.success(
+      t('Send a temporary user registration', { email: data.email }),
+      { autoClose: false, closeButton: false },
+    );
+  }, [register, t]);
 
   return {
     canSubmit,

@@ -3,11 +3,9 @@ import { useId } from 'react';
 import { FormProvider } from 'react-hook-form';
 import { useToggle } from 'react-use';
 
-import { input, iconButton } from './styles.css';
+import { useUserRegisterForm } from './logics';
+import { iconButton, input } from './styles.css';
 
-import type React from 'react';
-
-import { useLoginForm } from '@components/domains/LoginForm/logics';
 import Button from '@components/shared/Button';
 import ErrorMessage from '@components/shared/ErrorMessage';
 import FormGroup from '@components/shared/FormGroup';
@@ -17,16 +15,42 @@ import InputControl from '@components/shared/InputControl';
 import InputGroup from '@components/shared/InputGroup';
 import { useTranslation } from '@hooks/useTranslation';
 
-const LoginForm: React.FC = () => {
+const UserRegisterForm: React.FC = () => {
+  const inputNameId = useId();
   const inputEmailId = useId();
   const inputPasswordId = useId();
   const { t } = useTranslation();
-  const { methods, handleSubmit, canSubmit } = useLoginForm();
+  const { methods, handleSubmit, canSubmit } = useUserRegisterForm();
   const [on, toggle] = useToggle(false);
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit}>
+        <InputGroup>
+          <InputGroup.Label inputId={inputNameId}>
+            {t('User name')}
+          </InputGroup.Label>
+          <InputGroup.Input>
+            <InputControl
+              id={inputNameId}
+              className={input}
+              name="name"
+              type="text"
+              variant={{
+                mode: 'with',
+                border: 'none',
+                size: 'none',
+              }}
+              label={inputNameId}
+              rules={{ required: true }}
+            />
+          </InputGroup.Input>
+          {methods.formState.errors['name']?.message && (
+            <div className="mt-2">
+              <ErrorMessage message={methods.formState.errors['name'].message} />
+            </div>
+          )}
+        </InputGroup>
         <InputGroup>
           <InputGroup.Label inputId={inputEmailId}>
             {t('Email')}
@@ -88,11 +112,11 @@ const LoginForm: React.FC = () => {
           )}
         </InputGroup>
         <FormGroup.Button isDisabled={!canSubmit}>
-          {t('Login')}
+          {t('Register')}
         </FormGroup.Button>
       </form>
     </FormProvider>
   );
 };
 
-export default LoginForm;
+export default UserRegisterForm;

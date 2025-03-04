@@ -1,12 +1,9 @@
-export type Fields<T> = Pick<T, {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [P in keyof T]: T[P] extends (...args: any[]) => any ? never : P;
-}[keyof T]>;
+import type { ClassFields } from '@trastocker/typescript-utility-helper';
 
 export class Entity<T> {
   public readonly id!: T;
 
-  protected constructor(props: Fields<Entity<T>>) {
+  protected constructor(props: ClassFields<Entity<T>>) {
     Object.assign(this, props);
   }
 }
