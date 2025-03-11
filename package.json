@@ -6,6 +6,7 @@
   "scripts": {
     "build:libraries": "turbo run build --filter=@trastocker/*-definition --filter=@trastocker/*-helper",
     "clean": "turbo run clean",
+    "create:package": "turbo gen package && pnpm install",
     "dev": "turbo run dev",
     "lint:code": "turbo lint:code",
     "lint:type": "turbo lint:type",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "@praha/eslint-config-definer": "^2.0.1",
+    "@turbo/gen": "^2.4.4",
     "@types/node": "^22.13.4",
     "eslint": "9.18.0",
     "jiti": "^2.4.2",
