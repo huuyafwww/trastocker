@@ -10,7 +10,7 @@
     "dev": "turbo run dev",
     "lint:code": "turbo lint:code",
     "lint:type": "turbo lint:type",
-    "sort:package": "sort-package-json 'package.json' 'apps/*/package.json' 'definitions/*/package.json' 'middlewares/*/package.json'",
+    "sort:package": "sort-package-json 'package.json' 'apps/*/package.json' 'definitions/*/package.json'",
     "test": "turbo run test --filter=@trastocker/app-*"
   },
   "devDependencies": {

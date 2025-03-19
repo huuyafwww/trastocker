@@ -4,7 +4,6 @@ const PACKAGE_TYPES = {
   app: 'apps',
   definition: 'definitions',
   helper: 'helpers',
-  middleware: 'middlewares',
 };
 
 type PackageType = keyof typeof PACKAGE_TYPES;
@@ -15,7 +14,6 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     app: `app-${name}-server`,
     definition: `${name}-definition`,
     helper: `${name}-helper`,
-    middleware: `${name}-middleware`,
   }[type]));
 
   plop.setGenerator('package', {
@@ -25,7 +23,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: 'list',
         name: 'type',
         message: 'What type of package do you want to create?',
-        choices: ['app', 'definition', 'helper', 'middleware'],
+        choices: ['app', 'definition', 'helper'],
       },
       {
         type: 'input',
