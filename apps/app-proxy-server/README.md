@@ -1,4 +1,4 @@
-# @trastocker/reverse-proxy-middleware
+# @trastocker/app-proxy-server
 
 ローカル環境用のリバースプロキシサーバー。
 フロントエンドとバックエンドのoriginを統一させるために必要。
