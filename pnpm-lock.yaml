@@ -385,7 +385,7 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
 
-  apps/reverse-proxy-middleware:
+  apps/app-proxy-server:
     dependencies:
       '@fastify/http-proxy':
         specifier: ^11.1.2
