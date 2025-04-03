@@ -1,25 +1,29 @@
 import 'ress';
 import '@styles/tailwind.css';
 import '@styles/globals.css';
+import { connectDatabase } from '@trastocker/drizzle-helper/sql-js';
 import ms from 'ms';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { ToastContainer } from 'react-toastify';
 import { withScreenshot } from 'storycap';
 import { Provider } from 'urql';
 
-import { connectDatabase, setupHandlers } from '../mocks';
+import { setupHandlers } from '../mocks';
 
 import type { Preview } from '@storybook/react';
 
 import useUrql from '@hooks/useUrql';
 
-const promiseDatabase = connectDatabase();
-
 const options: {
   serviceWorker?: {
     url: string;
   };
-} = {};
+  quiet: boolean;
+  onUnhandledRequest: 'bypass';
+} = {
+  quiet: true,
+  onUnhandledRequest: 'bypass',
+};
 
 // for GitHub Pages
 if (location.hostname === 'huuyafwww.github.io') {
@@ -48,7 +52,9 @@ const preview: Preview = {
   },
   parameters: {
     msw: {
-      handlers: setupHandlers(promiseDatabase),
+      handlers: setupHandlers(
+        connectDatabase({ url: 'mock-database.sqlite' }),
+      ),
     },
     controls: {
       matchers: {
@@ -59,6 +65,7 @@ const preview: Preview = {
     screenshot: {
       fullPage: false,
       captureBeyondViewport: false,
+      delay: 500,
       viewports: {
         desktop: {
           width: 1920,

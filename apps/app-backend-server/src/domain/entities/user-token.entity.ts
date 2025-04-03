@@ -2,10 +2,10 @@ import { Entity } from '@domain/entities/entity';
 import { UserTokenAccessToken } from '@domain/value-objects/user-token/access-token.value-object';
 import { UserTokenId } from '@domain/value-objects/user-token/id.value-object';
 
-import type { Fields } from '@domain/entities/entity';
 import type { UserEmail } from '@domain/value-objects/user/email.value-object';
 import type { UserId } from '@domain/value-objects/user/id.value-object';
 import type { UserTokenRefreshToken } from '@domain/value-objects/user-token/refresh-token.value-object';
+import type { ClassFields } from '@trastocker/typescript-utility-helper';
 
 type SerializedUserToken = {
   id: string;
@@ -25,11 +25,11 @@ export class UserToken extends Entity<UserTokenId> {
   declare public readonly updatedAt: Date;
   declare public readonly deletedAt: Date | null;
 
-  public constructor(props: Fields<UserToken>) {
+  public constructor(props: ClassFields<UserToken>) {
     super(props);
   }
 
-  public static create(props: Omit<Fields<UserToken>, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>): UserToken {
+  public static create(props: Omit<ClassFields<UserToken>, 'id' | 'createdAt' | 'updatedAt' | 'deletedAt'>): UserToken {
     return new UserToken({
       id: UserTokenId.generate(),
       createdAt: new Date(),
@@ -39,7 +39,7 @@ export class UserToken extends Entity<UserTokenId> {
     });
   }
 
-  private update(props: Partial<Fields<UserToken>>): UserToken {
+  private update(props: Partial<ClassFields<UserToken>>): UserToken {
     return new UserToken({
       ...this,
       ...props,

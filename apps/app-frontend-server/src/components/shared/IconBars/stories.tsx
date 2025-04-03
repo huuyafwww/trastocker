@@ -3,7 +3,7 @@ import IconBars from './';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Shared/Icon/IconBars',
+  title: 'Shared/Icon/Bars',
   component: IconBars,
   args: {},
   argTypes: {},

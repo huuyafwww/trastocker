@@ -1,9 +1,10 @@
 import { Entity } from '@domain/entities/entity';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 
-import type { Fields } from '@domain/entities/entity';
 import type { UserEmail } from '@domain/value-objects/user/email.value-object';
+import type { UserName } from '@domain/value-objects/user/name.value-object';
 import type { UserPassword } from '@domain/value-objects/user/password.value-object';
+import type { ClassFields } from '@trastocker/typescript-utility-helper';
 
 export type SerializedUser = {
   id: string;
@@ -18,7 +19,7 @@ export type SerializedUser = {
 };
 
 export class User extends Entity<UserId> {
-  declare public readonly name: string;
+  declare public readonly name: UserName;
   declare public readonly email: UserEmail;
   declare public readonly password: UserPassword;
   declare public readonly registeredAt: Date;
@@ -27,11 +28,11 @@ export class User extends Entity<UserId> {
   declare public readonly updatedAt: Date;
   declare public readonly deletedAt: Date | null;
 
-  public constructor(props: Fields<User>) {
+  public constructor(props: ClassFields<User>) {
     super(props);
   }
 
-  public static create(props: Omit<Fields<User>, 'id' | 'registeredAt' | 'createdAt' | 'updatedAt' | 'deletedAt'>): User {
+  public static create(props: Omit<ClassFields<User>, 'id' | 'registeredAt' | 'createdAt' | 'updatedAt' | 'deletedAt'>): User {
     return new User({
       id: UserId.generate(),
       registeredAt: new Date(),
@@ -58,7 +59,7 @@ export class User extends Entity<UserId> {
     return this.deletedAt !== null;
   }
 
-  public update(props: Partial<Fields<User>>): User {
+  public update(props: Partial<ClassFields<User>>): User {
     return new User({
       ...this,
       ...props,
@@ -77,7 +78,7 @@ export class User extends Entity<UserId> {
   public serialize(): SerializedUser {
     return {
       id: this.id.toString(),
-      name: this.name,
+      name: this.name.toString(),
       email: this.email.toString(),
       password: this.password.toString(),
       registeredAt: this.registeredAt,

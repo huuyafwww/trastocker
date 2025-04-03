@@ -25,20 +25,19 @@
     "clean": "rimraf node_modules dist",
     "dev": "pkgroll --watch",
     "lint:code": "eslint . --cache",
-    "lint:type": "tsc --pretty --noEmit",
-    "sort:package": "sort-package-json"
+    "lint:type": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "valibot": "1.0.0-beta.14"
+    "valibot": "1.0.0"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-common": "^1.1.1",
-    "@huuyafwww/eslint-config-node": "^1.1.1",
+    "@huuyafwww/eslint-config-common": "^1.1.3",
+    "@huuyafwww/eslint-config-node": "^1.1.3",
     "@huuyafwww/tsconfig-common": "^1.1.1",
-    "pkgroll": "^2.6.1",
-    "typescript": "^5.7.3"
+    "pkgroll": "^2.11.2",
+    "typescript": "^5.8.2"
   },
   "peerDependencies": {
-    "valibot": "1.0.0-beta.14"
+    "valibot": "1.0.0"
   }
 }

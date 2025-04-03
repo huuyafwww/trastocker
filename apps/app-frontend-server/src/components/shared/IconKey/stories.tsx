@@ -3,7 +3,7 @@ import IconKey from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Shared/Icon/IconKey',
+  title: 'Shared/Icon/Key',
   component: IconKey,
   args: {},
   argTypes: {},

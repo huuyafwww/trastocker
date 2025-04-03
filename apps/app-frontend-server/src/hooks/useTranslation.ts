@@ -3,7 +3,7 @@ import { useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { useMount } from 'react-use';
 
-import type { LocaleKey } from '@locales';
+import type { LocaleKey, FunctionLocaleKey } from '@locales';
 
 import Trans from '@components/shared/Trans';
 import { en, ja } from '@locales';
@@ -33,7 +33,16 @@ export const useTranslation = () => {
     return key in targetLocale;
   }, [targetLocale]);
 
-  const handleTranslation = useCallback((key: LocaleKey) => {
+  const handleTranslation = useCallback(<K extends LocaleKey>(
+    key: K,
+    ...args: K extends FunctionLocaleKey ? [Parameters<typeof ja[K]>[0]] : []
+  ): string => {
+    if (typeof targetLocale[key] === 'function') {
+      if (!args || args.length === 0) {
+        throw new Error('props is required');
+      }
+      return targetLocale[key](args[0]);
+    }
     return targetLocale[key];
   }, [targetLocale]);
 

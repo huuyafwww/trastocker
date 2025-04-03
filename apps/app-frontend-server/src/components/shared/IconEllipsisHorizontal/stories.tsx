@@ -3,7 +3,7 @@ import IconEllipsisHorizontal from './';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Shared/Icon/IconEllipsisHorizontal',
+  title: 'Shared/Icon/EllipsisHorizontal',
   component: IconEllipsisHorizontal,
   args: {},
   argTypes: {},

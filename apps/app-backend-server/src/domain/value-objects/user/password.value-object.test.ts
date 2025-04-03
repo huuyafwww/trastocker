@@ -2,22 +2,22 @@ import { UserPassword, InvalidUserPasswordError } from '@domain/value-objects/us
 
 describe('isEqual', () => {
   it('should return true if the password is correct', () => {
-    const userPassword = UserPassword.fromRawString('Password123456!', { rounds: 1 });
+    const userPassword = UserPassword.fromRawString('Password123456!');
     expect(userPassword.isEqual('Password123456!')).toBe(true);
   });
 
   it('should return false if the password is incorrect', () => {
-    const userPassword = UserPassword.fromRawString('Password123456!', { rounds: 1 });
+    const userPassword = UserPassword.fromRawString('Password123456!');
     expect(userPassword.isEqual('Password123456')).toBe(false);
   });
 
   it('should return true if the password is correct', () => {
-    const userPassword = UserPassword.fromRawString('Password123456!', { rounds: 1 });
+    const userPassword = UserPassword.fromRawString('Password123456!');
     expect(UserPassword.fromString(userPassword.toString()).isEqual('Password123456!')).toBe(true);
   });
 
   it('should return false if the password is incorrect', () => {
-    const userPassword = UserPassword.fromRawString('Password123456!', { rounds: 1 });
+    const userPassword = UserPassword.fromRawString('Password123456!');
     expect(UserPassword.fromString(userPassword.toString()).isEqual('Password123456')).toBe(false);
   });
 });

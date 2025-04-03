@@ -8,17 +8,14 @@ import { classNames, variants, defaultVariant } from './styles.css';
 import type { Variant } from './styles.css';
 import type { AriaButtonProps } from 'react-aria';
 
-// type Without<T, U> = { [P in Exclude<keyof T, keyof U>]?: never };
-// type XOR<T, U> = T | U extends object ? (Without<T, U> & U) : T | U;
-
 export type ButtonProps = {
   as?: 'button' | 'a';
   children: React.ReactNode;
   className?: string;
   variant?: Partial<Variant>;
 } & AriaButtonProps & (
-  | ({ as?: 'button' } & React.ComponentPropsWithRef<'button'>)
-  | ({ as?: 'a' } & React.ComponentPropsWithRef<'a'>)
+  | ({ as?: 'button' } & React.ButtonHTMLAttributes<HTMLButtonElement>)
+  | ({ as?: 'a' } & React.AnchorHTMLAttributes<HTMLAnchorElement>)
 );
 
 const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = ({

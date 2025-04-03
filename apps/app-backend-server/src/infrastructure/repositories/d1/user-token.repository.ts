@@ -2,16 +2,17 @@ import { schema } from '@trastocker/database-definition';
 import { eq, and, isNull } from 'drizzle-orm';
 import { injectable, inject } from 'inversify';
 
+import { INJECT_KEY } from '@constants/inject-key';
 import { UserToken } from '@domain/entities/user-token.entity';
 import { UserTokenRepository } from '@domain/repositories/user-token.repository';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 import { UserTokenAccessToken } from '@domain/value-objects/user-token/access-token.value-object';
 import { UserTokenId } from '@domain/value-objects/user-token/id.value-object';
 import { UserTokenRefreshToken } from '@domain/value-objects/user-token/refresh-token.value-object';
-import { Repository } from '@infrastructure/repositories/d1/repository';
+import { Repository } from '@infrastructure/repositories/repository';
 
 import type { UserTokenSelectColumns } from '@trastocker/database-definition';
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/d1';
 
 const convert = (userToken: UserTokenSelectColumns): UserToken => {
   return new UserToken({
@@ -28,7 +29,7 @@ const convert = (userToken: UserTokenSelectColumns): UserToken => {
 @injectable()
 export class D1UserTokenRepository extends Repository<UserToken, UserTokenId> implements UserTokenRepository {
   constructor(
-    @inject('D1Database') private database: Database,
+    @inject(INJECT_KEY.D1Database) private database: Database,
   ) {
     super();
   }

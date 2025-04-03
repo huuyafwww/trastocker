@@ -1,7 +1,12 @@
 export default {
+  'User name': 'ユーザー名',
+  'Register': '登録',
   'Login': 'ログイン',
   'Email': 'メールアドレス',
   'Password': 'パスワード',
+  'User Register failed': 'ユーザー登録に失敗しました',
+  'User Register success': 'ユーザー登録に成功しました',
+  'Send a temporary user registration': (props: { email: string }) => `仮登録完了メールを${props.email}宛に送信しました。メール内のリンクをクリックして登録を完了してください。`,
   'Login failed': 'ログインに失敗しました',
   'Email address or password is incorrect.': 'メールアドレスまたはパスワードが間違っています',
   'Workspace Name': 'ワークスペース名',

@@ -2,22 +2,23 @@ import { schema } from '@trastocker/database-definition';
 import { eq, and, isNull, inArray } from 'drizzle-orm';
 import { injectable, inject } from 'inversify';
 
+import { INJECT_KEY } from '@constants/inject-key';
 import { Users } from '@domain/collections/user.collection';
 import { User } from '@domain/entities/user.entity';
 import { UserRepository } from '@domain/repositories/user.repository';
 import { UserEmail } from '@domain/value-objects/user/email.value-object';
 import { UserId } from '@domain/value-objects/user/id.value-object';
+import { UserName } from '@domain/value-objects/user/name.value-object';
 import { UserPassword } from '@domain/value-objects/user/password.value-object';
-
-import { Repository } from './repository';
+import { Repository } from '@infrastructure/repositories/repository';
 
 import type { UserSelectColumns } from '@trastocker/database-definition';
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/d1';
 
 const convert = (user: UserSelectColumns): User => {
   return new User({
     id: UserId.fromString(user.id),
-    name: user.name,
+    name: UserName.fromString(user.name),
     email: UserEmail.fromString(user.email),
     password: UserPassword.fromString(user.password),
     registeredAt: user.registeredAt,
@@ -31,7 +32,7 @@ const convert = (user: UserSelectColumns): User => {
 @injectable()
 export class D1UserRepository extends Repository<User, UserId> implements UserRepository {
   constructor(
-    @inject('D1Database') private database: Database,
+    @inject(INJECT_KEY.D1Database) private database: Database,
   ) {
     super();
   }
@@ -39,7 +40,7 @@ export class D1UserRepository extends Repository<User, UserId> implements UserRe
   async save(user: User): Promise<User> {
     if (!!(await this.findById(user.id))) {
       const rows = await this.database.update(schema.user).set({
-        name: user.name,
+        name: user.name.toString(),
         email: user.email.toString(),
         password: user.password.toString(),
         registeredAt: user.registeredAt,

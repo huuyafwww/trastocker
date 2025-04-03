@@ -1,4 +1,4 @@
-import WorkspaceCreatePage from './';
+import WorkspaceCreatePage from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

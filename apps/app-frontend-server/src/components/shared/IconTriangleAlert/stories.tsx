@@ -3,7 +3,7 @@ import IconTriangleAlert from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Shared/Icon/IconTriangleAlert',
+  title: 'Shared/Icon/TriangleAlert',
   component: IconTriangleAlert,
   args: {},
   argTypes: {},

@@ -4,9 +4,8 @@ import { Workspaces } from '@domain/collections/workspace.collection';
 import { Workspace } from '@domain/entities/workspace.entity';
 import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
+import { Repository } from '@infrastructure/repositories/repository';
 import { mockedWorkspace } from '@test/fixtures/workspace.fixture';
-
-import { Repository } from './repository';
 
 @injectable()
 export class D1WorkspaceRepository extends Repository<Workspace, WorkspaceId> implements WorkspaceRepository {

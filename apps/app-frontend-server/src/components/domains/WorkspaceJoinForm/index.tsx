@@ -15,7 +15,7 @@ import { useTranslation } from '@hooks/useTranslation';
 const WorkspaceJoinForm: React.FC = () => {
   const inputInviteCodeId = useId();
   const { t } = useTranslation();
-  const { methods, handleSubmit } = useWorkspaceJoinForm();
+  const { methods, handleSubmit, canSubmit } = useWorkspaceJoinForm();
 
   return (
     <FormProvider {...methods}>
@@ -35,6 +35,7 @@ const WorkspaceJoinForm: React.FC = () => {
                 border: 'none',
                 size: 'none',
               }}
+              label={inputInviteCodeId}
               rules={{ required: true }}
             />
           </InputGroup.Input>
@@ -44,7 +45,7 @@ const WorkspaceJoinForm: React.FC = () => {
             </div>
           )}
         </InputGroup>
-        <FormGroup.Button>
+        <FormGroup.Button isDisabled={!canSubmit}>
           {t('Join')}
         </FormGroup.Button>
       </form>

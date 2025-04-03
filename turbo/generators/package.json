@@ -1,0 +1,17 @@
+{
+  "name": "@trastocker/package-generator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "lint:code": "eslint . --cache",
+    "lint:type": "tsc --pretty --noEmit"
+  },
+  "devDependencies": {
+    "@huuyafwww/eslint-config-common": "^1.1.3",
+    "@huuyafwww/eslint-config-node": "^1.1.3",
+    "@huuyafwww/tsconfig-common": "^1.1.1",
+    "typescript": "^5.8.2"
+  }
+}

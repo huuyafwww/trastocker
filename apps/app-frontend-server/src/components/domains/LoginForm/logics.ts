@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { valibotResolver } from '@hookform/resolvers/valibot';
 import { UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-schema-definition';
@@ -32,6 +32,13 @@ export const useLoginForm = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, login] = useMutation<LoginUserMutation, LoginUserMutationVariables>(loginUserMutation);
 
+  const canSubmit = useMemo(() => {
+    if (methods.formState.isLoading) return false;
+    if (methods.formState.isSubmitting) return false;
+    if (methods.formState.isSubmitSuccessful) return false;
+    return methods.formState.isValid;
+  }, [methods.formState]);
+
   const handleSubmit = useCallback(async (data: LoginFormValues) => {
     const result = await login(data);
 
@@ -49,6 +56,7 @@ export const useLoginForm = () => {
   }, [login, t]);
 
   return {
+    canSubmit,
     methods,
     handleSubmit: methods.handleSubmit(handleSubmit),
   };

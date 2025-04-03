@@ -21,8 +21,8 @@ const LoginForm: React.FC = () => {
   const inputEmailId = useId();
   const inputPasswordId = useId();
   const { t } = useTranslation();
-  const { methods, handleSubmit } = useLoginForm();
-  const [on, toggle] = useToggle(true);
+  const { methods, handleSubmit, canSubmit } = useLoginForm();
+  const [on, toggle] = useToggle(false);
 
   return (
     <FormProvider {...methods}>
@@ -42,6 +42,7 @@ const LoginForm: React.FC = () => {
                 border: 'none',
                 size: 'none',
               }}
+              label={inputEmailId}
               rules={{ required: true }}
             />
           </InputGroup.Input>
@@ -66,6 +67,7 @@ const LoginForm: React.FC = () => {
                 border: 'none',
                 size: 'none',
               }}
+              label={inputPasswordId}
               rules={{ required: true }}
             />
             <Button
@@ -85,7 +87,7 @@ const LoginForm: React.FC = () => {
             </div>
           )}
         </InputGroup>
-        <FormGroup.Button>
+        <FormGroup.Button isDisabled={!canSubmit}>
           {t('Login')}
         </FormGroup.Button>
       </form>
