@@ -38,5 +38,5 @@ dist
 .wrangler
 .worker-next
 
-# typescript
+# TypeScript
 tsconfig.tsbuildinfo

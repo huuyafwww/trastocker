@@ -16,7 +16,9 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, 'src/styles'),
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+  ],
   test: {
     globals: true,
     environment: 'happy-dom',
