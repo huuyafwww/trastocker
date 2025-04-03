@@ -35,18 +35,6 @@ export const user: CreateHandler = ({ promiseDatabase }) => {
       ),
     });
 
-    if (workspaces.length === 0) {
-      return HttpResponse.json({
-        data: {
-          user: {
-            ...user,
-            isDeleted: user.deletedAt !== null,
-            workspaces: [],
-          },
-        },
-      });
-    }
-
     return HttpResponse.json({
       data: {
         user: {
