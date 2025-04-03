@@ -1,7 +1,7 @@
-import { migrate } from 'drizzle-orm/d1/migrator';
+import { migrate } from 'drizzle-orm/better-sqlite3/migrator';
 
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/better-sqlite3';
 
-export const migrateFromDatabase = async (database: Database): Promise<void> => {
-  await migrate(database, { migrationsFolder: '../../definitions/database-definition/migrations' });
+export const migrateFromDatabase = (database: Database): void => {
+  migrate(database, { migrationsFolder: '../../definitions/database-definition/migrations' });
 };

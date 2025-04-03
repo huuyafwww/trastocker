@@ -21,11 +21,11 @@ const generalUser = User.create({
   verifiedAt: new Date(),
 });
 
-export const users: Seeder = async (database) => {
-  await database.insert(schema.user).values({
+export const users: Seeder = (database) => {
+  database.insert(schema.user).values({
     ...adminUser.serialize(),
   });
-  await database.insert(schema.user).values({
+  database.insert(schema.user).values({
     ...generalUser.serialize(),
   });
 };

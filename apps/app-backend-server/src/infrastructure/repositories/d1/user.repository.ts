@@ -13,7 +13,7 @@ import { UserPassword } from '@domain/value-objects/user/password.value-object';
 import { Repository } from '@infrastructure/repositories/repository';
 
 import type { UserSelectColumns } from '@trastocker/database-definition';
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/d1';
 
 const convert = (user: UserSelectColumns): User => {
   return new User({

@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { connectDatabase } from '@trastocker/database-definition';
+import { connectDatabase } from '@trastocker/drizzle-helper/better-sqlite3';
 import { Container } from 'inversify';
 
 import { CreateUserUseCase } from '@application/use-cases/create-user.use-case.mock';
@@ -26,13 +26,10 @@ import type { UserTokenRepository } from '@domain/repositories/user-token.reposi
 import type { UserRepository } from '@domain/repositories/user.repository';
 import type { WorkspaceUserRepository } from '@domain/repositories/workspace-user.repository';
 import type { WorkspaceRepository } from '@domain/repositories/workspace.repository';
-import type { Database } from '@trastocker/database-definition';
-import type { AnyD1Database } from 'drizzle-orm/d1';
+import type { Database } from '@trastocker/drizzle-helper/better-sqlite3';
 import type { Resend } from 'resend';
 
-const createContainer: (props?: {
-  database?: AnyD1Database;
-}) => Container = (props) => {
+const createContainer: () => Container = () => {
   const container = new Container();
   container.bind<UserLoginUseCase>(INJECT_KEY.UserLoginUseCase).to(UserLoginUseCase);
   container.bind<GetAuthUserUseCase>(INJECT_KEY.GetAuthUserUseCase).to(GetAuthUserUseCase);
@@ -49,9 +46,7 @@ const createContainer: (props?: {
   container.bind<WorkspaceRepository>(INJECT_KEY.WorkspaceRepository).to(D1WorkspaceRepository);
   container.bind<WorkspaceUserRepository>(INJECT_KEY.WorkspaceUserRepository).to(D1WorkspaceUserRepository);
   container.bind<EmailNotification>(INJECT_KEY.EmailNotification).to(ResendEmailNotification);
-  if (props?.database) {
-    container.bind<Database>(INJECT_KEY.D1Database).toConstantValue(connectDatabase(props.database));
-  }
+  container.bind<Database>(INJECT_KEY.D1Database).toConstantValue(connectDatabase());
   container.bind<Partial<Resend>>(INJECT_KEY.Resend).toConstantValue(new ResendClient());
   return container;
 };

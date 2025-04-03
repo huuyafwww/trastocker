@@ -11,8 +11,8 @@ export const workspace = Workspace.create({
   inviteCode: WorkspaceInviteCode.generate(),
 });
 
-export const workspaces: Seeder = async (database) => {
-  await database.insert(schema.workspace).values({
+export const workspaces: Seeder = (database) => {
+  database.insert(schema.workspace).values({
     ...workspace.serialize(),
   });
 };

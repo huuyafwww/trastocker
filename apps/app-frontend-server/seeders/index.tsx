@@ -19,10 +19,9 @@ const seeders: Seeder[] = [
 ];
 
 export const seed = async (database: Database) => {
-  const context = {
-    now: new Date(),
-  };
   for (const seeder of seeders) {
-    await seeder(database, context);
+    await seeder(database, {
+      now: new Date(),
+    });
   }
 };

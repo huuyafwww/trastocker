@@ -1,21 +1,16 @@
-import { D1Database, D1DatabaseAPI } from '@miniflare/d1';
-import { createSQLiteDB } from '@miniflare/shared';
-import { connectDatabase } from '@trastocker/database-definition';
 import { schema } from '@trastocker/database-definition';
+import { connectDatabase } from '@trastocker/drizzle-helper/better-sqlite3';
 
 import { users } from './user';
 import { workspaces } from './workspace';
 import { workspaceUsers } from './workspace-user';
 
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/better-sqlite3';
 
 if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not defined');
 
-const sqliteDb = await createSQLiteDB(process.env.DATABASE_URL);
-const d1DataBase = new D1Database(new D1DatabaseAPI(sqliteDb));
-const database = connectDatabase(d1DataBase);
-
-export type Seeder = (database: Database) => Promise<void>;
+const database = connectDatabase({ url: process.env.DATABASE_URL });
+export type Seeder = (database: Database) => void;
 
 const seeders: Seeder[] = [
   users,
@@ -24,10 +19,8 @@ const seeders: Seeder[] = [
 ];
 
 // The order of deletion takes foreign keys into account.
-await database.delete(schema.workspaceUser);
-await database.delete(schema.user);
-await database.delete(schema.workspace);
+database.delete(schema.workspaceUser);
+database.delete(schema.user);
+database.delete(schema.workspace);
 
-for (const seeder of seeders) {
-  await seeder(database);
-}
+seeders.forEach(seeder => seeder(database));
