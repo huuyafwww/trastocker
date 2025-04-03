@@ -17,7 +17,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    // @ts-expect-error Type 'PluginOption[]' cannot be assigned to type 'PluginOption'.
     react(),
   ],
   test: {
