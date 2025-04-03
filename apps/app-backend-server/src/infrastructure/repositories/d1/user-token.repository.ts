@@ -12,7 +12,7 @@ import { UserTokenRefreshToken } from '@domain/value-objects/user-token/refresh-
 import { Repository } from '@infrastructure/repositories/repository';
 
 import type { UserTokenSelectColumns } from '@trastocker/database-definition';
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/d1';
 
 const convert = (userToken: UserTokenSelectColumns): UserToken => {
   return new UserToken({

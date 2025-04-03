@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { connectDatabase } from '@trastocker/database-definition';
+import { connectDatabase } from '@trastocker/drizzle-helper/d1';
 import { Container } from 'inversify';
 import { Resend } from 'resend';
 
@@ -25,7 +25,7 @@ import type { UserTokenRepository } from '@domain/repositories/user-token.reposi
 import type { UserRepository } from '@domain/repositories/user.repository';
 import type { WorkspaceUserRepository } from '@domain/repositories/workspace-user.repository';
 import type { WorkspaceRepository } from '@domain/repositories/workspace.repository';
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/d1';
 import type { AnyD1Database } from 'drizzle-orm/d1';
 
 const createContainer: (props: {

@@ -12,8 +12,8 @@ const workspaceUser = WorkspaceUser.create({
   workspaceId: workspace.id,
 });
 
-export const workspaceUsers: Seeder = async (database) => {
-  await database.insert(schema.workspaceUser).values({
+export const workspaceUsers: Seeder = (database) => {
+  database.insert(schema.workspaceUser).values({
     ...workspaceUser.serialize(),
   });
 };

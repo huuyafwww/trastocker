@@ -12,7 +12,7 @@ import { WorkspaceName } from '@domain/value-objects/workspace/name.value-object
 import { Repository } from '@infrastructure/repositories/repository';
 
 import type { WorkspaceSelectColumns } from '@trastocker/database-definition';
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/d1';
 
 const convert = (workspace: WorkspaceSelectColumns): Workspace => {
   return new Workspace({

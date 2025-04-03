@@ -1,11 +1,7 @@
-import { D1Database, D1DatabaseAPI } from '@miniflare/d1';
-import { createSQLiteDB } from '@miniflare/shared';
-import { connectDatabase } from '@trastocker/database-definition';
+import { connectDatabase } from '@trastocker/drizzle-helper/better-sqlite3';
 
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/better-sqlite3';
 
-export const getDatabaseClient = async (): Promise<Database> => {
-  const sqliteDb = await createSQLiteDB(':memory:');
-  const d1DataBase = new D1Database(new D1DatabaseAPI(sqliteDb));
-  return connectDatabase(d1DataBase);
+export const getDatabaseClient = (): Database => {
+  return connectDatabase();
 };

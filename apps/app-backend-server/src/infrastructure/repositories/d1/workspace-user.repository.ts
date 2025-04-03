@@ -12,7 +12,7 @@ import { WorkspaceUserId } from '@domain/value-objects/workspace-user/id.value-o
 import { Repository } from '@infrastructure/repositories/repository';
 
 import type { WorkspaceUserSelectColumns } from '@trastocker/database-definition';
-import type { Database } from '@trastocker/database-definition';
+import type { Database } from '@trastocker/drizzle-helper/d1';
 
 const convert = (workspaceUser: WorkspaceUserSelectColumns): WorkspaceUser => {
   return new WorkspaceUser({

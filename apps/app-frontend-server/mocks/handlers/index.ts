@@ -1,7 +1,7 @@
 import { createMutationHandlers } from './mutations';
 import { createQueryHandlers } from './queries';
 
-import type { Database } from '../';
+import type { Database } from '@trastocker/drizzle-helper/sql-js';
 import type { GraphQLHandler } from 'msw';
 
 export type HandlerContext = {
