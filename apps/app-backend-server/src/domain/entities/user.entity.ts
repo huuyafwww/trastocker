@@ -59,6 +59,10 @@ export class User extends Entity<UserId> {
     });
   }
 
+  public canVerify(): boolean {
+    return !this.verifiedAt && !this.deletedAt;
+  }
+
   public isVerified(): boolean {
     return this.verifiedAt !== null;
   }

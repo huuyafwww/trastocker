@@ -99,4 +99,14 @@ export class D1UserRepository extends Repository<User, UserId> implements UserRe
     if (!row) return null;
     return convert(row);
   }
+
+  async findByVerifyToken(verifyToken: UserVerifyToken): Promise<User | null> {
+    const row = await this.database.query.user.findFirst({
+      where: and(
+        eq(schema.user.verifyToken, verifyToken.toString()),
+      ),
+    });
+    if (!row) return null;
+    return convert(row);
+  }
 }
