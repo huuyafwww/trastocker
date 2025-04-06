@@ -13,6 +13,7 @@ import { CreateUserService } from '@domain/services/create-user.service.mock';
 import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service.mock';
 import { GetUserJoinedWorkspacesService } from '@domain/services/get-user-joined-workspaces.service.mock';
 import { GetWorkspaceJoinedUsersService } from '@domain/services/get-workspace-joined-users.service.mock';
+import { VerifyUserService } from '@domain/services/verify-user.service.mock';
 import { ResendEmailNotification } from '@infrastructure/notifications/resend/email.notification.mock';
 import { D1UserTokenRepository } from '@infrastructure/repositories/d1/user-token.repository.mock';
 import { D1UserRepository } from '@infrastructure/repositories/d1/user.repository.mock';
@@ -41,6 +42,7 @@ const createContainer: () => Container = () => {
   container.bind<CreateUserService>(INJECT_KEY.CreateUserService).to(CreateUserService);
   container.bind<GetUserJoinedWorkspacesService>(INJECT_KEY.GetUserJoinedWorkspacesService).to(GetUserJoinedWorkspacesService);
   container.bind<GetWorkspaceJoinedUsersService>(INJECT_KEY.GetWorkspaceJoinedUsersService).to(GetWorkspaceJoinedUsersService);
+  container.bind<VerifyUserService>(INJECT_KEY.VerifyUserService).to(VerifyUserService);
   container.bind<UserRepository>(INJECT_KEY.UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(INJECT_KEY.UserTokenRepository).to(D1UserTokenRepository);
   container.bind<WorkspaceRepository>(INJECT_KEY.WorkspaceRepository).to(D1WorkspaceRepository);

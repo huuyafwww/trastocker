@@ -14,6 +14,7 @@ import { CreateUserService } from '@domain/services/create-user.service';
 import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service';
 import { GetUserJoinedWorkspacesService } from '@domain/services/get-user-joined-workspaces.service';
 import { GetWorkspaceJoinedUsersService } from '@domain/services/get-workspace-joined-users.service';
+import { VerifyUserService } from '@domain/services/verify-user.service';
 import { ResendEmailNotification } from '@infrastructure/notifications/resend/email.notification';
 import { D1UserTokenRepository } from '@infrastructure/repositories/d1/user-token.repository';
 import { D1UserRepository } from '@infrastructure/repositories/d1/user.repository';
@@ -42,6 +43,7 @@ const createContainer: (props: {
   container.bind<CreateUserService>(INJECT_KEY.CreateUserService).to(CreateUserService);
   container.bind<GetUserJoinedWorkspacesService>(INJECT_KEY.GetUserJoinedWorkspacesService).to(GetUserJoinedWorkspacesService);
   container.bind<GetWorkspaceJoinedUsersService>(INJECT_KEY.GetWorkspaceJoinedUsersService).to(GetWorkspaceJoinedUsersService);
+  container.bind<VerifyUserService>(INJECT_KEY.VerifyUserService).to(VerifyUserService);
   container.bind<UserRepository>(INJECT_KEY.UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(INJECT_KEY.UserTokenRepository).to(D1UserTokenRepository);
   container.bind<WorkspaceRepository>(INJECT_KEY.WorkspaceRepository).to(D1WorkspaceRepository);
