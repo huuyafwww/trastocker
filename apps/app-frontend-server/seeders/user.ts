@@ -15,6 +15,7 @@ export const users: Seeder = async (database, context) => {
       name: `User-${id}`,
       email: `example+${id}@example.com`,
       password: 't2t2tN{b((t&',
+      verifyToken: 'verify-token',
       registeredAt: context.now,
       verifiedAt: null,
     });
@@ -30,6 +31,7 @@ export const users: Seeder = async (database, context) => {
       name: `User-${id}`,
       email: `example+${id}@example.com`,
       password: 't2t2tN{b((t&',
+      verifyToken: 'verify-token',
       registeredAt: context.now,
       verifiedAt: context.now,
     });
@@ -45,6 +47,7 @@ export const users: Seeder = async (database, context) => {
       name: `User-${id}`,
       email: `example+${id}@example.com`,
       password: 't2t2tN{b((t&',
+      verifyToken: 'verify-token',
       registeredAt: context.now,
       verifiedAt: context.now,
     });

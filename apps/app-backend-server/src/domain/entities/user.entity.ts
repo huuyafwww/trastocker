@@ -71,6 +71,14 @@ export class User extends Entity<UserId> {
     return this.deletedAt !== null;
   }
 
+  public verified(): User {
+    return new User({
+      ...this,
+      verifiedAt: new Date(),
+      updatedAt: new Date(),
+    });
+  }
+
   public update(props: Partial<ClassFields<User>>): User {
     return new User({
       ...this,

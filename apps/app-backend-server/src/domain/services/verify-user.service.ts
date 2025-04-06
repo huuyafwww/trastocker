@@ -39,9 +39,6 @@ export class VerifyUserService implements Service<VerifyUserServiceProps, Verify
     if (user.canVerify()) {
       throw new Error('User already verified');
     }
-    user.update({
-      verifiedAt: new Date(),
-    });
 
     const result = await this.emailNotification.dispatch(TextEmail.create({
       from: EmailFrom.fromString(SYSTEM_EMAIL.register),
@@ -68,6 +65,6 @@ export class VerifyUserService implements Service<VerifyUserServiceProps, Verify
       throw result.error;
     }
 
-    return await this.userRepository.save(user);
+    return await this.userRepository.save(user.verified());
   }
 }
