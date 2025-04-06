@@ -22,11 +22,11 @@ export class CreateUserUseCase {
   ) {}
 
   async execute(props: CreateUserUseCaseProps): CreateUserUseCaseOutput {
-    const canCreate = await this.canCreateUserService.execute({
+    const canCreateUser = await this.canCreateUserService.execute({
       email: props.email,
     });
 
-    if (!canCreate) throw new Error('User already exists');
+    if (!canCreateUser) throw new Error('User already exists');
 
     return await this.createUserService.execute({
       name: props.name,
