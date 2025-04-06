@@ -1,3 +1,4 @@
+import dedent from 'dedent';
 import { injectable, inject } from 'inversify';
 
 import { INJECT_KEY } from '@constants/inject-key';
@@ -42,8 +43,19 @@ export class CreateUserService implements Service<CreateUserServiceProps, Create
       from: EmailFrom.fromString(SYSTEM_EMAIL.register),
       to: user.email,
       subject: EmailSubject.fromString(SYSTEM_EMAIL_SUBJECT.register),
-      text: `Hello, ${user.name.toString()}!`,
+      /* TODO: Support
+        - html mail
+        - email templates
+        - i18n
+      */
+      text: dedent`Hello, ${user.name.toString()}!\n\n\
+      Welcome to Trastocker! Please verify your email address by clicking the link below:\n\n\
+      ${process.env.APP_URL}/user/verify?token=${user.verifyToken.toString()}\n\n\
+      Thank you for joining us!\n\n\
+      Best regards,\n\
+      The Trastocker Team`,
     }));
+
     if (result.isErr()) {
       throw result.error;
     }
