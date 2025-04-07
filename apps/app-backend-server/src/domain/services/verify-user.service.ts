@@ -65,6 +65,6 @@ export class VerifyUserService implements Service<VerifyUserServiceProps, Verify
       throw result.error;
     }
 
-    return await this.userRepository.save(user.verified());
+    return await this.userRepository.save(user.verify());
   }
 }
