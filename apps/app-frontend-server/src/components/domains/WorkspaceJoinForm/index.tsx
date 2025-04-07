@@ -2,7 +2,7 @@ import { useId } from 'react';
 
 import { FormProvider } from 'react-hook-form';
 
-import { input } from '../LoginForm/styles.css';
+import { input } from '../UserLoginForm/styles.css';
 
 import { useWorkspaceJoinForm } from './logics';
 

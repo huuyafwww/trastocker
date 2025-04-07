@@ -1,13 +1,13 @@
-import LoginForm from '.';
+import UserLoginForm from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Domain/LoginForm',
-  component: LoginForm,
+  title: 'Domain/UserLoginForm',
+  component: UserLoginForm,
   args: {},
   argTypes: {},
-} satisfies Meta<typeof LoginForm>;
+} satisfies Meta<typeof UserLoginForm>;
 
 type Story = StoryObj<typeof meta>;
 
