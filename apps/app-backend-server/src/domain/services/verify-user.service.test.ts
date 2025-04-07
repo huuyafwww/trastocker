@@ -4,6 +4,7 @@ import { err } from 'neverthrow';
 import { INJECT_KEY } from '@constants/inject-key';
 import { User } from '@domain/entities/user.entity';
 import { ResendEmailNotification } from '@infrastructure/notifications/resend/email.notification.mock';
+import { D1UserRepository } from '@infrastructure/repositories/d1/user.repository.mock';
 import { mockedUser } from '@test/fixtures/user.fixture';
 import { createContainer } from '@test/inversify.config';
 
@@ -31,9 +32,11 @@ describe('Positive', () => {
 
 describe('Negative', () => {
   it('If the user does not exist', async () => {
+    const spy = vi.spyOn(D1UserRepository.prototype, 'findByVerifyToken').mockResolvedValue(null);
     await expect(hasAsyncThrow(async () => await container.get<VerifyUserService>(INJECT_KEY.VerifyUserService).execute({
       verifyToken: 'invalid-token',
     }))).resolves.toStrictEqual(true);
+    spy.mockRestore();
   });
 
   it('If the user already verified', async () => {
@@ -46,7 +49,7 @@ describe('Negative', () => {
 
   it('If the email notification dispatch fails', async () => {
     const spy = vi.spyOn(ResendEmailNotification.prototype, 'dispatch').mockResolvedValue(err(new Error('Failed to send email')));
-    await expect(hasAsyncThrow(async () => await container.get<VerifyUserService>(INJECT_KEY.CreateUserService).execute({
+    await expect(hasAsyncThrow(async () => await container.get<VerifyUserService>(INJECT_KEY.VerifyUserService).execute({
       verifyToken: mockedUser.verifyToken.toString(),
     }))).resolves.toStrictEqual(true);
     spy.mockRestore();
