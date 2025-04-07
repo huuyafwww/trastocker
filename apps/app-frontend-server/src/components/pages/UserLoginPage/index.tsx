@@ -5,9 +5,9 @@ import type React from 'react';
 import LoginForm from '@components/domains/LoginForm';
 import LogoTrastocker from '@components/shared/LogoTrastocker';
 
-type LoginPageProps = {};
+type UserLoginPageProps = {};
 
-const LoginPage: React.FC<LoginPageProps> = () => {
+const UserLoginPage: React.FC<UserLoginPageProps> = () => {
   return (
     <div className={wrapper}>
       <div className={inner}>
@@ -20,4 +20,4 @@ const LoginPage: React.FC<LoginPageProps> = () => {
   );
 };
 
-export default LoginPage;
+export default UserLoginPage;
