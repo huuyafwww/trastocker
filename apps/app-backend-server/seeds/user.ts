@@ -24,8 +24,8 @@ const generalUser = User.create({
 export const users: Seeder = (database) => {
   database.insert(schema.user).values({
     ...adminUser.serialize(),
-  });
+  }).run();
   database.insert(schema.user).values({
     ...generalUser.serialize(),
-  });
+  }).run();
 };

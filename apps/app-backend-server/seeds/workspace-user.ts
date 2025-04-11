@@ -15,5 +15,5 @@ const workspaceUser = WorkspaceUser.create({
 export const workspaceUsers: Seeder = (database) => {
   database.insert(schema.workspaceUser).values({
     ...workspaceUser.serialize(),
-  });
+  }).run();
 };
