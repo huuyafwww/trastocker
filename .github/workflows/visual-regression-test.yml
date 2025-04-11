@@ -50,6 +50,10 @@ jobs:
           fonts-noto-cjk \
           fonts-noto-cjk-extra
 
+      - name: Generate mock database
+        run: pnpm run generate:mock-database
+        working-directory: apps/app-frontend-server
+
       - name: Build Storybook
         run: pnpm run storybook:build
         working-directory: apps/app-frontend-server
