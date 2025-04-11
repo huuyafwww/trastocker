@@ -2,7 +2,7 @@ import { schema } from '@trastocker/database-definition';
 import { connectDatabase } from '@trastocker/drizzle-helper/sql-js';
 import { and, isNull, isNotNull } from 'drizzle-orm';
 
-import UserVerifyStatus from '.';
+import UserVerifyPage from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
@@ -18,8 +18,8 @@ const registeredUser = await database.query.user.findFirst({
 });
 
 const meta = {
-  title: 'Pages/UserVerifyStatus',
-  component: UserVerifyStatus,
+  title: 'Pages/UserVerifyPage',
+  component: UserVerifyPage,
   args: {},
   argTypes: {},
   decorators: [
@@ -29,7 +29,7 @@ const meta = {
       </AuthLayout>
     ),
   ],
-} satisfies Meta<typeof UserVerifyStatus>;
+} satisfies Meta<typeof UserVerifyPage>;
 
 type Story = StoryObj<typeof meta>;
 
