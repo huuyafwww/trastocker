@@ -1,7 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 
 import { UserVerifyTokenSchema } from '@trastocker/validation-schema-definition';
-import { useRouter } from 'next/router';
 import { useMutation } from 'urql';
 import * as v from 'valibot';
 
@@ -9,15 +8,16 @@ import { verifyUserMutation } from './gql';
 
 import type { VerifyUserMutation, VerifyUserMutationVariables } from './gql';
 
-export const useIsVerifyUser = () => {
-  const router = useRouter();
+export type UseIsVerifyTokenProps = {
+  verifyToken: string;
+};
 
+export const useIsVerifyUser = ({ verifyToken }: UseIsVerifyTokenProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const [result, verify] = useMutation<VerifyUserMutation, VerifyUserMutationVariables>(verifyUserMutation);
 
   useEffect(() => {
-    const verifyToken = (router.query.verifyToken || '') as string;
     if (!v.safeParse(UserVerifyTokenSchema, verifyToken).success) {
       setIsLoading(false);
       return;
@@ -27,7 +27,7 @@ export const useIsVerifyUser = () => {
       await verify({ verifyToken });
       setIsLoading(false);
     })();
-  }, [router, verify]);
+  }, [verifyToken, verify]);
 
   const isVerified = useMemo(() => {
     return !!result.data?.verifyUser;

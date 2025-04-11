@@ -5,6 +5,8 @@ import type { Seeder } from './index';
 export const users: Seeder = async (database, context) => {
   let id = 1;
 
+  const verifyToken = 'verify-token-verify-token-verify-token-verify-token-verify-token-verify-token';
+
   // registered users
   for (; id <= 5; id++) {
     await database.insert(schema.user).values({
@@ -15,7 +17,7 @@ export const users: Seeder = async (database, context) => {
       name: `User-${id}`,
       email: `example+${id}@example.com`,
       password: 't2t2tN{b((t&',
-      verifyToken: 'verify-token',
+      verifyToken,
       registeredAt: context.now,
       verifiedAt: null,
     });
@@ -31,7 +33,7 @@ export const users: Seeder = async (database, context) => {
       name: `User-${id}`,
       email: `example+${id}@example.com`,
       password: 't2t2tN{b((t&',
-      verifyToken: 'verify-token',
+      verifyToken,
       registeredAt: context.now,
       verifiedAt: context.now,
     });
@@ -47,7 +49,7 @@ export const users: Seeder = async (database, context) => {
       name: `User-${id}`,
       email: `example+${id}@example.com`,
       password: 't2t2tN{b((t&',
-      verifyToken: 'verify-token',
+      verifyToken,
       registeredAt: context.now,
       verifiedAt: context.now,
     });
