@@ -1,10 +1,12 @@
 import { idSchema, WorkspaceInviteCodeSchema } from '@trastocker/validation-schema-definition';
 
+import { INJECT_KEY } from '@constants/inject-key';
 import { Workspace } from '@domain/entities/workspace.entity';
-import { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 import { WorkspaceId } from '@domain/value-objects/workspace/id.value-object';
 import { WorkspaceInviteCode } from '@domain/value-objects/workspace/invite-code.value-object';
 import { builder } from '@graphql/builder';
+
+import type { WorkspaceRepository } from '@domain/repositories/workspace.repository';
 
 builder.queryField('workspace', t => t.field({
   type: Workspace,
@@ -25,7 +27,7 @@ builder.queryField('workspace', t => t.field({
   resolve: async (_, args, context) => {
     if (args.workspaceId) {
       const workspaceId = WorkspaceId.fromString(args.workspaceId);
-      const workspace = await (context.container.get<WorkspaceRepository>(WorkspaceRepository)).findById(workspaceId);
+      const workspace = await (context.container.get<WorkspaceRepository>(INJECT_KEY.WorkspaceRepository)).findById(workspaceId);
       if (!workspace) throw new Error('Workspace not found');
       if (workspace.isDeleted()) throw new Error('Workspace is deleted');
       return workspace;
@@ -33,7 +35,7 @@ builder.queryField('workspace', t => t.field({
 
     if (args.inviteCode) {
       const inviteCode = WorkspaceInviteCode.fromString(args.inviteCode);
-      const workspace = await (context.container.get<WorkspaceRepository>(WorkspaceRepository)).findByInviteCode(inviteCode);
+      const workspace = await (context.container.get<WorkspaceRepository>(INJECT_KEY.WorkspaceRepository)).findByInviteCode(inviteCode);
       if (!workspace) throw new Error('Workspace not found');
       if (workspace.isDeleted()) throw new Error('Workspace is deleted');
       return workspace;

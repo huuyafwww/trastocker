@@ -1,9 +1,11 @@
 import { WorkspaceNameSchema } from '@trastocker/validation-schema-definition';
 
+import { INJECT_KEY } from '@constants/inject-key';
 import { Workspace } from '@domain/entities/workspace.entity';
-import { AssignWorkspaceByIdService } from '@domain/services/assign-workspace-by-id.service';
-import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service';
 import { builder } from '@graphql/builder';
+
+import type { AssignWorkspaceByIdService } from '@domain/services/assign-workspace-by-id.service';
+import type { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service';
 
 builder.mutationField('createWorkspace', t => t.field({
   type: Workspace,
@@ -19,12 +21,12 @@ builder.mutationField('createWorkspace', t => t.field({
   resolve: async (_, args, context) => {
     if (!context.authUser) throw new Error('Unauthorized');
 
-    const workspace = await (context.container.get<CreateWorkspaceByNameService>(CreateWorkspaceByNameService)).execute({
+    const workspace = await (context.container.get<CreateWorkspaceByNameService>(INJECT_KEY.CreateWorkspaceByNameService)).execute({
       name: args.name,
     });
     if (!workspace) throw new Error('Workspace not created');
 
-    return await (context.container.get<AssignWorkspaceByIdService>(AssignWorkspaceByIdService)).execute({
+    return await (context.container.get<AssignWorkspaceByIdService>(INJECT_KEY.AssignWorkspaceByIdService)).execute({
       userId: context.authUser.id.toString(),
       workspaceId: workspace.id.toString(),
     });
