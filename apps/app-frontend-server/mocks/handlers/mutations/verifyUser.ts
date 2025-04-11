@@ -43,10 +43,10 @@ export const verifyUser: CreateHandler = ({ promiseDatabase }) => {
         verifyUser: {
           ...user,
           isDeleted: user.deletedAt !== null,
-          // @ts-expect-error Because of circular reference
           workspaces: workspaces.map(workspace => ({
             ...workspace,
             isDeleted: workspace.deletedAt !== null,
+            users: [],
           })),
         },
       },
