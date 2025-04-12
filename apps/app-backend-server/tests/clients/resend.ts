@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Resend } from 'resend';
 
 // TODO: to Mock Client package
-export class ResendClient implements Partial<Resend> {
+export class MockResend implements Partial<Resend> {
   constructor() {
     Object.assign(this, {
       emails: {

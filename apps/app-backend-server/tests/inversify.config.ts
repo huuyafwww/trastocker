@@ -20,7 +20,7 @@ import { D1UserRepository } from '@infrastructure/repositories/d1/user.repositor
 import { D1WorkspaceUserRepository } from '@infrastructure/repositories/d1/workspace-user.repository.mock';
 import { D1WorkspaceRepository } from '@infrastructure/repositories/d1/workspace.repository.mock';
 
-import { ResendClient } from './clients/resend';
+import { MockResend } from './clients/resend';
 
 import type { EmailNotification } from '@domain/notifications/email.notification';
 import type { UserTokenRepository } from '@domain/repositories/user-token.repository';
@@ -49,7 +49,7 @@ const createContainer: () => Container = () => {
   container.bind<WorkspaceUserRepository>(INJECT_KEY.WorkspaceUserRepository).to(D1WorkspaceUserRepository);
   container.bind<EmailNotification>(INJECT_KEY.EmailNotification).to(ResendEmailNotification);
   container.bind<Database>(INJECT_KEY.D1Database).toConstantValue(connectDatabase());
-  container.bind<Partial<Resend>>(INJECT_KEY.Resend).toConstantValue(new ResendClient());
+  container.bind<Partial<Resend>>(INJECT_KEY.Resend).toConstantValue(new MockResend());
   return container;
 };
 

@@ -21,6 +21,8 @@ import { D1UserRepository } from '@infrastructure/repositories/d1/user.repositor
 import { D1WorkspaceUserRepository } from '@infrastructure/repositories/d1/workspace-user.repository';
 import { D1WorkspaceRepository } from '@infrastructure/repositories/d1/workspace.repository';
 
+import { MockResend } from '../tests/clients/resend';
+
 import type { EmailNotification } from '@domain/notifications/email.notification';
 import type { UserTokenRepository } from '@domain/repositories/user-token.repository';
 import type { UserRepository } from '@domain/repositories/user.repository';
@@ -50,7 +52,13 @@ const createContainer: (props: {
   container.bind<WorkspaceUserRepository>(INJECT_KEY.WorkspaceUserRepository).to(D1WorkspaceUserRepository);
   container.bind<EmailNotification>(INJECT_KEY.EmailNotification).to(ResendEmailNotification);
   container.bind<Database>(INJECT_KEY.D1Database).toConstantValue(connectDatabase(database));
-  container.bind<Resend>(INJECT_KEY.Resend).toConstantValue(new Resend(process.env.RESEND_API_KEY));
+  if (process.env.APP_ENV === 'local') {
+    container.bind<Partial<Resend>>(INJECT_KEY.Resend).toConstantValue(new MockResend());
+  }
+  else {
+    container.bind<Resend>(INJECT_KEY.Resend).toConstantValue(new Resend(process.env.RESEND_API_KEY));
+  }
+
   return container;
 };
 
