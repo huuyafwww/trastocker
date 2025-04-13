@@ -1,5 +1,7 @@
 import { schema } from '@trastocker/database-definition';
+import { sleep } from '@trastocker/nodejs-utility-helper';
 import { and, eq, isNull, isNotNull, inArray } from 'drizzle-orm';
+import ms from 'ms';
 import { graphql, HttpResponse } from 'msw';
 
 import type { CreateHandler } from '../';
@@ -37,6 +39,8 @@ export const verifyUser: CreateHandler = ({ promiseDatabase }) => {
         isNull(schema.workspace.deletedAt),
       ),
     });
+
+    await sleep(ms('1s'));
 
     return HttpResponse.json({
       data: {

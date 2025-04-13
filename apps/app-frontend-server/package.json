@@ -69,6 +69,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@trastocker/database-definition": "workspace:*",
     "@trastocker/drizzle-helper": "workspace:*",
+    "@trastocker/nodejs-utility-helper": "workspace:*",
     "@types/ms": "^0.7.34",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
