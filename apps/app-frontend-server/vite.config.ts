@@ -1,5 +1,6 @@
 import path from 'node:path';
 
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
@@ -11,13 +12,14 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@layouts': path.resolve(__dirname, 'src/layouts'),
       '@locales': path.resolve(__dirname, 'src/locales'),
-      '@mocks': path.resolve(__dirname, 'src/mocks'),
+      '@mocks': path.resolve(__dirname, './mocks'),
       '@pages': path.resolve(__dirname, 'src/pages'),
       '@styles': path.resolve(__dirname, 'src/styles'),
     },
   },
   plugins: [
     react(),
+    vanillaExtractPlugin(),
   ],
   test: {
     globals: true,

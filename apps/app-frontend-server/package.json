@@ -62,7 +62,7 @@
     "@storybook/addon-actions": "^8.6.12",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
-    "@storybook/nextjs": "^8.6.12",
+    "@storybook/experimental-nextjs-vite": "^8.6.12",
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@testing-library/react": "^16.3.0",
@@ -74,7 +74,7 @@
     "@types/react-dom": "^19.1.1",
     "@types/sql.js": "^1.4.9",
     "@vanilla-extract/next-plugin": "^2.4.10",
-    "@vanilla-extract/webpack-plugin": "^2.3.18",
+    "@vanilla-extract/vite-plugin": "^5.0.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.6",
@@ -95,8 +95,7 @@
     "storycap": "^5.0.1",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "vitest": "^3.1.1",
-    "webpack-merge": "^6.0.1"
+    "vitest": "^3.1.1"
   },
   "msw": {
     "workerDirectory": [

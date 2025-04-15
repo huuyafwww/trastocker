@@ -1,7 +1,6 @@
-import { VanillaExtractPlugin } from '@vanilla-extract/webpack-plugin';
-import { merge } from 'webpack-merge';
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 
-import type { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from '@storybook/experimental-nextjs-vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/stories.@(js|jsx|mjs|ts|tsx)'],
@@ -16,13 +15,14 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen',
   },
-  framework: {
-    name: '@storybook/nextjs',
-    options: { builder: { useSWC: true } },
-  },
+  framework: '@storybook/experimental-nextjs-vite',
   staticDirs: ['./public'],
-  webpackFinal: config => merge(config, {
-    plugins: [new VanillaExtractPlugin()],
+  viteFinal: config => ({
+    ...config,
+    plugins: [
+      ...(config.plugins ?? []),
+      vanillaExtractPlugin(),
+    ],
   }),
 };
 export default config;
