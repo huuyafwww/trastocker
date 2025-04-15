@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "build": "graphql-code-generator --config codegen.ts",
-    "clean": "rimraf node_modules dist",
+    "clean": "rimraf node_modules dist .turbo",
     "dev": "nodemon --watch ../../apps/app-backend-server/schema.graphql --exec 'pnpm run build'",
     "lint:code": "eslint . --cache"
   },

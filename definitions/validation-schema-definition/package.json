@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "build": "pkgroll --minify",
-    "clean": "rimraf node_modules dist",
+    "clean": "rimraf node_modules dist .turbo",
     "dev": "pkgroll --watch",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit"
