@@ -33,7 +33,7 @@
     "migrate:generate": "drizzle-kit generate"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.5.0",
     "drizzle-orm": "^0.39.3"
   },
   "devDependencies": {
@@ -44,6 +44,6 @@
     "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.30.6",
     "pkgroll": "^2.12.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   }
 }

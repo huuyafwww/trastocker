@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@trastocker/database-definition": "workspace:*",
-    "@types/better-sqlite3": "^7.6.12",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/sql.js": "^1.4.9",
     "better-sqlite3": "^11.9.1",
     "drizzle-orm": "^0.39.3",
@@ -60,6 +60,6 @@
     "@huuyafwww/tsconfig-common": "^1.1.1",
     "pkgroll": "^2.12.1",
     "rolldown": "1.0.0-beta.7",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   }
 }
