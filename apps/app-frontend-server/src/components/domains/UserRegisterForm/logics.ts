@@ -7,7 +7,9 @@ import { toast } from 'react-toastify';
 import { useMutation } from 'urql';
 import * as v from 'valibot';
 
-import { registerUserMutation, type RegisterUserMutation, type RegisterUserMutationVariables } from './gql';
+import { registerUserMutation } from './gql';
+
+import type { RegisterUserMutation, RegisterUserMutationVariables } from './gql';
 
 import { useTranslation } from '@hooks/useTranslation';
 

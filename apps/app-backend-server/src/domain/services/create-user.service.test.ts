@@ -39,7 +39,6 @@ describe('Negative', () => {
       email: mockedUser.email.toString(),
       password: mockedUserPasswordRaw,
     }))).resolves.toStrictEqual(true);
-
     spy.mockRestore();
   });
 });

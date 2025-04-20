@@ -1,0 +1,1 @@
+ALTER TABLE `user` ADD `verify_token` text(255) NOT NULL;

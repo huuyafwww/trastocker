@@ -1,7 +1,9 @@
+import { INJECT_KEY } from '@constants/inject-key';
 import { User } from '@domain/entities/user.entity';
-import { UserRepository } from '@domain/repositories/user.repository';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 import { builder } from '@graphql/builder';
+
+import type { UserRepository } from '@domain/repositories/user.repository';
 
 builder.queryField('user', t => t.field({
   type: User,
@@ -12,7 +14,7 @@ builder.queryField('user', t => t.field({
   },
   resolve: async (_, args, context) => {
     const userId = UserId.fromString(args.userId);
-    const user = await (context.container.get<UserRepository>(UserRepository)).findById(userId);
+    const user = await (context.container.get<UserRepository>(INJECT_KEY.UserRepository)).findById(userId);
     return user;
   },
 }));

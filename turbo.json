@@ -5,6 +5,7 @@
   },
   "tasks": {
     "build": {
+      "inputs": ["**/*.ts", "**/*.tsx", "**/*.graphql", "**/*.json", "**/*.mjs", "**/*.cjs"],
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },

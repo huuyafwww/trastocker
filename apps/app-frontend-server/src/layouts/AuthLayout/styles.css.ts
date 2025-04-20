@@ -1,10 +1,18 @@
 import { twMerge } from 'tailwind-merge';
 
 const wrapper = twMerge(
-  'hero',
   'h-screen',
   'bg-base-200',
   'md:p-5',
+  'flex',
+  'flex-col',
+  'justify-center',
+);
+
+const inner = twMerge(
+  'hero',
+  'flex',
+  'flex-col',
 );
 
 const content = twMerge(
@@ -17,12 +25,13 @@ const content = twMerge(
 );
 
 const footer = twMerge(
-  'self-end',
+  'self-center',
   'justify-self-center',
   'flex',
   'items-center',
   'gap-3',
   'flex-col',
+  'mt-4',
 );
 
 const logoWrapper = twMerge(
@@ -35,4 +44,4 @@ const copyRight = twMerge(
   'text-base-content',
 );
 
-export { wrapper, content, footer, logoWrapper, copyRight };
+export { wrapper, inner, content, footer, logoWrapper, copyRight };

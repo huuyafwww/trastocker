@@ -35,7 +35,7 @@
     "@huuyafwww/eslint-config-node": "^1.1.3",
     "@huuyafwww/tsconfig-common": "^1.1.1",
     "pkgroll": "^2.12.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "valibot": "1.0.0"
