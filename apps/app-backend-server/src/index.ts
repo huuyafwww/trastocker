@@ -11,6 +11,7 @@ import { createContainer } from './inversify.config';
 
 import type { User } from '@domain/entities/user.entity';
 import type { Container } from 'inversify';
+import type { Promisable } from 'type-fest';
 
 export type Context = {
   container: Container;
@@ -18,7 +19,7 @@ export type Context = {
 };
 
 export default {
-  fetch(request: Request, env: NodeJS.ProcessEnv) {
+  fetch(request: Request, env: NodeJS.ProcessEnv): Promisable<Response> {
     Object.assign(process.env, env);
 
     const isLocal = env.APP_ENV === 'local';
