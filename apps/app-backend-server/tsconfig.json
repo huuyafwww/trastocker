@@ -5,8 +5,20 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@*": [
-        "./src/*"
+      "@application/*": [
+        "./src/application/*"
+      ],
+      "@domain/*": [
+        "./src/domain/*"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@graphql/*": [
+        "./src/graphql/*"
+      ],
+      "@infrastructure/*": [
+        "./src/infrastructure/*"
       ],
       "@test/*": [
         "./tests/*"
