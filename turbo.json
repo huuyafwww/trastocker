@@ -6,6 +6,7 @@
   "tasks": {
     "build": {
       "inputs": ["**/*.ts", "**/*.tsx", "**/*.graphql", "**/*.json", "**/*.mjs", "**/*.cjs"],
+      "cache": false,
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
@@ -16,14 +17,17 @@
       "cache": false
     },
     "lint:code": {
+      "cache": false,
       "dependsOn": [],
       "inputs": ["**/*.ts", "**/*.tsx"]
     },
     "lint:type": {
+      "cache": false,
       "dependsOn": [],
       "inputs": ["**/*.ts", "**/*.tsx"]
     },
     "test": {
+      "cache": false,
       "dependsOn": [],
       "inputs": ["**/*.ts", "**/*.tsx"]
     }
