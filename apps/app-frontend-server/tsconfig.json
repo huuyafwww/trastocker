@@ -5,11 +5,30 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@mocks/*": [
-        "./mocks/*"
+      "@components/*": [
+        "./src/components/*",
       ],
-      "@*": [
-        "./src/*"
+      "@constants/*": [
+        "./src/constants/*",
+      ],
+      "@hooks/*": [
+        "./src/hooks/*",
+      ],
+      "@layouts/*": [
+        "./src/layouts/*",
+      ],
+      "@locales*": [
+        "./src/locales/*",
+        "./src/locales/index.ts",
+      ],
+      "@mocks/*": [
+        "./mocks/*",
+      ],
+      "@pages/*": [
+        "./src/pages/*",
+      ],
+      "@styles/*": [
+        "./src/styles/*",
       ],
     },
   },
