@@ -16,4 +16,6 @@ export default {
   'OR': 'または',
   'Failed to create workspace': 'ワークスペースの作成に失敗しました',
   'Failed to join workspace': 'ワークスペースの参加に失敗しました',
+  'User registration success': 'ユーザーは正常に認証されました',
+  'User registration failed': 'ユーザーの本登録に失敗しました',
 };
