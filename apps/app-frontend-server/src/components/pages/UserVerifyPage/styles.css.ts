@@ -18,4 +18,15 @@ const logoWrapper = twMerge(
   'mb-4',
 );
 
-export { wrapper, inner, logoWrapper };
+const verifyMessageWrapper = twMerge(
+  'flex',
+  'justify-center',
+);
+
+const loading = twMerge(
+  'loading',
+  'loading-spinner',
+  'loading-xl',
+);
+
+export { wrapper, inner, logoWrapper, verifyMessageWrapper, loading };
