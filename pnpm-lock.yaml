@@ -170,6 +170,9 @@ importers:
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
+      vite-tsconfig-paths:
+        specifier: ^5.1.4
+        version: 5.1.4(typescript@5.8.2)(vite@6.2.5(@types/node@22.14.0)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
       vitest:
         specifier: ^3.1.1
         version: 3.1.1(@edge-runtime/vm@3.2.0)(@types/node@22.14.0)(happy-dom@16.8.1)(jiti@2.4.2)(msw@2.7.3(patch_hash=fs2kyesztyfe2y3aftpuha3w2u)(@types/node@22.14.0)(typescript@5.8.2))(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1)
@@ -23305,6 +23308,17 @@ snapshots:
       tsconfck: 3.1.5(typescript@5.8.2)
     optionalDependencies:
       vite: 6.2.5(@types/node@16.18.11)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
+  vite-tsconfig-paths@5.1.4(typescript@5.8.2)(vite@6.2.5(@types/node@22.14.0)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1)):
+    dependencies:
+      debug: 4.4.0(supports-color@5.5.0)
+      globrex: 0.1.2
+      tsconfck: 3.1.5(typescript@5.8.2)
+    optionalDependencies:
+      vite: 6.2.5(@types/node@22.14.0)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
