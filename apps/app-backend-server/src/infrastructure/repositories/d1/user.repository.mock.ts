@@ -25,4 +25,8 @@ export class D1UserRepository extends Repository<User, UserId> implements UserRe
   async findByEmail(): Promise<User | null> {
     return new Promise(resolve => resolve(mockedUser));
   }
+
+  async findByVerifyToken(): Promise<User | null> {
+    return new Promise(resolve => resolve(mockedUser));
+  }
 }

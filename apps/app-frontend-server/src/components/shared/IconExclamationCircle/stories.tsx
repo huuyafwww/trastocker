@@ -1,13 +1,13 @@
-import LoginForm from '.';
+import IconExclamationCircle from './';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
-  title: 'Domain/LoginForm',
-  component: LoginForm,
+  title: 'Shared/Icon/ExclamationCircle',
+  component: IconExclamationCircle,
   args: {},
   argTypes: {},
-} satisfies Meta<typeof LoginForm>;
+} satisfies Meta<typeof IconExclamationCircle>;
 
 type Story = StoryObj<typeof meta>;
 

@@ -1,11 +1,11 @@
 import type { NextPageWithLayout } from '@pages/_app';
 import type { ReactElement } from 'react';
 
-import LoginPage from '@components/pages/LoginPage';
+import UserLoginPage from '@components/pages/UserLoginPage';
 import AuthLayout from '@layouts/AuthLayout';
 
 const Index: NextPageWithLayout = () => {
-  return <LoginPage />;
+  return <UserLoginPage />;
 };
 
 Index.getLayout = (page: ReactElement) => {

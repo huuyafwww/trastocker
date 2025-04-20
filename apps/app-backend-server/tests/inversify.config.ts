@@ -13,13 +13,14 @@ import { CreateUserService } from '@domain/services/create-user.service.mock';
 import { CreateWorkspaceByNameService } from '@domain/services/create-workspace-by-name.service.mock';
 import { GetUserJoinedWorkspacesService } from '@domain/services/get-user-joined-workspaces.service.mock';
 import { GetWorkspaceJoinedUsersService } from '@domain/services/get-workspace-joined-users.service.mock';
+import { VerifyUserService } from '@domain/services/verify-user.service.mock';
 import { ResendEmailNotification } from '@infrastructure/notifications/resend/email.notification.mock';
 import { D1UserTokenRepository } from '@infrastructure/repositories/d1/user-token.repository.mock';
 import { D1UserRepository } from '@infrastructure/repositories/d1/user.repository.mock';
 import { D1WorkspaceUserRepository } from '@infrastructure/repositories/d1/workspace-user.repository.mock';
 import { D1WorkspaceRepository } from '@infrastructure/repositories/d1/workspace.repository.mock';
 
-import { ResendClient } from './clients/resend';
+import { MockResend } from './clients/resend';
 
 import type { EmailNotification } from '@domain/notifications/email.notification';
 import type { UserTokenRepository } from '@domain/repositories/user-token.repository';
@@ -41,13 +42,14 @@ const createContainer: () => Container = () => {
   container.bind<CreateUserService>(INJECT_KEY.CreateUserService).to(CreateUserService);
   container.bind<GetUserJoinedWorkspacesService>(INJECT_KEY.GetUserJoinedWorkspacesService).to(GetUserJoinedWorkspacesService);
   container.bind<GetWorkspaceJoinedUsersService>(INJECT_KEY.GetWorkspaceJoinedUsersService).to(GetWorkspaceJoinedUsersService);
+  container.bind<VerifyUserService>(INJECT_KEY.VerifyUserService).to(VerifyUserService);
   container.bind<UserRepository>(INJECT_KEY.UserRepository).to(D1UserRepository);
   container.bind<UserTokenRepository>(INJECT_KEY.UserTokenRepository).to(D1UserTokenRepository);
   container.bind<WorkspaceRepository>(INJECT_KEY.WorkspaceRepository).to(D1WorkspaceRepository);
   container.bind<WorkspaceUserRepository>(INJECT_KEY.WorkspaceUserRepository).to(D1WorkspaceUserRepository);
   container.bind<EmailNotification>(INJECT_KEY.EmailNotification).to(ResendEmailNotification);
   container.bind<Database>(INJECT_KEY.D1Database).toConstantValue(connectDatabase());
-  container.bind<Partial<Resend>>(INJECT_KEY.Resend).toConstantValue(new ResendClient());
+  container.bind<Partial<Resend>>(INJECT_KEY.Resend).toConstantValue(new MockResend());
   return container;
 };
 

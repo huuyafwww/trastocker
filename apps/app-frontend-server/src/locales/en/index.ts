@@ -16,4 +16,6 @@ export default {
   'OR': 'OR',
   'Failed to create workspace': 'Failed to create workspace',
   'Failed to join workspace': 'Failed to join workspace',
+  'User registration success': 'User has been successfully authenticated',
+  'User registration failed': 'User registration failed',
 };

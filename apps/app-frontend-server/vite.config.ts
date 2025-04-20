@@ -1,7 +1,8 @@
 import path from 'node:path';
 
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
-import react from '@vitejs/plugin-react';
+import reactPlugin from '@vitejs/plugin-react';
+import tsconfigPathsPlugin from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -18,8 +19,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    react(),
+    reactPlugin(),
     vanillaExtractPlugin(),
+    tsconfigPathsPlugin(),
   ],
   test: {
     globals: true,

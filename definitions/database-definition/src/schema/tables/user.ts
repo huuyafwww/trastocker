@@ -10,6 +10,7 @@ export const user = sqliteTable('user', {
   name: text('name').notNull(),
   email: text('email').notNull().unique(),
   password: text('password').notNull(),
+  verifyToken: text('verify_token', { length: 255 }).notNull(),
   registeredAt: integer('registered_at', { mode: 'timestamp' }).notNull(),
   verifiedAt: integer('verified_at', { mode: 'timestamp' }),
 });

@@ -19,8 +19,8 @@ const seeders: Seeder[] = [
 ];
 
 // The order of deletion takes foreign keys into account.
-database.delete(schema.workspaceUser);
-database.delete(schema.user);
-database.delete(schema.workspace);
+database.delete(schema.workspaceUser).run();
+database.delete(schema.user).run();
+database.delete(schema.workspace).run();
 
 seeders.forEach(seeder => seeder(database));

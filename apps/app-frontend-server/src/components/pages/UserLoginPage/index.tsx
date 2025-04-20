@@ -2,22 +2,22 @@ import { wrapper, inner, logoWrapper } from './styles.css';
 
 import type React from 'react';
 
-import LoginForm from '@components/domains/LoginForm';
+import UserLoginForm from '@components/domains/UserLoginForm';
 import LogoTrastocker from '@components/shared/LogoTrastocker';
 
-type LoginPageProps = {};
+type UserLoginPageProps = {};
 
-const LoginPage: React.FC<LoginPageProps> = () => {
+const UserLoginPage: React.FC<UserLoginPageProps> = () => {
   return (
     <div className={wrapper}>
       <div className={inner}>
         <div className={logoWrapper}>
           <LogoTrastocker />
         </div>
-        <LoginForm />
+        <UserLoginForm />
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default UserLoginPage;
