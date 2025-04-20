@@ -1,5 +1,6 @@
 import { Entity } from '@domain/entities/entity';
 import { UserId } from '@domain/value-objects/user/id.value-object';
+import { UserVerifyToken } from '@domain/value-objects/user/verify-token.value-object';
 
 import type { UserEmail } from '@domain/value-objects/user/email.value-object';
 import type { UserName } from '@domain/value-objects/user/name.value-object';
@@ -11,6 +12,7 @@ export type SerializedUser = {
   name: string;
   email: string;
   password: string;
+  verifyToken: string;
   registeredAt: Date;
   verifiedAt: Date | null;
   createdAt: Date;
@@ -22,6 +24,7 @@ export class User extends Entity<UserId> {
   declare public readonly name: UserName;
   declare public readonly email: UserEmail;
   declare public readonly password: UserPassword;
+  declare public readonly verifyToken: UserVerifyToken;
   declare public readonly registeredAt: Date;
   declare public readonly verifiedAt: Date | null;
   declare public readonly createdAt: Date;
@@ -32,9 +35,14 @@ export class User extends Entity<UserId> {
     super(props);
   }
 
-  public static create(props: Omit<ClassFields<User>, 'id' | 'registeredAt' | 'createdAt' | 'updatedAt' | 'deletedAt'>): User {
+  public static create(props: Omit<ClassFields<User>, 'id' | 'verifyToken' | 'registeredAt' | 'createdAt' | 'updatedAt' | 'deletedAt'>): User {
+    const userId = UserId.generate();
     return new User({
-      id: UserId.generate(),
+      id: userId,
+      verifyToken: UserVerifyToken.generate({
+        userId,
+        email: props.email,
+      }),
       registeredAt: new Date(),
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -49,6 +57,10 @@ export class User extends Entity<UserId> {
       verifiedAt: new Date(),
       updatedAt: new Date(),
     });
+  }
+
+  public canVerify(): boolean {
+    return !this.verifiedAt && !this.deletedAt;
   }
 
   public isVerified(): boolean {
@@ -81,6 +93,7 @@ export class User extends Entity<UserId> {
       name: this.name.toString(),
       email: this.email.toString(),
       password: this.password.toString(),
+      verifyToken: this.verifyToken.toString(),
       registeredAt: this.registeredAt,
       verifiedAt: this.verifiedAt,
       createdAt: this.createdAt,

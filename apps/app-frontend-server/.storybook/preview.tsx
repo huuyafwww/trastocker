@@ -8,11 +8,10 @@ import { ToastContainer } from 'react-toastify';
 import { withScreenshot } from 'storycap';
 import { Provider } from 'urql';
 
-import { setupHandlers } from '../mocks';
-
 import type { Preview } from '@storybook/react';
 
 import useUrql from '@hooks/useUrql';
+import { setupHandlers } from '@mocks/index';
 
 const options: {
   serviceWorker?: {

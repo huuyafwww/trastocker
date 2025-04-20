@@ -14,5 +14,5 @@ export const workspace = Workspace.create({
 export const workspaces: Seeder = (database) => {
   database.insert(schema.workspace).values({
     ...workspace.serialize(),
-  });
+  }).run();
 };

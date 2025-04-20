@@ -10,6 +10,7 @@ import { UserEmail } from '@domain/value-objects/user/email.value-object';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 import { UserName } from '@domain/value-objects/user/name.value-object';
 import { UserPassword } from '@domain/value-objects/user/password.value-object';
+import { UserVerifyToken } from '@domain/value-objects/user/verify-token.value-object';
 import { Repository } from '@infrastructure/repositories/repository';
 
 import type { UserSelectColumns } from '@trastocker/database-definition';
@@ -21,6 +22,7 @@ const convert = (user: UserSelectColumns): User => {
     name: UserName.fromString(user.name),
     email: UserEmail.fromString(user.email),
     password: UserPassword.fromString(user.password),
+    verifyToken: UserVerifyToken.fromString(user.verifyToken),
     registeredAt: user.registeredAt,
     verifiedAt: user.verifiedAt,
     createdAt: user.createdAt,
@@ -43,6 +45,7 @@ export class D1UserRepository extends Repository<User, UserId> implements UserRe
         name: user.name.toString(),
         email: user.email.toString(),
         password: user.password.toString(),
+        verifyToken: user.verifyToken.toString(),
         registeredAt: user.registeredAt,
         verifiedAt: user.verifiedAt,
         updatedAt: user.updatedAt,
@@ -91,6 +94,16 @@ export class D1UserRepository extends Repository<User, UserId> implements UserRe
     const row = await this.database.query.user.findFirst({
       where: and(
         eq(schema.user.email, email.toString()),
+      ),
+    });
+    if (!row) return null;
+    return convert(row);
+  }
+
+  async findByVerifyToken(verifyToken: UserVerifyToken): Promise<User | null> {
+    const row = await this.database.query.user.findFirst({
+      where: and(
+        eq(schema.user.verifyToken, verifyToken.toString()),
       ),
     });
     if (!row) return null;

@@ -1,8 +1,10 @@
 import { UserNameSchema, UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-schema-definition';
 
+import { INJECT_KEY } from '@constants/inject-key';
 import { User } from '@domain/entities/user.entity';
-import { CreateUserService } from '@domain/services/create-user.service';
 import { builder } from '@graphql/builder';
+
+import type { CreateUserService } from '@domain/services/create-user.service';
 
 builder.mutationField('registerUser', t => t.field({
   type: User,
@@ -23,6 +25,6 @@ builder.mutationField('registerUser', t => t.field({
     }),
   },
   resolve: async (_, args, context) => {
-    return await context.container.get<CreateUserService>(CreateUserService).execute(args);
+    return await context.container.get<CreateUserService>(INJECT_KEY.CreateUserService).execute(args);
   },
 }));

@@ -2,9 +2,8 @@ import { useId } from 'react';
 
 import { FormProvider } from 'react-hook-form';
 
-import { input } from '../LoginForm/styles.css';
-
 import { useWorkspaceCreateForm } from '@components/domains/WorkspaceCreateForm/logics';
+import { input } from '@components/domains/WorkspaceCreateForm/styles.css';
 import ErrorMessage from '@components/shared/ErrorMessage';
 import FormGroup from '@components/shared/FormGroup';
 import InputControl from '@components/shared/InputControl';

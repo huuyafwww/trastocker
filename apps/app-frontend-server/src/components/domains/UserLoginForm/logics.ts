@@ -13,7 +13,7 @@ import type { LoginUserMutation, LoginUserMutationVariables } from './gql';
 
 import { useTranslation } from '@hooks/useTranslation';
 
-type LoginFormValues = {
+type UserLoginFormValues = {
   email: string;
   password: string;
 };
@@ -23,9 +23,9 @@ const schema = v.object({
   password: UserPasswordSchema,
 });
 
-export const useLoginForm = () => {
+export const useUserLoginForm = () => {
   const { t } = useTranslation();
-  const methods = useForm<LoginFormValues>({
+  const methods = useForm<UserLoginFormValues>({
     resolver: valibotResolver(schema),
   });
 
@@ -39,7 +39,7 @@ export const useLoginForm = () => {
     return methods.formState.isValid;
   }, [methods.formState]);
 
-  const handleSubmit = useCallback(async (data: LoginFormValues) => {
+  const handleSubmit = useCallback(async (data: UserLoginFormValues) => {
     const result = await login(data);
 
     if (!result.data?.loginUser) {

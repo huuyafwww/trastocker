@@ -8,7 +8,7 @@
   "scripts": {
     "build:schema": "tsx scripts/write-schema.ts",
     "clean": "rimraf node_modules",
-    "database:seed:local": "dotenv -v DATABASE_URL=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) -- tsx ./seeds/index.ts",
+    "database:seed:local": "dotenv -e .dev.vars -- dotenv -v DATABASE_URL=$(find .wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) -- tsx ./seeds/index.ts",
     "deploy": "wrangler deploy",
     "dev": "npm-run-all --parallel dev:server dev:schema",
     "dev:schema": "tsx watch --include 'src/graphql/**/*.ts' scripts/write-schema.ts",
@@ -31,6 +31,7 @@
     "@types/bcryptjs": "^2.4.6",
     "@whatwg-node/server-plugin-cookies": "^1.0.5",
     "bcryptjs": "^2.4.3",
+    "dedent": "^1.5.3",
     "drizzle-orm": "^0.39.3",
     "graphql": "^16.10.0",
     "graphql-yoga": "^5.13.2",

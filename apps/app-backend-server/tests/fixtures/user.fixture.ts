@@ -3,10 +3,15 @@ import { UserEmail } from '@domain/value-objects/user/email.value-object';
 import { UserId } from '@domain/value-objects/user/id.value-object';
 import { UserName } from '@domain/value-objects/user/name.value-object';
 import { UserPassword } from '@domain/value-objects/user/password.value-object';
+import { UserVerifyToken } from '@domain/value-objects/user/verify-token.value-object';
 
 export const mockedUserId = UserId.generate();
 export const mockedUserName = UserName.fromString('user');
 export const mockedUserEmail = UserEmail.fromString('user@user.com');
+export const mockedUserVerifyToken = UserVerifyToken.generate({
+  userId: mockedUserId,
+  email: mockedUserEmail,
+});
 export const mockedUserPasswordRaw = 't2t2tN{b((t&';
 export const mockedUserPassword = UserPassword.fromRawString(mockedUserPasswordRaw);
 
@@ -15,6 +20,7 @@ export const mockedUserData = {
   name: mockedUserName,
   email: mockedUserEmail,
   password: mockedUserPassword,
+  verifyToken: mockedUserVerifyToken,
   registeredAt: new Date(),
   verifiedAt: new Date(),
   createdAt: new Date(),

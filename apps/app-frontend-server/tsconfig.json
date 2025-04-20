@@ -5,9 +5,12 @@
   ],
   "compilerOptions": {
     "paths": {
+      "@mocks/*": [
+        "./mocks/*"
+      ],
       "@*": [
         "./src/*"
-      ]
+      ],
     },
   },
   "include": [

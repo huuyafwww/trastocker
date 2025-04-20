@@ -1,10 +1,12 @@
 import { UserEmailSchema, UserPasswordSchema } from '@trastocker/validation-schema-definition';
 import ms from 'ms';
 
-import { UserLoginUseCase } from '@application/use-cases/user-login.use-case';
 import { COOKIE } from '@constants/cookie';
+import { INJECT_KEY } from '@constants/inject-key';
 import { User } from '@domain/entities/user.entity';
 import { builder } from '@graphql/builder';
+
+import type { UserLoginUseCase } from '@application/use-cases/user-login.use-case';
 
 builder.mutationField('loginUser', t => t.field({
   type: User,
@@ -21,7 +23,7 @@ builder.mutationField('loginUser', t => t.field({
     }),
   },
   resolve: async (_, args, context) => {
-    const { user, userToken } = await context.container.get<UserLoginUseCase>(UserLoginUseCase).execute(args);
+    const { user, userToken } = await context.container.get<UserLoginUseCase>(INJECT_KEY.UserLoginUseCase).execute(args);
 
     await context.request.cookieStore?.set({
       name: COOKIE.ACCESS_TOKEN,

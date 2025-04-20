@@ -7,6 +7,7 @@ export const INJECT_KEY = {
   AssignWorkspaceByIdService: Symbol.for('AssignWorkspaceByIdService'),
   CanCreateUserService: Symbol.for('CanCreateUserService'),
   CreateUserService: Symbol.for('CreateUserService'),
+  VerifyUserService: Symbol.for('VerifyUserService'),
   GetUserJoinedWorkspacesService: Symbol.for('GetUserJoinedWorkspacesService'),
   GetWorkspaceJoinedUsersService: Symbol.for('GetWorkspaceJoinedUsersService'),
   UserRepository: Symbol.for('UserRepository'),

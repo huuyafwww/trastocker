@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  drizzle-orm:
+    hash: ridgz2e3albyui5nqlqkipsazu
+    path: patches/drizzle-orm.patch
   msw:
     hash: fs2kyesztyfe2y3aftpuha3w2u
     path: patches/msw.patch
@@ -82,9 +85,12 @@ importers:
       bcryptjs:
         specifier: ^2.4.3
         version: 2.4.3
+      dedent:
+        specifier: ^1.5.3
+        version: 1.5.3
       drizzle-orm:
         specifier: ^0.39.3
-        version: 0.39.3(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
+        version: 0.39.3(patch_hash=ridgz2e3albyui5nqlqkipsazu)(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
       graphql:
         specifier: ^16.10.0
         version: 16.10.0
@@ -300,6 +306,9 @@ importers:
       '@trastocker/drizzle-helper':
         specifier: workspace:*
         version: link:../../helpers/drizzle-helper
+      '@trastocker/nodejs-utility-helper':
+        specifier: workspace:*
+        version: link:../../helpers/nodejs-utility-helper
       '@types/ms':
         specifier: ^0.7.34
         version: 0.7.34
@@ -329,7 +338,7 @@ importers:
         version: 7.0.6(postcss@8.5.3)
       drizzle-orm:
         specifier: ^0.39.3
-        version: 0.39.3(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
+        version: 0.39.3(patch_hash=ridgz2e3albyui5nqlqkipsazu)(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
       happy-dom:
         specifier: ^16.8.1
         version: 16.8.1
@@ -429,7 +438,7 @@ importers:
         version: 16.4.7
       drizzle-orm:
         specifier: ^0.39.3
-        version: 0.39.3(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
+        version: 0.39.3(patch_hash=ridgz2e3albyui5nqlqkipsazu)(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
     devDependencies:
       '@huuyafwww/eslint-config-common':
         specifier: ^1.1.3
@@ -521,7 +530,7 @@ importers:
         version: 11.9.1
       drizzle-orm:
         specifier: ^0.39.3
-        version: 0.39.3(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
+        version: 0.39.3(patch_hash=ridgz2e3albyui5nqlqkipsazu)(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0)
       sql.js:
         specifier: 1.12.0
         version: 1.12.0
@@ -13561,7 +13570,7 @@ snapshots:
       detect-libc: 2.0.3
       https-proxy-agent: 5.0.1
       make-dir: 3.1.0
-      node-fetch: 2.6.9
+      node-fetch: 2.7.0
       nopt: 5.0.0
       npmlog: 5.0.1
       rimraf: 3.0.2
@@ -17810,7 +17819,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.39.3(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0):
+  drizzle-orm@0.39.3(patch_hash=ridgz2e3albyui5nqlqkipsazu)(@cloudflare/workers-types@4.20250403.0)(@types/better-sqlite3@7.6.12)(@types/sql.js@1.4.9)(better-sqlite3@11.9.1)(sql.js@1.12.0):
     optionalDependencies:
       '@cloudflare/workers-types': 4.20250403.0
       '@types/better-sqlite3': 7.6.12

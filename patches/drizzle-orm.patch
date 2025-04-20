@@ -1,0 +1,24 @@
+diff --git a/sql-js/session.js b/sql-js/session.js
+index cef570ce6059aa7de3b13ee1fe4e013fecbfef50..42c1b01ceff9c9a15a2eb023c0b3f72abe7ef18a 100644
+--- a/sql-js/session.js
++++ b/sql-js/session.js
+@@ -13,9 +13,17 @@ class SQLJsSession extends SQLiteSession {
+   }
+   static [entityKind] = "SQLJsSession";
+   logger;
+-  prepareQuery(query, fields, executeMethod, isResponseInArrayMode) {
++  prepareQuery(query, fields, executeMethod, isResponseInArrayMode, customResultMapper) {
+     const stmt = this.client.prepare(query.sql);
+-    return new PreparedQuery(stmt, query, this.logger, fields, executeMethod, isResponseInArrayMode);
++    return new PreparedQuery(
++      stmt,
++      query,
++      this.logger,
++      fields,
++      executeMethod,
++      isResponseInArrayMode,
++      customResultMapper
++    );
+   }
+   prepareOneTimeQuery(query, fields, executeMethod, isResponseInArrayMode, customResultMapper) {
+     const stmt = this.client.prepare(query.sql);
