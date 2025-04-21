@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "build": "pkgroll --minify",
-    "clean": "rimraf node_modules dist",
+    "clean": "rimraf node_modules dist .turbo",
     "database:local": "dotenv -v DATABASE_URL=$(find ../../apps/app-backend-server/.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) -- drizzle-kit studio",
     "database:production": "drizzle-kit studio",
     "dev": "pkgroll --watch",

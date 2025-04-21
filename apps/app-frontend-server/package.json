@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "clean": "rimraf node_modules",
+    "clean": "rimraf node_modules .turbo",
     "deploy": "pnpm pages:build && wrangler pages deploy",
     "dev": "npm-run-all --parallel dev:server dev:storybook dev:mock-database",
     "dev:server": "next dev",
