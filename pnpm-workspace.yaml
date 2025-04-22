@@ -3,3 +3,5 @@ packages:
   - 'definitions/*'
   - 'helpers/*'
   - 'turbo/*'
+
+dangerouslyAllowAllBuilds: true
