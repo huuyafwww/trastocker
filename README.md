@@ -11,6 +11,7 @@
 |pnpm|>= 9.14.4|
 
 ```bash
+brew install tbls
 pnpm install
 pnpm run build:libraries
 ```

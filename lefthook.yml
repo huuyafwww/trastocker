@@ -13,3 +13,10 @@ pre-commit:
       glob: 'apps/app-backend-server/src/graphql/resolvers/**/*.ts'
       stage_fixed: true
       root: "apps/app-backend-server"
+
+
+    - name: Generate Database Schema
+      run: pnpm run generate:database-schema
+      glob: 'definitions/database-definition/migrations/*.sql'
+      stage_fixed: true
+      root: "definitions/database-definition"

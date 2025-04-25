@@ -33,5 +33,9 @@
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "pkgroll": "^2.12.1",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@types/which": "^3.0.4",
+    "which": "^5.0.0"
   }
 }
