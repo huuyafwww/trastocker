@@ -26,6 +26,7 @@
     "database:local": "dotenv -v DATABASE_URL=$(find ../../apps/app-backend-server/.wrangler/state/v3/d1/miniflare-D1DatabaseObject -type f -name '*.sqlite' -print -quit) -- drizzle-kit studio",
     "database:production": "drizzle-kit studio",
     "dev": "pkgroll --watch",
+    "generate:database-schema": "tsx scripts/generate-database-schema.ts",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
     "migrate:apply:local": "wrangler d1 migrations apply trastocker --local --persist-to ../../apps/app-backend-server/.wrangler/state",
@@ -40,10 +41,15 @@
     "@huuyafwww/eslint-config-common": "^1.2.0",
     "@huuyafwww/eslint-config-node": "^1.2.0",
     "@huuyafwww/tsconfig-common": "^1.1.2",
+    "@trastocker/nodejs-utility-helper": "workspace:*",
+    "@types/sql.js": "^1.4.9",
     "better-sqlite3": "^11.9.1",
     "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.30.6",
     "pkgroll": "^2.12.1",
-    "typescript": "^5.8.3"
+    "sql.js": "1.12.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "zx": "^8.5.3"
   }
 }
