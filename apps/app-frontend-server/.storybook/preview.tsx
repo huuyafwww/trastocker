@@ -52,7 +52,7 @@ const preview: Preview = {
   parameters: {
     msw: {
       handlers: setupHandlers(
-        connectDatabase({ url: 'mock-database.sqlite' }),
+        connectDatabase({ url: 'storybook/mock-database.sqlite' }),
       ),
     },
     controls: {
