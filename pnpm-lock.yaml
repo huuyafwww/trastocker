@@ -458,6 +458,9 @@ importers:
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
+      '@types/sql.js':
+        specifier: ^1.4.9
+        version: 1.4.9
       better-sqlite3:
         specifier: ^11.9.1
         version: 11.9.1
@@ -467,12 +470,24 @@ importers:
       drizzle-kit:
         specifier: ^0.30.6
         version: 0.30.6
+      has-command:
+        specifier: ^1.0.0
+        version: 1.0.0
       pkgroll:
         specifier: ^2.12.1
         version: 2.12.1(typescript@5.8.3)
+      sql.js:
+        specifier: 1.12.0
+        version: 1.12.0
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
+      zx:
+        specifier: ^8.5.3
+        version: 8.5.3
 
   definitions/graphql-definition:
     devDependencies:
@@ -3899,6 +3914,9 @@ packages:
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
 
+  '@types/which@3.0.4':
+    resolution: {integrity: sha512-liyfuo/106JdlgSchJzXEQCVArk0CvevqPote8F8HgWgJ3dRCcTHgJIsLDuee0kxk/mhbInzIZk3QWSZJ8R+2w==}
+
   '@types/ws@8.18.1':
     resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
 
@@ -6350,6 +6368,10 @@ packages:
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
     engines: {node: '>= 0.4'}
+
+  has-command@1.0.0:
+    resolution: {integrity: sha512-uzXhUUqoS9t9ZiSGK12R8+F9jH74avUO65rRI9T/E2Vv7zdWZ6VcgQTt2+qky3jRXwFW0I7SloF1wMh6vNRZbA==}
+    engines: {node: '>=22.12.0', pnpm: '>=10.9.0'}
 
   has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
@@ -9960,6 +9982,11 @@ packages:
 
   zod@3.24.3:
     resolution: {integrity: sha512-HhY1oqzWCQWuUqvBFnsyrtZRhyPeR7SUGv+C4+MsisMuVfSPx8HpwWqH8tRahSlt6M3PiFAcoeFhZAqIXTxoSg==}
+
+  zx@8.5.3:
+    resolution: {integrity: sha512-TsGLAt8Ngr4wDXLZmN9BT+6FWVLFbqdQ0qpXkV3tIfH7F+MgN/WUeSY7W4nNqAntjWunmnRaznpyxtJRPhCbUQ==}
+    engines: {node: '>= 12.17.0'}
+    hasBin: true
 
 snapshots:
 
@@ -14174,6 +14201,8 @@ snapshots:
 
   '@types/uuid@9.0.8': {}
 
+  '@types/which@3.0.4': {}
+
   '@types/ws@8.18.1':
     dependencies:
       '@types/node': 22.14.1
@@ -16997,6 +17026,11 @@ snapshots:
   hard-rejection@2.1.0: {}
 
   has-bigints@1.1.0: {}
+
+  has-command@1.0.0:
+    dependencies:
+      '@types/which': 3.0.4
+      which: 5.0.0
 
   has-flag@3.0.0: {}
 
@@ -21200,3 +21234,5 @@ snapshots:
   zod@3.22.3: {}
 
   zod@3.24.3: {}
+
+  zx@8.5.3: {}

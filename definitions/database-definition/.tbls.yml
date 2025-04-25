@@ -1,0 +1,3 @@
+dsn: sqlite:./schema.sqlite
+exclude:
+  - __drizzle_migrations
