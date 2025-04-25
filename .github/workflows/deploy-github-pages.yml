@@ -1,4 +1,4 @@
-name: Deploy Storybook
+name: Deploy GitHub Pages
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Build packages
         run: pnpm run build:libraries
 
-      - name: Build Storybook
+      - name: Generate mock database for storybook
         run: pnpm run generate:mock-database
         working-directory: apps/app-frontend-server
 
@@ -29,10 +29,15 @@ jobs:
         run: pnpm run storybook:build
         working-directory: apps/app-frontend-server
 
+      - name: Move Storybook Dist
+        run: |
+          mkdir apps/app-github-pages/dist/storybook
+          cp -r apps/app-frontend-server/storybook-static/* apps/app-github-pages/dist/storybook/
+
       - name: Upload static files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ github.workspace }}/apps/app-frontend-server/storybook-static
+          path: ${{ github.workspace }}/apps/app-github-pages/dist
 
   deploy:
     needs: build
