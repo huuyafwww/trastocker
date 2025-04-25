@@ -8,7 +8,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import AuthLayout from '@layouts/AuthLayout';
 
-const database = await connectDatabase({ url: 'storybook/mock-database.sqlite' });
+const database = await connectDatabase({ url: 'mock-database.sqlite' });
 const registeredUser = await database.query.user.findFirst({
   where: and(
     isNotNull(schema.user.registeredAt),
