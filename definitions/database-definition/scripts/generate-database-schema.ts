@@ -1,14 +1,14 @@
 import fs from 'fs';
 
-import { hasBin } from '@trastocker/nodejs-utility-helper';
 import { drizzle } from 'drizzle-orm/sql-js';
 import { migrate } from 'drizzle-orm/sql-js/migrator';
+import { hasCommand } from 'has-command';
 import initSqlJs from 'sql.js';
 import { $ } from 'zx';
 
 import { schema } from '../src';
 
-if (!await hasBin('tbls')) {
+if (!await hasCommand('tbls')) {
   console.error('tbls is not installed. Please install the tbls.');
   process.exit(1);
 }
