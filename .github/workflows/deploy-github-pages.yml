@@ -32,7 +32,7 @@ jobs:
       - name: Move Storybook Dist
         run: |
           mkdir apps/app-github-pages/dist/storybook
-          mv apps/app-frontend-server/storybook-static apps/app-github-pages/dist/storybook
+          cp -r apps/app-frontend-server/storybook-static/* apps/app-github-pages/dist/storybook/
 
       - name: Upload static files
         uses: actions/upload-pages-artifact@v3
