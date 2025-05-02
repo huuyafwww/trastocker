@@ -7,14 +7,10 @@ const meta = {
   component: LogoTrastocker,
   args: {
     alt: 'Trastocker',
-    priority: true,
   },
   argTypes: {
     alt: {
       control: 'text',
-    },
-    priority: {
-      control: 'boolean',
     },
   },
 } satisfies Meta<typeof LogoTrastocker>;

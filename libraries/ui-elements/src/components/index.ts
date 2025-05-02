@@ -11,7 +11,6 @@ import IconExclamationCircle from './IconExclamationCircle';
 import IconEye from './IconEye';
 import IconEyeOff from './IconEyeOff';
 import IconKey from './IconKey';
-import IconTrastocker from './IconTrastocker';
 import IconTriangleAlert from './IconTriangleAlert';
 
 export {
@@ -28,6 +27,5 @@ export {
   IconEye,
   IconEyeOff,
   IconKey,
-  IconTrastocker,
   IconTriangleAlert,
 };
