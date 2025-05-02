@@ -1,10 +1,9 @@
+import { Box } from '@trastocker/ui-elements';
 import { twMerge } from 'tailwind-merge';
 
 import { classNames } from './styles';
 
 import type React from 'react';
-
-import Box from '@components/shared/Box';
 
 export type NavbarProps = {
   children: React.ReactNode;

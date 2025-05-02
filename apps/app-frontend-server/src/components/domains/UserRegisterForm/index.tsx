@@ -1,18 +1,13 @@
 import { useId } from 'react';
 
+import { Button, ErrorMessage, IconEye, IconEyeOff, InputGroup, FormGroup } from '@trastocker/ui-elements';
 import { FormProvider } from 'react-hook-form';
 import { useToggle } from 'react-use';
 
 import { useUserRegisterForm } from './logics';
 import { iconButton, input } from './styles.css';
 
-import Button from '@components/shared/Button';
-import ErrorMessage from '@components/shared/ErrorMessage';
-import FormGroup from '@components/shared/FormGroup';
-import IconEye from '@components/shared/IconEye';
-import IconEyeOff from '@components/shared/IconEyeOff';
 import InputControl from '@components/shared/InputControl';
-import InputGroup from '@components/shared/InputGroup';
 import { useTranslation } from '@hooks/useTranslation';
 
 const UserRegisterForm: React.FC = () => {

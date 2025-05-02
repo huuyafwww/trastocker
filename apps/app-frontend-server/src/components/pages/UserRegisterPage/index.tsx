@@ -1,9 +1,10 @@
+import { LogoTrastocker } from '@trastocker/ui-elements';
+
 import { wrapper, inner, logoWrapper } from './styles.css';
 
 import type React from 'react';
 
 import UserRegisterForm from '@components/domains/UserRegisterForm';
-import LogoTrastocker from '@components/shared/LogoTrastocker';
 
 type UserRegisterPageProps = {};
 

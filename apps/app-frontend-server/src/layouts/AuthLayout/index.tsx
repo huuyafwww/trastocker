@@ -1,8 +1,8 @@
+import { LogoTrastocker } from '@trastocker/ui-elements';
+
 import { wrapper, inner, content, footer, logoWrapper, copyRight } from './styles.css';
 
 import type React from 'react';
-
-import LogoTrastocker from '@components/shared/LogoTrastocker';
 
 type AuthLayoutProps = {
   children: React.ReactNode;

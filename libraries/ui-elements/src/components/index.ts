@@ -12,6 +12,10 @@ import IconEye from './IconEye';
 import IconEyeOff from './IconEyeOff';
 import IconKey from './IconKey';
 import IconTriangleAlert from './IconTriangleAlert';
+import Input from './Input';
+import InputGroup from './InputGroup';
+import LogoTrastocker from './LogoTrastocker';
+import Navbar from './Navbar';
 
 export {
   Box,
@@ -19,6 +23,7 @@ export {
   Divider,
   ErrorMessage,
   FormGroup,
+  Navbar,
   IconBars,
   IconCheckCircle,
   IconEllipsisHorizontal,
@@ -28,4 +33,25 @@ export {
   IconEyeOff,
   IconKey,
   IconTriangleAlert,
+  Input,
+  InputGroup,
+  LogoTrastocker,
 };
+
+export type * from './Box';
+export type * from './Button';
+export type * from './Divider';
+export type * from './ErrorMessage';
+export type * from './FormGroup';
+export type * from './IconBars';
+export type * from './IconCheckCircle';
+export type * from './IconEllipsisHorizontal';
+export type * from './IconEmail';
+export type * from './IconExclamationCircle';
+export type * from './IconEye';
+export type * from './IconEyeOff';
+export type * from './IconKey';
+export type * from './IconTriangleAlert';
+export type * from './Input';
+export type * from './InputGroup';
+export type * from './LogoTrastocker';
