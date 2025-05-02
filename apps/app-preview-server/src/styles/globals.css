@@ -1,0 +1,13 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+}
+
+button, input, select, textarea {
+  border-style: solid;
+}
+
+.lucide {
+  width: 1em;
+  height: 1em;
+}

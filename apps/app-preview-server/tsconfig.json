@@ -8,19 +8,11 @@
       "@components/*": [
         "./src/components/*",
       ],
-      "@constants/*": [
-        "./src/constants/*",
-      ],
       "@hooks/*": [
         "./src/hooks/*",
       ],
       "@layouts/*": [
         "./src/layouts/*",
-      ],
-      "@locales": ["./src/locales/index.ts"],
-      "@locales/*": ["./src/locales/*"],
-      "@mocks/*": [
-        "./mocks/*",
       ],
       "@pages/*": [
         "./src/pages/*",
@@ -33,8 +25,7 @@
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    ".storybook/**/*.ts",
-    ".storybook/**/*.tsx",
+    "types/*.ts",
     "**/*.ts",
     "**/*.tsx",
   ],
