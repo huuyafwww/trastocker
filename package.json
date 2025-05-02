@@ -4,7 +4,7 @@
   "description": "",
   "license": "MIT",
   "scripts": {
-    "build:libraries": "turbo run build --filter=@trastocker/*-definition --filter=@trastocker/*-helper",
+    "build:libraries": "turbo run build --filter=@trastocker/*-definition --filter=@trastocker/*-helper --filter=./libraries/*",
     "clean": "turbo run clean && pnpm run clean:self",
     "clean:self": "rimraf .next node_modules dist .turbo",
     "create:package": "turbo gen package && pnpm install",
