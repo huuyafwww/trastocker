@@ -8,6 +8,9 @@ export default defineConfig(options => ({
   sourcemap: true,
   clean: true,
   splitting: false,
-  esbuildPlugins: [vanillaExtractPlugin()],
+  esbuildPlugins: [
+    vanillaExtractPlugin(),
+  ],
   minify: !options.watch,
+  css: true,
 }));

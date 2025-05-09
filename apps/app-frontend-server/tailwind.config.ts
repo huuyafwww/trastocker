@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss';
 const config = {
   content: [
     './src/**/*.{ts,tsx}',
+    './node_modules/@trastocker/ui-elements/dist/**/*.js',
   ],
   theme: {
     extend: {},
