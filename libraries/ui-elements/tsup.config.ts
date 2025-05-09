@@ -11,6 +11,9 @@ export default defineConfig(options => ({
   esbuildPlugins: [
     vanillaExtractPlugin(),
   ],
+  loader: {
+    '.png': 'dataurl',
+  },
   minify: !options.watch,
   css: true,
 }));
