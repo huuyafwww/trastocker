@@ -6,7 +6,6 @@
   "scripts": {
     "build": "next build",
     "clean": "rimraf node_modules .turbo",
-    "deploy": "pnpm pages:build && wrangler pages deploy",
     "dev": "next dev",
     "lint": "next lint",
     "lint:code": "eslint . --cache",
