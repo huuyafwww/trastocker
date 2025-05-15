@@ -40,7 +40,7 @@ export type Variant = {
 export const defaultVariant: Variant = {
   color: 'primary',
   shape: 'none',
-  size: 'unset',
+  size: 'lg',
   border: 'none',
 };
 
