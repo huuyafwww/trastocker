@@ -16,9 +16,10 @@ const labelText = twMerge(
 );
 
 const inputWrapper = twMerge(
+  'w-full',
   'input',
   'input-bordered',
-  'input-md',
+  'input-lg',
   'flex',
   'items-center',
 );

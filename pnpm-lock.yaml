@@ -236,15 +236,9 @@ importers:
       react-use:
         specifier: ^17.6.0
         version: 17.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      ress:
-        specifier: ^5.0.2
-        version: 5.0.2
       tailwind-merge:
         specifier: ^3.2.0
         version: 3.2.0
-      tailwindcss:
-        specifier: ^4.1.6
-        version: 4.1.6
       urql:
         specifier: ^4.2.2
         version: 4.2.2(@urql/core@5.1.1(graphql@16.10.0))(react@19.1.0)
@@ -390,6 +384,9 @@ importers:
       storycap:
         specifier: ^5.0.1
         version: 5.0.1(@storybook/manager-api@8.6.12(storybook@8.6.12(prettier@3.5.3)))(@storybook/preview-api@8.6.12(storybook@8.6.12(prettier@3.5.3)))
+      tailwindcss:
+        specifier: ^4.1.6
+        version: 4.1.6
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -8530,9 +8527,6 @@ packages:
   resolve@2.0.0-next.5:
     resolution: {integrity: sha512-U7WjGVG9sH8tvjW5SmGbQuui75FiyjAX72HX15DwBBwF9dNiQZRQAg9nnPhYy+TUnE0+VcrttuvNI8oSxZcocA==}
     hasBin: true
-
-  ress@5.0.2:
-    resolution: {integrity: sha512-oHBtOWo/Uc8SzQMbQNIKTcgi8wKmAs7IlNlRywmXudbOtF+c27FlOIq7tnwLDVcTywe6JXYo1pDXHO6kABwNYA==}
 
   restore-cursor@3.1.0:
     resolution: {integrity: sha512-l+sSefzHpj5qimhFSE5a8nufZYAM3sBSVMAPtYkmC+4EH2anSGaEMXSD0izRQbu9nfyQ9y5JrVmp7E8oZrUjvA==}
@@ -19487,8 +19481,6 @@ snapshots:
       is-core-module: 2.16.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
-
-  ress@5.0.2: {}
 
   restore-cursor@3.1.0:
     dependencies:

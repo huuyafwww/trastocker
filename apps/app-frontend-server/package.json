@@ -43,9 +43,7 @@
     "react-hook-form": "^7.56.0",
     "react-toastify": "^11.0.5",
     "react-use": "^17.6.0",
-    "ress": "^5.0.2",
     "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.6",
     "urql": "^4.2.2",
     "valibot": "1.0.0"
   },
@@ -96,6 +94,7 @@
     "sql.js": "1.12.0",
     "storybook": "^8.6.12",
     "storycap": "^5.0.1",
+    "tailwindcss": "^4.1.6",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3",
     "vite-tsconfig-paths": "^5.1.4",
