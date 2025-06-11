@@ -57,7 +57,6 @@
     "@huuyafwww/eslint-config-storybook": "^1.2.0",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@huuyafwww/tsconfig-next": "^1.2.1",
-    "@storybook/addon-actions": "^9.0.8",
     "@storybook/nextjs-vite": "^9.0.8",
     "@storybook/react": "^9.0.8",
     "@tailwindcss/postcss": "^4.1.6",
