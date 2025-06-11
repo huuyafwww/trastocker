@@ -1,4 +1,4 @@
-import { fn } from '@storybook/test';
+import { action } from 'storybook/actions';
 
 import { defaultVariant } from './styles.css';
 
@@ -12,7 +12,7 @@ const meta = {
   args: {
     as: 'button',
     children: 'Button',
-    onPress: fn(),
+    onPress: action('onPress'),
     variant: defaultVariant,
   },
   argTypes: {},
