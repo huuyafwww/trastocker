@@ -33,14 +33,14 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.10",
     "@vanilla-extract/css": "^1.17.1",
-    "daisyui": "^5.0.35",
+    "daisyui": "^5.0.43",
     "framer-motion": "^12.7.4",
-    "lucide-react": "^0.474.0",
+    "lucide-react": "^0.518.0",
     "react": "^19.1.0",
     "react-aria": "^3.39.0",
     "react-dom": "^19.1.0",
-    "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.6"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "@huuyafwww/eslint-config-browser": "^1.2.0",
@@ -59,11 +59,10 @@
     "@types/react-dom": "^19.1.2",
     "@vanilla-extract/esbuild-plugin": "^2.3.15",
     "@vanilla-extract/vite-plugin": "^5.0.1",
-    "cssnano": "^7.0.6",
     "http-server": "^14.1.1",
     "npm-run-all2": "^7.0.2",
-    "postcss": "^8.5.3",
-    "@tailwindcss/postcss": "^4.1.6",
+    "postcss": "^8.5.6",
+    "@tailwindcss/postcss": "^4.1.10",
     "reg-keygen-git-hash-plugin": "^0.14.3",
     "reg-notify-github-plugin": "^0.14.4",
     "reg-publish-s3-plugin": "^0.14.4",
