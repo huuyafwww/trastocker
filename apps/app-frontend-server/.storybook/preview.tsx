@@ -1,4 +1,3 @@
-import 'ress';
 import '@styles/tailwind.css';
 import '@styles/globals.css';
 import { connectDatabase } from '@trastocker/drizzle-helper/sql-js';
