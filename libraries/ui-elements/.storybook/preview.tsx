@@ -1,4 +1,3 @@
-import 'ress';
 import '@styles/tailwind.css';
 import '@styles/globals.css';
 import { withScreenshot } from 'storycap';

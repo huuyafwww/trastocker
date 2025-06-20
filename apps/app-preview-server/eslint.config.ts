@@ -10,7 +10,7 @@ const config = define([
   () => ([{
     ignores: [
       'next.config.mjs',
-      'postcss.config.cjs',
+      'postcss.config.mjs',
       'tailwind.config.ts',
     ],
   }]),

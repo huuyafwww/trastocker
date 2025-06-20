@@ -14,7 +14,7 @@
   "dependencies": {
     "@trastocker/ui-elements": "workspace:*",
     "@vanilla-extract/css": "^1.17.1",
-    "daisyui": "^4.12.24",
+    "daisyui": "^5.0.35",
     "framer-motion": "^12.7.4",
     "lucide-react": "^0.474.0",
     "next": "^15.3.1",
@@ -22,14 +22,14 @@
     "react-aria": "^3.39.0",
     "react-dom": "^19.1.0",
     "react-use": "^17.6.0",
-    "ress": "^5.0.2",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss": "^3.4.17"
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.6"
   },
   "devDependencies": {
     "@huuyafwww/eslint-config-browser": "^1.2.0",
     "@huuyafwww/eslint-config-common": "^1.2.0",
     "@huuyafwww/eslint-config-next": "^1.2.0",
+    "@tailwindcss/postcss": "^4.1.6",
     "@huuyafwww/eslint-config-react": "^1.2.0",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@huuyafwww/tsconfig-next": "^1.2.1",
@@ -37,7 +37,6 @@
     "@types/react-dom": "^19.1.2",
     "@vanilla-extract/next-plugin": "^2.4.10",
     "@vanilla-extract/webpack-plugin": "^2.3.18",
-    "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.6",
     "postcss": "^8.5.3",
     "puppeteer": "^24.6.1",

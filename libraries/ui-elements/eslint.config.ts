@@ -9,7 +9,7 @@ import type { Linter } from 'eslint';
 const config = define([
   () => ([{
     ignores: [
-      'postcss.config.cjs',
+      'postcss.config.mjs',
       'tailwind.config.ts',
       'storybook-static/**',
       '.storybook/public/**',

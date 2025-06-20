@@ -1,5 +1,4 @@
 import '@styles/tailwind.css';
-import '@styles/globals.css';
 import '@styles/app.css';
 import ms from 'ms';
 import { Noto_Sans_JP } from 'next/font/google';
