@@ -12,6 +12,9 @@ const nextConfig = {
   typescript: {
     tsconfigPath: "tsconfig.build.json",
   },
+  publicRuntimeConfig: {
+    currentBranchName: process.env.GIT_BRANCH_NAME || 'develop',
+  },
 };
 
 export default withVanillaExtract(nextConfig);
