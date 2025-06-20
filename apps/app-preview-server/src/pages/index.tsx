@@ -1,11 +1,12 @@
 import type { NextPageWithLayout } from './_app';
 import type { ReactElement } from 'react';
 
+import PreviewListPage from '@components/pages/PreviewListPage';
 import HomeLayout from '@layouts/HomeLayout';
 
 const Index: NextPageWithLayout = () => {
   return (
-    <div className="" />
+    <PreviewListPage />
   );
 };
 

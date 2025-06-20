@@ -1,38 +1,31 @@
-import { Button, IconBars, IconEllipsisHorizontal, Navbar } from '@trastocker/ui-elements';
+import { LogoTrastocker } from '@trastocker/ui-elements';
 
-import { classNames } from './styles.css';
+import { wrapper, inner, content, footer, logoWrapper, copyRight } from './styles.css';
 
 import type React from 'react';
 
-type HomeLayoutProps = {
+type AuthLayoutProps = {
   children: React.ReactNode;
 };
 
-const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
+const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
-    <div className={classNames.wrapper}>
-      <Navbar className={classNames.navbar}>
-        <div className="flex-none">
-          <Button variant={{ color: 'ghost', shape: 'square' }}>
-            <IconBars />
-          </Button>
+    <div className={wrapper}>
+      <div className={inner}>
+        <div className={content}>
+          {children}
         </div>
-        <div className="flex-1">
-          <Button as="a" variant={{ color: 'ghost' }} className="text-xl">
-            Trastocker
-          </Button>
-        </div>
-        <div className="flex-none">
-          <Button variant={{ color: 'ghost', shape: 'square' }}>
-            <IconEllipsisHorizontal />
-          </Button>
-        </div>
-      </Navbar>
-      <div className={classNames.slot}>
-        {children}
+        <footer className={footer}>
+          <div className={logoWrapper}>
+            <LogoTrastocker />
+          </div>
+          <p className={copyRight}>
+            © 2024 Trastocker.
+          </p>
+        </footer>
       </div>
     </div>
   );
 };
 
-export default HomeLayout;
+export default AuthLayout;

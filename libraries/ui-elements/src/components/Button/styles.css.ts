@@ -4,6 +4,7 @@ const wrapper = twMerge('btn');
 
 export const variants = {
   color: {
+    none: '',
     default: 'btn-primary',
     primary: 'btn-primary',
     secondary: 'btn-secondary',
@@ -23,6 +24,7 @@ export const variants = {
     unset: '',
     sm: 'btn-sm',
     lg: 'btn-lg',
+    xl: 'btn-xl',
   },
   border: {
     none: '',

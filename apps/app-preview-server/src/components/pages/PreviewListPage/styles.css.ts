@@ -1,0 +1,33 @@
+import { style } from '@vanilla-extract/css';
+import { twMerge } from 'tailwind-merge';
+
+const wrapper = twMerge(
+  'card',
+  'shrink-0',
+  'w-full',
+  'max-w-lg',
+  'shadow-2xl',
+  'bg-base-100',
+);
+
+const inner = twMerge(
+  'card-body',
+);
+
+const logoWrapper = twMerge(
+  'mt-4',
+  'mb-4',
+);
+
+const button = twMerge(
+  style({
+    fontSize: 'var(--text-xl);',
+    gap: 'calc(var(--spacing) * 6)',
+  }),
+);
+
+const previewLogoWrapper = twMerge(
+  'size-6',
+);
+
+export { wrapper, inner, logoWrapper, button, previewLogoWrapper };
