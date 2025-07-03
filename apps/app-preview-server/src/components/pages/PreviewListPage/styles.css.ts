@@ -1,4 +1,3 @@
-import { style } from '@vanilla-extract/css';
 import { twMerge } from 'tailwind-merge';
 
 const wrapper = twMerge(
@@ -19,15 +18,11 @@ const logoWrapper = twMerge(
   'mb-4',
 );
 
-const button = twMerge(
-  style({
-    fontSize: 'var(--text-xl);',
-    gap: 'calc(var(--spacing) * 6)',
-  }),
+const buttonArea = twMerge(
+  'mt-4',
+  'flex',
+  'flex-col',
+  'gap-4',
 );
 
-const previewLogoWrapper = twMerge(
-  'size-6',
-);
-
-export { wrapper, inner, logoWrapper, button, previewLogoWrapper };
+export { wrapper, inner, logoWrapper, buttonArea };

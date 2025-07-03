@@ -1,6 +1,6 @@
 import { LogoTrastocker } from '@trastocker/ui-elements';
 
-import { wrapper, inner, logoWrapper } from './styles.css';
+import { wrapper, inner, logoWrapper, buttonArea } from './styles.css';
 
 import type React from 'react';
 
@@ -18,26 +18,28 @@ const PreviewListPage: React.FC<PreviewListPageProps> = () => {
         <div className={logoWrapper}>
           <LogoTrastocker />
         </div>
-        <PreviewButton
-          icon={<LogoStorybook />}
-          name="app-backend-server"
-        />
 
-        <PreviewButton
-          icon={<LogoStorybook />}
-          name="ui-elements"
-        />
+        <div className={buttonArea}>
+          <PreviewButton
+            icon={<LogoStorybook />}
+            name="app-backend-server"
+          />
 
-        <PreviewButton
-          icon={<LogoLiam />}
-          name="ERD by liam"
-        />
+          <PreviewButton
+            icon={<LogoStorybook />}
+            name="ui-elements"
+          />
 
-        <PreviewButton
-          icon={<IconDatabase />}
-          name="ERD by tbls"
-        />
+          <PreviewButton
+            icon={<LogoLiam />}
+            name="ERD by liam"
+          />
 
+          <PreviewButton
+            icon={<IconDatabase />}
+            name="ERD by tbls"
+          />
+        </div>
       </div>
     </div>
   );
