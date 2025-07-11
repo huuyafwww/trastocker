@@ -20,15 +20,14 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm-run-all --parallel build:code build:storybook",
-    "build:code": "tsup",
-    "build:storybook": "storybook build --test",
+    "build": "tsup",
     "clean": "rimraf node_modules .turbo",
     "dev": "npm-run-all --parallel dev:build dev:storybook",
     "dev:build": "tsup --watch",
     "dev:storybook": "storybook dev -p 6008",
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
+    "storybook:build": "storybook build --test",
     "storybook:screenshot": "storycap http://localhost:6007 --serverCmd 'http-server storybook-static --port 6007'"
   },
   "dependencies": {
