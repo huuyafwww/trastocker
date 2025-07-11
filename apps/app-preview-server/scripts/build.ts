@@ -1,4 +1,5 @@
-import { $, dotenv } from 'zx';
+import * as dotenv from 'dotenv';
+import { $ } from 'zx';
 
 dotenv.populate(process.env as unknown as {}, {
   STORYBOOK_APP_FRONTEND_SERVER_BASE_PATH: 'storybook/app-frontend-server/',
