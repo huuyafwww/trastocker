@@ -31,6 +31,7 @@
     "@huuyafwww/eslint-config-common": "^1.2.0",
     "@huuyafwww/eslint-config-next": "^1.2.0",
     "@huuyafwww/eslint-config-react": "^1.2.0",
+    "dotenv": "^16.5.0",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@huuyafwww/tsconfig-next": "^1.2.1",
     "@tailwindcss/postcss": "^4.1.10",
