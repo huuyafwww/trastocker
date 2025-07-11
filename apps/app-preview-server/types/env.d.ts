@@ -1,5 +1,5 @@
 declare namespace NodeJS {
   interface ProcessEnv {
-    GIT_BRANCH_NAME: string;
+    NEXT_PUBLIC_GIT_COMMIT_REF: string;
   }
 }

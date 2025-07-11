@@ -18,7 +18,10 @@ const PreviewButton: React.FC<PreviewButtonProps> = ({
   return (
     <Button
       className={wrapper}
-      type="button"
+      as="a"
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
       variant={{
         color: 'none',
         size: 'lg',
