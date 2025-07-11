@@ -1,9 +1,6 @@
 import { $ } from 'zx';
 
-const currentPath = process.cwd();
-console.log(`Current directory: ${currentPath}`);
-
-const rootPath = '../..';
+const rootPath = `${process.cwd()}/../..`;
 
 // Generate mock database and build Storybook for the app-frontend-server
 await $`cd ${rootPath}/apps/app-frontend-server && pnpm run generate:mock-database && pnpm run storybook:build`;
