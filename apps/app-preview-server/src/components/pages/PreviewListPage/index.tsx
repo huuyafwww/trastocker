@@ -23,7 +23,7 @@ const PreviewListPage: React.FC<PreviewListPageProps> = () => {
 
         <div className={buttonArea}>
           <PreviewButton
-            link={links.appBackendServer}
+            link={links.appFrontendServer}
             icon={<LogoStorybook />}
             name="app-backend-server"
           />
