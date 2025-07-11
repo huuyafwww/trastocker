@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "next build",
+    "build": "pnpm run build:next && tsx scripts/build.ts",
+    "build:next": "next build",
     "clean": "rimraf node_modules .turbo",
     "dev": "next dev",
     "lint": "next lint",
@@ -29,10 +30,10 @@
     "@huuyafwww/eslint-config-browser": "^1.2.0",
     "@huuyafwww/eslint-config-common": "^1.2.0",
     "@huuyafwww/eslint-config-next": "^1.2.0",
-    "@tailwindcss/postcss": "^4.1.10",
     "@huuyafwww/eslint-config-react": "^1.2.0",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@huuyafwww/tsconfig-next": "^1.2.1",
+    "@tailwindcss/postcss": "^4.1.10",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vanilla-extract/next-plugin": "^2.4.10",
@@ -40,6 +41,7 @@
     "postcss": "^8.5.6",
     "puppeteer": "^24.6.1",
     "tsx": "^4.19.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "zx": "^8.5.3"
   }
 }
