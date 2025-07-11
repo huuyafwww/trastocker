@@ -1,5 +1,8 @@
 import { $ } from 'zx';
 
+const currentPath = process.cwd();
+console.log(`Current directory: ${currentPath}`);
+
 const rootPath = '../..';
 
 // Generate mock database and build Storybook for the app-frontend-server
