@@ -10,7 +10,7 @@ await $`mkdir -p ${rootPath}/apps/app-preview-server/dist/storybook/app-frontend
 await $`cp -r ${rootPath}/apps/app-frontend-server/storybook-static/* ${rootPath}/apps/app-preview-server/dist/storybook/app-frontend-server`;
 
 // Generate mock database and build Storybook for the app-ui-elements
-await $`cd ${rootPath}/apps/app-preview-server && pnpm run storybook:build`;
+await $`cd ${rootPath}/libraries/ui-elements && pnpm run storybook:build`;
 
 // copy the built UI elements to the app-ui-elements
 await $`mkdir -p ${rootPath}/apps/app-preview-server/dist/storybook/ui-elements`;
