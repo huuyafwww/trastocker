@@ -25,28 +25,6 @@ jobs:
         run: pnpm run build
         working-directory: apps/app-preview-server
 
-      - name: Build ui-elements Storybook
-        run: pnpm run storybook:build
-        working-directory: libraries/ui-elements
-
-      - name: Generate mock database for storybook
-        run: pnpm run generate:mock-database
-        working-directory: apps/app-frontend-server
-
-      - name: Move ui-elements Storybook Dist
-        run: |
-          mkdir apps/app-preview-server/dist/storybook/ui-elements
-          cp -r libraries/ui-elements/storybook-static/* apps/app-preview-server/dist/storybook/ui-elements
-
-      - name: Build app-frontend-server Storybook
-        run: pnpm run storybook:build
-        working-directory: apps/app-frontend-server
-
-      - name: Move app-frontend-server Storybook Dist
-        run: |
-          mkdir apps/app-preview-server/dist/storybook/app-frontend-server
-          cp -r apps/app-frontend-server/storybook-static/* apps/app-preview-server/dist/storybook/app-frontend-server
-
       - name: Upload static files
         uses: actions/upload-pages-artifact@v3
         with:
