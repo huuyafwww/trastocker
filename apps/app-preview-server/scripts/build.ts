@@ -1,9 +1,23 @@
 import * as dotenv from 'dotenv';
 import { $ } from 'zx';
 
+const basePaths = (() => {
+  if (!!process.env.VERCEL) {
+    return {
+      appFrontendServerBasePath: '/storybook/app-frontend-server/',
+      uiElementsBasePath: '/storybook/ui-elements/',
+    };
+  }
+  // For GitHub Pages
+  return {
+    appFrontendServerBasePath: '/trastocker/storybook/app-frontend-server/',
+    uiElementsBasePath: '/trastocker/storybook/ui-elements/',
+  };
+})();
+
 dotenv.populate(process.env as unknown as {}, {
-  STORYBOOK_APP_FRONTEND_SERVER_BASE_PATH: '/storybook/app-frontend-server/',
-  STORYBOOK_UI_ELEMENTS_BASE_PATH: '/storybook/ui-elements/',
+  STORYBOOK_APP_FRONTEND_SERVER_BASE_PATH: basePaths.appFrontendServerBasePath,
+  STORYBOOK_UI_ELEMENTS_BASE_PATH: basePaths.uiElementsBasePath,
 });
 
 const rootPath = `${process.cwd()}/../..`;
