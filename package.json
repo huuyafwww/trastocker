@@ -33,8 +33,7 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "drizzle-orm": "patches/drizzle-orm.patch",
-      "msw": "patches/msw.patch"
+      "drizzle-orm": "patches/drizzle-orm.patch"
     }
   }
 }
