@@ -25,7 +25,7 @@ const PreviewListPage: React.FC<PreviewListPageProps> = () => {
           <PreviewButton
             link={links.appFrontendServer}
             icon={<LogoStorybook />}
-            name="app-backend-server"
+            name="app-frontend-server"
           />
 
           <PreviewButton

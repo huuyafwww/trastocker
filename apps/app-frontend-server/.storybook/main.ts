@@ -18,8 +18,14 @@ const config: StorybookConfig = {
   },
   framework: '@storybook/experimental-nextjs-vite',
   staticDirs: ['./public'],
+  managerHead: (head) => {
+    if (!process.env.STORYBOOK_APP_FRONTEND_SERVER_BASE_PATH) return head;
+    return (`
+        <base href="${process.env.STORYBOOK_APP_FRONTEND_SERVER_BASE_PATH}" />
+        ${head}
+      `);
+  },
   viteFinal: (config) => {
-    config.base = process.env.STORYBOOK_APP_FRONTEND_SERVER_BASE_PATH || config.base;
     return {
       ...config,
       plugins: [
