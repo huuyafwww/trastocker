@@ -1,13 +1,11 @@
 import { useId } from 'react';
 
+import { ErrorMessage, InputGroup, FormGroup } from '@trastocker/ui-elements';
 import { FormProvider } from 'react-hook-form';
 
 import { useWorkspaceCreateForm } from '@components/domains/WorkspaceCreateForm/logics';
 import { input } from '@components/domains/WorkspaceCreateForm/styles.css';
-import ErrorMessage from '@components/shared/ErrorMessage';
-import FormGroup from '@components/shared/FormGroup';
 import InputControl from '@components/shared/InputControl';
-import InputGroup from '@components/shared/InputGroup';
 import { useTranslation } from '@hooks/useTranslation';
 
 const WorkspaceCreateForm: React.FC = () => {

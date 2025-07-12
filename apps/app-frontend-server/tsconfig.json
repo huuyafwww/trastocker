@@ -37,7 +37,6 @@
     ".storybook/**/*.tsx",
     "**/*.ts",
     "**/*.tsx",
-    "eslint.config.js",
   ],
   "exclude": [
     "node_modules",

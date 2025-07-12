@@ -1,6 +1,7 @@
+import { IconExclamationCircle } from '@trastocker/ui-elements';
+
 import { wrapper } from './styles.css';
 
-import IconExclamationCircle from '@components/shared/IconExclamationCircle';
 import { useTranslation } from '@hooks/useTranslation';
 
 const UserVerifyErrorMessage: React.FC = () => {

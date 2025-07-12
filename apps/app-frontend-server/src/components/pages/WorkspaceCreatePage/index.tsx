@@ -1,11 +1,11 @@
+import { Divider, LogoTrastocker } from '@trastocker/ui-elements';
+
 import { wrapper, inner, logoWrapper, divider } from './styles.css';
 
 import type React from 'react';
 
 import WorkspaceCreateForm from '@components/domains/WorkspaceCreateForm';
 import WorkspaceJoinForm from '@components/domains/WorkspaceJoinForm';
-import Divider from '@components/shared/Divider';
-import LogoTrastocker from '@components/shared/LogoTrastocker';
 import { useTranslation } from '@hooks/useTranslation';
 
 type WorkspaceCreatePageProps = {};

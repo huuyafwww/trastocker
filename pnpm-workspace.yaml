@@ -2,6 +2,7 @@ packages:
   - 'apps/*'
   - 'definitions/*'
   - 'helpers/*'
+  - 'libraries/*'
   - 'turbo/*'
 
 dangerouslyAllowAllBuilds: true

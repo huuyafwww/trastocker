@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": [
+    "@huuyafwww/tsconfig-next",
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@components/*": [
+        "./src/components/*",
+      ],
+      "@constants/*": [
+        "./src/constants/*",
+      ],
+      "@layouts/*": [
+        "./src/layouts/*",
+      ],
+      "@pages/*": [
+        "./src/pages/*",
+      ],
+      "@styles/*": [
+        "./src/styles/*",
+      ],
+    },
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "types/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}

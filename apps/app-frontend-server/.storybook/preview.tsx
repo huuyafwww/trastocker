@@ -1,5 +1,4 @@
 import '@styles/tailwind.css';
-import '@styles/globals.css';
 import { connectDatabase } from '@trastocker/drizzle-helper/sql-js';
 import ms from 'ms';
 import { initialize, mswLoader } from 'msw-storybook-addon';
@@ -26,7 +25,14 @@ const options: {
 // for GitHub Pages
 if (location.hostname === 'huuyafwww.github.io') {
   options.serviceWorker = {
-    url: '/trastocker/storybook/mockServiceWorker.js',
+    url: '/trastocker/storybook/ui-elements/mockServiceWorker.js',
+  };
+}
+
+// for Vercel
+if (location.hostname.includes('vercel.app')) {
+  options.serviceWorker = {
+    url: '/storybook/app-frontend-server/mockServiceWorker.js',
   };
 }
 
