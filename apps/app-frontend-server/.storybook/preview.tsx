@@ -25,7 +25,7 @@ const options: {
 // for GitHub Pages
 if (location.hostname === 'huuyafwww.github.io') {
   options.serviceWorker = {
-    url: '/trastocker/storybook/ui-elements/mockServiceWorker.js',
+    url: '/trastocker/storybook/app-frontend-server/mockServiceWorker.js',
   };
 }
 
