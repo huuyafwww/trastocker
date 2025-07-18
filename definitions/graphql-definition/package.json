@@ -15,13 +15,13 @@
     "lint:code": "eslint . --cache"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^5.0.5",
-    "@graphql-codegen/typescript-operations": "^4.6.0",
+    "@graphql-codegen/cli": "^5.0.7",
+    "@graphql-codegen/typescript-operations": "^4.6.1",
     "@huuyafwww/eslint-config-common": "^1.2.0",
     "@huuyafwww/eslint-config-node": "^1.2.0",
     "@huuyafwww/tsconfig-common": "^1.1.2",
-    "graphql": "^16.10.0",
-    "nodemon": "^3.1.9",
+    "graphql": "^16.11.0",
+    "nodemon": "^3.1.10",
     "typescript": "^5.8.3"
   }
 }
