@@ -1,0 +1,5 @@
+# production
+/dist
+
+# storybook
+storybook-static

@@ -1,6 +1,7 @@
+import { IconCheckCircle } from '@trastocker/ui-elements';
+
 import { wrapper } from './styles.css';
 
-import IconCheckCircle from '@components/shared/IconCheckCircle';
 import { useTranslation } from '@hooks/useTranslation';
 
 const UserVerifySuccessMessage: React.FC = () => {

@@ -1,5 +1,6 @@
 import { useId } from 'react';
 
+import { Button, ErrorMessage, IconEye, IconEyeOff, InputGroup, FormGroup } from '@trastocker/ui-elements';
 import { FormProvider } from 'react-hook-form';
 import { useToggle } from 'react-use';
 
@@ -8,13 +9,7 @@ import { input, iconButton } from './styles.css';
 import type React from 'react';
 
 import { useUserLoginForm } from '@components/domains/UserLoginForm/logics';
-import Button from '@components/shared/Button';
-import ErrorMessage from '@components/shared/ErrorMessage';
-import FormGroup from '@components/shared/FormGroup';
-import IconEye from '@components/shared/IconEye';
-import IconEyeOff from '@components/shared/IconEyeOff';
 import InputControl from '@components/shared/InputControl';
-import InputGroup from '@components/shared/InputGroup';
 import { useTranslation } from '@hooks/useTranslation';
 
 const UserLoginForm: React.FC = () => {

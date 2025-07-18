@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 
+import { LogoTrastocker } from '@trastocker/ui-elements';
 import { useRouter } from 'next/router';
 
 import { useIsVerifyUser } from './logics';
@@ -9,7 +10,6 @@ import type React from 'react';
 
 import UserVerifyErrorMessage from '@components/domains/UserVerifyErrorMessage';
 import UserVerifySuccessMessage from '@components/domains/UserVerifySuccessMessage';
-import LogoTrastocker from '@components/shared/LogoTrastocker';
 
 type UserVerifyPageProps = {};
 
