@@ -18,8 +18,8 @@
     "open": "^10.2.0"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-common": "^1.2.0",
-    "@huuyafwww/eslint-config-node": "^1.2.0",
+    "@huuyafwww/eslint-config-common": "^1.2.1",
+    "@huuyafwww/eslint-config-node": "^1.2.1",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@types/ms": "^0.7.34",
     "tsx": "^4.20.3",

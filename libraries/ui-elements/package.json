@@ -43,12 +43,12 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-browser": "^1.2.0",
-    "@huuyafwww/eslint-config-common": "^1.2.0",
-    "@huuyafwww/eslint-config-react": "^1.2.0",
-    "@huuyafwww/eslint-config-storybook": "^1.2.0",
+    "@huuyafwww/eslint-config-browser": "^1.2.1",
+    "@huuyafwww/eslint-config-common": "^1.2.1",
+    "@huuyafwww/eslint-config-react": "^1.2.1",
+    "@huuyafwww/eslint-config-storybook": "^1.2.1",
     "@huuyafwww/tsconfig-common": "^1.1.2",
-    "@huuyafwww/tsconfig-react": "^1.0.0",
+    "@huuyafwww/tsconfig-react": "^1.0.1",
     "@storybook/addon-actions": "^8.6.14",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/blocks": "^8.6.14",

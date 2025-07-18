@@ -129,11 +129,11 @@ importers:
         specifier: ^4.20250718.0
         version: 4.20250718.0
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -153,8 +153,8 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       has-throw:
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       npm-run-all2:
         specifier: ^7.0.2
         version: 7.0.2
@@ -253,20 +253,20 @@ importers:
         specifier: ^4.20250718.0
         version: 4.20250718.0
       '@huuyafwww/eslint-config-browser':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-next':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/eslint-config-react':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/eslint-config-storybook':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -437,17 +437,17 @@ importers:
         version: 4.1.11
     devDependencies:
       '@huuyafwww/eslint-config-browser':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-next':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/eslint-config-react':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -510,11 +510,11 @@ importers:
         version: 10.2.0
     devDependencies:
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -538,11 +538,11 @@ importers:
         version: 0.39.3(patch_hash=fedaf08548609efe35157e25861c21b3901124ca3c771e768bd0fb565936c801)(@cloudflare/workers-types@4.20250718.0)(@types/better-sqlite3@7.6.13)(@types/sql.js@1.4.9)(better-sqlite3@11.10.0)(sql.js@1.12.0)
     devDependencies:
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -559,8 +559,8 @@ importers:
         specifier: ^0.30.6
         version: 0.30.6
       has-command:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       pkgroll:
         specifier: ^2.14.3
         version: 2.14.3(typescript@5.8.3)
@@ -586,11 +586,11 @@ importers:
         specifier: ^4.6.1
         version: 4.6.1(graphql-sock@1.0.1(graphql@16.11.0))(graphql@16.11.0)
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -611,11 +611,11 @@ importers:
         version: 1.0.0(typescript@5.8.3)
     devDependencies:
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -648,11 +648,11 @@ importers:
         version: 1.12.0
     devDependencies:
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -669,11 +669,11 @@ importers:
   helpers/nodejs-utility-helper:
     devDependencies:
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -687,11 +687,11 @@ importers:
   helpers/typescript-utility-helper:
     devDependencies:
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -736,23 +736,23 @@ importers:
         version: 4.1.11
     devDependencies:
       '@huuyafwww/eslint-config-browser':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-react':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/eslint-config-storybook':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
       '@huuyafwww/tsconfig-react':
-        specifier: ^1.0.0
-        version: 1.0.0(typescript@5.8.3)
+        specifier: ^1.0.1
+        version: 1.0.1(typescript@5.8.3)
       '@storybook/addon-actions':
         specifier: ^8.6.14
         version: 8.6.14(storybook@8.6.14(prettier@3.6.2))
@@ -826,11 +826,11 @@ importers:
   turbo/generators:
     devDependencies:
       '@huuyafwww/eslint-config-common':
-        specifier: ^1.2.0
-        version: 1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
+        specifier: ^1.2.1
+        version: 1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)
       '@huuyafwww/eslint-config-node':
-        specifier: ^1.2.0
-        version: 1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
+        specifier: ^1.2.1
+        version: 1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)
       '@huuyafwww/tsconfig-common':
         specifier: ^1.1.2
         version: 1.1.2(typescript@5.8.3)
@@ -2239,38 +2239,38 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@huuyafwww/eslint-config-browser@1.2.0':
-    resolution: {integrity: sha512-05dKgSZHyO/jfLoTDFcBxn0jcRtqLwfGxWO+YSO8b3kMGJkgFisO3ta0aO3tDWROMDUwH1A1QCK/kxE+MW0EgA==}
+  '@huuyafwww/eslint-config-browser@1.2.1':
+    resolution: {integrity: sha512-mw8ZbcfR7AhExkJ3Qu0JP9uAJHwky8ocTKjDw9eQR56LMDnJcjn8v/IAz7VAMW3lXekU7TG6Rtvq+Gt1a4IpMQ==}
     peerDependencies:
       eslint: ^9.25.0
       jiti: ^2.4.2
 
-  '@huuyafwww/eslint-config-common@1.2.0':
-    resolution: {integrity: sha512-jKLi4u+7TJVgln0l7EAsTx3FW/uVA1AMsEGKGahSwFKk88pE5/onbe88qnNaoLjS4ilb1VfIo8UPKn+Z1qhguw==}
+  '@huuyafwww/eslint-config-common@1.2.1':
+    resolution: {integrity: sha512-k7L6HK6E1IioQcLifzZoGR6jLvzYR0T4KYLYEDBp3kmHzK/Ke1YvtoG0fxFpMDkaJK5QPBY/0u5ueg00zyNIxg==}
     peerDependencies:
       eslint: ^9.25.0
       jiti: ^2.4.2
 
-  '@huuyafwww/eslint-config-next@1.2.0':
-    resolution: {integrity: sha512-oz0WzZl0OKtOHDjU6IEucvm9oei9pN9FYX+r7+lq5zCKfFQZeTR/BAr8J/VOY+r8nSyIYfWKx2NvL7KMwXJR5w==}
+  '@huuyafwww/eslint-config-next@1.2.1':
+    resolution: {integrity: sha512-AhPDV/1wdm/r21he2v0hfIkbn4LA7X9iuWRQMyKUL1PVuk0wV90VbTVjF07m4OT1qw4nhT2oLdECQ9EYTjGF3A==}
     peerDependencies:
       eslint: ^9.25.0
       jiti: ^2.4.2
 
-  '@huuyafwww/eslint-config-node@1.2.0':
-    resolution: {integrity: sha512-QqJ1viEBc4sJgF1Uqzm4IPx/cd+Wm+5r5ZWBehGSgXNArWgeVI0Fq7zSwTZMzuN36dbaqUyAa38UmD5qwO2d5w==}
+  '@huuyafwww/eslint-config-node@1.2.1':
+    resolution: {integrity: sha512-BLa2AB1gKgYydH5gQU1oqX+3Mme6dARM8Bqw5VBoOGuc/NU6PbKAMWEIoh2cnvzg2mO8kLuYOShCh3FZerucsg==}
     peerDependencies:
       eslint: ^9.25.0
       jiti: ^2.4.2
 
-  '@huuyafwww/eslint-config-react@1.2.0':
-    resolution: {integrity: sha512-SxcSWho/+ui47AZMKG130+Ptb0Bh6zhNEqGrOFcZbpXmJNhA2L5jm4Quui/i3FoTnE28HwY+KdKBuDpWryqtNw==}
+  '@huuyafwww/eslint-config-react@1.2.1':
+    resolution: {integrity: sha512-Xux64qwEhMX33RKPMjF6LyFkSZbPWvPBk4uJRglRGkMD69CCf+HJmyBLYH3RV2D7EbpMPBYJqiMhBGNjml1yBg==}
     peerDependencies:
       eslint: ^9.25.0
       jiti: ^2.4.2
 
-  '@huuyafwww/eslint-config-storybook@1.2.0':
-    resolution: {integrity: sha512-9ijrEu4fsk3XCa0v9kWJ0YrNzzAcsLZA/c74WXsO49nwo/4orfI+XcLr80mq0Tk+TDSK5ABHqzxHhmW5BWd9oA==}
+  '@huuyafwww/eslint-config-storybook@1.2.1':
+    resolution: {integrity: sha512-uFKBV/DJtMRRLKsx1NGmtrExBybeUbxkBpYe7m+kaiycEanCApg4Ji0PqJc4/+eSnG8i2ZxEMc/EKVPm8SV7CA==}
     peerDependencies:
       eslint: ^9.25.0
       jiti: ^2.4.2
@@ -2285,8 +2285,8 @@ packages:
     peerDependencies:
       typescript: ^5.8.3
 
-  '@huuyafwww/tsconfig-react@1.0.0':
-    resolution: {integrity: sha512-jdq+o5GqYfGZHw/8blPOBMCtGCe1Q+uLgwVXz9iCV3JoScvKlxtpUyeu2Z1nUCbDcKDVLB8dISzvxuRzqWAgJA==}
+  '@huuyafwww/tsconfig-react@1.0.1':
+    resolution: {integrity: sha512-r7lV4QOzUAr3r8yrtVdSIcvri76NnQ2/9+ZHC1Kp9ZUodGcoive4iPBEsI9jPzEF4oeiLXRyzT5nWr26pLaHiA==}
     peerDependencies:
       typescript: ^5.8.3
 
@@ -6911,8 +6911,8 @@ packages:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
     engines: {node: '>= 0.4'}
 
-  has-command@1.0.0:
-    resolution: {integrity: sha512-uzXhUUqoS9t9ZiSGK12R8+F9jH74avUO65rRI9T/E2Vv7zdWZ6VcgQTt2+qky3jRXwFW0I7SloF1wMh6vNRZbA==}
+  has-command@1.0.1:
+    resolution: {integrity: sha512-KGRlIPe8+DP8TzWRJQo6d4RCdUHTWtHkMcDihmt6hUZs0ACRDHkl9pogjGnX0y8NcXCm5AAiJk5zvCLBavy00A==}
     engines: {node: '>=22.12.0', pnpm: '>=10.9.0'}
 
   has-flag@3.0.0:
@@ -6934,9 +6934,9 @@ packages:
     resolution: {integrity: sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==}
     engines: {node: '>= 0.4'}
 
-  has-throw@1.0.2:
-    resolution: {integrity: sha512-akjrdbeJieqbUOL6xxDaIm1PS/5lJMNUNjy3n926VemawuIPinqShhUTVMpuqQQlv5j4KNwe2NFr1Bydmyv1ZA==}
-    engines: {node: '>=22.12.0', pnpm: '>=9.15.0'}
+  has-throw@1.0.3:
+    resolution: {integrity: sha512-md8hL0/aNJsWL6QpQVueKiiFvDfKoPbpQNsiZg637jkleGEEtuJdJaOSMq+/a589bIpKWrJ+v2lfBty0RpPcUw==}
+    engines: {node: '>=22.12.0', pnpm: '>=10.9.0'}
 
   has-tostringtag@1.0.2:
     resolution: {integrity: sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw==}
@@ -9944,8 +9944,8 @@ packages:
     resolution: {integrity: sha512-gBLkYIlEnSp8pFbT64yFgGE6UIB9tAkhukC23PmMDCe5Nd+cRqKxSjw5y54MK2AZMgZfJWMaNE4nYUHgi1XEOw==}
     engines: {node: '>=18.17'}
 
-  undici@7.11.0:
-    resolution: {integrity: sha512-heTSIac3iLhsmZhUCjyS3JQEkZELateufzZuBaVM5RHXdSBMb1LPMQf5x+FH7qjsZYDP0ttAc3nnVpUB+wYbOg==}
+  undici@7.12.0:
+    resolution: {integrity: sha512-GrKEsc3ughskmGA9jevVlIOPMiiAHJ4OFUtaAH+NhfTUSiZ1wMPIQqQvAJUrJspFXJt3EBWgpAeoHEDVT1IBug==}
     engines: {node: '>=20.18.1'}
 
   unenv@2.0.0-rc.17:
@@ -11656,7 +11656,7 @@ snapshots:
       fast-querystring: 1.1.2
       fastify-plugin: 5.0.1
       toad-cache: 3.7.0
-      undici: 7.11.0
+      undici: 7.12.0
 
   '@formatjs/ecma402-abstract@2.3.4':
     dependencies:
@@ -12196,14 +12196,14 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@huuyafwww/eslint-config-browser@1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
+  '@huuyafwww/eslint-config-browser@1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
     dependencies:
       '@praha/eslint-config-definer': 2.0.1(eslint@9.25.0(jiti@2.4.2))
       eslint: 9.25.0(jiti@2.4.2)
       globals: 15.15.0
       jiti: 2.4.2
 
-  '@huuyafwww/eslint-config-common@1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)':
+  '@huuyafwww/eslint-config-common@1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)':
     dependencies:
       '@eslint/js': 9.31.0
       '@praha/eslint-config-definer': 2.0.1(eslint@9.25.0(jiti@2.4.2))
@@ -12224,21 +12224,21 @@ snapshots:
       - supports-color
       - typescript
 
-  '@huuyafwww/eslint-config-next@1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
+  '@huuyafwww/eslint-config-next@1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
     dependencies:
       '@next/eslint-plugin-next': 15.4.1
       '@praha/eslint-config-definer': 2.0.1(eslint@9.25.0(jiti@2.4.2))
       eslint: 9.25.0(jiti@2.4.2)
       jiti: 2.4.2
 
-  '@huuyafwww/eslint-config-node@1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
+  '@huuyafwww/eslint-config-node@1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
     dependencies:
       '@praha/eslint-config-definer': 2.0.1(eslint@9.25.0(jiti@2.4.2))
       eslint: 9.25.0(jiti@2.4.2)
       globals: 15.15.0
       jiti: 2.4.2
 
-  '@huuyafwww/eslint-config-react@1.2.0(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
+  '@huuyafwww/eslint-config-react@1.2.1(@typescript-eslint/utils@8.37.0(eslint@9.25.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-node@0.3.9)(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)':
     dependencies:
       '@praha/eslint-config-definer': 2.0.1(eslint@9.25.0(jiti@2.4.2))
       '@stylistic/eslint-plugin-js': 2.13.0(eslint@9.25.0(jiti@2.4.2))
@@ -12252,7 +12252,7 @@ snapshots:
       - eslint-import-resolver-node
       - supports-color
 
-  '@huuyafwww/eslint-config-storybook@1.2.0(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)':
+  '@huuyafwww/eslint-config-storybook@1.2.1(eslint@9.25.0(jiti@2.4.2))(jiti@2.4.2)(typescript@5.8.3)':
     dependencies:
       '@praha/eslint-config-definer': 2.0.1(eslint@9.25.0(jiti@2.4.2))
       eslint: 9.25.0(jiti@2.4.2)
@@ -12270,7 +12270,7 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  '@huuyafwww/tsconfig-react@1.0.0(typescript@5.8.3)':
+  '@huuyafwww/tsconfig-react@1.0.1(typescript@5.8.3)':
     dependencies:
       typescript: 5.8.3
 
@@ -16123,7 +16123,7 @@ snapshots:
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   camelcase-keys@6.2.2:
     dependencies:
@@ -16138,7 +16138,7 @@ snapshots:
   capital-case@1.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case-first: 2.0.2
 
   chai@5.2.1:
@@ -16214,7 +16214,7 @@ snapshots:
       path-case: 3.0.4
       sentence-case: 3.0.4
       snake-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   chardet@0.7.0: {}
 
@@ -16369,7 +16369,7 @@ snapshots:
   constant-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case: 2.0.2
 
   content-type@1.0.4: {}
@@ -16681,7 +16681,7 @@ snapshots:
   dot-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   dotenv-cli@8.0.0:
     dependencies:
@@ -17890,7 +17890,7 @@ snapshots:
 
   has-bigints@1.1.0: {}
 
-  has-command@1.0.0:
+  has-command@1.0.1:
     dependencies:
       '@types/which': 3.0.4
       which: 5.0.0
@@ -17909,7 +17909,7 @@ snapshots:
 
   has-symbols@1.1.0: {}
 
-  has-throw@1.0.2: {}
+  has-throw@1.0.3: {}
 
   has-tostringtag@1.0.2:
     dependencies:
@@ -17948,7 +17948,7 @@ snapshots:
   header-case@2.0.4:
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   headers-polyfill@4.0.3: {}
 
@@ -18285,7 +18285,7 @@ snapshots:
 
   is-lower-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   is-map@2.0.3: {}
 
@@ -18368,7 +18368,7 @@ snapshots:
 
   is-upper-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   is-weakmap@2.0.2: {}
 
@@ -18746,13 +18746,13 @@ snapshots:
 
   lower-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   lower-case@1.1.4: {}
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   lru-cache@10.4.3: {}
 
@@ -18897,7 +18897,7 @@ snapshots:
       glob-to-regexp: 0.4.1
       sharp: 0.33.5
       stoppable: 1.1.0
-      undici: 7.11.0
+      undici: 7.12.0
       workerd: 1.20250712.0
       ws: 8.18.0
       youch: 4.1.0-beta.10
@@ -19136,7 +19136,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   node-abi@3.75.0:
     dependencies:
@@ -19454,7 +19454,7 @@ snapshots:
   param-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   parent-module@1.0.1:
     dependencies:
@@ -19488,7 +19488,7 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   pascalcase@0.1.1: {}
 
@@ -19501,7 +19501,7 @@ snapshots:
   path-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   path-exists@4.0.0: {}
 
@@ -20387,7 +20387,7 @@ snapshots:
   sentence-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case-first: 2.0.2
 
   serialize-javascript@6.0.2:
@@ -20578,7 +20578,7 @@ snapshots:
   snake-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   snapdragon@0.8.2:
     dependencies:
@@ -20672,7 +20672,7 @@ snapshots:
 
   sponge-case@1.0.1:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   sprintf-js@1.0.3: {}
 
@@ -20921,7 +20921,7 @@ snapshots:
 
   swap-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   sync-fetch@0.6.0-2:
     dependencies:
@@ -21066,7 +21066,7 @@ snapshots:
 
   title-case@3.0.3:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   tmp@0.0.33:
     dependencies:
@@ -21358,7 +21358,7 @@ snapshots:
 
   undici@6.21.3: {}
 
-  undici@7.11.0: {}
+  undici@7.12.0: {}
 
   unenv@2.0.0-rc.17:
     dependencies:
@@ -21440,13 +21440,13 @@ snapshots:
 
   upper-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   upper-case@1.1.3: {}
 
   upper-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   uri-js@4.4.1:
     dependencies:

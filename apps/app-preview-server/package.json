@@ -27,10 +27,10 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-browser": "^1.2.0",
-    "@huuyafwww/eslint-config-common": "^1.2.0",
-    "@huuyafwww/eslint-config-next": "^1.2.0",
-    "@huuyafwww/eslint-config-react": "^1.2.0",
+    "@huuyafwww/eslint-config-browser": "^1.2.1",
+    "@huuyafwww/eslint-config-common": "^1.2.1",
+    "@huuyafwww/eslint-config-next": "^1.2.1",
+    "@huuyafwww/eslint-config-react": "^1.2.1",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@huuyafwww/tsconfig-next": "^1.2.1",
     "@tailwindcss/postcss": "^4.1.11",

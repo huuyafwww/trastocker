@@ -38,14 +38,14 @@
     "drizzle-orm": "^0.39.3"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-common": "^1.2.0",
-    "@huuyafwww/eslint-config-node": "^1.2.0",
+    "@huuyafwww/eslint-config-common": "^1.2.1",
+    "@huuyafwww/eslint-config-node": "^1.2.1",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@types/sql.js": "^1.4.9",
     "better-sqlite3": "^11.10.0",
     "dotenv-cli": "^8.0.0",
     "drizzle-kit": "^0.30.6",
-    "has-command": "^1.0.0",
+    "has-command": "^1.0.1",
     "pkgroll": "^2.14.3",
     "sql.js": "1.12.0",
     "tsx": "^4.20.3",

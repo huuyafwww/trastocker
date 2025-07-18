@@ -31,8 +31,8 @@
     "valibot": "1.0.0"
   },
   "devDependencies": {
-    "@huuyafwww/eslint-config-common": "^1.2.0",
-    "@huuyafwww/eslint-config-node": "^1.2.0",
+    "@huuyafwww/eslint-config-common": "^1.2.1",
+    "@huuyafwww/eslint-config-node": "^1.2.1",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "pkgroll": "^2.14.3",
     "typescript": "^5.8.3"
