@@ -25,7 +25,7 @@ CREATE TABLE `user` (
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| id | TEXT |  | false | [workspace_user](workspace_user.md) |  |  |
+| id | TEXT |  | false | [workspace_user](workspace_user.md) [user_token](user_token.md) |  |  |
 | created_at | INTEGER |  | false |  |  |  |
 | updated_at | INTEGER |  | false |  |  |  |
 | deleted_at | INTEGER |  | true |  |  |  |

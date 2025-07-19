@@ -1,5 +1,7 @@
 import { sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
 
+import { user } from './user';
+
 import type { InferSelectModel } from 'drizzle-orm';
 
 export const userToken = sqliteTable('user_token', {
@@ -7,7 +9,7 @@ export const userToken = sqliteTable('user_token', {
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
   deletedAt: integer('deleted_at', { mode: 'timestamp' }),
-  userId: text('user_id').notNull(),
+  userId: text('user_id').notNull().references(() => user.id),
   accessToken: text('access_token', { length: 255 }).notNull(),
   refreshToken: text('refresh_token', { length: 255 }).notNull(),
 });

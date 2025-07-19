@@ -6,14 +6,15 @@
 <summary><strong>Table Definition</strong></summary>
 
 ```sql
-CREATE TABLE `user_token` (
+CREATE TABLE "user_token" (
 	`id` text PRIMARY KEY NOT NULL,
 	`created_at` integer NOT NULL,
 	`updated_at` integer NOT NULL,
 	`deleted_at` integer,
 	`user_id` text NOT NULL,
 	`access_token` text(255) NOT NULL,
-	`refresh_token` text(255) NOT NULL
+	`refresh_token` text(255) NOT NULL,
+	FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON UPDATE no action ON DELETE no action
 )
 ```
 
@@ -27,7 +28,7 @@ CREATE TABLE `user_token` (
 | created_at | INTEGER |  | false |  |  |  |
 | updated_at | INTEGER |  | false |  |  |  |
 | deleted_at | INTEGER |  | true |  |  |  |
-| user_id | TEXT |  | false |  |  |  |
+| user_id | TEXT |  | false |  | [user](user.md) |  |
 | access_token | text(255) |  | false |  |  |  |
 | refresh_token | text(255) |  | false |  |  |  |
 
@@ -36,6 +37,7 @@ CREATE TABLE `user_token` (
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
 | id | PRIMARY KEY | PRIMARY KEY (id) |
+| - (Foreign key ID: 0) | FOREIGN KEY | FOREIGN KEY (user_id) REFERENCES user (id) ON UPDATE NO ACTION ON DELETE NO ACTION MATCH NONE |
 | sqlite_autoindex_user_token_1 | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes
