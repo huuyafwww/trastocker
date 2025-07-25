@@ -28,7 +28,7 @@
     "lint:code": "eslint . --cache",
     "lint:type": "tsc --pretty --noEmit",
     "storybook:build": "storybook build --test",
-    "storybook:screenshot": "storycap http://localhost:6007 --serverCmd 'http-server storybook-static --port 6007'"
+    "storybook:screenshot": "storycapture http://localhost:6007 --serverCmd 'http-server storybook-static --port 6007'"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.10",
@@ -68,7 +68,7 @@
     "reg-publish-s3-plugin": "^0.14.4",
     "reg-suit": "^0.14.4",
     "storybook": "^8.6.12",
-    "storycap": "^5.0.1",
+    "storycapture": "^9.0.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3",
     "vite-tsconfig-paths": "^5.1.4"

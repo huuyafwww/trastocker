@@ -1,6 +1,6 @@
 import '@styles/tailwind.css';
 import '@styles/globals.css';
-import { withScreenshot } from 'storycap';
+import { withScreenshot } from 'storycapture';
 
 import type { Preview } from '@storybook/react';
 
