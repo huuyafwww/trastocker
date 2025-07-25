@@ -49,7 +49,6 @@
     "@huuyafwww/eslint-config-storybook": "^1.2.0",
     "@huuyafwww/tsconfig-common": "^1.1.2",
     "@huuyafwww/tsconfig-react": "^1.0.0",
-    "@storybook/react": "^9.0.12",
     "@storybook/react-vite": "^9.0.12",
     "@tailwindcss/postcss": "^4.1.10",
     "@types/react": "^19.1.2",

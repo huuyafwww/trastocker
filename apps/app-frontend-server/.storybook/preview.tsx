@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { withScreenshot } from 'storycapture';
 import { Provider } from 'urql';
 
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 import useUrql from '@hooks/useUrql';
 import { setupHandlers } from '@mocks/index';

@@ -2,7 +2,7 @@ import '@styles/tailwind.css';
 import '@styles/globals.css';
 import { withScreenshot } from 'storycapture';
 
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 const options: {
   serviceWorker?: {
