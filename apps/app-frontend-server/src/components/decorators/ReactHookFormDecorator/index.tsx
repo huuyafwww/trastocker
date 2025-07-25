@@ -1,5 +1,5 @@
-import { action } from '@storybook/addon-actions';
 import { useForm, FormProvider } from 'react-hook-form';
+import { action } from 'storybook/actions';
 
 import type { FieldValues } from 'react-hook-form';
 

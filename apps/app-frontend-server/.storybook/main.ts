@@ -1,22 +1,17 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import tsconfigPathsPlugin from 'vite-tsconfig-paths';
 
-import type { StorybookConfig } from '@storybook/experimental-nextjs-vite';
+import type { StorybookConfig } from '@storybook/nextjs-vite';
 
 const config: StorybookConfig = {
   stories: ['../src/**/stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    {
-      name: '@storybook/addon-essentials',
-      options: { docs: false },
-    },
-    '@storybook/addon-actions',
-    'storycap',
+    'storycapture',
   ],
   typescript: {
     reactDocgen: 'react-docgen',
   },
-  framework: '@storybook/experimental-nextjs-vite',
+  framework: '@storybook/nextjs-vite',
   staticDirs: ['./public'],
   viteFinal: config => ({
     ...config,

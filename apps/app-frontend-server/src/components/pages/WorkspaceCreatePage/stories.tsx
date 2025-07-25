@@ -1,6 +1,6 @@
 import WorkspaceCreatePage from '.';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import AuthLayout from '@layouts/AuthLayout';
 

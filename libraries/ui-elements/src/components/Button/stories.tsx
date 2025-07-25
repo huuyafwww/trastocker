@@ -1,10 +1,10 @@
-import { fn } from '@storybook/test';
+import { action } from 'storybook/actions';
 
 import { defaultVariant } from './styles.css';
 
 import Button from '.';
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
   title: 'Button',
@@ -12,7 +12,7 @@ const meta = {
   args: {
     as: 'button',
     children: 'Button',
-    onPress: fn(),
+    onPress: action('onPress'),
     variant: defaultVariant,
   },
   argTypes: {},
