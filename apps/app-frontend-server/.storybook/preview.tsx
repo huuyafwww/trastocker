@@ -3,10 +3,10 @@ import { connectDatabase } from '@trastocker/drizzle-helper/sql-js';
 import ms from 'ms';
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { ToastContainer } from 'react-toastify';
-import { withScreenshot } from 'storycap';
+import { withScreenshot } from 'storycapture';
 import { Provider } from 'urql';
 
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 
 import useUrql from '@hooks/useUrql';
 import { setupHandlers } from '@mocks/index';
