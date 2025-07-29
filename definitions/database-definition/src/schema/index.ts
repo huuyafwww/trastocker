@@ -1,4 +1,5 @@
 import { createProductCategoryRelations } from './relations/productCategory';
+import { createUserTokenRelations } from './relations/userToken';
 import { createWorkspaceProductRelations } from './relations/workspaceProduct';
 import { createWorkspaceProductCategoryRelations } from './relations/workspaceProductCategory';
 import { createWorkspaceUserRelations } from './relations/workspaceUser';
@@ -37,6 +38,7 @@ export const schema = {
 } satisfies Record<string, AnySQLiteTable<NonNullable<unknown>> | Relations>;
 
 [
+  createUserTokenRelations,
   createWorkspaceUserRelations,
   createProductCategoryRelations,
   createWorkspaceProductRelations,

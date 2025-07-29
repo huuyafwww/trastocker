@@ -1,1 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1668" height="664pt" viewBox="0 0 1250.71 663.6"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 659.6)"><title>product</title><polygon fill="#fff" stroke="none" points="-4 4 -4 -659.6 1246.71 -659.6 1246.71 4 -4 4"/><g id="node1" class="node"><title>product</title><polygon fill="#efefef" stroke="none" points="545.62 -231 545.62 -266.6 703.59 -266.6 703.59 -231 545.62 -231"/><polygon fill="none" stroke="#000" points="545.62 -231 545.62 -266.6 703.59 -266.6 703.59 -231 545.62 -231"/><text x="562.49" y="-244.4" font-family="Arial Bold" font-size="18" text-anchor="start">product</text><text x="648.59" y="-244.4" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[table]</text><polygon fill="none" stroke="#000" points="545.62 -200.2 545.62 -231 703.59 -231 703.59 -200.2 545.62 -200.2"/><text x="552.62" y="-212.4" font-family="Arial" font-size="14" text-anchor="start">id</text><text x="567.41" y="-212.4" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text><polygon fill="none" stroke="#000" points="545.62 -169.4 545.62 -200.2 703.59 -200.2 703.59 -169.4 545.62 -169.4"/><text x="552.62" y="-181.6" font-family="Arial" font-size="14" text-anchor="start">created_at</text><text x="622.67" y="-181.6" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="545.62 -138.6 545.62 -169.4 703.59 -169.4 703.59 -138.6 545.62 -138.6"/><text x="552.62" y="-150.8" font-family="Arial" font-size="14" text-anchor="start">updated_at</text><text x="626.58" y="-150.8" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="545.62 -107.8 545.62 -138.6 703.59 -138.6 703.59 -107.8 545.62 -107.8"/><text x="552.62" y="-120" font-family="Arial" font-size="14" text-anchor="start">deleted_at</text><text x="621.9" y="-120" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="545.62 -77 545.62 -107.8 703.59 -107.8 703.59 -77 545.62 -77"/><text x="552.62" y="-89.2" font-family="Arial" font-size="14" text-anchor="start">name</text><text x="591.53" y="-89.2" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text><polygon fill="none" stroke="#000" points="545.62 -46.2 545.62 -77 703.59 -77 703.59 -46.2 545.62 -46.2"/><text x="552.62" y="-58.4" font-family="Arial" font-size="14" text-anchor="start">code</text><text x="586.87" y="-58.4" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" stroke-width="3" points="544.12 -44.7 544.12 -268.1 705.09 -268.1 705.09 -44.7 544.12 -44.7"/></g><g id="node2" class="node"><title>product_category</title><polygon fill="#efefef" stroke="none" points="360 -576.8 360 -612.4 569.21 -612.4 569.21 -576.8 360 -576.8"/><polygon fill="none" stroke="#000" points="360 -576.8 360 -612.4 569.21 -612.4 569.21 -576.8 360 -576.8"/><text x="367" y="-590.2" font-family="Arial Bold" font-size="18" text-anchor="start">product_category</text><text x="524.07" y="-590.2" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[table]</text><polygon fill="none" stroke="#000" points="360 -546 360 -576.8 569.21 -576.8 569.21 -546 360 -546"/><text x="367" y="-558.2" font-family="Arial" font-size="14" text-anchor="start">id</text><text x="381.79" y="-558.2" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text><polygon fill="none" stroke="#000" points="360 -515.2 360 -546 569.21 -546 569.21 -515.2 360 -515.2"/><text x="367" y="-527.4" font-family="Arial" font-size="14" text-anchor="start">created_at</text><text x="437.05" y="-527.4" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="360 -484.4 360 -515.2 569.21 -515.2 569.21 -484.4 360 -484.4"/><text x="367" y="-496.6" font-family="Arial" font-size="14" text-anchor="start">updated_at</text><text x="440.96" y="-496.6" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="360 -453.6 360 -484.4 569.21 -484.4 569.21 -453.6 360 -453.6"/><text x="367" y="-465.8" font-family="Arial" font-size="14" text-anchor="start">deleted_at</text><text x="436.29" y="-465.8" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="360 -422.8 360 -453.6 569.21 -453.6 569.21 -422.8 360 -422.8"/><text x="367" y="-435" font-family="Arial" font-size="14" text-anchor="start">name</text><text x="405.91" y="-435" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text><polygon fill="none" stroke="#000" points="360 -392 360 -422.8 569.21 -422.8 569.21 -392 360 -392"/><text x="367" y="-404.2" font-family="Arial" font-size="14" text-anchor="start">product_id</text><text x="436.27" y="-404.2" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text></g><g id="edge1" class="edge"><title>product_category:product_id-&gt;product:id</title><path fill="none" stroke="#000" d="M580.18,-404.38C589.67,-395.57 575.49,-369.22 569.21,-348.8 563.58,-330.52 551.19,-331.1 545.62,-312.8 533.06,-271.47 501.42,-215.6 544.62,-215.6"/><polygon fill="#000" stroke="#000" points="580.1 -404.41 569.22 -403 574.99 -405.95 570.85 -407.21 570.85 -407.21 570.85 -407.21 574.99 -405.95 571.83 -411.61 580.1 -404.41"/><text x="7" y="-417.4" font-family="Arial" font-size="10" text-anchor="start">FOREIGN KEY (product_id) REFERENCES product (id) ON UPDATE NO ACTION ON DELETE NO ACTION MATCH NONE</text></g><g id="node3" class="node"><title>workspace_product</title><polygon fill="#efefef" stroke="none" points="673.5 -576.8 673.5 -612.4 897.71 -612.4 897.71 -576.8 673.5 -576.8"/><polygon fill="none" stroke="#000" points="673.5 -576.8 673.5 -612.4 897.71 -612.4 897.71 -576.8 673.5 -576.8"/><text x="680.5" y="-590.2" font-family="Arial Bold" font-size="18" text-anchor="start">workspace_product</text><text x="852.57" y="-590.2" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[table]</text><polygon fill="none" stroke="#000" points="673.5 -546 673.5 -576.8 897.71 -576.8 897.71 -546 673.5 -546"/><text x="680.5" y="-558.2" font-family="Arial" font-size="14" text-anchor="start">id</text><text x="695.29" y="-558.2" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text><polygon fill="none" stroke="#000" points="673.5 -515.2 673.5 -546 897.71 -546 897.71 -515.2 673.5 -515.2"/><text x="680.5" y="-527.4" font-family="Arial" font-size="14" text-anchor="start">created_at</text><text x="750.55" y="-527.4" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="673.5 -484.4 673.5 -515.2 897.71 -515.2 897.71 -484.4 673.5 -484.4"/><text x="680.5" y="-496.6" font-family="Arial" font-size="14" text-anchor="start">updated_at</text><text x="754.46" y="-496.6" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="673.5 -453.6 673.5 -484.4 897.71 -484.4 897.71 -453.6 673.5 -453.6"/><text x="680.5" y="-465.8" font-family="Arial" font-size="14" text-anchor="start">deleted_at</text><text x="749.78" y="-465.8" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[INTEGER]</text><polygon fill="none" stroke="#000" points="673.5 -422.8 673.5 -453.6 897.71 -453.6 897.71 -422.8 673.5 -422.8"/><text x="680.5" y="-435" font-family="Arial" font-size="14" text-anchor="start">workspace_id</text><text x="769.99" y="-435" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text><polygon fill="none" stroke="#000" points="673.5 -392 673.5 -422.8 897.71 -422.8 897.71 -392 673.5 -392"/><text x="680.5" y="-404.2" font-family="Arial" font-size="14" text-anchor="start">product_id</text><text x="749.77" y="-404.2" fill="#666" font-family="Arial" font-size="14" text-anchor="start">[TEXT]</text></g><g id="edge2" class="edge"><title>workspace_product:product_id-&gt;product:id</title><path fill="none" stroke="#000" d="M662.7,-404.59C652.36,-395.94 665.97,-369.01 673.5,-348.8 680.78,-329.26 696.37,-332.36 703.59,-312.8 718.53,-272.26 747.79,-215.6 704.59,-215.6"/><polygon fill="#000" stroke="#000" points="662.57 -404.55 670.94 -411.63 667.7 -406.02 671.86 -407.22 671.86 -407.22 671.86 -407.22 667.7 -406.02 673.42 -402.98 662.57 -404.55"/><text x="679.5" y="-417.4" font-family="Arial" font-size="10" text-anchor="start">FOREIGN KEY (product_id) REFERENCES product (id) ON UPDATE NO ACTION ON DELETE NO ACTION MATCH NONE</text></g></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 12.1.2 (20240928.0832)
+ -->
+<!-- Title: product Pages: 1 -->
+<svg width="1251pt" height="664pt"
+ viewBox="0.00 0.00 1250.71 663.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 659.6)">
+<title>product</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-659.6 1246.71,-659.6 1246.71,4 -4,4"/>
+<!-- product -->
+<g id="node1" class="node">
+<title>product</title>
+<polygon fill="#efefef" stroke="none" points="545.62,-231 545.62,-266.6 703.59,-266.6 703.59,-231 545.62,-231"/>
+<polygon fill="none" stroke="black" points="545.62,-231 545.62,-266.6 703.59,-266.6 703.59,-231 545.62,-231"/>
+<text text-anchor="start" x="562.49" y="-244.4" font-family="Arial Bold" font-size="18.00">product</text>
+<text text-anchor="start" x="617.47" y="-244.4" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="648.59" y="-244.4" font-family="Arial" font-size="14.00" fill="#666666">[table]</text>
+<polygon fill="none" stroke="black" points="545.62,-200.2 545.62,-231 703.59,-231 703.59,-200.2 545.62,-200.2"/>
+<text text-anchor="start" x="552.62" y="-212.4" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="567.41" y="-212.4" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+<polygon fill="none" stroke="black" points="545.62,-169.4 545.62,-200.2 703.59,-200.2 703.59,-169.4 545.62,-169.4"/>
+<text text-anchor="start" x="552.62" y="-181.6" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="622.67" y="-181.6" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="545.62,-138.6 545.62,-169.4 703.59,-169.4 703.59,-138.6 545.62,-138.6"/>
+<text text-anchor="start" x="552.62" y="-150.8" font-family="Arial" font-size="14.00">updated_at </text>
+<text text-anchor="start" x="626.58" y="-150.8" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="545.62,-107.8 545.62,-138.6 703.59,-138.6 703.59,-107.8 545.62,-107.8"/>
+<text text-anchor="start" x="552.62" y="-120" font-family="Arial" font-size="14.00">deleted_at </text>
+<text text-anchor="start" x="621.9" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="545.62,-77 545.62,-107.8 703.59,-107.8 703.59,-77 545.62,-77"/>
+<text text-anchor="start" x="552.62" y="-89.2" font-family="Arial" font-size="14.00">name </text>
+<text text-anchor="start" x="591.53" y="-89.2" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+<polygon fill="none" stroke="black" points="545.62,-46.2 545.62,-77 703.59,-77 703.59,-46.2 545.62,-46.2"/>
+<text text-anchor="start" x="552.62" y="-58.4" font-family="Arial" font-size="14.00">code </text>
+<text text-anchor="start" x="586.87" y="-58.4" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" stroke-width="3" points="544.12,-44.7 544.12,-268.1 705.09,-268.1 705.09,-44.7 544.12,-44.7"/>
+</g>
+<!-- product_category -->
+<g id="node2" class="node">
+<title>product_category</title>
+<polygon fill="#efefef" stroke="none" points="360,-576.8 360,-612.4 569.21,-612.4 569.21,-576.8 360,-576.8"/>
+<polygon fill="none" stroke="black" points="360,-576.8 360,-612.4 569.21,-612.4 569.21,-576.8 360,-576.8"/>
+<text text-anchor="start" x="367" y="-590.2" font-family="Arial Bold" font-size="18.00">product_category</text>
+<text text-anchor="start" x="492.95" y="-590.2" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="524.07" y="-590.2" font-family="Arial" font-size="14.00" fill="#666666">[table]</text>
+<polygon fill="none" stroke="black" points="360,-546 360,-576.8 569.21,-576.8 569.21,-546 360,-546"/>
+<text text-anchor="start" x="367" y="-558.2" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="381.79" y="-558.2" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+<polygon fill="none" stroke="black" points="360,-515.2 360,-546 569.21,-546 569.21,-515.2 360,-515.2"/>
+<text text-anchor="start" x="367" y="-527.4" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="437.05" y="-527.4" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="360,-484.4 360,-515.2 569.21,-515.2 569.21,-484.4 360,-484.4"/>
+<text text-anchor="start" x="367" y="-496.6" font-family="Arial" font-size="14.00">updated_at </text>
+<text text-anchor="start" x="440.96" y="-496.6" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="360,-453.6 360,-484.4 569.21,-484.4 569.21,-453.6 360,-453.6"/>
+<text text-anchor="start" x="367" y="-465.8" font-family="Arial" font-size="14.00">deleted_at </text>
+<text text-anchor="start" x="436.29" y="-465.8" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="360,-422.8 360,-453.6 569.21,-453.6 569.21,-422.8 360,-422.8"/>
+<text text-anchor="start" x="367" y="-435" font-family="Arial" font-size="14.00">name </text>
+<text text-anchor="start" x="405.91" y="-435" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+<polygon fill="none" stroke="black" points="360,-392 360,-422.8 569.21,-422.8 569.21,-392 360,-392"/>
+<text text-anchor="start" x="367" y="-404.2" font-family="Arial" font-size="14.00">product_id </text>
+<text text-anchor="start" x="436.27" y="-404.2" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+</g>
+<!-- product_category&#45;&gt;product -->
+<g id="edge1" class="edge">
+<title>product_category:product_id&#45;&gt;product:id</title>
+<path fill="none" stroke="black" d="M580.18,-404.38C589.67,-395.57 575.49,-369.22 569.21,-348.8 563.58,-330.52 551.19,-331.1 545.62,-312.8 533.06,-271.47 501.42,-215.6 544.62,-215.6"/>
+<polygon fill="black" stroke="black" points="580.1,-404.41 569.22,-403 574.99,-405.95 570.85,-407.21 570.85,-407.21 570.85,-407.21 574.99,-405.95 571.83,-411.61 580.1,-404.41"/>
+<text text-anchor="start" x="7" y="-417.4" font-family="Arial" font-size="10.00">FOREIGN KEY (product_id) REFERENCES product (id) ON UPDATE NO ACTION ON DELETE NO ACTION MATCH NONE</text>
+</g>
+<!-- workspace_product -->
+<g id="node3" class="node">
+<title>workspace_product</title>
+<polygon fill="#efefef" stroke="none" points="673.5,-576.8 673.5,-612.4 897.71,-612.4 897.71,-576.8 673.5,-576.8"/>
+<polygon fill="none" stroke="black" points="673.5,-576.8 673.5,-612.4 897.71,-612.4 897.71,-576.8 673.5,-576.8"/>
+<text text-anchor="start" x="680.5" y="-590.2" font-family="Arial Bold" font-size="18.00">workspace_product</text>
+<text text-anchor="start" x="821.45" y="-590.2" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="852.57" y="-590.2" font-family="Arial" font-size="14.00" fill="#666666">[table]</text>
+<polygon fill="none" stroke="black" points="673.5,-546 673.5,-576.8 897.71,-576.8 897.71,-546 673.5,-546"/>
+<text text-anchor="start" x="680.5" y="-558.2" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="695.29" y="-558.2" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+<polygon fill="none" stroke="black" points="673.5,-515.2 673.5,-546 897.71,-546 897.71,-515.2 673.5,-515.2"/>
+<text text-anchor="start" x="680.5" y="-527.4" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="750.55" y="-527.4" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="673.5,-484.4 673.5,-515.2 897.71,-515.2 897.71,-484.4 673.5,-484.4"/>
+<text text-anchor="start" x="680.5" y="-496.6" font-family="Arial" font-size="14.00">updated_at </text>
+<text text-anchor="start" x="754.46" y="-496.6" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="673.5,-453.6 673.5,-484.4 897.71,-484.4 897.71,-453.6 673.5,-453.6"/>
+<text text-anchor="start" x="680.5" y="-465.8" font-family="Arial" font-size="14.00">deleted_at </text>
+<text text-anchor="start" x="749.78" y="-465.8" font-family="Arial" font-size="14.00" fill="#666666">[INTEGER]</text>
+<polygon fill="none" stroke="black" points="673.5,-422.8 673.5,-453.6 897.71,-453.6 897.71,-422.8 673.5,-422.8"/>
+<text text-anchor="start" x="680.5" y="-435" font-family="Arial" font-size="14.00">workspace_id </text>
+<text text-anchor="start" x="769.99" y="-435" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+<polygon fill="none" stroke="black" points="673.5,-392 673.5,-422.8 897.71,-422.8 897.71,-392 673.5,-392"/>
+<text text-anchor="start" x="680.5" y="-404.2" font-family="Arial" font-size="14.00">product_id </text>
+<text text-anchor="start" x="749.77" y="-404.2" font-family="Arial" font-size="14.00" fill="#666666">[TEXT]</text>
+</g>
+<!-- workspace_product&#45;&gt;product -->
+<g id="edge2" class="edge">
+<title>workspace_product:product_id&#45;&gt;product:id</title>
+<path fill="none" stroke="black" d="M662.7,-404.59C652.36,-395.94 665.97,-369.01 673.5,-348.8 680.78,-329.26 696.37,-332.36 703.59,-312.8 718.53,-272.26 747.79,-215.6 704.59,-215.6"/>
+<polygon fill="black" stroke="black" points="662.57,-404.55 670.94,-411.63 667.7,-406.02 671.86,-407.22 671.86,-407.22 671.86,-407.22 667.7,-406.02 673.42,-402.98 662.57,-404.55"/>
+<text text-anchor="start" x="679.5" y="-417.4" font-family="Arial" font-size="10.00">FOREIGN KEY (product_id) REFERENCES product (id) ON UPDATE NO ACTION ON DELETE NO ACTION MATCH NONE</text>
+</g>
+</g>
+</svg>
