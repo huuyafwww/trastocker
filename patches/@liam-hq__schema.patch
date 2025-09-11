@@ -1,0 +1,13 @@
+diff --git a/dist/utils/constraintsToRelationships.js b/dist/utils/constraintsToRelationships.js
+index 6ba02c6a46cbf496e54679dea43193dfd4de81b0..b712b1bc82b498386ae4b86d41df60c6fa9bdf87 100644
+--- a/dist/utils/constraintsToRelationships.js
++++ b/dist/utils/constraintsToRelationships.js
+@@ -25,7 +25,7 @@ export const constraintsToRelationships = (tables) => {
+                     continue;
+                 }
+                 // For composite keys, append index to make unique relationship names
+-                const relationshipKey = columnCount > 1 ? `${constraint.name}_${i}` : constraint.name;
++                const relationshipKey = `${table.name}_${constraint.name}_${i}`;
+                 relationships[relationshipKey] = {
+                     name: relationshipKey,
+                     primaryTableName: foreignKeyConstraint.targetTableName,

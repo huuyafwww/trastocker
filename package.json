@@ -33,6 +33,7 @@
   },
   "pnpm": {
     "patchedDependencies": {
+      "@liam-hq/schema": "patches/@liam-hq__schema.patch",
       "drizzle-orm": "patches/drizzle-orm.patch"
     }
   }
