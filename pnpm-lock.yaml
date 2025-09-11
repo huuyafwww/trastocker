@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  '@liam-hq/schema':
+    hash: 7ccb272cd82924fb636915eebed6596a7048bcf1584d03b950fee2cadfa40c8c
+    path: patches/@liam-hq__schema.patch
   drizzle-orm:
     hash: fedaf08548609efe35157e25861c21b3901124ca3c771e768bd0fb565936c801
     path: patches/drizzle-orm.patch
@@ -13422,7 +13425,7 @@ snapshots:
   '@liam-hq/cli@0.7.12(@swc/helpers@0.5.17)(@types/node@22.14.1)(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(next@15.3.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.8.3)':
     dependencies:
       '@liam-hq/erd-core': 0.6.9(@types/react-dom@19.1.2(@types/react@19.1.2))(@types/react@19.1.2)(next@15.3.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(typescript@5.8.3)
-      '@liam-hq/schema': 0.5.4(@swc/helpers@0.5.17)(typescript@5.8.3)
+      '@liam-hq/schema': 0.5.4(patch_hash=7ccb272cd82924fb636915eebed6596a7048bcf1584d03b950fee2cadfa40c8c)(@swc/helpers@0.5.17)(typescript@5.8.3)
       '@prisma/internals': 6.8.2(typescript@5.8.3)
       '@swc/core': 1.12.11(@swc/helpers@0.5.17)
       commander: 13.1.0
@@ -13483,7 +13486,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@liam-hq/schema@0.5.4(@swc/helpers@0.5.17)(typescript@5.8.3)':
+  '@liam-hq/schema@0.5.4(patch_hash=7ccb272cd82924fb636915eebed6596a7048bcf1584d03b950fee2cadfa40c8c)(@swc/helpers@0.5.17)(typescript@5.8.3)':
     dependencies:
       '@liam-hq/neverthrow': 0.0.1(typescript@5.8.3)
       '@prisma/internals': 6.8.2(typescript@5.8.3)
