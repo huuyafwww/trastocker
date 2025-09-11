@@ -52,4 +52,4 @@ await $`cd ${rootPath}/definitions/database-definition && pnpm run generate::lia
 
 // Copy the generated static page to the app-preview-server
 await $`mkdir -p ${rootPath}/apps/app-preview-server/dist/erd/liam`;
-await $`cp -r ${rootPath}/definitions/database-definition/liam/* ${rootPath}/apps/app-preview-server/dist/erd/liam`;
+await $`cp -r ${rootPath}/definitions/database-definition/dist/liam/* ${rootPath}/apps/app-preview-server/dist/erd/liam`;
