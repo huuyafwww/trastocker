@@ -9,7 +9,7 @@ const PACKAGE_TYPES = {
 
 type PackageType = keyof typeof PACKAGE_TYPES;
 
-export default function generator(plop: PlopTypes.NodePlopAPI): void {
+export default (plop: PlopTypes.NodePlopAPI): void => {
   plop.setHelper('package', (type: PackageType) => PACKAGE_TYPES[type]);
   plop.setHelper('library', (type: PackageType, name: string) => ({
     app: `app-${name}-server`,
@@ -51,4 +51,4 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       },
     ],
   });
-}
+};
